@@ -1,2 +1,2 @@
-# opendsu
-OpenDSU emerging standard public documentation
+# We have build our site using Cardinal
+
