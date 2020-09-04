@@ -32,8 +32,12 @@ header {
   height:3.5rem;
   z-index: 100;
   display: flex;
+  align-items: center;
 }
 
+header img {
+  margin-left: 1rem;
+}
 section{
   margin-top: 3.5rem;
 }

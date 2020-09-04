@@ -19,16 +19,16 @@
       "children": [
         {
           "name": "Projects",
-          "tags": "projects"
+          "icon": "fa-suitcase"
         },
         {
-          "name": "Scientific Articles"
+          "name": "Scientific Articles",
+          "icon": "fa-book"
         }
       ]
     },
     {
-      "name": "About",
-      "tags": "about"
+      "name": "About"
     }
   ]
 }
