@@ -27,15 +27,6 @@
       ]
     },
     {
-      "name": "Contact",
-      "children": [
-        {
-          "name": "Contact",
-          "tags": "contact"
-        }
-      ]
-    },
-    {
       "name": "About",
       "tags": "about"
     }
