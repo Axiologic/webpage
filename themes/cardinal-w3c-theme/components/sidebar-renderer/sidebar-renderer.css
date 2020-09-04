@@ -1,0 +1,41 @@
+.wrapper_container {
+    padding: 0 1.5rem;
+}
+
+.wrapper_container .item_container {
+    display: flex;
+    padding: 0.5rem 0;
+    border-top: 1px solid #00336620;
+}
+
+.item_container .icon,
+.item_container .item_name {
+    color: #003366;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.children {
+    display: none;
+}
+
+.children .wrapper_container .item_container {
+    border: none;
+}
+
+.dropdown .close-section {
+    position: absolute;
+    right: 1.5rem; top: 20px;
+    width: 1.5rem; height: 4px;
+    border: none;
+    background-color: #0033667F;
+    border-radius: 2px;
+}
+
+.dropdown.isOpened .wrapper_container .children {
+    display: block;
+}
+
+.dropdown.isOpened .fa-caret-right.expand-menu {
+    transform: rotate(90deg);
+}

@@ -1,0 +1,9 @@
+{
+    "basePagesUrl": "/pages/",
+    "profile": {
+        "username": "Axiologic Research",
+        "email": "office at axiologic.net",
+        "avatar": "/assets/images/axiologic-logo.png"
+    },
+    "theme": "cardinal-w3c-theme"
+}
