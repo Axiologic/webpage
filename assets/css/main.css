@@ -15,6 +15,8 @@ body{
 }
 /* NAV */
 .main-nav{
+    width:100%;
+    position:fixed;
     padding: 0 3rem;
     padding-top:0.8rem;
     display: flex;
@@ -29,35 +31,70 @@ body{
     align-items: center;
     list-style: none;
 }
-.main-menu a{
+
+.main-menu li{
+    position:relative;
+}
+.main-menu li a{
     font-size: 28px;
     color:white;
     font-weight: 500;
     text-decoration: none;
     padding-left:65px;
 }
-.main-menu a i{
+.main-menu li a i{
     vertical-align: middle;
     font-size: 11px;
     padding-left: 14px;
 }
-.main-menu .projects-drop-down{
-    text-align: center;
-    display: block;
-    padding-right: 1rem;
+
+.main-menu li a:hover{
+    color:#0073ff;
 }
 
+/*DROPDOWN MENU*/
+.dropdown-menu {
+    display: none;
+}
+.dropdown-menu ul{
+    list-style: none;
+}
+.main-menu li:hover .dropdown-menu{
+    display: block;
+    position: absolute;
+    left: 3rem;
+    top: 100%;
+    background-color: black;
+    width: auto;
+    height: auto;
+}
+
+.main-menu li:hover .dropdown-menu ul{
+    display: block;
+}
+
+.main-menu li:hover .dropdown-menu ul a{
+    display:block;
+
+    margin:0.8rem 0;
+    padding-left:1rem;
+    font-size:23px;
+    word-wrap: break-word;
+
+}
+/*END DROPDOWN MENU*/
 /* END NAV */
 
 /* INDEX TEXT */
 
 section.content{
     height: 100%;
+    padding-top:140px;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.31), rgba(0, 0, 0, 0.31)),
     linear-gradient(223.53deg, #0033AC 33.76%, #3672FF 75.84%);
     display: flex;
     align-items: center;
-    height:100%;
+
 
 }
 
@@ -71,3 +108,4 @@ section.content{
     color:white;
 }
 /* END INDEX TEXT */
+
