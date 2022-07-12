@@ -25,7 +25,7 @@ function readMore(button){
         button.innerHTML="Read Less "+chevron;
         let bigParagraph=parent.item(0);
         let smallParagraph=parent.item(1);
-        bigParagraph.classList.toggle("hidden",false);
+        bigParagraph.classList.toggle("hidden");
         smallParagraph.classList.toggle("hidden");
     }
     else if(text=="Read Less"){
@@ -37,6 +37,28 @@ function readMore(button){
         bigParagraph.classList.toggle("hidden");
         smallParagraph.classList.toggle("hidden");
     }
+}
 
+function viewMoreItems(className,name){
+    let button=event.target;
+    const items=Array.from(document.getElementsByClassName(className));
+    if(button.innerHTML.includes("View All")){
+        button.innerHTML="Show Less"
+        items.forEach((item)=>{
+            item.classList.toggle("hidden",false);
+        })
+    }
+    else
+    {
+        button.innerHTML="View All "+name;
+        items.forEach((item,index)=>{
+            if(index>2){
+                item.classList.toggle("hidden",true);
+            }
+
+        })
+
+    }
 
 }
+
