@@ -1,15 +1,16 @@
 function truncateFunction(){
     const collection = document.getElementsByClassName("truncate");
     Array.from(collection).forEach((element)=>{
-        let numberOfWords=element.className.split(" ")[1];
+        let numberOfWords=element.getAttribute("data-length");
+        if(numberOfWords==0){
+            return;
+        }
         let firstWords=element.innerHTML.split(' ').slice(0,numberOfWords).join(' ')+" ..."
         let smallParagraph=document.createElement("p");
         smallParagraph.classList.add("truncate");
         smallParagraph.innerHTML=firstWords;
         element.classList.toggle("hidden");
         insertAfter(smallParagraph,element);
-
-
     })
 }
 
@@ -27,11 +28,6 @@ function readMore(button){
         let smallParagraph=parent.children.item(1);
         bigParagraph.classList.toggle("hidden");
         smallParagraph.classList.toggle("hidden");
-        if(parent.className=="project-description")
-        {
-            parent.style.maxWidth="830px";
-        }
-
     }
     else if(text=="Read Less"){
         const parent=button.parentNode;
@@ -40,10 +36,6 @@ function readMore(button){
         let smallParagraph=parent.children.item(1);
         bigParagraph.classList.toggle("hidden");
         smallParagraph.classList.toggle("hidden");
-        if(parent.className=="project-description")
-        {
-            parent.style.maxWidth="537px";
-        }
     }
 }
 

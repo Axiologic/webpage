@@ -176,7 +176,7 @@ h2 span{
 .about-content div p{
     z-index: 1;
     position:relative;
-    max-width:532px;
+    max-width:530px;
     font-weight: 400;
     font-size: 20px;
     line-height: 230.4%;
@@ -204,16 +204,7 @@ h2 span{
 .project-description>button{
     position: absolute;
 }
-.about-second h2{
-    max-width: 787px;
-    margin:0 auto;
-    text-align: center;
-    font-weight: 500;
-    font-size: 30px;
-    line-height: 149.4%;
-    text-align: center;
-    margin-bottom: 50px;
-}
+
 .btn-center{
     margin:0 auto;
 }
@@ -221,6 +212,20 @@ h2 span{
 /* END OF FIRST ABOUT PAGE*/
 
 /* SECOND ABOUT PAGE*/
+.about-second{
+
+}
+.about-second h2{
+    max-width: 787px;
+    margin:50px auto;
+    text-align: center;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 149.4%;
+    text-align: center;
+    padding-top:73px;
+
+}
 .about-second div p{
     max-width: 787px;
     margin:0 auto;
@@ -234,7 +239,7 @@ h2 span{
 }
 
 .cards{
-    margin:100px 0;
+    margin-top:100px;
     display:grid;
     grid-template-columns: repeat(3,1fr);
     grid-gap:30px;
@@ -242,7 +247,7 @@ h2 span{
 }
 
 .cards>div{
-    min-height: 330px;
+    min-height: 350px;
     background: linear-gradient(180.04deg, #203048 0.04%, #202139 45.98%, #192031 99.96%);
     border: 1px solid #2E2F46;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
@@ -275,8 +280,8 @@ h2 span{
 
 /*PROJECTS PAGE*/
 
-.projects{
-   padding-top:0;
+.projects>.breakline{
+    margin-top:23px;
 }
 
 .project-container{
@@ -288,7 +293,7 @@ h2 span{
 }
 .project-description{
     position:relative;
-    max-width: 537px;
+    max-width: 830px;
 }
 .project-svg{
     min-height:300px;
@@ -301,7 +306,8 @@ h2 span{
     margin-right: 15px;
 }
 .projects>h1{
-    margin-bottom:150px;
+    padding-top:50px;
+    margin-bottom:125px;
     text-align: center;
     font-weight: 500;
     font-size: 64px;
@@ -340,6 +346,7 @@ h2 span{
 }
 .button-container{
     margin-top:150px;
+    margin-bottom:39px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -366,7 +373,7 @@ button.btn-view-more{
 }
 
 .researches h1{
-    padding-top:20px;
+    padding-top:50px;
     margin-bottom:65px;
     font-weight: 500;
     font-size: 64px;
