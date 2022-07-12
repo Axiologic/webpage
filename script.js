@@ -21,21 +21,29 @@ function readMore(button){
     const chevron="<i class=\"fa-solid fa-chevron-down \"></i>"
     let text=button.innerHTML.split(" ").slice(0,2).join(" ");
     if(text=="Read More"){
-        const parent=button.parentNode.children;
+        const parent=button.parentNode;
         button.innerHTML="Read Less "+chevron;
-        let bigParagraph=parent.item(0);
-        let smallParagraph=parent.item(1);
+        let bigParagraph=parent.children.item(0);
+        let smallParagraph=parent.children.item(1);
         bigParagraph.classList.toggle("hidden");
         smallParagraph.classList.toggle("hidden");
+        if(parent.className=="project-description")
+        {
+            parent.style.maxWidth="830px";
+        }
+
     }
     else if(text=="Read Less"){
-        const parent=button.parentNode.children;
+        const parent=button.parentNode;
         button.innerHTML="Read More "+chevron;
-        let bigParagraph=parent.item(0);
-        let smallParagraph=parent.item(1);
-
+        let bigParagraph=parent.children.item(0);
+        let smallParagraph=parent.children.item(1);
         bigParagraph.classList.toggle("hidden");
         smallParagraph.classList.toggle("hidden");
+        if(parent.className=="project-description")
+        {
+            parent.style.maxWidth="537px";
+        }
     }
 }
 
