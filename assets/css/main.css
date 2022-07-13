@@ -470,9 +470,6 @@ button.btn-view-more{
     color: #FFFFFF;
     margin-bottom: 77px;
 }
-.hidden{
-    display:none;
-}
 
 @media(max-width: 1145px){
     .card-inside:last-child{
@@ -521,4 +518,8 @@ button.btn-view-more{
     .secondary-menu{
         min-width: 100vw;
     }
+}
+
+.hidden{
+    display:none;
 }
