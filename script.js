@@ -12,6 +12,7 @@ function truncateFunction(){
         element.classList.toggle("hidden");
         insertAfter(smallParagraph,element);
     })
+    addEvent();
 }
 
 function insertAfter(newNode, existingNode) {
@@ -62,3 +63,12 @@ function viewMoreItems(className,name){
 
 }
 
+function addEvent(){
+    document.querySelector("#hamburger").addEventListener('click',(element)=>{
+        document.querySelector('.secondary-menu').classList.toggle("toggle")
+    })
+}
+
+document.addEventListener("scroll",()=>{
+    document.querySelector('.secondary-menu').classList.toggle("toggle",false);
+})
