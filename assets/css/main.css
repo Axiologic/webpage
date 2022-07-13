@@ -298,9 +298,11 @@ h2 span{
     padding-top:73px;
 
 }
+.ai-introduction>p{
+    margin:0 auto;
+}
 .about-second div p{
     max-width: 787px;
-    margin:0 auto;
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
@@ -313,7 +315,7 @@ h2 span{
 .cards{
     margin-top:100px;
     display:grid;
-    grid-template-columns: repeat(auto-fit,minmax(253px,1fr));
+    grid-template-columns: repeat(auto-fit,minmax(274px,1fr));
     align-items: center;
     grid-gap:30px;
 }
@@ -326,8 +328,7 @@ h2 span{
 }
 
 .cards>div h4{
-
-    font-family: 'Poppins';
+    font-family: 'Raleway';
     font-style: normal;
     font-weight: 600;
     font-size: 20px;
@@ -473,7 +474,7 @@ button.btn-view-more{
     display:none;
 }
 
-@media(max-width: 1050px){
+@media(max-width: 1145px){
     .card-inside:last-child{
         grid-column: 1/ span 2;
     }
