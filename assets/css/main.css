@@ -470,7 +470,9 @@ button.btn-view-more{
     color: #FFFFFF;
     margin-bottom: 77px;
 }
-
+.hidden{
+    display:none !important;
+}
 @media(max-width: 1145px){
     .card-inside:last-child{
         grid-column: 1/ span 2;
@@ -520,6 +522,3 @@ button.btn-view-more{
     }
 }
 
-.hidden{
-    display:none;
-}
