@@ -269,7 +269,10 @@ h2 span{
     line-height: 128.9%;
     letter-spacing: 0.03em;
 }
-
+.project-description>p>a{
+    color:#1F69F7;
+    text-decoration: none;
+}
 .project-description>button{
     position: absolute;
 }
@@ -469,6 +472,7 @@ button.btn-view-more{
 .hidden{
     display:none;
 }
+
 @media(max-width: 1050px){
     .card-inside:last-child{
         grid-column: 1/ span 2;
