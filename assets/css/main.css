@@ -228,18 +228,20 @@ section.home{
 /* FIRST ABOUT PAGE*/
 section{
     color:white;
-    padding:50px 10%;
+    padding:3.125rem 10%;
     background-color: rgba(24, 29, 43, 1);
 }
 section>*{
     padding:0 10px;
 }
 section.about{
-
     width:100%;
-    background: url('../images/shapes.svg');
+    background: transparent url('../images/shapes.svg') no-repeat;
     background-color: rgba(24, 29, 43, 1);
-    background-size: cover;
+    bbackground-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: 0% 0%;
+    background-size: 100% auto;
 
     padding-top:0;
     padding-bottom: 0;
@@ -269,7 +271,7 @@ section .introduction h3{
 div.breakline{
     height: 1px;
     background: rgba(45, 51, 66, 1);
-    margin:50px 0;
+    margin:3.125rem 0;
 }
 
 div.about-content{
@@ -398,10 +400,16 @@ section.about-second{
     color: #D8D8E8;
 }
 .card-inside{
-    padding:25px;
     height: 100%;
 }
+.card-inside .card-text{
+    padding:25px;
+}
 
+.logo-container img{
+    width:100%;
+
+}
 /* END OF SECOND ABOUT PAGE */
 
 
@@ -529,6 +537,14 @@ button.btn-view-more{
     background: #242C44;
     border-radius: 35px;
 }
+.research p a{
+    color:white;
+    text-decoration: none;
+}
+.research p a:hover{
+    color:#1F69F7;
+
+}
 
 @media(max-width: 1145px){
     .card-inside:last-child{
@@ -548,6 +564,9 @@ button.btn-view-more{
 
 }
 @media(max-width: 820px){
+    #newLine{
+        display: none;
+    }
     .project-container{
         display:flex;
         flex-direction: column;
@@ -569,10 +588,6 @@ button.btn-view-more{
 }
 
 @media(max-width: 500px){
-    .landing-page-text h1{
-        font-size: 3.75rem;
-    }
-
     html{
         font-size:12px;
     }
@@ -589,6 +604,49 @@ button.btn-view-more{
     .secondary-menu{
         min-width: 100vw;
     }
+
+    section.about{
+        background: none;
+        background-color: rgba(24, 29, 43, 1);
+    }
+    .project-container{
+        align-items: start;
+    }
+    .project-svg{
+        background: none;
+        display:block;
+        min-height: 0;
+    }
+    /*Paddings and margins*/
+    *{
+        text-align: left !important;
+    }
+    .btn-center{
+        margin:0;
+    }
+    .landing-page-text h1{
+        font-size: 3.75rem;
+    }
+    button.btn-view-more{
+        padding:15px 20px;
+    }
+    section .introduction h1{
+        padding-top: 0;
+        font-size: 2.5rem;
+    }
+    section.home{
+        padding-bottom: 0;
+    }
+    div.about-content{
+        display:block;
+    }
+    div.about-content h2{
+        margin-bottom:35px;
+    }
+    section.about{
+        padding-bottom: 1px;
+    }
+
 }
 @media(max-width: 400px) {
     .landing-page-text h1 {
@@ -598,9 +656,6 @@ button.btn-view-more{
         font-size: 1rem;
     }
 }
-.hidden{
-    display:none !important;
-}
 @media(max-width: 335px) {
     .landing-page-text h1 {
         font-size: 2.5rem;
@@ -608,4 +663,7 @@ button.btn-view-more{
     .landing-page-text h5{
         font-size: 0.875rem;
     }
+}
+.hidden{
+    display:none !important;
 }
