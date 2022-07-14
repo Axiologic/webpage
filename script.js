@@ -53,7 +53,7 @@ function viewMoreItems(className,name){
     {
         button.innerHTML="View All "+name;
         items.forEach((item,index)=>{
-            if(index>2){
+            if(index>1){
                 item.classList.toggle("hidden",true);
             }
 

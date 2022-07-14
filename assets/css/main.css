@@ -175,6 +175,9 @@ section.home{
     padding-top:100px;
     min-height: 100vh;
 }
+.home .breakline{
+    margin-bottom: 0;
+}
 .landing-page-text{
     max-width: 495px;
     padding:0;
@@ -217,6 +220,7 @@ section.home{
     border: none;
     cursor: pointer;
     outline: none;
+    margin-bottom:calc((100vh - 100px)*0.25);
 
 }
 /* END INDEX PAGE */
@@ -231,14 +235,15 @@ section>*{
     padding:0 10px;
 }
 section.about{
-    min-height: 100vh;
+
     width:100%;
     background: url('../images/shapes.svg');
     background-color: rgba(24, 29, 43, 1);
     background-size: cover;
-    background-position: center;
-}
 
+    padding-top:0;
+    padding-bottom: 0;
+}
 section .introduction{
     text-align: center;
 }
@@ -246,7 +251,7 @@ section .introduction{
 section .introduction h1{
     max-width: 600px;
     margin:0 auto;
-    padding:30px 0;
+    padding:20px 0;
     font-weight: 500;
     font-size: 4rem;
     line-height: 4.68rem;
@@ -258,7 +263,7 @@ section .introduction h3{
     font-weight: 400;
     font-size: 1.25rem;
     line-height: 230.4%;
-    margin-bottom: 100px;
+    margin-bottom: 70px;
 }
 
 div.breakline{
@@ -268,7 +273,7 @@ div.breakline{
 }
 
 div.about-content{
-    margin:100px auto;
+    margin: 68px auto 0;
     display:grid;
     grid-template-columns: repeat(auto-fit,minmax(289px,1fr));
     grid-gap: 100px;
@@ -308,6 +313,7 @@ h2 span{
 }
 
 .read-more{
+    font-family: 'Raleway';
     color:white;
     font-weight: 600;
     font-size: 1.25rem;
@@ -329,18 +335,21 @@ h2 span{
 /* END OF FIRST ABOUT PAGE*/
 
 /* SECOND ABOUT PAGE*/
-.about-second{
-
+section.about-second{
+    padding-bottom: 22px;
+}
+.about-second .breakline{
+    margin:0;
 }
 .about-second h2{
     max-width: 787px;
-    margin:50px auto;
+    margin:0px auto 50px;
     text-align: center;
     font-weight: 500;
     font-size: 1.875rem;
     line-height: 149.4%;
     text-align: center;
-    padding-top:73px;
+    padding-top:68px;
 
 }
 .ai-introduction>p{
@@ -354,11 +363,11 @@ h2 span{
     line-height: 230.4%;
     /* or 46px */
     text-align: center;
-    margin-bottom:50px;
+    margin-bottom:20px;
 }
 
 .cards{
-    margin-top:100px;
+    margin-top:90px;
     display:grid;
     grid-template-columns: repeat(auto-fit,minmax(274px,1fr));
     align-items: center;
@@ -399,19 +408,18 @@ h2 span{
 /*PROJECTS PAGE*/
 
 .projects>.breakline{
-    margin-top:23px;
+    margin-top:0;
 }
 
 .project-container{
-
     display:flex;
     justify-content: space-between;
     align-items: center;
-    margin:100px 0;
+    margin:65px 0;
 }
 .project-description{
     position:relative;
-    max-width: 830px;
+    max-width: 730px;
 }
 .project-svg{
     min-height:300px;
@@ -424,8 +432,8 @@ h2 span{
     margin-right: 15px;
 }
 .projects>h1{
-    padding-top:50px;
-    margin-bottom:125px;
+    padding-top:11px;
+    margin-bottom:65px;
     text-align: center;
     font-weight: 500;
     font-size: 4rem;
@@ -463,8 +471,8 @@ h2 span{
     letter-spacing: 0.03em;
 }
 .button-container{
-    margin-top:150px;
-    margin-bottom:39px;
+    margin-top:100px;
+    margin-bottom:7px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -480,19 +488,15 @@ button.btn-view-more{
     line-height: 1.68rem;
     color: #FFFFFF;
 }
-.researches .button-container{
-    margin-top:80px;
-    justify-content: left;
-}
-.researches .btn-view-more{
-    font-weight: 600;
-    background: #242C44;
-    border-radius: 35px;
+
+/* RESEARCH ACTIVITY*/
+.researches .breakline{
+    margin-top:0;
 }
 
 .researches h1{
-    padding-top:50px;
-    margin-bottom:65px;
+    padding-top:10px;
+    margin-bottom:73px;
     font-weight: 500;
     font-size: 4rem;
     line-height: 4.68rem;
@@ -513,7 +517,17 @@ button.btn-view-more{
     font-size: 1.25rem;
     line-height: 230.4%;
     color: #FFFFFF;
-    margin-bottom: 77px;
+    margin-bottom: 67px;
+}
+
+.researches .button-container{
+    margin-top:80px;
+    justify-content: left;
+}
+.researches .btn-view-more{
+    font-weight: 600;
+    background: #242C44;
+    border-radius: 35px;
 }
 
 @media(max-width: 1145px){
