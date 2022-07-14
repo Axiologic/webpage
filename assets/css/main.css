@@ -239,9 +239,8 @@ section.about{
     background: transparent url('../images/shapes.svg') no-repeat;
     background-color: rgba(24, 29, 43, 1);
     bbackground-repeat: no-repeat;
-    background-attachment: scroll;
-    background-position: 0% 0%;
-    background-size: 100% auto;
+    background-size: cover;
+
 
     padding-top:0;
     padding-bottom: 0;
@@ -555,6 +554,10 @@ button.btn-view-more{
     html{
         font-size:14px;
     }
+    section.about{
+        background: none;
+        background-color: rgba(24, 29, 43, 1);
+    }
     .main-menu{
         display: none;
     }
@@ -605,10 +608,6 @@ button.btn-view-more{
         min-width: 100vw;
     }
 
-    section.about{
-        background: none;
-        background-color: rgba(24, 29, 43, 1);
-    }
     .project-container{
         align-items: start;
     }

@@ -5,6 +5,15 @@ function truncateFunction(){
         if(numberOfWords==0){
             return;
         }
+        let currentWidth=window.innerWidth;
+        if(currentWidth<1400){
+            let difference=1400-currentWidth;
+            numberOfWords-=difference/100;
+            if(numberOfWords<15){
+                numberOfWords=15;
+            }
+        }
+
         let firstWords=element.innerHTML.split(' ').slice(0,numberOfWords).join(' ')+" ..."
         let smallParagraph=document.createElement("p");
         smallParagraph.classList.add("truncate");
@@ -14,6 +23,8 @@ function truncateFunction(){
     })
     addEvent();
 }
+
+
 
 function insertAfter(newNode, existingNode) {
     existingNode.parentNode.insertBefore(newNode, existingNode.nextSibling);
