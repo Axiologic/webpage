@@ -138,12 +138,14 @@ i.fa-chevron-down{
     width:30vw;
     min-width: 320px;
     list-style: none;
-    justify-content: center;
+    justify-content: flex-start;
     transform:translateX(100%);
     transition: transform 0.3s ease-in-out;
 
 }
-
+.secondary-menu li:first-child{
+    margin-top:30px;
+}
 .secondary-menu.toggle{
     transform:translateX(0);
 }
@@ -175,7 +177,6 @@ section.home{
 }
 .landing-page-text{
     max-width: 495px;
-    overflow-wrap: break-word;
     padding:0;
     margin-top:calc((100vh - 100px)* 0.2);
 }
@@ -521,6 +522,9 @@ button.btn-view-more{
     }
 }
 @media(max-width: 900px){
+    html{
+        font-size:14px;
+    }
     .main-menu{
         display: none;
     }
@@ -540,13 +544,24 @@ button.btn-view-more{
     }
 }
 @media(max-width: 700px){
+    html {
+        font-size: 13px;
+    }
     .cards{
         display:flex;
         flex-direction: column;
         justify-content: center;
     }
 }
+
 @media(max-width: 500px){
+    .landing-page-text h1{
+        font-size: 3.75rem;
+    }
+
+    html{
+        font-size:12px;
+    }
     .main-nav{
         justify-content: space-between;
         padding: 0 1rem;
@@ -561,7 +576,22 @@ button.btn-view-more{
         min-width: 100vw;
     }
 }
-
+@media(max-width: 400px) {
+    .landing-page-text h1 {
+        font-size: 3.2rem;
+    }
+    .landing-page-text h5{
+        font-size: 1rem;
+    }
+}
 .hidden{
     display:none !important;
+}
+@media(max-width: 335px) {
+    .landing-page-text h1 {
+        font-size: 2.5rem;
+    }
+    .landing-page-text h5{
+        font-size: 0.875rem;
+    }
 }
