@@ -72,3 +72,9 @@ function addEvent(){
 document.addEventListener("scroll",()=>{
     document.querySelector('.secondary-menu').classList.toggle("toggle",false);
 })
+
+window.onresize = function() {
+    if(window.innerWidth>900){
+        document.querySelector(".secondary-menu").classList.toggle("toggle",false);
+    }
+}
