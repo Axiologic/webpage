@@ -45,7 +45,7 @@ body{
 .main-menu li a{
     font-weight: 500;
     font-size: 1.125rem;
-    line-height: 21px;
+    line-height: 1.31rem;
     color: #FFFFFF;
     text-decoration: none;
 }
@@ -263,7 +263,7 @@ section .introduction h3{
     margin:0 auto;
     font-weight: 400;
     font-size: 1.25rem;
-    line-height: 230.4%;
+    line-height: 191.9%;
     margin-bottom: 70px;
 }
 
@@ -299,7 +299,7 @@ h2 span{
     max-width:530px;
     font-weight: 400;
     font-size: 1.25rem;
-    line-height: 230.4%;
+    line-height: 191.9%;
 }
 
 .btn{
@@ -348,7 +348,7 @@ section.about-second{
     text-align: center;
     font-weight: 500;
     font-size: 1.875rem;
-    line-height: 149.4%;
+    line-height: 138.9%;
     text-align: center;
     padding-top:68px;
 
@@ -361,7 +361,7 @@ section.about-second{
     font-style: normal;
     font-weight: 400;
     font-size: 1.25rem;
-    line-height: 230.4%;
+    line-height: 191.9%;
     /* or 46px */
     text-align: center;
     margin-bottom:20px;
@@ -404,10 +404,13 @@ section.about-second{
 .card-inside .card-text{
     padding:25px;
 }
+.logo-container{
 
+}
 .logo-container img{
+    display: block;
     width:100%;
-
+    height:90%;
 }
 /* END OF SECOND ABOUT PAGE */
 
@@ -467,7 +470,7 @@ section.about-second{
 .project-description p{
     font-weight: 400;
     font-size: 1.25rem;
-    line-height: 230.4%;
+    line-height: 191.9%;
     text-align: justify;
 }
 .project-description button{
@@ -514,7 +517,7 @@ button.btn-view-more{
     max-width: 1000px;
     font-weight: 500;
     font-size: 1.56rem;
-    line-height: 230.4%;
+    line-height: 191.9%;
     color: #1F69F7;
 
 }
@@ -522,7 +525,7 @@ button.btn-view-more{
     max-width: 870px;
     font-weight: 400;
     font-size: 1.25rem;
-    line-height: 230.4%;
+    line-height: 191.9%;
     color: #FFFFFF;
     margin-bottom: 67px;
 }
