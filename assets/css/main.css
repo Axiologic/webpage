@@ -617,6 +617,9 @@ button.btn-view-more{
         display:block;
         min-height: 0;
     }
+    .button-container{
+        justify-content: start;
+    }
     /*Paddings and margins*/
     *{
         text-align: left !important;
