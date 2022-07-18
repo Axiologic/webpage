@@ -42,7 +42,7 @@ body{
     display: inline-block;
     min-width: 132px;
 }
-.main-menu li a{
+.main-menu li>a{
     font-weight: 500;
     font-size: 1.125rem;
     line-height: 1.31rem;
@@ -55,7 +55,13 @@ i.fa-chevron-down{
     padding-left: 10px;
 }
 
-.main-menu li a:hover{
+i.fa-chevron-up{
+    vertical-align: middle;
+    font-size: 0.7rem;
+    padding-left: 10px;
+}
+
+.main-menu li>a:hover{
     color:#0073ff;
 }
 
@@ -86,7 +92,7 @@ i.fa-chevron-down{
     left: -10px;
     top: 100%;
     background: #151220;
-    width: auto;
+    width: 175px;
     height: auto;
 }
 
@@ -104,7 +110,7 @@ i.fa-chevron-down{
     word-wrap: break-word;
 }
 .main-menu li:hover .dropdown-menu ul li:first-child a{
-    margin-top:2rem;
+    margin-top:1.2rem;
 }
 /*END DROPDOWN MENU*/
 
@@ -547,7 +553,62 @@ button.btn-view-more{
     color:#1F69F7;
 
 }
-
+section.researches{
+    padding-bottom: 1px;
+}
+section.contact{
+    padding-bottom: 1px;
+}
+.contact h1{
+    font-weight: 500;
+    font-size: 4rem;
+    line-height: 4.68rem;
+    color: #FFFFFF;
+}
+.contact>.container{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.contact ol{
+    list-style: none;
+    text-decoration: none;
+}
+.contact>.container{
+    margin:20px;
+    margin-left:0px;
+}
+.contact .information{
+    margin-bottom:35px;
+}
+.contact .information ol li{
+    margin:15px 0;
+}
+.map iframe{
+    width: 450px;
+    height: 300px;
+}
+.footer .breakline{
+    margin-top:0;
+}
+.footer .pages>h4{
+    margin-bottom:30px;
+}
+.footer>.pages ol{
+    list-style:none;
+    text-decoration: none;
+}
+.footer>.pages ol li{
+    margin-bottom:20px;
+}
+.footer>.pages ol li a{
+    text-decoration: none;
+    color:white;
+}
+.footer>.pages ol li a:hover{
+    color:#1F69F7;
+}
 @media(max-width: 1145px){
     .card-inside:last-child{
         grid-column: 1/ span 2;
@@ -599,7 +660,6 @@ button.btn-view-more{
     }
     .main-nav{
         justify-content: space-between;
-        padding: 0 1rem;
     }
     .main-nav .logo-img{
         width:200px;
@@ -621,6 +681,10 @@ button.btn-view-more{
     }
     .button-container{
         justify-content: start;
+    }
+    .map iframe{
+        width: 300px;
+        height: 200px;
     }
     /*Paddings and margins*/
     *{

@@ -31,11 +31,12 @@ function insertAfter(newNode, existingNode) {
 }
 
 function readMore(button){
-    const chevron="<i class=\"fa-solid fa-chevron-down \"></i>"
+    const chevronDown="<i class=\"fa-solid fa-chevron-down \"></i>"
+    const chevronUp="<i class=\"fa-solid fa-chevron-up \"></i>"
     let text=button.innerHTML.split(" ").slice(0,2).join(" ");
     if(text=="Read More"){
         const parent=button.parentNode;
-        button.innerHTML="Read Less "+chevron;
+        button.innerHTML="Read Less "+chevronUp;
         let bigParagraph=parent.children.item(0);
         let smallParagraph=parent.children.item(1);
         bigParagraph.classList.toggle("hidden");
@@ -43,7 +44,7 @@ function readMore(button){
     }
     else if(text=="Read Less"){
         const parent=button.parentNode;
-        button.innerHTML="Read More "+chevron;
+        button.innerHTML="Read More "+chevronDown;
         let bigParagraph=parent.children.item(0);
         let smallParagraph=parent.children.item(1);
         bigParagraph.classList.toggle("hidden");
