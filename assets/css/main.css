@@ -828,6 +828,9 @@ section.footer{
         line-height: 1.125rem;
 
     }
+    .btn-contact-home{
+    margin-bottom: calc((100vh - 100px)*0.45)
+    }
     /*Paddings and margins*/
     *{
         text-align: left !important;
@@ -862,8 +865,37 @@ section.footer{
         padding:1rem;
     }
 
+    /*Font-size */
+    .about-second h2{
+        font-size:2rem;
+    }
+    .projects>h1{
+        font-size:2.5rem;
+    }
+    .researches h1{
+        font-size:2.5rem;
+    }
+    .contact>h1{
+        font-size:2.5rem;
+    }
 
+    /*Later updated margins*/
+    div.about-content{
+        margin:0;
+    }
+    .about-second h2{
+        padding-top:37.5px;
+    }
+    .projects>h1{
+        padding-top:0;
 
+    }
+    .researches h1{
+        padding-top:0;
+    }
+    section.contact{
+        margin-top:0;
+    }
 
 }
 @media(max-width: 400px) {
