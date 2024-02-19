@@ -5,7 +5,7 @@
 		<meta name="viewport"
 			  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<link rel="stylesheet" href="./assets/css/main.css">
+		<link rel="stylesheet" href="../assets/css/amain.css">
         <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 		<script src="../script.js"></script>
@@ -16,23 +16,17 @@
 		<!--- Nav --->
 		<nav class="main-nav" id="main-nav">
 			<div class="logo-img">
-				<img src="./assets/images/logo.png" alt="Axiologic" class="logo">
+				<img src="../assets/images/logo.png" alt="Axiologic" class="logo">
 			</div>
 
 			<ul class="main-menu">
-				<li><a href="#home">Home</a></li>
-				<li><a href="#about">About</a></li>
-				<li>
-					<a href="#projects">Projects <i class="fa-solid fa-chevron-down "></i></a>
-					<div class="dropdown-menu">
-						<ul>
-							<li><a href="#projects">Project</a></li>
-							<li><a href="#scientific">Scientific Research</a></li>
-						</ul>
-					</div>
-				</li>
-				<li><a href="https://www.axiologic.net/research/">Research</a></li>
-				<li><a href="#about">Recent Publications</a></li>
+				<li><a href="https://www.axiologic.net/#home">Home</a></li>
+				<li><a href="https://www.axiologic.net/#about">About</a></li>
+				<li><a href="https://www.axiologic.net/#projects">Projects</a></li>
+				<li><a href="#research">Research</a></li>
+				<li><a href="#publications">Recent Publications</a></li>
+
+
 				<li>
 					<a href="#contact"><button class="btn-contact">Contact us</button></a>
 				</li>
@@ -52,417 +46,421 @@
 		</nav>
 
 
-		<!-- home -->
-		<section class="home" id="home">
-			<div class="landing-page-text">
-				<h1><span>AXIOLOGIC</span> RESEARCH</h1>
-				<h5>An innovative company specialised in blockchains, decentralised identities and data self-sovereignty.</h5>
-				<a href="#contact"><button class="btn-contact-home">Contact us</button></a>
-			</div>
-			<div class="breakline"></div>
-		</section>
-		<section class="about" id="about">
-			<div class="introduction">
-				<h1>About our company</h1>
-				<h3> Axiologic is a software development company with variegated and robust expertise in enterprise integration, privacy-enhancing technologies,
-					security, blockchains, web applications and mobile software development.
-				</h3>
-			</div>
-			<div class="breakline"></div>
 
-			<!--- ABOUT --->
-			<div class="about-content">
-				<h2>Axiologic Research was founded by <a href="https://ro.linkedin.com/in/salboaie"><span>Sînică Alboaie</span></a> in 2003
-					and it is located in Iași, Romania.</h2>				
+		<!-- research -->
+		<section class="research" id="research">
+			<div class="breakline" style="background-color: transparent;"></div>
 
-				<div>
-					<p class="truncate" data-length="59">Sînică has over 20 years of experience as an entrepreneur, software developer, technical manager, and researcher in areas like distributed systems,
-						software integration, privacy, and blockchain technologies. Sînică is currently co-leader of the architecture work package in the ambitious
-						Pharmaledger European research project. He was also technically leading an innovative European project called PrivateSky that invented new
-						privacy-enhancing technologies built around executable choreographies. Sînică has the hope that the digital world is going in the direction of data
-						self-sovereignty as a guarantee for preserving and increasing our political and economic freedom. The team led by Sînică in Axiologic is composed
-						mainly of PhDs, PhD students and very experienced programmers.
-					</p>
-					<button onclick="readMore(this)" class="btn read-more">Read More <i class="fa-solid fa-chevron-down "></i></button>
-				</div>
-			</div>
-		</section>
+<style>
+	a {
+    text-decoration: none;
+}
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  .axiologicresearchh-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+  }
+  .axiologicresearchh {
+    flex: 0 0 auto;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    width: 220px; /* Adjust as needed */
+    height: 220px; /* Adjust as needed */
+    margin-bottom: 40px;
+    text-align: center; /* Center align the text */
+    overflow: hidden; /* Hide overflow content (for image zoom) */
+  }
+  .axiologicresearchh img {
+    display: block;
+    margin: 0 auto;
+    max-width: 90%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease; /* Add transition for smooth zoom effect */
+  }
+  .axiologicresearchh:hover img {
+    transform: scale(1.1); /* Scale image to 110% on hover */
+  }
+  .axiologicresearchh h2 {
+    margin-top: 0;
+    font-size: 20px; /* Adjust as needed */
+    color: #333; /* Adjust as needed */
+    font-family: 'Raleway', sans-serif; /* Adjust as needed */
+  }
+  .axiologicresearchh p {
+    margin-top: 10px;
+    font-size: 18px; /* Adjust as needed */
+    color: ; /* Adjust as needed */
+    font-family: 'Raleway', sans-serif; /* Adjust as needed */
+  }
+</style>
+</head>
+<body>
 
-		<!----SECOND ABOUT PAGE ---->
-		<section class="about-second">
-			<div class="breakline"></div>
-			<div class="introduction">
-				<h2>
-					<a href="DataPrivacy.html"> Data Privacy Management RUles </a>
-					Axiologic has a <span>strong focus </span> on <br id="newLine">
-					building Privacy-Preserving Technologies and blockchain-based decentralized business application					
-				</h2>				
-				<div class="ai-introduction">
-					<p class="truncate" data-length="30">
-						We have the AI and blockchain to our shortlist of strategic competencies we aim to expand. This focus allows us to build quickly
-						and deploy solutions and processes on public or consortium blockchains. We have an experienced team of researchers and developers with experience in creating
-						decentralized applications. Axiologic is a software development company with variegated and robust expertise in enterprise integration, privacy-enhancing
-						technologies, security, blockchains, web applications and mobile software development. Axiologic is involved in advanced research to scale blockchain-based
-						systems, secure digital values storage, and do complex integration with smart contracts and executable choreographies. We research, design, and implement
-						the business processes in software and integrating project components with distributed ledgers. We are specialized in implementing industry-specific
-						Distributed Applications and smart contracts. In PrivateSky, our team developed off-chain storage technologies, new types of blockchains and smart-contracts.
-						Axiologic is open to transferring technologies from the PrivateSky platform towards other blockchain projects.
-					</p>
-					<button onclick="readMore(this)" class="btn read-more btn-center">Read More <i class="fa-solid fa-chevron-down "></i></button>
-				</div>
-				
-			</div>
-			<div class="cards">
-				<div class="card-inside">
-					<div class="logo-container">
-						<img src="./assets/images/research.svg" alt="blockchain">
-					</div>
-					<div class="card-text">
-						<h4>Research Collaborations</h4>
-						<div>
-							<p class="truncate" data-length="20">
-								We efficiently create complex solutions based on AI techniques and blockchain technologies. For many years we have done
-								consultancy for companies from UK, Germany, US and Romania. We started with C/C++/Java/PHP/Node.js
-								more than 15 years ago. Still, now we are mainly looking to collaborate on significant research
-								projects about AI, blockchains and complex integrations (e.g. Digital Trust Ecosystems for entire industries ).
-							</p>
-							<button onclick="readMore(this)" class="btn read-more ">Read More <i class="fa-solid fa-chevron-down "></i></button>
-						</div>
-					</div>
-				</div>
-				<div class="card-inside">
-					<div class="logo-container">
-						<img src="./assets/images/blockchain.svg" alt="blockchain">
-					</div>
-					<div class="card-text">
-						<h4>Blockchain Consultancy & Decentralized Applications</h4>
-						<div>
-							<p class="truncate" data-length="12">
-								We develop decentralized applications that implement cost-efficient and secure blockchain-based business solutions.
-								Based on the analysis of needs and potential benefits of migrating existing business processes to the blockchain,
-								we build, test and deploy robust decentralized solutions. We develop trustless decentralized applications using
-								smart contracts that automate business processes and deliver cost efficiency and continuity.
-							</p>
-							<button onclick="readMore(this)" class="btn read-more ">Read More <i class="fa-solid fa-chevron-down "></i></button>
-						</div>
-					</div>
+<h1><span style="font-family: 'Raleway', sans-serif; font-size: 50px;">Research</span><br><br></h1>
 
-				</div>
-				<div class="card-inside">
-					<div class="logo-container">
-						<img src="./assets/images/padlock.svg" alt="security">
-					</div>
-					<div class="card-text">
-						<h4>Security and Privacy</h4>
-						<div>
-							<p class="truncate" data-length="19">
-								We have built extensive cyber-threat protection and security monitoring into our past solutions. Our solutions are
-								GDPR-compliant and protect user identities and data using advanced cryptography (Zero-Knowledge Proofs, Homomorphic
-								Encryption), public-key cryptography and privacy-by-design methodologies. Our researchers have a deep understanding
-								of the security attack models and cryptography. More than ten years of experience with SwarmESB and PrivateSky recommends
-								we provide practical solutions for complex projects requiring complex rewrites or architectural refactoring.
-							</p>
-							<button onclick="readMore(this)" class="btn read-more">Read More <i class="fa-solid fa-chevron-down "></i></button>
-						</div>
-					</div>
-				</div>
-			</div>
+<div class="axiologicresearchh-container">
+  <a href="../downloads/articol_assistos.pdf">
+    <div class="axiologicresearchh">
+      <img src="./images/assistos.png" alt="Image 1">
+      <p>AssistOS Vision</p>
+    </div>
+  </a>
 
-		</section>
+  <a href="../downloads/articol_ai_market.pdf">
+    <div class="axiologicresearchh">
+      <img src="./images/ai_market_evolution.png" alt="Image 2">
+      <p>AI Market Evolution Report</p>
+    </div>
+  </a>
 
-		<!----PROJECTS----->
-		<section class="projects" id="projects">
-			<div class="breakline"></div>
-			<h1>
-				Open Source & Research Projects
-			</h1>
+  <a href="../downloads/articol_ai_alignment.pdf">
+    <div class="axiologicresearchh">
+      <img src="./images/ai_alignment.png" alt="Image 3">
+      <p>AI Alignment Research Report</p>
+    </div>
+  </a>
+	 <a href="../downloads/articol_super_intelligences.pdf">
+    <div class="axiologicresearchh">
+      <img src="./images/super_intelligence.png" alt="Image 3">
+      <p>Super Intelligence Classification</p>
+    </div>
+  </a>
+	 <a href="../downloads/articol_social_impact.pdf">
+    <div class="axiologicresearchh">
+     <img src="./images/social_ai.png" alt="Image 1">
+      <p>Social Impact of Controllable AIs</p>
+    </div>
+  </a>
+</div>
+</body>
+			<div class="">
 
-				<div class="project-container">
-				<div class="project-svg">
-					<div class="project-name">
-						<h2>AssistOS</h2>
-						<h3>2023-present</h3>
-					</div>
-				</div>
+				<section class="publications" id="publications">
 
-				<div class="project-description">
-					<p class="truncate" data-length="0">
-						<a href="https://www.assistos.org">AssistOS</a> is an innovative open-source platform designed to revolutionize daily interactions with artificial intelligence, providing a comprehensive suite of AI tools for a wide range of applications, from content creation and education to enhancing productivity and facilitating efficient collaboration between intelligent agents.
-					</p>
-				</div>
-			</div>
-
-			<div class="project-container">
-				<div class="project-svg">
-					<div class="project-name">
-						<h2>OpenDSU</h2>
-						<h3>2016-present</h3>
-					</div>
-				</div>
-
-				<div class="project-description">
-					<p class="truncate" data-length="0">
-						Axiologic is at the leader of the OpenDSU open-source project designed to standardize the key outcomes of the PrivateSky research project. More details available on the <a href="https://www.opendsu.org/">OpenDSU website</a>. OpenDSU has been utilized in Horizon research projects such as PharmaLedger and WorldGalaxy. As leaders of the OpenDSU community, Axiologic collaborates with major companies including Novartis, GSK, and Takeda within the <a href="https://www.pharmaledger.org">PharmaLedger Association</a> governing a Digital Trust Ecosystem.
-
-					</p>
-				</div>
-			</div>
-
-			<div class="project-container">
-				<div class="project-svg">
-					<div class="project-name">
-						<h2>Outfinity</h2>
-						<h3>2017-present</h3>
-					</div>
-				</div>
-
-				<div class="project-description">
-					<p class="truncate" data-length="0">
-						Outfinity is a strategic project with a medium to long-term focus, aimed at creating social and advanced technologies to enhance societal resilience through the application of AI and blockchain technologies. The research area encompasses the development of improved social networks, innovative crowdfunding mechanisms, and the incentivization of decentralized brands, as well as decentralized governance mechanisms. These efforts collectively aim to potentially increase global and societal resilience and antifragility.
-
-					</p>
-				</div>
-			</div>
+<div class="breakline second"></div>
 
 
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  .publication-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+  }
+  .publication {
+    flex: 0 0 auto;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    width: 370px; /* Adjust as needed */
+    height: 350px; /* Adjust as needed */
+    margin-bottom: 40px;
+    text-align: center; /* Center align the text */
+    overflow: hidden; /* Hide overflow content (for image zoom) */
+  }
+  .publication img {
+    display: block;
+    margin: 0 auto;
+    max-width: 90%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease; /* Add transition for smooth zoom effect */
+  }
+  .publication:hover img {
+    transform: scale(1.1); /* Scale image to 110% on hover */
+  }
+  .publication h2 {
+    margin-top: 0;
+    font-size: 20px; /* Adjust as needed */
+    color: #333; /* Adjust as needed */
+    font-family: 'Raleway', sans-serif; /* Adjust as needed */
+  }
+  .publication p {
+    margin-top: 10px;
+    font-size: 18px; /* Adjust as needed */
+    color: ; /* Adjust as needed */
+    font-family: 'Raleway', sans-serif; /* Adjust as needed */
+  }
+</style>
+</head>
+<body>
 
-			<div class="project-container">
-				<div class="project-svg">
-					<div class="project-name">
-						<h2>AIRobot</h2>
-						<h3>2021-2022</h3>
-					</div>
-				</div>
-				<div class="project-description">
-					<p class="truncate" data-length="33">
-						We are working on a communication solution integrating new AI techniques with decentralisation and blockchain technologies.						
-						For Axiologic, this is a strategic project that tries to reuse our strong background in decentralisation or security and
-						combine it with the strategic goal of increasing our strength in using AI technologies (optimisation of audio/video streams,
-						emotion detection, metaverse-like avatars, etc.). We have built a network of researchers from universities and AI specialists
-						from partner companies.
-					</p>
-					<button onclick="readMore(this)" class="btn read-more">Read More <i class="fa-solid fa-chevron-down "></i></button>
-				</div>
-			</div>
+<h1><span style="font-family: 'Raleway', sans-serif; font-size: 50px;">Recent Publications</span><br><br></h1>
 
-			<div class="project-container">
-				<div class="project-svg">
-					<div class="project-name">
-						<h2>DRONEWS</h2>
-						<h3>2022-2022</h3>
-					</div>
-				</div>
+<div class="publication-container">
+  <a href="../downloads/articol_ai_insights.pdf">
+    <div class="publication">
+      <img src="./images/articol_ai_insights.png" alt="Image 1">
+      <p>AI INSIGHTS THROUGH LINKED QUERIES ASSESSMENT: A META-RATIONAL INVESTIGATION OF BIASES AND WISDOM</p>
+    </div>
+  </a>
 
-				<div class="project-description">
-					<p class="truncate" data-length="0">
-						This project obtained EU funding (Horizon Europe 2020) and aimed to create a way for citizens to generate news
-						using drone filming. Axiologic is contributing to privacy techniques and video processing using AI techniques.
-					</p>
-				</div>
-			</div>
+  <a href="../downloads/articol_metarationality.pdf">
+    <div class="publication">
+      <img src="./images/articol_metarationality.png" alt="Image 2">
+      <p>EXPLORING THE LINK BETWEEN META-RATIONALITY AND AI MODELS COMPOSABILITY</p>
+    </div>
+  </a>
 
-			<div class="project-container hidden">
-				<div class="project-svg">
-					<div class="project-name">
-						<h2>PrivateSky</h2>
-						<h3>2016-2021</h3>
-					</div>
-				</div>
-				<div class="project-description">
-					<p class="truncate" data-length="35">
-						PrivateSky research project: This project was funded by the Romanian Ministry of Research and Innovation (MCI) and the EU
-						(budget around 3M Euro) (2016-2021) aims at building the next generation of executable choreographies and at implementing
-						powerful innovations regarding secret smart contracts and communication between heterogeneous blockchains. PrivateSky is
-						a platform for creating blockchain applications and introducing the concept of off-chain "secret smart contracts". Axiologic
-						created the initial technology concept, and Axiologic's key people were leading the PrivateSky research project inside the
-						University" Alexandru Ioan Cuza" from Iasi. Details could be found in <a href="https://privatesky.xyz/">PrivateSky Development Site</a> and in
-						<a href="https://github.com/privatesky">GitHub repositories</a>.
-					</p>
-					<button onclick="readMore(this)" class="btn read-more">Read More <i class="fa-solid fa-chevron-down "></i></button>
-				</div>
-			</div>
+  <a href="../downloads/articol_regulatory.pdf">
+    <div class="publication">
+      <img src="./images/articol_regulatory.png" alt="Image 3">
+      <p>TOWARDS A ROBUST AI REGULATORY FRAMEWORK: TECHNICAL AND LEGAL ASPECTS</p>
+    </div>
+  </a>
+</div>
+</body>
 
-			<div class="project-container hidden">
-				<div class="project-svg">
-					<div class="project-name">
-						<h2>SwarmESB</h2>
-						<h3>2008-2017</h3>
-					</div>
-				</div>
-				<div class="project-description">
-					<p class="truncate" data-length="30">
-						SwarmESB research project: SwarmESB has validated the concept of using swarm communication to implement executable
-						choreographies and the important role that choreographies can play in improving privacy and confidentiality from
-						code and software architectures. The SwarmESB project makes us a market leader in integration technologies and
-						micro-services architecture for node.js. Details can be found in <a href="https://github.com/salboaie/swarmesb">GitHub repository</a>.
-					</p>
-					<button onclick="readMore(this)" class="btn read-more">Read More <i class="fa-solid fa-chevron-down "></i></button>
-				</div>
-			</div>
+				</section>
 
-			<div class="project-container hidden">
-				<div class="project-svg">
-					<div class="project-name">
-						<h2>Outfinity</h2>
-						<h3>2017-present</h3>
-					</div>
-				</div>
-				<div class="project-description">
-					<p class="truncate" data-length="30">
-						Outfinity is a long-time project using blockchain to increase societal resilience through the use of AI 
-						and blockchain technologies to create better social networks, innovative crowdfunding mechanisms and decentralised governance. 
-					</p>
-					<button onclick="readMore(this)" class="btn read-more">Read More <i class="fa-solid fa-chevron-down "></i></button>
-				</div>
-			</div>
 
-			<div class="project-container hidden">
-				<div class="project-svg">
-					<div class="project-name">
-						<h2>Past Projects</h2>
-					</div>
-				</div>
+	<div class="breakline second"></div>
 
-				<div class="project-description">
-					<p class="truncate" data-length="32">
-						Other past projects: We have invested in researching and developing different products like Obfusc (2007),
-						SensERP(2011), and thebuzz.center (2014). The development of these products is now stopped, our focus being
-						on the technologies around the PrivateSky platform.
-					</p>
-					<button onclick="readMore(this)" class="btn read-more">Read More <i class="fa-solid fa-chevron-down "></i></button>
-				</div>
-			</div>
-			<div class="button-container">
-				<button onclick="viewMoreItems('project-container','Projects')" class="btn-view-more">View All Projects</button>
-			</div>
-		</section>
 
-		<!------RESEARCH ACTIVITY------->
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  .youtube-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+  }
+  .youtube {
+    flex: 0 0 auto;
+    border: 0px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    width: 250px; /* Adjust as needed */
+    height: 210px; /* Adjust as needed */
+    margin-bottom: 40px;
+    text-align: center; /* Center align the text */
+    overflow: hidden; /* Hide overflow content (for image zoom) */
+  }
+  .youtube img {
+    display: block;
+    margin: 0 auto;
+    max-width: 90%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease; /* Add transition for smooth zoom effect */
+  }
+  .youtube:hover img {
+    transform: scale(1.1); /* Scale image to 110% on hover */
+  }
+  .youtube h2 {
+    margin-top: 0;
+    font-size: 20px; /* Adjust as needed */
+    color: #333; /* Adjust as needed */
+    font-family: 'Raleway', sans-serif; /* Adjust as needed */
+  }
+  .youtube p {
+    margin-top: 10px;
+    font-size: 25px; /* Adjust as needed */
+    color: ; /* Adjust as needed */
+    font-family: 'Raleway', sans-serif; /* Adjust as needed */
+  }
+</style>
+</head>
+<body>
 
-		<section class="researches" id="scientific">
-			<div class="breakline"></div>
-			<h1>Our Published Research Activity</h1>
+<h1><span style="font-family: 'Raleway', sans-serif; font-size: 50px;">Youtube Channels</span><br><br></h1>
 
-			<div class="research">
-				<h3 class="title">
-					OpenDSU: Digital Sovereignty in PharmaLedger
-				</h3>
-				<p>
-					Sammeth Michael,Sînică Alboaie, Cosmin Ursache  Frontiers in Blockchain, vol. 6, June 2023. 
-				</p>
-			</div>
-			
-			<div class="research">
-				<h3 class="title">
-					AI INSIGHTS THROUGH LINKED QUERIES ASSESSMENT: A META-RATIONAL  INVESTIGATION OF BIASES AND WISDOM
-				</h3>
-				<p>
-					Sinica Alboaie, Daniel SAVA, Lenuta Alboaie, 
-					<a href="https://www.uaiasi.ro/revagrois/volum/Volum-65-supl_2022.pdf">
-						LUCRĂRI ŞTIINŢIFICE SERIA AGRONOMIE VOL. 65, Supliment, 233–239. </a>
-.
-				</p>
-			</div>
-			
-			<div class="research">
-				<h3 class="title">
-					Optimal Byzantine Fault Tolerance Consensus Algorithm for Permissioned Systems
-				</h3>
-				<p>
-					Lenuța Alboaie, Sînică Alboaie, Cristina Georgiana Calancea The 20th Edition of RoEduNet Conference: Networking
-					in Education and Research (RoEduNet 2021), Iasi, 4-6 noiembrie, 2021.
-				</p>
-			</div>
-			
-			<div class="research">
-				<h3 class="title">
-					Self-Sovereign Applications: return control of data back to people
-				</h3>
-				<p>
-					Sinica Alboaie, Nicu-Cosmin Ursache, Lenuta Alboaie,  Knowledge-Based
-					and Intelligent Information & Engineering Systems: Proceedings  The 24th International Conference
-					KES2020, vol. 176, 16-18 Septembrie 2020, doi: <a href="https://doi.org/10.1016/j.procs.2020.09.183">https://doi.org/10.1016/j.procs.2020.09.183</a>.
-				</p>
-			</div>
+<div class="youtube-container">
+  <a href="https://www.youtube.com/@AssistOS-sv2db">
+    <div class="youtube">
+      <img src="./images/youtube.png" alt="Image 1">
+      <p>AssistOS</p>
+    </div>
+  </a>
 
-			<div class="research">
-				<h3 class="title">
-					Secret Smart Contracts in Hierarchical Blockchains
-				</h3>
-				<p>
-					Alboaie Sînică, Alboaie Lenuța, Zeev Pritzker, Adrian Iftene, The 28th International Conference on
-					 Information Systems Development (ISD2019), Toulon, France, August 28-30, 2019
-				</p>
+  <a href="https://www.youtube.com/@opendsu4783">
+    <div class="youtube">
+          <img src="./images/youtube.png" alt="Image 1">
+      <p>OpenDSU</p>
+    </div>
+  </a>
+
+  <a href="https://www.youtube.com/@Outfinity-DecentralisedB-oh5es">
+    <div class="youtube">
+            <img src="./images/youtube.png" alt="Image 1">
+      <p>Outfinity</p>
+    </div>
+  </a>
+</div>
+</body>
+
+</div>
+
+<div class="breakline second"></div>
+
+
+
+				<style>
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  .blog-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+  }
+  .blog {
+    flex: 0 0 auto;
+    border: 0px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    width: 250px; /* Adjust as needed */
+    height: 300px; /* Adjust as needed */
+    margin-bottom: 40px;
+    text-align: center; /* Center align the text */
+    overflow: hidden; /* Hide overflow content (for image zoom) */
+  }
+  .blog img {
+    display: block;
+    margin: 0 auto;
+    max-width: 90%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease; /* Add transition for smooth zoom effect */
+  }
+  .blog:hover img {
+    transform: scale(1.1); /* Scale image to 110% on hover */
+  }
+  .blog h2 {
+    margin-top: 0;
+    font-size: 30px; /* Adjust as needed */
+    color: #333; /* Adjust as needed */
+    font-family: 'Raleway', sans-serif; /* Adjust as needed */
+  }
+  .blog p {
+    margin-top: 10px;
+    font-size: 25px; /* Adjust as needed */
+    color: ; /* Adjust as needed */
+    font-family: 'Raleway', sans-serif; /* Adjust as needed */
+  }
+</style>
+</head>
+<body>
+
+<h1><span style="font-family: 'Raleway', sans-serif; font-size: 50px;">Blog</span><br><br></h1>
+
+<div class="blog-container">
+  <a href="https://blog.assistsos.org">
+    <div class="blog">
+      <img src="./images/blog.png" alt="Image 1">
+      <p>AssistOS</p>
+    </div>
+  </a>
+
+  <a href="https://outfinity.medium.com">
+    <div class="blog">
+          <img src="./images/blog.png" alt="Image 1">
+      <p>Outfinity</p>
+    </div>
+  </a>
+
+</div>
+</body>
+
 			</div>
 
-			<div class="research hidden">
-				<h3 class="title">
-					Extending swarm communication to unify choreography and long-lived processes
-				</h3>
-				<p>
-					L. Alboaie, S. Alboaie, T. Barbu, 3rd International Conference on Information Systems Development (ISD2014 Croatia) pp. 375–382, 2014.
-				</p>
-			</div>
 
-			<div class="research hidden">
-				<h3 class="title">
-					“Swarm Communication – a Messaging Pattern Proposal for Dynamic Scalability in Cloud”
-				</h3>
-				<p>
-					L. Alboaie, S. Alboaie, P. Andrei, At 15th IEEE International Conference on High-Performance Computing and Communications (HPCC 2013).
-					Zhangjiajie, China, November 2013.
-				</p>
-			</div>
 
-			<div class="research hidden">
-				<h3 class="title">
-					“Levels of Privacy for e-Health systems in the cloud era”
-				</h3>
-				<p>
-					[PRV15] S. Alboaie, L. Alboaie, A. Panu, 24th International Conference on Information Systems Development. Harbin, China, August 25-27, 2015.
-				</p>
-			</div>
 
-			<div class="research hidden">
-				<h3 class="title">
-					“Operations on encrypted data in an ORM made for encrypted choreographies”
-				</h3>
-				<p>
-					S. Alboaie, I. Bogdan, L. Alboaie, M.F. Vaida, At 16th RoEduNet Conference: Networking in Education and Research, IEEE 13th International
-					Conference on Intelligent Computer Communication and Processing, Târgu-Mureș, Romania, September 2017
-				</p>
-			</div>
+<div class="breakline second"></div>
 
-			<div class="research hidden">
-				<h3 class="title">
-					“Bringing Executable Choreographies to the IoT”
-				</h3>
-				<p>
-					N.C. Ursache, C. Damian, S. Alboaie, L. Alboaie, E.M. Stouti, 22nd IMEKO TC4 Symposium and 20th International Workshop on ADC Modelling and Testing, ID-192, Iasi, Romania, September, 2017.
-				</p>
-			</div>
 
-			<div class="research hidden">
-				<h3 class="title">
-					“Semantic analysis audit in triple-entry accounting systems based on blockchain”
-				</h3>
-				<p>
-					S. Alboaie, A. Rata, E. Horomnea, M.F. Vaida, Acta Technica Napocensis – Electronics and Telecommunications, Vol. 59, 2018.
-				</p>
-			</div>
 
-			<div class="research hidden">
-				<h3 class="title">
-					"Lamport n-Time Signature Scheme"
-				</h3>
-				<p>
-					S. Alboaie, D. Cosovan, L.D. Chiorean, M.F. Vaida, International Conference on Automation, Quality and Testing, Robotics 2018, Technical University of Cluj Napoca, Romania, 2018.
-				</p>
-			</div>
 
-			<div class="button-container">
-				<button onclick="viewMoreItems('research','Articles')" class="btn-view-more">View All Articles</button>
-			</div>
+				<style>
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  .demo-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+  }
+  .demo {
+    flex: 0 0 auto;
+    border: 0px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    width: 250px; /* Adjust as needed */
+    height: 280px; /* Adjust as needed */
+    margin-bottom: 40px;
+    text-align: center; /* Center align the text */
+    overflow: hidden; /* Hide overflow content (for image zoom) */
+  }
+  .demo img {
+    display: block;
+    margin: 0 auto;
+    max-width: 90%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease; /* Add transition for smooth zoom effect */
+  }
+  .demo:hover img {
+    transform: scale(1.1); /* Scale image to 110% on hover */
+  }
+  .demo h2 {
+    margin-top: 0;
+    font-size: 20px; /* Adjust as needed */
+    color: #333; /* Adjust as needed */
+    font-family: 'Raleway', sans-serif; /* Adjust as needed */
+  }
+  .demo p {
+    margin-top: 10px;
+    font-size: 30px; /* Adjust as needed */
+    color: ; /* Adjust as needed */
+    font-family: 'Raleway', sans-serif; /* Adjust as needed */
+  }
+</style>
+</head>
+<body>
+
+<h1><span style="font-family: 'Raleway', sans-serif; font-size: 50px;">Demo systems</span><br><br></h1>
+
+<div class="demo-container">
+  <a href="http://demo.asssitsos.org:8080">
+    <div class="demo">
+      <img src="./images/demo.png" alt="Logo AssistOS">
+      <p>Demo AssistOS</p>
+    </div>
+  </a>
+
+</div>
+
+
+</body>
+</div>
+
+
+
+
+
+
+
+
+
 			<div class="breakline second"></div>
 		</section>
 
@@ -471,7 +469,7 @@
 			<div class="contact-container">
 				<div class="contact-information">
 					<div class="image">
-						<img src="./assets/images/contact-mail.svg" alt="mail">
+						<img src="../assets/images/contact-mail.svg" alt="mail">
 					</div>
 					<div class="text">
 						<p>E-mail</p>
@@ -480,16 +478,16 @@
 				</div>
 				<div class="contact-information">
 					<div class="image">
-						<img src="./assets/images/contact-phone.svg" alt="phone">
-					</div> 
+						<img src="../assets/images/contact-phone.svg" alt="phone">
+					</div>
 					<div class="text">
 						 <p>Phone</p>
 						<span>+40 758 239 880
-					</div>
+					</span></div>
 				</div>
 				<div class="contact-information">
 					<div class="image">
-						<img src="./assets/images/contact-location.svg" alt="location">
+						<img src="../assets/images/contact-location.svg" alt="location">
 					</div>
 					<div class="text">
 						<p>Location</p>
@@ -504,13 +502,13 @@
 			<div class="breakline"></div>
 			<div class="container-padding">
 				<div class="footer-img">
-					<img src="./assets/images/logo.png" alt="Axiologic" class="footer-logo">
+					<img src="../assets/images/logo.png" alt="Axiologic" class="footer-logo">
 				</div>
 				<ul>
-					<li><a href="#home">Home</a></li>
-					<li><a href="#about">About</a></li>
-					<li><a href="#projects">Projects</a></li>
-					<li><a href="#scientific">Scientific Research</a></li>
+
+					<li><a href="#https://www.axiologic.net/#home">Home</a></li>
+
+
 				</ul>
 			</div>
 
@@ -518,3 +516,4 @@
 		</section>
 	</body>
 </html>
+
