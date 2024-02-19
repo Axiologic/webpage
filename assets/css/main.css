@@ -40,7 +40,7 @@ body{
 }
 .main-menu>li:nth-child(3)>a{
     display: inline-block;
-    min-width: 132px;
+    min-width: 0px;
 }
 .main-menu li>a{
     font-weight: 500;
