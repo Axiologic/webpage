@@ -241,7 +241,7 @@ section.home{
 /* FIRST ABOUT PAGE*/
 section{
     color:white;
-    padding:3.125rem 10%;
+    padding:1rem 10%;
     background-color: rgba(24, 29, 43, 1);
 }
 section>*{
