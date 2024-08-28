@@ -854,7 +854,7 @@ section.footer{
     }
     /*Paddings and margins*/
     *{
-        text-align: left !important;
+        text-align: center !important;
     }
     .btn-center{
         margin:0;
