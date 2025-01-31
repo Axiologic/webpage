@@ -266,7 +266,6 @@ section.home {
 .btn-contact-home {
     background: #07A5E9;
     border-radius: 35px;
-    padding: 25px 50px;
     font-style: normal;
     font-weight: 600;
     font-size: 1rem;
@@ -276,6 +275,7 @@ section.home {
     cursor: pointer;
     outline: none;
     margin-bottom: calc((100vh - 100px) * 0.25);
+    padding: 11px 26px;
 
 }
 
