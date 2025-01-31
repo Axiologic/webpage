@@ -388,10 +388,6 @@ div.about-content h2 span {
     text-decoration: none;
 }
 
-.project-description > button {
-    position: absolute;
-}
-
 .btn-center {
     margin: 0 auto;
 }

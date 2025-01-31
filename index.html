@@ -1,474 +1,552 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport"
-			  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<link rel="stylesheet" href="./assets/css/main.css">
-        <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-		<script src="script.js"></script>
-		<title>Axiologic Research</title>
-	</head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="script.js"></script>
+    <title>Axiologic Research</title>
+</head>
 
-	<body onload="truncateFunction()">
-		<!--- Nav --->
-		<nav class="main-nav" id="main-nav">
-			<div class="logo-img">
-				<img src="./assets/images/logo.png" alt="Axiologic" class="logo">
-			</div>
+<body onload="truncateFunction()">
+<!--- Nav --->
+<nav class="main-nav" id="main-nav">
+    <div class="logo-img">
+        <img src="./assets/images/logo.png" alt="Axiologic" class="logo">
+    </div>
 
-			<ul class="main-menu">
-				<li><a href="#home">Home</a></li>
-				<li><a href="#about">About</a></li>
-				<li>
+    <ul class="main-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li>
 
-					<a href="#projects">Projects </a>
+            <a href="#projects">Projects </a>
 
-				</li>
-				<li><a href="https://www.axiologic.net/research/">Research</a></li>
-				<li><a href="https://www.axiologic.net/publications">Publications</a></li>
-				<li>
-					<a href="#contact"><button class="btn-contact">Contact us</button></a>
-				</li>
-			</ul>
-			<div class="hamburger-lines" id="hamburger">
-				<span class="line" id="line1"></span>
-				<span class="line" id="line2"></span>
-				<span class="line" id="line3"></span>
-			</div>
-			<ul class="secondary-menu" >
-				<li><a href="https://www.axiologic.net/index.html#home">Home</a></li>
-				<li><a href="https://www.axiologic.net/index.html#about">About</a></li>
-				<li>
+        </li>
+        <li><a href="https://www.axiologic.net/research/">Research</a></li>
+        <li><a href="https://www.axiologic.net/publications">Publications</a></li>
+        <li>
+            <a href="#contact">
+                <button class="btn-contact">Contact us</button>
+            </a>
+        </li>
+    </ul>
+    <div class="hamburger-lines" id="hamburger">
+        <span class="line" id="line1"></span>
+        <span class="line" id="line2"></span>
+        <span class="line" id="line3"></span>
+    </div>
+    <ul class="secondary-menu">
+        <li><a href="https://www.axiologic.net/index.html#home">Home</a></li>
+        <li><a href="https://www.axiologic.net/index.html#about">About</a></li>
+        <li>
 
-					<a href="https://www.axiologic.net/index.html#projects">Projects </a>
+            <a href="https://www.axiologic.net/index.html#projects">Projects </a>
 
-				</li>
-				<li><a href="https://www.axiologic.net/research/">Research</a></li>
-				<li><a href="https://www.axiologic.net/publications">Publications</a></li>
-				<li>
-					<br>
-					<a href="#contact"><button class="btn-contact" style="display: block; margin-left: 0;">Contact us</button></a>
-				</li>
+        </li>
+        <li><a href="https://www.axiologic.net/research/">Research</a></li>
+        <li><a href="https://www.axiologic.net/publications">Publications</a></li>
+        <li>
+            <br>
+            <a href="#contact">
+                <button class="btn-contact" style="display: block; margin-left: 0;">Contact us</button>
+            </a>
+        </li>
 
-			</ul>
+    </ul>
 
-		</nav>
-
-
-		<!-- home -->
-		<section class="home" id="home">
-			<div class="landing-page-text">
-				<img src="/assets/images/app-name.svg"/>
-				<h5>Strategic Research & Consulting in AI and Blockchain.</h5>
-				<a href="#contact"><button class="btn-contact-home">Contact us</button></a>
-			</div>
-			<div class="landing-page-video">
-				<video id="wizard_video" loading="lazy" preload="auto" loop autoplay muted playsinline poster="/assets/images/placeholder.png">
-					<source src="/assets/video.mp4" type="video/mp4">
-				</video>
-			</div>
-		</section>
-
-		<section class="about" id="about">
-            <div class="breakline"></div>
-			<div class="introduction">
-				<h1>About Axiologic Research</h1>
-				<h3> Axiologic is a software development company with variegated and robust expertise in artificial
-					inteligence, enterprise integration, privacy-enhancing technologies,
-					security, blockchains, web applications and mobile software development.
-				</h3>
-			</div>
-			<div class="breakline"></div>
-
-			<!--- ABOUT --->
-			<div class="about-content">
-				<h2>Axiologic Research was founded in 2003 in Iași, Romania.</h2>
-				<div>
-					<p class="truncate" data-length="28">
-						Axiologic Research is a trusted partner in AI-driven automation and blockchain solutions,
-						delivering cutting-edge technology to clients worldwide. With over two decades of experience,
-						we have built a reputation for professionalism, precision, and innovation.
-						Our team collaborates closely with businesses of all sizes, from startups to global enterprises,
-						ensuring tailored solutions that integrate seamlessly into existing workflows.
-						We take a research-driven approach, combining deep technical expertise with a commitment to understanding
-						each client’s unique needs. By maintaining high standards of security, efficiency, and adaptability,
-						we help organizations navigate the complexities of digital transformation with confidence and long-term success.
-						Axiologic founder is <a href="https://ro.linkedin.com/in/salboaie"><span>Sînică Alboaie</span></a>
-						Sînică has over 25 years of experience as an entrepreneur,software developer, technical manager,
-						and researcher in fields such as artificial intelligence, distributed systems, software integration,
-						privacy, cryptography, and blockchain technologies.  Sînică has extensive research experience in ambitious European research projects.
-					</p>
-					<button onclick="readMore(this)" class="btn read-more">Read More <i class="fa-solid fa-chevron-down "></i></button>
-				</div>
-			</div>
-		</section>
-
-		<!----SECOND ABOUT PAGE ---->
-		<section class="about-second">
-			<div class="breakline"></div>
-			<div class="introduction">
-				<h1>
-					Core Competencies
-				</h1>
-				<div class="ai-introduction">
-					<p class="truncate" data-length="30">
-						Artificial Inteligence and Blockchain are among our core strategic competencies, which we continuously expand and apply
-						in both commercial and research projects. Our team of seasoned researchers and developers specializes
-						in AI-driven automation, complex platforms, and advanced applications.
-						We have a diverse and robust expertise in artificial intelligence, enterprise integration, privacy-enhancing technologies, security, blockchain, web applications,
-						and mobile software development.
-					</p>
-					<button onclick="readMore(this)" class="btn read-more">Read More <i class="fa-solid fa-chevron-down "></i></button>
-				</div>
-
-			</div>
-			<div class="cards">
-				<div class="card-inside">
-					<div class="logo-container">
-						<img src="./assets/images/research.svg" alt="blockchain">
-					</div>
-					<div class="card-text">
-						<h2>Research Collaborations</h2>
-						<div>
-							<p class="truncate" data-length="15">
-						We specialize in developing sophisticated solutions powered by AI and blockchain technologies.
-						With years of experience providing consultancy for enterprises in Switzerland, the UK, Germany,
-						the US, and Romania, our expertise spans over two decades, starting with C/C++/Java/PHP/Node.js.
-						We seek collaboration on impactful research projects in AI, blockchain, and large-scale integrations,
-						such as Digital Trust Ecosystems for entire industries. On the commercial side, our primary focus is
-						leveraging R&D advancements around the AssistOS platform to accelerate AI-driven automation for enterprises.
-							</p>
-							<button onclick="readMore(this)" class="btn read-more ">Read More <i class="fa-solid fa-chevron-down "></i></button>
-						</div>
-					</div>
-				</div>
-				<div class="card-inside">
-					<div class="logo-container">
-						<img src="./assets/images/blockchain.svg" alt="blockchain">
-					</div>
-					<div class="card-text">
-						<h2>AI Consultancy</h2>
-						<div>
-							<p class="truncate" data-length="15">
-							Leveraging the technologies developed within the open-source AssistOS platform and insights from our
-							research projects, we specialize in AI consultancy and the implementation of advanced AI-driven solutions.
-							AI has the potential to automate Standard Operating Procedures (SOPs), minimizing human error, enhancing consistency in interpretation,
-							accelerating execution, and optimizing critical business processes. By integrating AI into enterprise workflows, we help organizations
-							reduce costs, improve quality, and increase operational speed, unlocking new efficiencies and competitive advantages.
-							Our expertise ensures that research-driven AI innovations translate into practical, high-impact solutions tailored to real-world business needs.
-							</p>
-							<button onclick="readMore(this)" class="btn read-more ">Read More <i class="fa-solid fa-chevron-down "></i></button>
-						</div>
-					</div>
-
-				</div>
-				<div class="card-inside">
-					<div class="logo-container">
-						<img src="./assets/images/padlock.svg" alt="security">
-					</div>
-					<div class="card-text">
-						<h2>Blockchain and Security</h2>
-						<div>
-							<p class="truncate" data-length="12">
-								As leaders of the OpenDSU open-source ecosystem, we focus on developing decentralized applications
-								that deliver cost-efficient and secure blockchain-based solutions at industry and national scales.
-								By analyzing business needs and evaluating the benefits of blockchain migration, we design,
-								test, and deploy robust decentralized solutions. Our expertise lies in building trustless applications
-								powered by smart contracts, automating business processes to enhance efficiency, reduce costs, and ensure operational continuity.
-								We integrate advanced cyber-threat protection and security monitoring into our solutions.
-								Our architectures are GDPR-compliant and safeguard user identities and data through cutting-edge cryptographic techniques,
-								including Zero-Knowledge Proofs, Homomorphic Encryption, public-key cryptography, and privacy-by-design methodologies.
-								With deep expertise in security attack models and cryptography, our researchers provide practical solutions for complex projects
-								requiring significant rewrites or architectural refactoring.
-							</p>
-							<button onclick="readMore(this)" class="btn read-more">Read More <i class="fa-solid fa-chevron-down "></i></button>
-						</div>
-					</div>
-				</div>
-			</div>
-
-		</section>
-
-		<!----PROJECTS----->
-		<section class="projects" id="projects">
-			<div class="breakline"></div>
-			<h1>
-				Open Source & Research Projects
-			</h1>
-
-			<div class="project-container">
-				<div class="project-svg">
-					<div class="project-name">
-						<h2>AssistOS</h2>
-						<h3>2023-present</h3>
-					</div>
-				</div>
-
-				<div class="project-description">
-					<p class="truncate" data-length="0">
-						<a href="https://www.assistos.org">AssistOS</a> is an innovative open-source platform designed to revolutionize daily interactions with artificial intelligence, providing a comprehensive suite of AI tools for a wide range of applications, from content creation and education to enhancing productivity and facilitating efficient collaboration between intelligent agents.
-					</p>
-				</div>
-			</div>
-
-			<div class="project-container">
-				<div class="project-svg">
-					<div class="project-name">
-						<h2>Achilles</h2>
-						<h3>2024-present</h3>
-					</div>
-				</div>
-
-				<div class="project-description">
-					<p class="truncate" data-length="0">
-						<a href="https://www.linkedin.com/company/achilles-project"> Achilles </a>
-					 is a Horizon Europe research project coordinated by
-						<a href="https://www.fraunhofer.pt/"> Fraunhofer </a>, focused on developing technologies for trustworthy and human-centric AI.
-					As a key partner, Axiologic is responsible for developing Achilles IDE, an application built on the AssistOS platform.
-					This IDE is designed to provide an intuitive, efficient, and human-centric environment for multi-agent systems, AI-driven pipelines, and automation.
-					Additionally, it serves as a dedicated workspace for AI research and generative AI applications,
-					streamlining development and enhancing usability across diverse AI-driven use cases.
-					</p>
-				</div>
-			</div>
-
-			<div class="project-container">
-				<div class="project-svg">
-					<div class="project-name">
-						<h2>OpenDSU</h2>
-						<h3>2016-present</h3>
-					</div>
-				</div>
-				<div class="project-description">
-					<p class="truncate" data-length="38">
-					Axiologic is a leading force behind the OpenDSU open-source project, which standardizes the key outcomes of the PrivateSky research initiative.
-						More details are available on the <a href="https://www.opendsu.org/">OpenDSU website</a>.
-						OpenDSU has been utilized in Horizon research projects such as PharmaLedger and WorldGalaxy.
-						As leaders of the OpenDSU community, Axiologic collaborates with major companies including Novartis, GSK, and Takeda within
-						the <a href="https://www.pharmaledger.org">PharmaLedger Association</a> governing a Digital Trust Ecosystem.
-					</p>
-					<button onclick="readMore(this)" class="btn read-more">Read More <i class="fa-solid fa-chevron-down "></i></button>
-				</div>
-			</div>
-
-			<div class="project-container">
-				<div class="project-svg">
-					<div class="project-name">
-						<h2>Outfinity</h2>
-						<h3>2017-present</h3>
-					</div>
-				</div>
-
-					<div class="project-description">
-					<p class="truncate" data-length="37">
-					Outfinity is a strategic spinoff of Axiologic with a medium- to long-term vision, focused on developing social and advanced technologies
-					to enhance societal resilience through AI and decentralization.
-					Check the current active projects <a href="https://www.outfinitygift.com"> Outfinity Gift </a>
-						and <a href ="https://www.hatefinity.com"> Hatefinity </a> for more details.
-					Originally initiated as research within Axiologic, the implementation transitioned to Outfinity, expanding
-					its scope to include improved social networks, innovative crowdfunding mechanisms,
-					decentralized brand incentivization, and decentralized governance models.
-					These initiatives collectively aim to strengthen global and societal resilience and antifragility.
-					</p>
-					<button onclick="readMore(this)" class="btn read-more">Read More <i class="fa-solid fa-chevron-down "></i></button>
-				</div>
-			</div>
-
-			<div class="project-container">
-				<div class="project-svg">
-					<div class="project-name">
-						<h2>AIRobot</h2>
-						<h3>2021-2022</h3>
-					</div>
-				</div>
-				<div class="project-description">
-					<p class="truncate" data-length="33">
-						AIRobot was conceived as a communication solution integrating AI techniques with decentralization and blockchain technologies.
-						For Axiologic, this was a strategic internal project leveraging our expertise in decentralization and security,
-						while advancing our capabilities in AI technologies, such as optimizing audio/video streams, emotion detection,
-						and creating metaverse-like avatars.  We assembled a  network of researchers from universities and AI specialists from partner companies.
-						However, the project was halted, and its research results were migrated to the Outfinity and AssistOS initiatives.
-					</p>
-					<button onclick="readMore(this)" class="btn read-more">Read More <i class="fa-solid fa-chevron-down "></i></button>
-				</div>
-			</div>
-
-			<div class="project-container">
-				<div class="project-svg">
-					<div class="project-name">
-						<h2>DRONEWS</h2>
-						<h3>2022-2022</h3>
-					</div>
-				</div>
-
-				<div class="project-description">
-					<p class="truncate" data-length="0">
-						This project obtained EU funding (Horizon Europe ) and aimed to create a way for citizens to generate news
-						using drone filming. Axiologic is contributing to privacy techniques and video processing using AI techniques.
-					</p>
-				</div>
-			</div>
-
-			<div class="project-container hidden">
-				<div class="project-svg">
-					<div class="project-name">
-						<h2>PrivateSky</h2>
-						<h3>2016-2021</h3>
-					</div>
-				</div>
-				<div class="project-description">
-					<p class="truncate" data-length="35">
-						The PrivateSky research project was funded by the Romanian Ministry of Research and Innovation (MCI)
-						and the European Union, with a budget of approximately €3 million (2016–2021).
-						The project aimed to develop the next generation of executable choreographies and introduce
-						secret smart contracts and communication between heterogeneous blockchains.
-						PrivateSky serves as a platform for building blockchain applications, pioneering the concept of off-chain
-						"secret smart contracts". Axiologic conceived the initial technology concept, and key members of Axiologic
-						led the PrivateSky research project within "Alexandru Ioan Cuza" University of Iași.
-						The outcomes of this project are now maintained and further developed by Axiologic under the OpenDSU technology.
-					</p>
-					<button onclick="readMore(this)" class="btn read-more">Read More <i class="fa-solid fa-chevron-down "></i></button>
-				</div>
-			</div>
-
-			<div class="project-container hidden">
-				<div class="project-svg">
-					<div class="project-name">
-						<h2>SwarmESB</h2>
-						<h3>2008-2017</h3>
-					</div>
-				</div>
-				<div class="project-description">
-					<p class="truncate" data-length="30">
-					SwarmESB Research Project validated the concept of using swarm communication to implement executable choreographies
-					and demonstrated the critical role of choreographies in enhancing privacy and confidentiality within software architectures.
-					More details are available in the <a href="https://github.com/salboaie/swarmesb">GitHub repository</a>.
-					Although the technologies and innovations from SwarmESB have not yet reached mainstream adoption, we believe that
-					as the number of autonomous AI agents interacting with each other increases, the SwarmESB approach and the concept
-					of executable choreography will inevitably replace traditional agent orchestration.
-					This shift will enable a more flexible and security/privacy-friendly model, making interactions easier to analyze and adapt to evolving needs.
-
-					</p>
-					<button onclick="readMore(this)" class="btn read-more">Read More <i class="fa-solid fa-chevron-down "></i></button>
-				</div>
-			</div>
+</nav>
 
 
-			<div class="project-container hidden">
-				<div class="project-svg">
-					<div class="project-name">
-						<h2>Past Projects</h2>
-					</div>
-				</div>
+<!-- home -->
+<section class="home" id="home">
+    <div class="landing-page-text">
+        <img src="/assets/images/app-name.svg"/>
+        <h5>Strategic Research & Consulting in AI and Blockchain.</h5>
+        <a href="#contact">
+            <button class="btn-contact-home">Contact us</button>
+        </a>
+    </div>
+    <div class="landing-page-video">
+        <video id="wizard_video" loading="lazy" preload="auto" loop autoplay muted playsinline>
+            <source src="/assets/video.mp4" type="video/mp4">
+        </video>
+    </div>
 
-				<div class="project-description">
-					<p class="truncate" data-length="32">
-						Other past projects: We have invested in researching and developing different products like Obfusc (2007),
-						SensERP(2011), and thebuzz.center (2014). The development of these products is now stopped.
-					</p>
-					<button onclick="readMore(this)" class="btn read-more">Read More <i class="fa-solid fa-chevron-down "></i></button>
-				</div>
-			</div>
-			<div class="button-container">
-				<button onclick="viewMoreItems('project-container','Projects')" class="btn-view-more">View All Projects</button>
-			</div>
-		</section>
+</section>
+
+<section class="about" id="about">
+    <div class="breakline"></div>
+    <div class="introduction">
+        <h1>About Axiologic Research</h1>
+        <h3> Axiologic is a software development company with variegated and robust expertise in artificial
+            inteligence, enterprise integration, privacy-enhancing technologies,
+            security, blockchains, web applications and mobile software development.
+        </h3>
+    </div>
+    <div class="breakline"></div>
+
+    <!--- ABOUT --->
+    <div class="about-content">
+        <h2>Axiologic Research was founded in 2003 in Iași, Romania.</h2>
+        <div>
+            <p class="truncate" data-length="28">
+                Axiologic Research is a trusted partner in AI-driven automation and blockchain solutions,
+                delivering cutting-edge technology to clients worldwide. With over two decades of experience,
+                we have built a reputation for professionalism, precision, and innovation.
+                Our team collaborates closely with businesses of all sizes, from startups to global enterprises,
+                ensuring tailored solutions that integrate seamlessly into existing workflows.
+                We take a research-driven approach, combining deep technical expertise with a commitment to
+                understanding
+                each client’s unique needs. By maintaining high standards of security, efficiency, and adaptability,
+                we help organizations navigate the complexities of digital transformation with confidence and long-term
+                success.
+                Axiologic founder is <a href="https://ro.linkedin.com/in/salboaie"><span>Sînică Alboaie</span></a>
+                Sînică has over 25 years of experience as an entrepreneur,software developer, technical manager,
+                and researcher in fields such as artificial intelligence, distributed systems, software integration,
+                privacy, cryptography, and blockchain technologies. Sînică has extensive research experience in
+                ambitious European research projects.
+            </p>
+            <button onclick="readMore(this)" class="btn read-more">Read More <i class="fa-solid fa-chevron-down "></i>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!----SECOND ABOUT PAGE ---->
+<section class="about-second">
+    <div class="breakline"></div>
+    <div class="introduction">
+        <h1>
+            Core Competencies
+        </h1>
+        <div class="ai-introduction">
+            <p class="truncate" data-length="30">
+                Artificial Inteligence and Blockchain are among our core strategic competencies, which we continuously
+                expand and apply
+                in both commercial and research projects. Our team of seasoned researchers and developers specializes
+                in AI-driven automation, complex platforms, and advanced applications.
+                We have a diverse and robust expertise in artificial intelligence, enterprise integration,
+                privacy-enhancing technologies, security, blockchain, web applications,
+                and mobile software development.
+            </p>
+            <button onclick="readMore(this)" class="btn read-more">Read More <i class="fa-solid fa-chevron-down "></i>
+            </button>
+        </div>
+
+    </div>
+    <div class="cards">
+        <div class="card-inside">
+            <div class="logo-container">
+                <img src="./assets/images/research.svg" alt="blockchain">
+            </div>
+            <div class="card-text">
+                <h2>Research Collaborations</h2>
+                <div>
+                    <p class="truncate" data-length="15">
+                        We specialize in developing sophisticated solutions powered by AI and blockchain technologies.
+                        With years of experience providing consultancy for enterprises in Switzerland, the UK, Germany,
+                        the US, and Romania, our expertise spans over two decades, starting with C/C++/Java/PHP/Node.js.
+                        We seek collaboration on impactful research projects in AI, blockchain, and large-scale
+                        integrations,
+                        such as Digital Trust Ecosystems for entire industries. On the commercial side, our primary
+                        focus is
+                        leveraging R&D advancements around the AssistOS platform to accelerate AI-driven automation for
+                        enterprises.
+                    </p>
+                    <button onclick="readMore(this)" class="btn read-more ">Read More <i
+                            class="fa-solid fa-chevron-down "></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="card-inside">
+            <div class="logo-container">
+                <img src="./assets/images/blockchain.svg" alt="blockchain">
+            </div>
+            <div class="card-text">
+                <h2>AI Consultancy</h2>
+                <div>
+                    <p class="truncate" data-length="15">
+                        Leveraging the technologies developed within the open-source AssistOS platform and insights from
+                        our
+                        research projects, we specialize in AI consultancy and the implementation of advanced AI-driven
+                        solutions.
+                        AI has the potential to automate Standard Operating Procedures (SOPs), minimizing human error,
+                        enhancing consistency in interpretation,
+                        accelerating execution, and optimizing critical business processes. By integrating AI into
+                        enterprise workflows, we help organizations
+                        reduce costs, improve quality, and increase operational speed, unlocking new efficiencies and
+                        competitive advantages.
+                        Our expertise ensures that research-driven AI innovations translate into practical, high-impact
+                        solutions tailored to real-world business needs.
+                    </p>
+                    <button onclick="readMore(this)" class="btn read-more ">Read More <i
+                            class="fa-solid fa-chevron-down "></i></button>
+                </div>
+            </div>
+
+        </div>
+        <div class="card-inside">
+            <div class="logo-container">
+                <img src="./assets/images/padlock.svg" alt="security">
+            </div>
+            <div class="card-text">
+                <h2>Blockchain and Security</h2>
+                <div>
+                    <p class="truncate" data-length="12">
+                        As leaders of the OpenDSU open-source ecosystem, we focus on developing decentralized
+                        applications
+                        that deliver cost-efficient and secure blockchain-based solutions at industry and national
+                        scales.
+                        By analyzing business needs and evaluating the benefits of blockchain migration, we design,
+                        test, and deploy robust decentralized solutions. Our expertise lies in building trustless
+                        applications
+                        powered by smart contracts, automating business processes to enhance efficiency, reduce costs,
+                        and ensure operational continuity.
+                        We integrate advanced cyber-threat protection and security monitoring into our solutions.
+                        Our architectures are GDPR-compliant and safeguard user identities and data through cutting-edge
+                        cryptographic techniques,
+                        including Zero-Knowledge Proofs, Homomorphic Encryption, public-key cryptography, and
+                        privacy-by-design methodologies.
+                        With deep expertise in security attack models and cryptography, our researchers provide
+                        practical solutions for complex projects
+                        requiring significant rewrites or architectural refactoring.
+                    </p>
+                    <button onclick="readMore(this)" class="btn read-more">Read More <i
+                            class="fa-solid fa-chevron-down "></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<!----PROJECTS----->
+<section class="projects" id="projects">
+    <div class="breakline"></div>
+    <h1>
+        Open Source & Research Projects
+    </h1>
+
+    <div class="project-container">
+        <div class="project-svg">
+            <div class="project-name">
+                <h2>AssistOS</h2>
+                <h3>2023-present</h3>
+            </div>
+        </div>
+
+        <div class="project-description">
+            <p class="truncate" data-length="0">
+                <a href="https://www.assistos.org">AssistOS</a> is an innovative open-source platform designed to
+                revolutionize daily interactions with artificial intelligence, providing a comprehensive suite of AI
+                tools for a wide range of applications, from content creation and education to enhancing productivity
+                and facilitating efficient collaboration between intelligent agents.
+            </p>
+        </div>
+    </div>
+
+    <div class="project-container">
+        <div class="project-svg">
+            <div class="project-name">
+                <h2>Achilles</h2>
+                <h3>2024-present</h3>
+            </div>
+        </div>
+
+        <div class="project-description">
+            <p class="truncate" data-length="0">
+                <a href="https://www.linkedin.com/company/achilles-project"> Achilles </a>
+                is a Horizon Europe research project coordinated by
+                <a href="https://www.fraunhofer.pt/"> Fraunhofer </a>, focused on developing technologies for
+                trustworthy and human-centric AI.
+                As a key partner, Axiologic is responsible for developing Achilles IDE, an application built on the
+                AssistOS platform.
+                This IDE is designed to provide an intuitive, efficient, and human-centric environment for multi-agent
+                systems, AI-driven pipelines, and automation.
+                Additionally, it serves as a dedicated workspace for AI research and generative AI applications,
+                streamlining development and enhancing usability across diverse AI-driven use cases.
+            </p>
+        </div>
+    </div>
+
+    <div class="project-container">
+        <div class="project-svg">
+            <div class="project-name">
+                <h2>OpenDSU</h2>
+                <h3>2016-present</h3>
+            </div>
+        </div>
+        <div class="project-description">
+            <p class="truncate" data-length="38">
+                Axiologic is a leading force behind the OpenDSU open-source project, which standardizes the key outcomes
+                of the PrivateSky research initiative.
+                More details are available on the <a href="https://www.opendsu.org/">OpenDSU website</a>.
+                OpenDSU has been utilized in Horizon research projects such as PharmaLedger and WorldGalaxy.
+                As leaders of the OpenDSU community, Axiologic collaborates with major companies including Novartis,
+                GSK, and Takeda within
+                the <a href="https://www.pharmaledger.org">PharmaLedger Association</a> governing a Digital Trust
+                Ecosystem.
+            </p>
+            <button onclick="readMore(this)" class="btn read-more">Read More <i class="fa-solid fa-chevron-down "></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="project-container">
+        <div class="project-svg">
+            <div class="project-name">
+                <h2>Outfinity</h2>
+                <h3>2017-present</h3>
+            </div>
+        </div>
+
+        <div class="project-description">
+            <p class="truncate" data-length="37">
+                Outfinity is a strategic spinoff of Axiologic with a medium- to long-term vision, focused on developing
+                social and advanced technologies
+                to enhance societal resilience through AI and decentralization.
+                Check the current active projects <a href="https://www.outfinitygift.com"> Outfinity Gift </a>
+                and <a href="https://www.hatefinity.com"> Hatefinity </a> for more details.
+                Originally initiated as research within Axiologic, the implementation transitioned to Outfinity,
+                expanding
+                its scope to include improved social networks, innovative crowdfunding mechanisms,
+                decentralized brand incentivization, and decentralized governance models.
+                These initiatives collectively aim to strengthen global and societal resilience and antifragility.
+            </p>
+            <button onclick="readMore(this)" class="btn read-more">Read More <i class="fa-solid fa-chevron-down "></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="project-container">
+        <div class="project-svg">
+            <div class="project-name">
+                <h2>AIRobot</h2>
+                <h3>2021-2022</h3>
+            </div>
+        </div>
+        <div class="project-description">
+            <p class="truncate" data-length="33">
+                AIRobot was conceived as a communication solution integrating AI techniques with decentralization and
+                blockchain technologies.
+                For Axiologic, this was a strategic internal project leveraging our expertise in decentralization and
+                security,
+                while advancing our capabilities in AI technologies, such as optimizing audio/video streams, emotion
+                detection,
+                and creating metaverse-like avatars. We assembled a network of researchers from universities and AI
+                specialists from partner companies.
+                However, the project was halted, and its research results were migrated to the Outfinity and AssistOS
+                initiatives.
+            </p>
+            <button onclick="readMore(this)" class="btn read-more">Read More <i class="fa-solid fa-chevron-down "></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="project-container">
+        <div class="project-svg">
+            <div class="project-name">
+                <h2>DRONEWS</h2>
+                <h3>2022-2022</h3>
+            </div>
+        </div>
+
+        <div class="project-description">
+            <p class="truncate" data-length="0">
+                This project obtained EU funding (Horizon Europe ) and aimed to create a way for citizens to generate
+                news
+                using drone filming. Axiologic is contributing to privacy techniques and video processing using AI
+                techniques.
+            </p>
+        </div>
+    </div>
+
+    <div class="project-container hidden">
+        <div class="project-svg">
+            <div class="project-name">
+                <h2>PrivateSky</h2>
+                <h3>2016-2021</h3>
+            </div>
+        </div>
+        <div class="project-description">
+            <p class="truncate" data-length="35">
+                The PrivateSky research project was funded by the Romanian Ministry of Research and Innovation (MCI)
+                and the European Union, with a budget of approximately €3 million (2016–2021).
+                The project aimed to develop the next generation of executable choreographies and introduce
+                secret smart contracts and communication between heterogeneous blockchains.
+                PrivateSky serves as a platform for building blockchain applications, pioneering the concept of
+                off-chain
+                "secret smart contracts". Axiologic conceived the initial technology concept, and key members of
+                Axiologic
+                led the PrivateSky research project within "Alexandru Ioan Cuza" University of Iași.
+                The outcomes of this project are now maintained and further developed by Axiologic under the OpenDSU
+                technology.
+            </p>
+            <button onclick="readMore(this)" class="btn read-more">Read More <i class="fa-solid fa-chevron-down "></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="project-container hidden">
+        <div class="project-svg">
+            <div class="project-name">
+                <h2>SwarmESB</h2>
+                <h3>2008-2017</h3>
+            </div>
+        </div>
+        <div class="project-description">
+            <p class="truncate" data-length="30">
+                SwarmESB Research Project validated the concept of using swarm communication to implement executable
+                choreographies
+                and demonstrated the critical role of choreographies in enhancing privacy and confidentiality within
+                software architectures.
+                More details are available in the <a href="https://github.com/salboaie/swarmesb">GitHub repository</a>.
+                Although the technologies and innovations from SwarmESB have not yet reached mainstream adoption, we
+                believe that
+                as the number of autonomous AI agents interacting with each other increases, the SwarmESB approach and
+                the concept
+                of executable choreography will inevitably replace traditional agent orchestration.
+                This shift will enable a more flexible and security/privacy-friendly model, making interactions easier
+                to analyze and adapt to evolving needs.
+
+            </p>
+            <button onclick="readMore(this)" class="btn read-more">Read More <i class="fa-solid fa-chevron-down "></i>
+            </button>
+        </div>
+    </div>
 
 
+    <div class="project-container hidden">
+        <div class="project-svg">
+            <div class="project-name">
+                <h2>Past Projects</h2>
+            </div>
+        </div>
+
+        <div class="project-description">
+            <p class="truncate" data-length="32">
+                Other past projects: We have invested in researching and developing different products like Obfusc
+                (2007),
+                SensERP(2011), and thebuzz.center (2014). The development of these products is now stopped.
+            </p>
+            <button onclick="readMore(this)" class="btn read-more">Read More <i class="fa-solid fa-chevron-down "></i>
+            </button>
+        </div>
+    </div>
+    <div class="button-container">
+        <button onclick="viewMoreItems('project-container','Projects')" class="btn-view-more">View All Projects</button>
+    </div>
+</section>
 
 
-		<section class="projects" id="projects">
-			<div class="breakline"></div>
-			<h1>
-				Internal Policy Documents
-			</h1>
+<section class="projects" id="projects">
+    <div class="breakline"></div>
+    <h1>
+        Internal Policy Documents
+    </h1>
 
 
+    <section class="publications" id="scientific"><br>
 
 
-<section class="publications" id="scientific"><br>
+        <style>
+            .research .title a {
+                text-decoration: none;
+            }
+        </style>
+
+        <br>
+        <div class="research">
+            <h3 class="title">
+                <a href="/downloads/gender-equality-plan.pdf" target="_blank" style="color: #07A5E9;">Gender Equality
+                    Plan (2024)</a>
+            </h3>
+        </div>
+
+        <div class="research">
+            <h3 class="title">
+                <a href="/downloads/data-privacy-management-obligations.pdf" target="_blank" style="color: #07A5E9;">Data
+                    Privacy Management Obligations (2024)</a>
+            </h3>
+        </div>
+
+        <br><br><br><br><br><br><br>
 
 
-	<style>
-    .research .title a {
-        text-decoration: none;
-    }
-	</style>
-
-<br>
-			<div class="research">
-    <h3 class="title">
-        <a href="/downloads/gender-equality-plan.pdf" target="_blank" style="color: #07A5E9;">Gender Equality Plan (2024)</a>
-    </h3>
-			</div>
-
-			<div class="research">
-    <h3 class="title">
-        <a href="/downloads/data-privacy-management-obligations.pdf" target="_blank" style="color: #07A5E9;">Data Privacy Management Obligations (2024)</a>
-    </h3>
-		</div>
-
-<br><br><br><br><br><br><br>
+    </section>
+    <div class="breakline second"></div>
 
 
+    <section class="contact" id="contact">
+        <h1>Do you have a project or question? Contact us!</h1>
+        <div class="contact-container">
+            <div class="contact-information">
+                <div class="image">
+                    <img src="./assets/images/contact-mail.svg" alt="mail">
+                </div>
+                <div class="text">
+                    <p>E-mail</p>
+                    <span>office@axiologic.net</span>
+                </div>
+            </div>
+            <div class="contact-information">
+                <div class="image">
+                    <img src="./assets/images/contact-phone.svg" alt="phone">
+                </div>
+                <div class="text">
+                    <p>Phone</p>
+                    <span>+40 758 239 880</span>
+                </div>
+            </div>
+            <div class="contact-information">
+                <div class="image">
+                    <img src="./assets/images/contact-location.svg" alt="location">
+                </div>
+                <div class="text">
+                    <p>Location</p>
+                    <span>Iasi, Romania</span>
+                </div>
+            </div>
 
-		</section>
-<div class="breakline second"></div>
+        </div>
+    </section>
 
-
-		<section class="contact" id="contact">
-			<h1>Do you have a project or question? Contact us!</h1>
-			<div class="contact-container">
-				<div class="contact-information">
-					<div class="image">
-						<img src="./assets/images/contact-mail.svg" alt="mail">
-					</div>
-					<div class="text">
-						<p>E-mail</p>
-						<span>office@axiologic.net</span>
-					</div>
-				</div>
-				<div class="contact-information">
-					<div class="image">
-						<img src="./assets/images/contact-phone.svg" alt="phone">
-					</div>
-					<div class="text">
-						 <p>Phone</p>
-						<span>+40 758 239 880</span>
-					</div>
-				</div>
-				<div class="contact-information">
-					<div class="image">
-						<img src="./assets/images/contact-location.svg" alt="location">
-					</div>
-					<div class="text">
-						<p>Location</p>
-						<span>Iasi, Romania</span>
-					</div>
-				</div>
-
-			</div>
-		</section>
-
-		<section class="footer" id="footer">
-			<div class="breakline"></div>
-			<div class="container-padding">
-				<div class="footer-img">
-					<img src="./assets/images/logo.png" alt="Axiologic" class="footer-logo">
-				</div>
-				<ul>
-					<li><a href="#home">Home</a></li>
-					<li><a href="#about">About</a></li>
-					<li><a href="#projects">Projects</a></li>
-					<li><a href="https://www.axiologic.net/research/">Research</a></li>
-					<li><a href="https://www.axiologic.net/publications/">Publications</a></li>
-				</ul>
-			</div>
+    <section class="footer" id="footer">
+        <div class="breakline"></div>
+        <div class="container-padding">
+            <div class="footer-img">
+                <img src="./assets/images/logo.svg" alt="Axiologic" class="footer-logo">
+            </div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="https://www.axiologic.net/research/">Research</a></li>
+                <li><a href="https://www.axiologic.net/publications/">Publications</a></li>
+            </ul>
+        </div>
 
 
-		</section>
-	</body>
+    </section>
+
+
+    <script>
+        window.onload = () => {
+            const video = document.getElementById("wizard_video");
+            video.addEventListener("timeupdate", () => {
+
+                if (video.currentTime >= video.duration - 1.5) {
+                    video.currentTime = 1; // Sare direct la început
+                }
+            })
+
+        }
+    </script>
+</body>
+
 </html>
