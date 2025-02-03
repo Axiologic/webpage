@@ -1,3 +1,4 @@
+/*
 function truncateFunction(){
     const collection = document.getElementsByClassName("truncate");
     Array.from(collection).forEach((element)=>{
@@ -23,14 +24,14 @@ function truncateFunction(){
     })
     addEvent();
 }
-
+*/
 
 
 function insertAfter(newNode, existingNode) {
     existingNode.parentNode.insertBefore(newNode, existingNode.nextSibling);
 }
 
-function readMore(button){
+/*function readMore(button){
     const chevronDown="<i class=\"fa-solid fa-chevron-down \"></i>"
     const chevronUp="<i class=\"fa-solid fa-chevron-up \"></i>"
     let text=button.innerHTML.split(" ").slice(0,2).join(" ");
@@ -50,23 +51,35 @@ function readMore(button){
         bigParagraph.classList.toggle("hidden");
         smallParagraph.classList.toggle("hidden");
     }
+}*/
+
+function readMore(button) {
+    const chevronDown = "<i class=\"fa-solid fa-chevron-down \"></i>"
+    const chevronUp = "<i class=\"fa-solid fa-chevron-up \"></i>"
+    let text = button.innerHTML.split(" ").slice(0, 2).join(" ");
+    const parent = button.parentNode;
+    if (text == "Read More") {
+        button.innerHTML = "Read Less " + chevronUp;
+    }
+    if (text == "Read Less") {
+        button.innerHTML = "Read More " + chevronDown;
+    }
+    parent.children.item(0).classList.toggle("truncate-4lines");
 }
 
-function viewMoreItems(className,name){
-    let button=event.target;
-    const items=Array.from(document.getElementsByClassName(className));
-    if(button.innerHTML.includes("View All")){
-        button.innerHTML="Show Less"
-        items.forEach((item)=>{
-            item.classList.toggle("hidden",false);
+function viewMoreItems(className, name) {
+    let button = event.target;
+    const items = Array.from(document.getElementsByClassName(className));
+    if (button.innerHTML.includes("View All")) {
+        button.innerHTML = "Show Less"
+        items.forEach((item) => {
+            item.classList.toggle("hidden", false);
         })
-    }
-    else
-    {
-        button.innerHTML="View All "+name;
-        items.forEach((item,index)=>{
-            if(index>1){
-                item.classList.toggle("hidden",true);
+    } else {
+        button.innerHTML = "View All " + name;
+        items.forEach((item, index) => {
+            if (index > 1) {
+                item.classList.toggle("hidden", true);
             }
 
         })
@@ -75,18 +88,18 @@ function viewMoreItems(className,name){
 
 }
 
-function addEvent(){
-    document.querySelector("#hamburger").addEventListener('click',(element)=>{
+function addEvent() {
+    document.querySelector("#hamburger").addEventListener('click', (element) => {
         document.querySelector('.secondary-menu').classList.toggle("toggle")
     })
 }
 
-document.addEventListener("scroll",()=>{
-    document.querySelector('.secondary-menu').classList.toggle("toggle",false);
+document.addEventListener("scroll", () => {
+    document.querySelector('.secondary-menu').classList.toggle("toggle", false);
 })
 
-window.onresize = function() {
-    if(window.innerWidth>900){
-        document.querySelector(".secondary-menu").classList.toggle("toggle",false);
+window.onresize = function () {
+    if (window.innerWidth > 900) {
+        document.querySelector(".secondary-menu").classList.toggle("toggle", false);
     }
 }
