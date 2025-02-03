@@ -714,6 +714,7 @@ section.contact {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-fill-color: transparent;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .map iframe {
