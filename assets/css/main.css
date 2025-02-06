@@ -156,7 +156,7 @@ i.fa-chevron-up {
     top: 100px;
     right: 0;
     height: calc(100vh - 100px);
-    background: rgba(24, 29, 43, 1);
+    background: rgba(0, 0, 0);
     display: flex;
     flex-direction: column;
     width: 30vw;
