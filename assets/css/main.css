@@ -253,8 +253,6 @@ section.home {
 
 .landing-page-text {
     padding: 0;
-    margin-top: calc((100vh - 100px) * 0.2);
-    min-width: max(50%, 480px);
 }
 
 .landing-page-text video {
@@ -262,10 +260,6 @@ section.home {
     object-fit: contain;
 }
 
-.landing-page-video {
-    margin-top: calc((100vh - 100px) * 0.2);
-    position: relative;
-}
 
 .landing-page-video video {
     width: 100%;
