@@ -88,10 +88,74 @@ function viewMoreItems(className, name) {
 
 }
 
+function showModal(options = {}) {
+    const buttonsHTML = (options.buttons || []).map(button => {
+        if (!button) {
+            return
+        }
+        return `<button type="button" class="modal_action_button" button-type="${button.type}">${button.text}</button>`;
+    }).join('')
+    const dialogHTML = `
+        <dialog class="axiologic_modal ${options.className}" modal-type="${options.type || "error"}">
+            <div class="dialog_header">
+                 <div class="dialog_title">${options.title || ""}</div>
+                 <button class="dialog_close_btn pointer" aria-label="Close"></button>
+            </div>
+             <section class="dialog_content">
+                <div class="dialog_message_container">${options.modalTxt}</div>
+                <div class="dialog_actions_container">${buttonsHTML}</div>
+            </section>
+        </dialog>`;
+    document.body.insertAdjacentHTML('afterbegin', dialogHTML);
+    const dialog = document.querySelector('dialog.axiologic_modal');
+    const actionButtons = dialog.querySelectorAll('.modal_action_button');
+    actionButtons.forEach((btn, index) => {
+        btn.addEventListener('click', async () => {
+            if (options.buttons && options.buttons[index].onClick) {
+                await options.buttons[index].onClick();
+            }
+            dialog.close();
+            dialog.remove();
+        });
+    });
+    const closeButton = dialog.querySelector('.dialog_close_btn');
+    closeButton.addEventListener('click', () => {
+        dialog.close();
+        dialog.remove();
+    });
+
+    // Show the dialog
+    dialog.showModal();
+    return dialog;
+}
+
 function addEvent() {
     document.querySelector("#hamburger").addEventListener('click', (element) => {
         document.querySelector('.secondary-menu').classList.toggle("toggle")
     })
+}
+
+function showCookieAgreement() {
+    let agreeModal = showModal({
+        type: "",
+        className: "site_cookies_info",
+        modalTxt: 'Our website uses cookies. By continuing, you agree to the use of cookies, as detailed in our <a href="about.html#terms_and_privacy">Terms and Conditions & Privacy Policy</a>',
+        buttons: [{
+            text: "Ok",
+            type: "main_action",
+            onClick: async () => {
+                let video = document.querySelector('#home_video');
+                video.play();
+                video.muted = false;
+                /* document.querySelector("#mute_btn").click();*/
+            }
+        }]
+    });
+    agreeModal.querySelector('.dialog_close_btn').style.display = "none";
+    agreeModal.addEventListener('cancel', (event) => {
+        agreeModal.close();
+        agreeModal.style.display = "none";
+    });
 }
 
 document.addEventListener("scroll", () => {

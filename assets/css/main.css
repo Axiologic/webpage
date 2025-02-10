@@ -199,6 +199,42 @@ i.fa-chevron-up {
 
 /* INDEX PAGE */
 
+
+dialog.axiologic_modal.site_cookies_info {
+    width: min(85%, 1319px);
+    height: fit-content;
+    top: auto;
+    margin: auto auto 30px;
+    background: #C0DEED;
+    border-radius: 8px;
+}
+
+dialog.axiologic_modal.site_cookies_info .dialog_header {
+    display: none;
+}
+
+dialog.axiologic_modal.site_cookies_info .dialog_content {
+    padding: 20px;
+    gap: unset;
+    color: #000000;
+    text-align: center;
+}
+
+.modal_action_button {
+    text-align: center;
+    padding: 7px 25px;
+    border-radius: 6px;
+    background: #000000;
+    color: #FFFFFF;
+    border: 1px solid #000000;
+}
+
+.site_cookies_info .dialog_actions_container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+
 section.home {
     padding-top: 100px;
     min-height: 100vh;
@@ -221,7 +257,7 @@ section.home {
     min-width: max(50%, 480px);
 }
 
-.landing-page-text img {
+.landing-page-text video {
     width: 100%;
     object-fit: contain;
 }
@@ -656,7 +692,7 @@ section.contact {
     border: 3px solid #242C34;
     box-shadow: 0px 0px 15px -5px #07A5E9;
     border-radius: 5px;
-    margin: 1rem 4%;
+    margin: 1rem 10%;
     padding: 4.5rem;
     background-position: right top;
 
@@ -740,10 +776,11 @@ section.footer {
 }
 
 .footer ul {
-    margin: 3rem 2.3rem 3rem 35px;
+    margin: 3rem 2.3rem 3rem 10px;
     display: flex;
     flex-wrap: wrap-reverse;
     list-style-position: inside;
+    list-style-type: none;
 }
 
 .footer ul li:first-child {

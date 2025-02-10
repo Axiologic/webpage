@@ -12,13 +12,12 @@
     <title>Axiologic Research</title>
 </head>
 
-<body onload="addEvent()">
+<body onload="addEvent(); showCookieAgreement()">
 <!--- Nav --->
 <nav class="main-nav" id="main-nav">
     <div class="logo-img">
-        <img src="./assets/images/logo.png" alt="Axiologic" class="logo">
+        <img src="./assets/images/logo.svg" alt="Axiologic" class="logo">
     </div>
-
     <ul class="main-menu">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -65,11 +64,16 @@
 <!-- home -->
 <section class="home" id="home">
     <div class="landing-page-text">
-        <img src="/assets/images/app-name.svg"/>
-        <h5>Strategic Research & Consulting in AI and Blockchain.</h5>
-        <a href="#contact">
-            <button class="btn-contact-home">Contact us</button>
-        </a>
+        <!--  <img src="/assets/images/app-name.svg"/>-->
+
+        <video id="home_video" loading="lazy" preload="auto" controls muted playsinline>
+            <source src="assets/home_video.mp4" type="video/mp4">
+        </video>
+
+        <!--      <h5>Strategic Research & Consulting in AI and Blockchain.</h5>-->
+        <!--       <a href="#contact">
+                   <button class="btn-contact-home">Contact us</button>
+               </a>-->
     </div>
 
 </section>
@@ -515,7 +519,7 @@
 
 <section class="footer" id="footer">
     <div class="breakline"></div>
-    <div class="container-padding">
+    <div>
         <div class="footer-img">
             <img src="./assets/images/logo.svg" alt="Axiologic" class="footer-logo">
         </div>
