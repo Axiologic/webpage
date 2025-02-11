@@ -141,6 +141,7 @@ function closeCookiesAgreement() {
     video.style.display = "block";
     video.play();
     video.muted = false;
+    sessionStorage.setItem("user_agree", "true");
     /* document.querySelector("#mute_btn").click();*/
 }
 
@@ -152,21 +153,23 @@ function closePopup() {
 }
 
 function showCookieAgreement() {
-    let agreeModal = showModal({
-        type: "",
-        className: "site_cookies_info",
-        modalTxt: 'Our website uses cookies. By continuing, you agree to the use of cookies, as detailed in our <a href="#" onclick="closeCookiesAgreement(); closePopup()">Terms and Conditions & Privacy Policy </a>',
-        buttons: [{
-            text: "Ok",
-            type: "main_action",
-            onClick: closeCookiesAgreement
-        }]
-    });
-    agreeModal.querySelector('.dialog_close_btn').style.display = "none";
-    agreeModal.addEventListener('cancel', (event) => {
-        agreeModal.close();
-        agreeModal.style.display = "none";
-    });
+    if (!sessionStorage.getItem("user_agree")) {
+        let agreeModal = showModal({
+            type: "",
+            className: "site_cookies_info",
+            modalTxt: 'Our website uses cookies. By continuing, you agree to the use of cookies, as detailed in our <a href="#" onclick="closeCookiesAgreement(); closePopup()">Terms and Conditions & Privacy Policy </a>',
+            buttons: [{
+                text: "Ok",
+                type: "main_action",
+                onClick: closeCookiesAgreement
+            }]
+        });
+        agreeModal.querySelector('.dialog_close_btn').style.display = "none";
+        agreeModal.addEventListener('cancel', (event) => {
+            agreeModal.close();
+            agreeModal.style.display = "none";
+        });
+    }
 }
 
 document.addEventListener("scroll", () => {
