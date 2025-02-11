@@ -159,7 +159,7 @@ function showCookieAgreement() {
         buttons: [{
             text: "Ok",
             type: "main_action",
-            onClick: closeCookiesAgreement()
+            onClick: closeCookiesAgreement
         }]
     });
     agreeModal.querySelector('.dialog_close_btn').style.display = "none";

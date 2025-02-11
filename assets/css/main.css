@@ -256,6 +256,8 @@ section.home {
 }
 .landing-page-text img{
     margin-top: calc((100vh - 100px) * 0.2);
+    width: 100%;
+    object-fit: contain;
 }
 .landing-page-text video {
     width: 100%;
