@@ -135,20 +135,31 @@ function addEvent() {
     })
 }
 
+function closeCookiesAgreement() {
+    let video = document.querySelector('#home_video');
+    document.querySelector('#video_placeholder').style.display = 'none';
+    video.style.display = "block";
+    video.play();
+    video.muted = false;
+    /* document.querySelector("#mute_btn").click();*/
+}
+
+function closePopup() {
+    const agreeModal = document.querySelector('dialog.axiologic_modal');
+    agreeModal.close();
+    agreeModal.style.display = "none";
+    document.querySelector('#privacy_link').click();
+}
+
 function showCookieAgreement() {
     let agreeModal = showModal({
         type: "",
         className: "site_cookies_info",
-        modalTxt: 'Our website uses cookies. By continuing, you agree to the use of cookies, as detailed in our <a href="about.html#terms_and_privacy">Terms and Conditions & Privacy Policy</a>',
+        modalTxt: 'Our website uses cookies. By continuing, you agree to the use of cookies, as detailed in our <a href="#" onclick="closeCookiesAgreement(); closePopup()">Terms and Conditions & Privacy Policy </a>',
         buttons: [{
             text: "Ok",
             type: "main_action",
-            onClick: async () => {
-                let video = document.querySelector('#home_video');
-                video.play();
-                video.muted = false;
-                /* document.querySelector("#mute_btn").click();*/
-            }
+            onClick: closeCookiesAgreement()
         }]
     });
     agreeModal.querySelector('.dialog_close_btn').style.display = "none";
