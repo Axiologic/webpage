@@ -169,6 +169,8 @@ function showCookieAgreement() {
             agreeModal.close();
             agreeModal.style.display = "none";
         });
+    } else {
+        closeCookiesAgreement();
     }
 }
 
