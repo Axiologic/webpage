@@ -255,7 +255,6 @@ section.home {
     padding: 0;
 }
 .landing-page-text img{
-    margin-top: calc((100vh - 100px) * 0.2);
     width: 100%;
     object-fit: contain;
 }
