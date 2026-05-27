@@ -282,22 +282,30 @@ p {
 .panel-content {
   display: grid;
   grid-template-columns: 1fr auto;
-  align-items: center;
+  align-items: start;
   gap: 20px;
 }
 
 .panel-icon img {
   display: block;
-  width: 80px;
+  width: auto;
   height: auto;
+  max-width: 132px;
+  max-height: 72px;
+  object-fit: contain;
   filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.4));
 }
 
 .panel-icon img.outfinity-mark {
-  width: 132px;
+  max-width: 132px;
 }
 
 .panel-icon {
+  width: 132px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding-top: 4px;
   text-align: right;
 }
 
