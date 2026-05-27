@@ -1,0 +1,28 @@
+<svg width="460" height="112" viewBox="0 0 460 112" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="outfinityTitle outfinityDesc">
+  <title id="outfinityTitle">Outfinity logo</title>
+  <desc id="outfinityDesc">Outfinity wordmark with an infinity-inspired icon using inverted colors.</desc>
+  <defs>
+    <linearGradient id="outfinityGradient" x1="16" y1="16" x2="152" y2="96" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8B5CF6"/>
+      <stop offset="0.55" stop-color="#22D3EE"/>
+      <stop offset="1" stop-color="#E2E8F0"/>
+    </linearGradient>
+    <clipPath id="outfinityIconClip">
+      <rect x="8" y="8" width="152" height="96" rx="28"/>
+    </clipPath>
+    <clipPath id="outfinityLeftHalf">
+      <rect x="8" y="8" width="76" height="96"/>
+    </clipPath>
+    <clipPath id="outfinityRightHalf">
+      <rect x="84" y="8" width="76" height="96"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#outfinityIconClip)">
+    <rect x="8" y="8" width="152" height="96" rx="28" fill="url(#outfinityGradient)"/>
+    <rect x="84" y="8" width="76" height="96" fill="#0F172A"/>
+    <path d="M28 56C28 39.4315 40.536 28 56 28C71.464 28 82.1025 41.0394 92 56C101.897 70.9606 112.536 84 128 84C143.464 84 156 72.5685 156 56C156 39.4315 143.464 28 128 28C112.536 28 101.897 41.0394 92 56C82.1025 70.9606 71.464 84 56 84C40.536 84 28 72.5685 28 56Z" clip-path="url(#outfinityLeftHalf)" stroke="#0F172A" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M28 56C28 39.4315 40.536 28 56 28C71.464 28 82.1025 41.0394 92 56C101.897 70.9606 112.536 84 128 84C143.464 84 156 72.5685 156 56C156 39.4315 143.464 28 128 28C112.536 28 101.897 41.0394 92 56C82.1025 70.9606 71.464 84 56 84C40.536 84 28 72.5685 28 56Z" clip-path="url(#outfinityRightHalf)" stroke="#F8FAFC" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M28 56C28 39.4315 40.536 28 56 28C71.464 28 82.1025 41.0394 92 56C101.897 70.9606 112.536 84 128 84C143.464 84 156 72.5685 156 56C156 39.4315 143.464 28 128 28C112.536 28 101.897 41.0394 92 56C82.1025 70.9606 71.464 84 56 84C40.536 84 28 72.5685 28 56Z" stroke="#FFFFFF" stroke-opacity="0.18" stroke-width="2"/>
+  </g>
+  <text x="186" y="67" fill="#0F172A" font-family="Inter, Avenir Next, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="42" font-weight="700" letter-spacing="0.5">Outfinity</text>
+</svg>
