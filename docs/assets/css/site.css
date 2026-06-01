@@ -82,7 +82,7 @@ a {
 
 .logo-lockup {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 14px;
 }
 
@@ -93,10 +93,11 @@ a {
 
 .tagline {
   color: #d8dde5;
+  font-family: 'Montserrat', sans-serif;
   font-size: 42px;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1;
-  letter-spacing: 0;
+  letter-spacing: -0.01em;
   text-transform: uppercase;
 }
 
