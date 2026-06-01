@@ -82,7 +82,7 @@ a {
 
 .logo-lockup {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   gap: 14px;
 }
 
@@ -93,8 +93,10 @@ a {
 
 .tagline {
   color: #d8dde5;
-  font-size: 13px;
-  letter-spacing: 0.08em;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0;
   text-transform: uppercase;
 }
 
@@ -103,13 +105,13 @@ a {
   text-transform: uppercase;
   color: var(--muted);
   font-size: 12px;
-  margin-bottom: 10px;
+  margin: 0;
 }
 
 h1 {
   font-size: clamp(34px, 5vw, 48px);
   line-height: 1.15;
-  margin: 10px 0 18px;
+  margin: 0;
 }
 
 h2 {
@@ -127,13 +129,18 @@ p {
 .hero {
   margin: 40px 0 64px;
   display: grid;
-  gap: 36px;
+  gap: 28px;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
 .hero-text {
   display: grid;
-  gap: 18px;
+  gap: 8px;
+  align-self: start;
+}
+
+.hero-text h1 {
+  margin-top: -6px;
 }
 
 .lede {
@@ -143,8 +150,7 @@ p {
 
 .hero-summary {
   display: grid;
-  gap: 10px;
-  margin-top: 12px;
+  gap: 6px;
 }
 
 .hero-summary p {
@@ -213,6 +219,7 @@ p {
 
 .panel p {
   color: #d7dce6;
+  text-align: justify;
 }
 
 .badge {
