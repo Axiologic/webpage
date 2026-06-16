@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 :root {
   --bg: #040404;
@@ -15,6 +15,9 @@
   --shadow-soft: 0 18px 60px rgba(0, 0, 0, 0.38);
   --glow: 0 18px 60px rgba(154, 242, 198, 0.16);
   --content-width: 1180px;
+  --copy-font: 'Space Grotesk', 'Segoe UI', sans-serif;
+  --copy-size: 18px;
+  --copy-line: 1.55;
 }
 
 *,
@@ -25,7 +28,7 @@
 
 body {
   margin: 0;
-  font-family: 'Space Grotesk', 'Sora', 'Segoe UI', sans-serif;
+  font-family: var(--copy-font);
   background: var(--bg);
   color: var(--ink);
   -webkit-font-smoothing: antialiased;
@@ -93,7 +96,7 @@ a {
 
 .tagline {
   color: #d8dde5;
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--copy-font);
   font-size: 42px;
   font-weight: 800;
   line-height: 1;
@@ -110,21 +113,27 @@ a {
 }
 
 h1 {
+  font-family: var(--copy-font);
   font-size: clamp(34px, 5vw, 48px);
   line-height: 1.15;
   margin: 0;
 }
 
 h2 {
+  font-family: var(--copy-font);
   font-size: clamp(26px, 3vw, 34px);
   margin: 0 0 12px;
+}
+
+h3 {
+  font-family: var(--copy-font);
 }
 
 p {
   margin: 0;
   color: #cdd2dc;
-  font-size: 18px;
-  line-height: 1.55;
+  font-size: var(--copy-size);
+  line-height: var(--copy-line);
 }
 
 .hero {
@@ -145,8 +154,9 @@ p {
 }
 
 .lede {
-  font-size: 18px;
+  font-size: var(--copy-size);
   color: #d6dae2;
+  text-align: justify;
 }
 
 .hero-summary {
@@ -157,8 +167,8 @@ p {
 .hero-summary p {
   margin: 0;
   color: #cfd4dd;
-  font-size: 15px;
-  line-height: 1.6;
+  font-size: var(--copy-size);
+  line-height: var(--copy-line);
   text-align: justify;
 }
 
@@ -177,7 +187,7 @@ p {
   padding: 12px 16px;
   border-radius: 999px;
   font-weight: 600;
-  font-size: 15px;
+  font-size: var(--copy-size);
   border: 1px solid transparent;
   cursor: pointer;
   transition: transform 120ms ease, border-color 160ms ease, background 160ms ease;
@@ -232,7 +242,7 @@ p {
   color: #b3f7da;
   border-radius: var(--radius-sm);
   border: 1px solid rgba(154, 242, 198, 0.35);
-  font-size: 13px;
+  font-size: var(--copy-size);
   letter-spacing: 0.02em;
 }
 
@@ -278,11 +288,13 @@ p {
 
 .tile p {
   color: #d6dbe5;
+  font-size: var(--copy-size);
+  line-height: var(--copy-line);
 }
 
 .tile .label {
   color: var(--muted);
-  font-size: 12px;
+  font-size: var(--copy-size);
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -361,7 +373,7 @@ p {
 .contact-row .label {
   display: block;
   color: var(--muted);
-  font-size: 13px;
+  font-size: var(--copy-size);
   margin-bottom: 6px;
   letter-spacing: 0.04em;
 }
@@ -369,7 +381,7 @@ p {
 .contact-row strong,
 .contact-row a {
   color: #e8eaf1;
-  font-size: 17px;
+  font-size: var(--copy-size);
   word-break: break-word;
 }
 
@@ -382,7 +394,7 @@ p {
   justify-content: space-between;
   gap: 12px;
   color: var(--muted);
-  font-size: 14px;
+  font-size: var(--copy-size);
 }
 
 .legacy-link {
