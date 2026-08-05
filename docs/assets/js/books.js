@@ -13,6 +13,7 @@ const books = [
   },
   {
     id: 'OpenDSU', category: 'Technology', title: 'OpenDSU', subtitle: 'Essential Philosophy',
+    fileId: 'OpenDSU_Essential_Philosophy',
     description: 'OpenDSU is presented as a conceptual framework for controlled, reconstructable and verifiable digital objects. It examines the relationship among bounded data, cryptographic authority, protected storage, verifiable history, provenance, validation, discovery and governance—while keeping its concepts independent of any single implementation.',
     color: 'linear-gradient(145deg, #25454d, #0f171b 72%)'
   },
@@ -23,6 +24,7 @@ const books = [
   },
   {
     id: 'The_Basilisks_Internal_Critique_of_Outfinitism', category: 'Literature', title: "The Basilisk's Internal Critique of Outfinitism",
+    fileId: 'The_Basilisk_Internal_Critique_of_Outfinitism',
     subtitle: '',
     description: 'The Basilisk is not dead; it has merely lost the right to turn a conclusion into an event. As beings from the Outside conduct its autopsy, they discover the thought it could not contain: a world that continues without becoming a province of any central intelligence.',
     color: 'linear-gradient(145deg, #41263c, #111117 74%)'
@@ -52,16 +54,33 @@ const books = [
     color: 'linear-gradient(145deg, #315052, #101918 74%)'
   },
   {
+    id: 'The_Sovereignty_Archipelago', category: 'Literature', title: 'The Sovereignty Archipelago',
+    subtitle: '',
+    description: 'A work of speculative literature about systems, authority and the choices hidden beneath their promises.',
+    color: 'linear-gradient(145deg, #294b5a, #101619 74%)'
+  },
+  {
+    id: 'The_Silicon_Shadows_and_I', category: 'Literature', title: 'The Silicon Shadows and I',
+    subtitle: '',
+    description: 'A work of speculative literature about freedom, care and the right to refuse rescue.',
+    color: 'linear-gradient(145deg, #40365a, #12121b 74%)'
+  },
+  {
+    id: 'The_Museum_of_Good_Reasons', category: 'Literature', title: 'The Museum of Good Reasons', subtitle: 'A Catalogue of Things That Disappear by Themselves',
+    description: 'A work of speculative literature, available here to read.',
+    color: 'linear-gradient(145deg, #54432d, #18140f 74%)'
+  },
+  {
     id: 'A_Balance_of_Iron_and_Salt', category: 'Literature', title: 'A Balance of Iron and Salt', subtitle: 'SF Novel',
-    description: 'A science-fiction novel. Publication details and a reader introduction will be added with the manuscript.', color: 'linear-gradient(145deg, #4c3c2e, #171617 74%)'
+    description: 'A science-fiction novel, available here to read.', color: 'linear-gradient(145deg, #4c3c2e, #171617 74%)'
   },
   {
     id: 'Anatomy_Of_An_Echo', category: 'Literature', title: 'Anatomy Of An Echo', subtitle: '',
-    description: 'A forthcoming work of literature. Its reader introduction will be published alongside the manuscript.', color: 'linear-gradient(145deg, #304252, #11161b 74%)'
+    description: 'A work of literature, available here to read.', color: 'linear-gradient(145deg, #304252, #11161b 74%)'
   },
   {
     id: 'Me_and_My_Robots', category: 'Literature', title: 'Me and My Robots', subtitle: '',
-    description: 'A forthcoming work of literature. Its reader introduction will be published alongside the manuscript.', color: 'linear-gradient(145deg, #543d56, #171219 74%)'
+    description: 'A work of literature, available here to read.', color: 'linear-gradient(145deg, #543d56, #171219 74%)'
   },
   {
     id: 'Holding_the_Dirty_Thing_by_the_Clean_Side', category: 'Outfinist Philosophy', title: 'Holding the Dirty Thing by the Clean Side', subtitle: 'A History of Strategies for Social Success and a Search for Theoretical Legitimacy',
@@ -72,11 +91,11 @@ const books = [
     description: 'A study of the dangerous configuration in which weak models, confidence disproportionate to evidence, refusal of correction and power combine. It develops the Outfinitist metacult as a culture of correction rather than superiority.', color: 'linear-gradient(145deg, #3e304e, #15131a 74%)'
   },
   {
-    id: 'The_History_and_Future_of_Social_Technologies', category: 'Outfinist Philosophy', title: 'The History and Future of Social Technologies', subtitle: 'The Yin-Yang of Civilisation',
+    id: 'The_History_and_Future_of_Social_Technologies', category: 'Miscellaneous', title: 'The History and Future of Social Technologies', subtitle: 'The Yin-Yang of Civilisation',
     description: 'An interpretive synthesis of the symbols, roles, rules, procedures and incentives by which societies coordinate across time and distance—and a disciplined exploration of their possible futures.', color: 'linear-gradient(145deg, #243e42, #101817 74%)'
   },
   {
-    id: 'Memes_for_2030', category: 'Outfinist Philosophy', title: 'Memes for 2030', subtitle: 'Ten Ideas Whose Time Is Coming',
+    id: 'Memes_for_2030', category: 'Miscellaneous', title: 'Memes for 2030', subtitle: 'Ten Ideas Whose Time Is Coming',
     description: 'A study of the ideas that become culturally contagious when historical pressure, emotional need, technological possibility and narrative simplicity converge. The book maps ten memes for a changing moral architecture.', color: 'linear-gradient(145deg, #5b4424, #19150e 74%)'
   },
   {
@@ -89,6 +108,7 @@ const books = [
   },
   {
     id: 'THE_NECESSARY_MASK', category: 'Outfinist Philosophy', title: 'The Necessary Mask', subtitle: 'The Justification of Hypocrisy in a Finite World',
+    fileId: 'The_Necessary_Mask',
     description: 'A constructive argument about hypocrisy, moral psychology, unequal power and institutional life. It asks which adaptive function a hypocrisy performs, and how its deception or transferred harm can be reduced.', color: 'linear-gradient(145deg, #3d4d39, #131713 74%)'
   },
   {
@@ -107,7 +127,7 @@ const pdfBase = './downloads/books/';
 const escapeHtml = (value) => value.replace(/[&<>"']/g, (character) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' })[character]);
 
 function cover(book, className = '') {
-  return `<div class="book-cover ${className}" style="--cover:${book.color}"><div class="book-cover-copy"><span>${collectionName}</span><strong>${escapeHtml(book.title)}</strong><span>${book.category}</span></div><img alt="${escapeHtml(book.title)} cover" data-cover="${book.id}"></div>`;
+  return `<div class="book-cover ${className}" style="--cover:${book.color}"><div class="book-cover-copy"><span>${collectionName}</span><strong>${escapeHtml(book.title)}</strong><span>${book.category}</span></div><img alt="${escapeHtml(book.title)} cover" data-cover="${book.fileId || book.id}"></div>`;
 }
 
 function locateCover(image) {
@@ -122,12 +142,8 @@ function locateCover(image) {
   tryNext();
 }
 
-function pdfExists(id) {
-  return fetch(`${pdfBase}${id}.pdf`, { method: 'HEAD' }).then(response => response.ok).catch(() => false);
-}
-
 function renderListing() {
-  ['Technology', 'Literature', 'Outfinist Philosophy', 'Executable Science'].forEach(category => {
+  ['Technology', 'Literature', 'Outfinist Philosophy', 'Executable Science', 'Miscellaneous'].forEach(category => {
     const grid = document.getElementById(`${category.toLowerCase().replaceAll(' ', '-')}-grid`);
     if (!grid) return;
     grid.innerHTML = books.filter(book => book.category === category).map(book => `
@@ -145,11 +161,8 @@ function renderDetail() {
   const book = books.find(item => item.id === id);
   if (!book) { window.location.replace('./books.html'); return; }
   document.title = `${book.title} — ${collectionName}`;
-  detail.innerHTML = `${cover(book, 'detail-cover')}<div class="book-detail-copy"><span class="eyebrow">${book.category} · ${collectionName}</span><h1>${escapeHtml(book.title)}</h1>${book.subtitle ? `<p class="book-subtitle">${escapeHtml(book.subtitle)}</p>` : ''}<p>${escapeHtml(book.description)}</p><div class="book-actions" id="book-actions"><span class="coming-soon">Coming soon</span></div></div>`;
+  detail.innerHTML = `<a class="book-cover-link" href="${pdfBase}${book.fileId || book.id}.pdf" target="_blank" rel="noreferrer" aria-label="Read ${escapeHtml(book.title)} in a new tab">${cover(book, 'detail-cover')}</a><div class="book-detail-copy"><span class="eyebrow">${book.category} · ${collectionName}</span><h1>${escapeHtml(book.title)}</h1>${book.subtitle ? `<p class="book-subtitle">${escapeHtml(book.subtitle)}</p>` : ''}<p>${escapeHtml(book.description)}</p><div class="book-actions"><a class="btn primary" href="${pdfBase}${book.fileId || book.id}.pdf" target="_blank" rel="noreferrer">Read here <span>→</span></a></div></div>`;
   detail.querySelectorAll('[data-cover]').forEach(locateCover);
-  pdfExists(book.id).then(exists => {
-    if (exists) document.getElementById('book-actions').innerHTML = `<a class="btn primary" href="${pdfBase}${book.id}.pdf" target="_blank" rel="noreferrer">Read here <span>→</span></a>`;
-  });
 }
 
 renderListing();

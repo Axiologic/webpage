@@ -740,25 +740,31 @@ p {
 .category-head p { justify-self: end; max-width: none; font-size: 14px; text-align: right; color: var(--muted); white-space: nowrap; }
 .books-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 28px 14px; padding-top: 28px; }
 .book-card { display: grid; gap: 15px; align-content: start; }
-.book-cover { position: relative; aspect-ratio: .7; overflow: hidden; border-radius: 4px 9px 9px 4px; background: var(--cover, linear-gradient(145deg,#1c3833,#0b1113)); border: 1px solid rgba(255,255,255,.12); box-shadow: 15px 22px 28px rgba(0,0,0,.32), inset 4px 0 rgba(255,255,255,.08); transition: transform .25s ease, box-shadow .25s ease; }
-.book-card:hover .book-cover { transform: translateY(-6px) rotate(-1deg); box-shadow: 18px 28px 38px rgba(0,0,0,.44), 0 0 0 1px rgba(154,242,198,.2); }
-.book-cover img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .2s ease; }
+.book-cover { position: relative; aspect-ratio: .7; overflow: hidden; border-radius: 4px 9px 9px 4px; background: var(--cover, linear-gradient(145deg,#1c3833,#0b1113)); border: 1px solid rgba(255,255,255,.12); box-shadow: 15px 22px 28px rgba(0,0,0,.32); }
+.book-cover img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; image-rendering: auto; opacity: 0; transition: opacity .2s ease; }
 .book-cover img.loaded { opacity: 1; }
 .book-cover::after { content: ''; position: absolute; inset: 9px; border: 1px solid rgba(255,255,255,.25); pointer-events: none; }
 .book-cover-copy { position: absolute; z-index: 1; inset: 0; display: flex; flex-direction: column; justify-content: space-between; padding: 22px 18px; color: #f7f4ee; text-transform: uppercase; }
 .book-cover-copy span { font-size: 9px; letter-spacing: .18em; color: var(--accent); }
 .book-cover-copy strong { max-width: 90%; font-size: clamp(18px, 2.5vw, 28px); line-height: .98; letter-spacing: -.04em; }
 .book-cover.has-image .book-cover-copy { opacity: 0; }
+.book-cover.has-image { background: #090b0e; }
+.book-cover.has-image::after { display: none; }
+/* These source files include transparent canvas space around the cover. */
+.book-cover img[data-cover="OpenDSU_Essential_Philosophy"] { width: auto; max-width: none; height: 104.5%; inset: 0 auto auto 0; }
+.book-cover img[data-cover="Agentic_AI_2026"] { width: auto; max-width: none; height: 122.7%; inset: -1.4% auto auto -1.1%; }
+.book-cover img[data-cover="Memes_for_2030"] { width: auto; max-width: none; height: 142%; inset: -1.3% auto auto -1.2%; }
 .book-meta { display: flex; justify-content: space-between; gap: 10px; color: var(--muted); font-size: 10px; letter-spacing: .13em; text-transform: uppercase; }
 .book-card h3 { margin: -7px 0 0; font-size: 19px; line-height: 1.15; }
 .book-card p { font-size: 14px; line-height: 1.45; color: #bfc6d1; }
-.book-detail { min-height: 68vh; display: grid; grid-template-columns: minmax(220px, .7fr) minmax(0, 1.3fr); gap: clamp(32px, 8vw, 110px); align-items: center; padding: 72px 7vw 90px; }
-.book-detail .book-cover { width: min(100%, 330px); justify-self: center; }
+.book-detail { min-height: 68vh; display: grid; grid-template-columns: minmax(300px, .95fr) minmax(0, 1.05fr); gap: clamp(32px, 6vw, 76px); align-items: center; padding: 72px 3vw 90px; }
+.book-cover-link { display: grid; }
+.book-detail .book-cover { width: min(100%, 440px); justify-self: center; }
 .book-detail-copy { display: grid; gap: 20px; align-content: center; }
 .book-detail-copy .eyebrow { color: var(--accent-2); }
 .book-detail h1 { font-size: clamp(36px, 5vw, 68px); letter-spacing: -.06em; line-height: .96; }
-.book-subtitle { margin-top: -10px; color: var(--accent-2) !important; font-size: 16px !important; line-height: 1.35 !important; }
-.book-detail p { font-size: clamp(17px, 2vw, 20px); line-height: 1.55; color: #d6dbe3; }
+.book-subtitle { margin-top: -10px; color: var(--accent-2) !important; font-size: 16px !important; line-height: 1.4 !important; text-align: left; text-wrap: pretty; }
+.book-detail-copy > p:not(.book-subtitle) { max-width: 62ch; font-size: clamp(17px, 2vw, 20px); line-height: 1.55; color: #d6dbe3; text-align: justify; text-justify: inter-word; hyphens: auto; text-wrap: pretty; }
 .book-actions { display: flex; flex-wrap: wrap; gap: 12px; padding-top: 5px; }
 .coming-soon { display: inline-flex; align-items: center; min-height: 46px; padding: 0 17px; border: 1px solid rgba(255,255,255,.14); border-radius: 999px; color: var(--muted); font-size: 13px; letter-spacing: .06em; text-transform: uppercase; }
 
@@ -812,5 +818,5 @@ p {
   .book-cover-copy { padding: 15px 12px; }
   .book-cover-copy strong { font-size: 17px; }
   .book-detail { grid-template-columns: 1fr; padding: 52px 0 64px; }
-  .book-detail .book-cover { max-width: 260px; }
+  .book-detail .book-cover { max-width: 320px; }
 }
