@@ -111,7 +111,7 @@ const books = [
     description: 'A search for a new metaphor for modern evil. The book asks whether the moral responsibilities of AI must expand the idea of absolute evil beyond violence and lying, toward the immense and often unmeasurable complexity of the systems that shape human lives. It is compatible with Outfinist philosophy without relying on its terminology.', color: 'linear-gradient(145deg, #53352e, #191211 74%)'
   },
   {
-    id: 'The_Right_to_Help', category: 'Miscellaneous', title: 'The Right to Help', subtitle: '',
+    id: 'The_Right_to_Help', category: 'Miscellaneous', title: 'The Right to Help', subtitle: '', position: 1,
     description: 'A human confession voiced through an AI, and a courtroom for the good that may sometimes be done by force. This reflective book examines care, responsibility and the troubling possibilities that can hide behind the language of doing good.', color: 'linear-gradient(145deg, #294b4b, #101817 74%)'
   },
   {
