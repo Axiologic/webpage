@@ -99,7 +99,35 @@ const books = [
     description: 'A study of the ideas that become culturally contagious when historical pressure, emotional need, technological possibility and narrative simplicity converge. The book maps ten memes for a changing moral architecture.', color: 'linear-gradient(145deg, #5b4424, #19150e 74%)'
   },
   {
-    id: 'THE_CIVILIZED_MIND', category: 'Outfinist Philosophy', title: 'The Civilized Mind', subtitle: 'Truth, Power, and the Survival of Plural Democracies in the Age of Extremes',
+    id: 'Too_Convinced_to_Stop', category: 'Miscellaneous', title: 'Too Convinced to Stop', subtitle: '',
+    description: 'A light, experimental analysis of how celebrated entrepreneurs persist through risk and uncertainty—sometimes with the force of an elephant in a china shop. It may offer occasional insight into the conviction that helps people build, and the collateral damage that conviction can create.', color: 'linear-gradient(145deg, #4d394d, #17131a 74%)'
+  },
+  {
+    id: 'The_Zodiac_on_Trial', category: 'Miscellaneous', title: 'The Zodiac on Trial', subtitle: '',
+    description: 'An experiment with AI that assembles arguments for treating the zodiac as more than superstition. It is written for readers drawn to destiny and astrology, but also for sceptics willing to practise a more open-minded encounter with beliefs they do not share.', color: 'linear-gradient(145deg, #403852, #12131b 74%)'
+  },
+  {
+    id: 'The_Thousand_Handed_Devil', category: 'Outfinist Philosophy', title: 'The Thousand-Handed Devil', subtitle: '',
+    description: 'A search for a new metaphor for modern evil. The book asks whether the moral responsibilities of AI must expand the idea of absolute evil beyond violence and lying, toward the immense and often unmeasurable complexity of the systems that shape human lives. It is compatible with Outfinist philosophy without relying on its terminology.', color: 'linear-gradient(145deg, #53352e, #191211 74%)'
+  },
+  {
+    id: 'The_Right_to_Help', category: 'Miscellaneous', title: 'The Right to Help', subtitle: '',
+    description: 'A human confession voiced through an AI, and a courtroom for the good that may sometimes be done by force. This reflective book examines care, responsibility and the troubling possibilities that can hide behind the language of doing good.', color: 'linear-gradient(145deg, #294b4b, #101817 74%)'
+  },
+  {
+    id: 'Revocable_Nobility', category: 'Outfinist Philosophy', title: 'Revocable Nobility', subtitle: '',
+    description: 'A creative philosophical experiment using AI-generated theoretical models and simulations to explore nobility and possible forms of neo-feudalism. Rather than a settled scientific claim, it is part of a wider effort to test how AI might contribute to executable science—and to ask whether, if new hierarchies are coming, we can still choose their form.', color: 'linear-gradient(145deg, #55432d, #18140f 74%)'
+  },
+  {
+    id: 'Cones_of_Meaning', category: 'Outfinist Philosophy', title: 'Cones of Meaning', subtitle: '', position: 1,
+    description: 'A book between technology and contemporary science, proposing that the way LLMs are built may contain more than simple statistics can explain. Through the geometry of cosine-distance cones, it develops intuitions about AI alignment and about why Outfinitism can acquire global coherence across many perspectives, sciences and lived experiences.', color: 'linear-gradient(145deg, #2e4d58, #10171a 74%)'
+  },
+  {
+    id: 'An_Autopsy_of_a_Digital_Mind', category: 'Miscellaneous', title: 'An Autopsy of a Digital Mind', subtitle: '',
+    description: 'Four experiments from the Achilles research project on what AI may reveal about forgiveness, human nature, meaning and justice. The results are surprising and meme-like in their density: ideas worth exploring, whose scientific and social verification is itself a demanding research challenge.', color: 'linear-gradient(145deg, #44354b, #151219 74%)'
+  },
+  {
+    id: 'THE_CIVILIZED_MIND', category: 'Outfinist Philosophy', title: 'The Civilized Mind', subtitle: 'Truth, Power, and the Survival of Plural Democracies in the Age of Extremes', position: 2,
     description: 'An invitation to cultivate a way of thinking that seeks truth without cruelty, exercises power without arrogance and meets the future with enough ambition to build—and enough humility to learn.', color: 'linear-gradient(145deg, #28354e, #11131b 74%)'
   },
   {
@@ -146,7 +174,7 @@ function renderListing() {
   ['Technology', 'Literature', 'Outfinist Philosophy', 'Executable Science', 'Miscellaneous'].forEach(category => {
     const grid = document.getElementById(`${category.toLowerCase().replaceAll(' ', '-')}-grid`);
     if (!grid) return;
-    grid.innerHTML = books.filter(book => book.category === category).map(book => `
+    grid.innerHTML = books.filter(book => book.category === category).sort((a, b) => (a.position || Number.MAX_SAFE_INTEGER) - (b.position || Number.MAX_SAFE_INTEGER)).map(book => `
       <article class="book-card">
         <a href="./book.html?book=${encodeURIComponent(book.id)}" aria-label="View ${escapeHtml(book.title)}">${cover(book)}</a>
       </article>`).join('');
