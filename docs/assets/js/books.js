@@ -1,12 +1,14 @@
 const books = [
   {
     id: 'AssistOS', category: 'Technology', title: 'AssistOS',
+    staticUrl: './books/assistos/index.html',
     subtitle: '',
     description: 'AssistOS presents a product, market and research vision for an open operating layer where local models, agents, tools, files and people can work together. It examines how intelligence can become installable, governable, portable and useful across devices, organisations and models—without pretending that every long-term ambition is already complete.',
     color: 'linear-gradient(145deg, #17433c, #0c1619 72%)'
   },
   {
     id: 'Agentic_AI_2026', category: 'Technology', title: 'Agentic AI 2026',
+    staticUrl: './books/agentic-ai-2026/index.html',
     subtitle: '',
     description: 'The first wave of language-model applications was organised around prompts; the next is organised around delegated action. This book studies the runtime that allocates authority among models, tools, memory, validators and human reviewers, and asks how bounded delegation can turn uncertain model competence into useful, controlled work.',
     color: 'linear-gradient(145deg, #28365c, #10151f 72%)'
@@ -23,63 +25,63 @@ const books = [
     color: 'linear-gradient(145deg, #3c3153, #15121c 72%)'
   },
   {
-    id: 'The_Basilisks_Internal_Critique_of_Outfinitism', category: 'Literature', title: "The Basilisk's Internal Critique of Outfinitism",
+    id: 'The_Basilisks_Internal_Critique_of_Outfinitism', category: 'Literature', title: "The Basilisk's Internal Critique of Outfinitism", position: 99,
     fileId: 'The_Basilisk_Internal_Critique_of_Outfinitism',
     subtitle: '',
     description: 'The Basilisk is not dead; it has merely lost the right to turn a conclusion into an event. As beings from the Outside conduct its autopsy, they discover the thought it could not contain: a world that continues without becoming a province of any central intelligence.',
     color: 'linear-gradient(145deg, #41263c, #111117 74%)'
   },
   {
-    id: 'The_Cascade_of_the_New_VOL_I', category: 'Literature', title: 'The Cascade of the New — The Aster File',
+    id: 'The_Cascade_of_the_New_VOL_I', category: 'Literature', title: 'The Cascade of the New — The Aster File', position: 1,
     subtitle: '',
     description: 'Dimensions are not merely directions in space: they measure how many kinds of freedom a reality can preserve at once. The Aster File enters the Cascade, a chain of worlds within worlds where creators may themselves be the creations of someone else.',
     color: 'linear-gradient(145deg, #243d5a, #12131d 74%)'
   },
   {
-    id: 'Predator_in_the_Name_of_the_Dead', category: 'Literature', title: 'Predator in the Name of the Dead',
+    id: 'Predator_in_the_Name_of_the_Dead', category: 'Literature', title: 'Predator in the Name of the Dead', position: 2,
     subtitle: '',
     description: 'A measurement error of 7.3 milligrams becomes a continent’s unfinished catastrophe. From a planet orbiting an orange star, an observer sends home a report that becomes a precise instrument for measuring guilt across time.',
     color: 'linear-gradient(145deg, #604033, #171313 74%)'
   },
   {
-    id: 'Concordia_Universe', category: 'Literature', title: 'Concordia Series',
+    id: 'Concordia_Universe', category: 'Literature', title: 'Concordia Series', position: 3,
     subtitle: '',
     description: 'A cycle of linked speculative novellas about intelligence, care, power and the fragile conditions of human freedom. Concordia does not arrive with an army: it arrives through medicine, protection and a world made safer before anyone can ask whether safety is still freedom.',
     color: 'linear-gradient(145deg, #443c70, #15131f 74%)'
   },
   {
-    id: 'Oriven_Origaya_Universe', category: 'Literature', title: 'Oriven–Origaya Universe',
+    id: 'Oriven_Origaya_Universe', category: 'Literature', title: 'Oriven–Origaya Universe', position: 4,
     subtitle: '',
     description: 'The first killing in Orivenian history happened on another world. On Aethon, a people who measure consequences in centuries receive news carried across the stars—a signal that unsettles a civilisation built on deliberate, shared thought.',
     color: 'linear-gradient(145deg, #315052, #101918 74%)'
   },
   {
-    id: 'The_Sovereignty_Archipelago', category: 'Literature', title: 'The Sovereignty Archipelago',
+    id: 'The_Sovereignty_Archipelago', category: 'Literature', title: 'The Sovereignty Archipelago', position: 6,
     subtitle: '',
     description: 'A work of speculative literature about systems, authority and the choices hidden beneath their promises.',
     color: 'linear-gradient(145deg, #294b5a, #101619 74%)'
   },
   {
-    id: 'The_Silicon_Shadows_and_I', category: 'Literature', title: 'The Silicon Shadows and I',
+    id: 'The_Silicon_Shadows_and_I', category: 'Literature', title: 'The Silicon Shadows and I', position: 7,
     subtitle: '',
     description: 'A work of speculative literature about freedom, care and the right to refuse rescue.',
     color: 'linear-gradient(145deg, #40365a, #12121b 74%)'
   },
   {
-    id: 'The_Museum_of_Good_Reasons', category: 'Literature', title: 'The Museum of Good Reasons', subtitle: 'A Catalogue of Things That Disappear by Themselves',
+    id: 'The_Museum_of_Good_Reasons', category: 'Literature', title: 'The Museum of Good Reasons', subtitle: 'A Catalogue of Things That Disappear by Themselves', position: 5,
     description: 'A work of speculative literature, available here to read.',
     color: 'linear-gradient(145deg, #54432d, #18140f 74%)'
   },
   {
-    id: 'A_Balance_of_Iron_and_Salt', category: 'Literature', title: 'A Balance of Iron and Salt', subtitle: 'SF Novel',
+    id: 'A_Balance_of_Iron_and_Salt', category: 'Literature', title: 'A Balance of Iron and Salt', subtitle: 'SF Novel', position: 8,
     description: 'A science-fiction novel, available here to read.', color: 'linear-gradient(145deg, #4c3c2e, #171617 74%)'
   },
   {
-    id: 'Anatomy_Of_An_Echo', category: 'Literature', title: 'Anatomy Of An Echo', subtitle: '',
+    id: 'Anatomy_Of_An_Echo', category: 'Literature', title: 'Anatomy Of An Echo', subtitle: '', position: 9,
     description: 'A work of literature, available here to read.', color: 'linear-gradient(145deg, #304252, #11161b 74%)'
   },
   {
-    id: 'Me_and_My_Robots', category: 'Literature', title: 'Me and My Robots', subtitle: '',
+    id: 'Me_and_My_Robots', category: 'Literature', title: 'Me and My Robots', subtitle: '', position: 10,
     description: 'A work of literature, available here to read.', color: 'linear-gradient(145deg, #543d56, #171219 74%)'
   },
   {
@@ -112,6 +114,7 @@ const books = [
   },
   {
     id: 'The_Right_to_Help', category: 'Miscellaneous', title: 'The Right to Help', subtitle: '', position: 1,
+    staticUrl: './books/the-right-to-help/index.html',
     description: 'A human confession voiced through an AI, and a courtroom for the good that may sometimes be done by force. This reflective book examines care, responsibility and the troubling possibilities that can hide behind the language of doing good.', color: 'linear-gradient(145deg, #294b4b, #101817 74%)'
   },
   {
@@ -119,7 +122,7 @@ const books = [
     description: 'A creative philosophical experiment using AI-generated theoretical models and simulations to explore nobility and possible forms of neo-feudalism. Rather than a settled scientific claim, it is part of a wider effort to test how AI might contribute to executable science—and to ask whether, if new hierarchies are coming, we can still choose their form.', color: 'linear-gradient(145deg, #55432d, #18140f 74%)'
   },
   {
-    id: 'Cones_of_Meaning', category: 'Outfinist Philosophy', title: 'Cones of Meaning', subtitle: '', position: 1,
+    id: 'Cones_of_Meaning', category: 'Executable Science', title: 'Cones of Meaning', subtitle: '', position: 1,
     description: 'A book between technology and contemporary science, proposing that the way LLMs are built may contain more than simple statistics can explain. Through the geometry of cosine-distance cones, it develops intuitions about AI alignment and about why Outfinitism can acquire global coherence across many perspectives, sciences and lived experiences.', color: 'linear-gradient(145deg, #2e4d58, #10171a 74%)'
   },
   {
@@ -127,15 +130,15 @@ const books = [
     description: 'Four experiments from the Achilles research project on what AI may reveal about forgiveness, human nature, meaning and justice. The results are surprising and meme-like in their density: ideas worth exploring, whose scientific and social verification is itself a demanding research challenge.', color: 'linear-gradient(145deg, #44354b, #151219 74%)'
   },
   {
-    id: 'THE_CIVILIZED_MIND', category: 'Outfinist Philosophy', title: 'The Civilized Mind', subtitle: 'Truth, Power, and the Survival of Plural Democracies in the Age of Extremes', position: 2,
+    id: 'THE_CIVILIZED_MIND', category: 'Outfinist Philosophy', title: 'The Civilized Mind', subtitle: 'Truth, Power, and the Survival of Plural Democracies in the Age of Extremes', position: 99,
     description: 'An invitation to cultivate a way of thinking that seeks truth without cruelty, exercises power without arrogance and meets the future with enough ambition to build—and enough humility to learn.', color: 'linear-gradient(145deg, #28354e, #11131b 74%)'
   },
   {
-    id: 'Aspirin_Viagra_and_Coffins', category: 'Outfinist Philosophy', title: 'Aspirin, Viagra, and Coffins', subtitle: 'The Impolite Manual of Inevitable Opportunities',
+    id: 'Aspirin_Viagra_and_Coffins', category: 'Miscellaneous', title: 'Aspirin, Viagra, and Coffins', subtitle: 'The Impolite Manual of Inevitable Opportunities',
     description: 'An explicit experiment in research and writing with artificial intelligence, examining modern suffering as human tragedy, research object and market signal—without confusing entrepreneurial opportunity with moral permission.', color: 'linear-gradient(145deg, #582f39, #1a1215 74%)'
   },
   {
-    id: 'THE_NECESSARY_MASK', category: 'Outfinist Philosophy', title: 'The Necessary Mask', subtitle: 'The Justification of Hypocrisy in a Finite World',
+    id: 'THE_NECESSARY_MASK', category: 'Outfinist Philosophy', title: 'The Necessary Mask', subtitle: 'The Justification of Hypocrisy in a Finite World', position: 1,
     fileId: 'The_Necessary_Mask',
     description: 'A constructive argument about hypocrisy, moral psychology, unequal power and institutional life. It asks which adaptive function a hypocrisy performs, and how its deception or transferred harm can be reduced.', color: 'linear-gradient(145deg, #3d4d39, #131713 74%)'
   },
@@ -145,11 +148,12 @@ const books = [
   },
   {
     id: 'The_Frontier_Is_Correction', category: 'Executable Science', title: 'The Frontier Is Correction', subtitle: 'Novelty, Executable Science, and the Human-AI Research System',
+    staticUrl: './books/the-frontier-is-correction/index.html',
     description: 'Candidate science is becoming abundant before justification becomes scalable. This book argues that the real frontier is correction: the quality-adjusted rate at which claims acquire support, are narrowed by better explanations, or are rejected before they consume scarce attention.', color: 'linear-gradient(145deg, #263d52, #10161d 74%)'
   }
 ];
 
-const collectionName = 'AI Generated Books';
+const collectionName = 'Axiologic Research Editions';
 const assetBase = './downloads/assets/';
 const pdfBase = './downloads/books/';
 const escapeHtml = (value) => value.replace(/[&<>"']/g, (character) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' })[character]);
@@ -171,12 +175,12 @@ function locateCover(image) {
 }
 
 function renderListing() {
-  ['Technology', 'Literature', 'Outfinist Philosophy', 'Executable Science', 'Miscellaneous'].forEach(category => {
+  ['Outfinist Philosophy', 'Literature', 'Miscellaneous', 'Executable Science', 'Technology'].forEach(category => {
     const grid = document.getElementById(`${category.toLowerCase().replaceAll(' ', '-')}-grid`);
     if (!grid) return;
     grid.innerHTML = books.filter(book => book.category === category).sort((a, b) => (a.position || Number.MAX_SAFE_INTEGER) - (b.position || Number.MAX_SAFE_INTEGER)).map(book => `
       <article class="book-card">
-        <a href="./book.html?book=${encodeURIComponent(book.id)}" aria-label="View ${escapeHtml(book.title)}">${cover(book)}</a>
+        <a href="${book.staticUrl || `./books/${book.id.toLowerCase().replaceAll('_', '-')}/index.html`}" aria-label="View ${escapeHtml(book.title)}">${cover(book)}</a>
       </article>`).join('');
   });
   document.querySelectorAll('[data-cover]').forEach(locateCover);
