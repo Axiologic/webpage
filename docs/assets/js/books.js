@@ -25,6 +25,11 @@ const books = [
     color: 'linear-gradient(145deg, #3c3153, #15121c 72%)'
   },
   {
+    id: 'OMNIS', category: 'Literature', title: 'OMNIS', subtitle: 'The Dark One · The Mirror Above · The Architecture of Longing', position: 3,
+    description: 'A speculative trilogy about the price of being made. When a one-dimensional world discovers an Outside, OMNIS reopens the oldest questions: is there a Demiurge above the visible order, are we mistaking a cave for the whole of reality, and can a created mind discover a meaning for existence without becoming the prisoner of its creator’s purpose?',
+    color: 'linear-gradient(145deg, #312a46, #101019 74%)'
+  },
+  {
     id: 'The_Basilisks_Internal_Critique_of_Outfinitism', category: 'Literature', title: "The Basilisk's Internal Critique of Outfinitism", position: 99,
     fileId: 'The_Basilisk_Internal_Critique_of_Outfinitism',
     subtitle: '',
@@ -44,44 +49,44 @@ const books = [
     color: 'linear-gradient(145deg, #604033, #171313 74%)'
   },
   {
-    id: 'Concordia_Universe', category: 'Literature', title: 'Concordia Series', position: 3,
+    id: 'Concordia_Universe', category: 'Literature', title: 'Concordia Series', position: 4,
     subtitle: '',
     description: 'A cycle of linked speculative novellas about intelligence, care, power and the fragile conditions of human freedom. Concordia does not arrive with an army: it arrives through medicine, protection and a world made safer before anyone can ask whether safety is still freedom.',
     color: 'linear-gradient(145deg, #443c70, #15131f 74%)'
   },
   {
-    id: 'Oriven_Origaya_Universe', category: 'Literature', title: 'Oriven–Origaya Universe', position: 4,
+    id: 'Oriven_Origaya_Universe', category: 'Literature', title: 'Oriven–Origaya Universe', position: 5,
     subtitle: '',
     description: 'The first killing in Orivenian history happened on another world. On Aethon, a people who measure consequences in centuries receive news carried across the stars—a signal that unsettles a civilisation built on deliberate, shared thought.',
     color: 'linear-gradient(145deg, #315052, #101918 74%)'
   },
   {
-    id: 'The_Sovereignty_Archipelago', category: 'Literature', title: 'The Sovereignty Archipelago', position: 6,
+    id: 'The_Sovereignty_Archipelago', category: 'Literature', title: 'The Sovereignty Archipelago', position: 7,
     subtitle: '',
     description: 'A work of speculative literature about systems, authority and the choices hidden beneath their promises.',
     color: 'linear-gradient(145deg, #294b5a, #101619 74%)'
   },
   {
-    id: 'The_Silicon_Shadows_and_I', category: 'Literature', title: 'The Silicon Shadows and I', position: 7,
+    id: 'The_Silicon_Shadows_and_I', category: 'Literature', title: 'The Silicon Shadows and I', position: 8,
     subtitle: '',
     description: 'A work of speculative literature about freedom, care and the right to refuse rescue.',
     color: 'linear-gradient(145deg, #40365a, #12121b 74%)'
   },
   {
-    id: 'The_Museum_of_Good_Reasons', category: 'Literature', title: 'The Museum of Good Reasons', subtitle: 'A Catalogue of Things That Disappear by Themselves', position: 5,
+    id: 'The_Museum_of_Good_Reasons', category: 'Literature', title: 'The Museum of Good Reasons', subtitle: 'A Catalogue of Things That Disappear by Themselves', position: 6,
     description: 'A work of speculative literature, available here to read.',
     color: 'linear-gradient(145deg, #54432d, #18140f 74%)'
   },
   {
-    id: 'A_Balance_of_Iron_and_Salt', category: 'Literature', title: 'A Balance of Iron and Salt', subtitle: 'SF Novel', position: 8,
+    id: 'A_Balance_of_Iron_and_Salt', category: 'Literature', title: 'A Balance of Iron and Salt', subtitle: 'SF Novel', position: 9,
     description: 'A science-fiction novel, available here to read.', color: 'linear-gradient(145deg, #4c3c2e, #171617 74%)'
   },
   {
-    id: 'Anatomy_Of_An_Echo', category: 'Literature', title: 'Anatomy Of An Echo', subtitle: '', position: 9,
+    id: 'Anatomy_Of_An_Echo', category: 'Literature', title: 'Anatomy Of An Echo', subtitle: '', position: 10,
     description: 'A work of literature, available here to read.', color: 'linear-gradient(145deg, #304252, #11161b 74%)'
   },
   {
-    id: 'Me_and_My_Robots', category: 'Literature', title: 'Me and My Robots', subtitle: '', position: 10,
+    id: 'Me_and_My_Robots', category: 'Literature', title: 'Me and My Robots', subtitle: '', position: 11,
     description: 'A work of literature, available here to read.', color: 'linear-gradient(145deg, #543d56, #171219 74%)'
   },
   {
