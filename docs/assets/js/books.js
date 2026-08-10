@@ -127,7 +127,7 @@ const books = [
     description: 'A creative philosophical experiment using AI-generated theoretical models and simulations to explore nobility and possible forms of neo-feudalism. Rather than a settled scientific claim, it is part of a wider effort to test how AI might contribute to executable science—and to ask whether, if new hierarchies are coming, we can still choose their form.', color: 'linear-gradient(145deg, #55432d, #18140f 74%)'
   },
   {
-    id: 'Cones_of_Meaning', category: 'Executable Science', title: 'Cones of Meaning', subtitle: '', position: 1,
+    id: 'Cones_of_Meaning', category: 'Executable Science', title: 'Cones of Meaning', subtitle: '', position: 3,
     description: 'A book between technology and contemporary science, proposing that the way LLMs are built may contain more than simple statistics can explain. Through the geometry of cosine-distance cones, it develops intuitions about AI alignment and about why Outfinitism can acquire global coherence across many perspectives, sciences and lived experiences.', color: 'linear-gradient(145deg, #2e4d58, #10171a 74%)'
   },
   {
@@ -178,11 +178,11 @@ const books = [
     description: 'A constructive argument about hypocrisy, moral psychology, unequal power and institutional life. It asks which adaptive function a hypocrisy performs, and how its deception or transferred harm can be reduced.', color: 'linear-gradient(145deg, #3d4d39, #131713 74%)'
   },
   {
-    id: 'Executable_Natural_Language', category: 'Executable Science', title: 'Executable Natural Language', subtitle: '',
+    id: 'Executable_Natural_Language', category: 'Executable Science', title: 'Executable Natural Language', subtitle: '', position: 2,
     description: 'A survey and proposal for auditable chains from source language to grounded symbols, executable formal objects and verified results. It studies how language models and symbolic systems can work together without turning generated explanation into uncheckable authority.', color: 'linear-gradient(145deg, #5a4030, #171519 74%)'
   },
   {
-    id: 'The_Frontier_Is_Correction', category: 'Executable Science', title: 'The Frontier Is Correction', subtitle: 'Novelty, Executable Science, and the Human-AI Research System',
+    id: 'The_Frontier_Is_Correction', category: 'Executable Science', title: 'The Frontier Is Correction', subtitle: 'Novelty, Executable Science, and the Human-AI Research System', position: 1,
     staticUrl: './books/the-frontier-is-correction/index.html',
     description: 'Candidate science is becoming abundant before justification becomes scalable. This book argues that the real frontier is correction: the quality-adjusted rate at which claims acquire support, are narrowed by better explanations, or are rejected before they consume scarce attention.', color: 'linear-gradient(145deg, #263d52, #10161d 74%)'
   }
@@ -228,7 +228,7 @@ function renderDetail() {
   const book = books.find(item => item.id === id);
   if (!book) { window.location.replace('./books.html'); return; }
   document.title = `${book.title} — ${collectionName}`;
-  detail.innerHTML = `<a class="book-cover-link" href="${pdfBase}${book.fileId || book.id}.pdf" target="_blank" rel="noreferrer" aria-label="Read ${escapeHtml(book.title)} in a new tab">${cover(book, 'detail-cover')}</a><div class="book-detail-copy"><span class="eyebrow">${book.category} · ${collectionName}</span><h1>${escapeHtml(book.title)}</h1>${book.subtitle ? `<p class="book-subtitle">${escapeHtml(book.subtitle)}</p>` : ''}<p>${escapeHtml(book.description)}</p><div class="book-actions"><a class="btn primary" href="${pdfBase}${book.fileId || book.id}.pdf" target="_blank" rel="noreferrer">Read here <span>→</span></a></div></div>`;
+  detail.innerHTML = `<a class="book-cover-link" href="${pdfBase}${book.fileId || book.id}.pdf" target="_blank" rel="noreferrer" aria-label="Read ${escapeHtml(book.title)} in a new tab">${cover(book, 'detail-cover')}</a><div class="book-detail-copy"><span class="eyebrow">${book.category} · ${collectionName}</span><h1>${escapeHtml(book.title)}</h1>${book.subtitle ? `<p class="book-subtitle">${escapeHtml(book.subtitle)}</p>` : ''}<p>${escapeHtml(book.description)}</p><div class="book-actions"><a class="btn primary" href="${pdfBase}${book.fileId || book.id}.pdf" target="_blank" rel="noreferrer">Read online <span>→</span></a><a class="btn ghost" href="${pdfBase}${book.fileId || book.id}.pdf" download>Download PDF</a></div></div>`;
   detail.querySelectorAll('[data-cover]').forEach(locateCover);
 }
 

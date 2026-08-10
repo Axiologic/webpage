@@ -757,7 +757,7 @@ p {
 /* These covers are exported on a landscape canvas, with the portrait cover on its left side. */
 .book-cover img:is([data-cover="Too_Convinced_to_Stop"], [data-cover="The_Zodiac_on_Trial"], [data-cover="The_Thousand_Handed_Devil"], [data-cover="The_Right_to_Help"], [data-cover="Revocable_Nobility"], [data-cover="Cones_of_Meaning"], [data-cover="An_Autopsy_of_a_Digital_Mind"], [data-cover="OMNIS"]) { width: 200%; max-width: none; height: 100%; inset: 0 auto auto 0; object-fit: fill; }
 /* New covers use the same landscape export: the portrait artwork occupies its left half. */
-.book-cover img:is([data-cover="The_Ultimate_Sense_of_Life"], [data-cover="The_Tao_of_OMIS"], [data-cover="The_Great_Decoupling"], [data-cover="The_Fragmented_Future"], [data-cover="Autopsy_of_Future_Emotions"], [data-cover="The_Schizoid_and_the_Oracle_RO"]) { width: 200%; max-width: none; height: 100%; inset: 0 auto auto 0; object-fit: fill; }
+.book-cover img:is([data-cover="The_Ultimate_Sense_of_Life"], [data-cover="The_Tao_of_OMIS"], [data-cover="The_Great_Decoupling"], [data-cover="The_Fragmented_Future"], [data-cover="Autopsy_of_Future_Emotions"], [data-cover="The_Schizoid_and_the_Oracle_RO"], [data-cover="The_Frontier_Is_Correction"]) { width: 200%; max-width: none; height: 100%; inset: 0 auto auto 0; object-fit: fill; }
 /* Their transparent export margins are not identical, so crop to each actual portrait boundary. */
 .book-cover img[data-cover="The_Tao_of_OMIS"] { width: 210.3%; height: 109.3%; inset: -5.6% auto auto 0; }
 .book-cover img[data-cover="The_Great_Decoupling"] { width: 209%; height: 104.4%; inset: -.9% auto auto 0; }
