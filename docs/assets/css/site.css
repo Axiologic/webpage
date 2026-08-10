@@ -756,6 +756,12 @@ p {
 .book-cover img[data-cover="Memes_for_2030"] { width: auto; max-width: none; height: 142%; inset: -1.3% auto auto -1.2%; }
 /* These covers are exported on a landscape canvas, with the portrait cover on its left side. */
 .book-cover img:is([data-cover="Too_Convinced_to_Stop"], [data-cover="The_Zodiac_on_Trial"], [data-cover="The_Thousand_Handed_Devil"], [data-cover="The_Right_to_Help"], [data-cover="Revocable_Nobility"], [data-cover="Cones_of_Meaning"], [data-cover="An_Autopsy_of_a_Digital_Mind"], [data-cover="OMNIS"]) { width: 200%; max-width: none; height: 100%; inset: 0 auto auto 0; object-fit: fill; }
+/* New covers use the same landscape export: the portrait artwork occupies its left half. */
+.book-cover img:is([data-cover="The_Ultimate_Sense_of_Life"], [data-cover="The_Tao_of_OMIS"], [data-cover="The_Great_Decoupling"], [data-cover="The_Fragmented_Future"], [data-cover="Autopsy_of_Future_Emotions"], [data-cover="The_Schizoid_and_the_Oracle_RO"]) { width: 200%; max-width: none; height: 100%; inset: 0 auto auto 0; object-fit: fill; }
+/* Their transparent export margins are not identical, so crop to each actual portrait boundary. */
+.book-cover img[data-cover="The_Tao_of_OMIS"] { width: 210.3%; height: 109.3%; inset: -5.6% auto auto 0; }
+.book-cover img[data-cover="The_Great_Decoupling"] { width: 209%; height: 104.4%; inset: -.9% auto auto 0; }
+.book-cover img[data-cover="The_Schizoid_and_the_Oracle_RO"] { width: 210.3%; height: 109.3%; inset: -5.6% auto auto 0; }
 .book-cover img[data-cover="The_Right_to_Help"] { height: 107%; }
 .book-meta { display: flex; justify-content: space-between; gap: 10px; color: var(--muted); font-size: 10px; letter-spacing: .13em; text-transform: uppercase; }
 .book-card h3 { margin: -7px 0 0; font-size: 19px; line-height: 1.15; }
@@ -779,6 +785,11 @@ p {
 .edition-subtitle { margin: 12px 0 18px; color: var(--accent-2); font-size: 19px; }
 .edition-why { font-size: clamp(20px, 2.3vw, 28px); line-height: 1.35; color: #f0f2f7; max-width: 32ch; }
 .edition-actions { margin: 26px 0 18px; display: flex; flex-wrap: wrap; gap: 12px; }
+.language-picker { position: relative; }
+.language-picker summary { list-style: none; cursor: pointer; }
+.language-picker summary::-webkit-details-marker { display: none; }
+.language-picker[open] summary { margin-bottom: 8px; }
+.language-picker a { color: var(--text); font-size: 14px; }
 .edition-facts { display: flex; flex-wrap: wrap; gap: 8px 18px; color: var(--muted); font-size: 13px; }
 .edition-content { display: grid; grid-template-columns: minmax(0, 1fr) minmax(230px, 300px); gap: clamp(28px, 5vw, 70px); padding: 36px 0 72px; border-top: 1px solid var(--border); }
 .edition-reading { max-width: 760px; }

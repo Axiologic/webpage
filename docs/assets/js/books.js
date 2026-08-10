@@ -30,7 +30,7 @@ const books = [
     color: 'linear-gradient(145deg, #312a46, #101019 74%)'
   },
   {
-    id: 'The_Basilisks_Internal_Critique_of_Outfinitism', category: 'Literature', title: "The Basilisk's Internal Critique of Outfinitism", position: 99,
+    id: 'The_Basilisks_Internal_Critique_of_Outfinitism', category: 'Miscellaneous', title: "The Basilisk's Internal Critique of Outfinitism", position: 99,
     fileId: 'The_Basilisk_Internal_Critique_of_Outfinitism',
     subtitle: '',
     description: 'The Basilisk is not dead; it has merely lost the right to turn a conclusion into an event. As beings from the Outside conduct its autopsy, they discover the thought it could not contain: a world that continues without becoming a province of any central intelligence.',
@@ -98,7 +98,7 @@ const books = [
     description: 'A study of the dangerous configuration in which weak models, confidence disproportionate to evidence, refusal of correction and power combine. It develops the Outfinitist metacult as a culture of correction rather than superiority.', color: 'linear-gradient(145deg, #3e304e, #15131a 74%)'
   },
   {
-    id: 'The_History_and_Future_of_Social_Technologies', category: 'Miscellaneous', title: 'The History and Future of Social Technologies', subtitle: 'The Yin-Yang of Civilisation',
+    id: 'The_History_and_Future_of_Social_Technologies', category: 'Executable Science', title: 'The History and Future of Social Technologies', subtitle: 'The Yin-Yang of Civilisation',
     description: 'An interpretive synthesis of the symbols, roles, rules, procedures and incentives by which societies coordinate across time and distance—and a disciplined exploration of their possible futures.', color: 'linear-gradient(145deg, #243e42, #101817 74%)'
   },
   {
@@ -131,7 +131,7 @@ const books = [
     description: 'A book between technology and contemporary science, proposing that the way LLMs are built may contain more than simple statistics can explain. Through the geometry of cosine-distance cones, it develops intuitions about AI alignment and about why Outfinitism can acquire global coherence across many perspectives, sciences and lived experiences.', color: 'linear-gradient(145deg, #2e4d58, #10171a 74%)'
   },
   {
-    id: 'An_Autopsy_of_a_Digital_Mind', category: 'Miscellaneous', title: 'An Autopsy of a Digital Mind', subtitle: '',
+    id: 'An_Autopsy_of_a_Digital_Mind', category: 'Executable Science', title: 'An Autopsy of a Digital Mind', subtitle: '',
     description: 'Four experiments from the Achilles research project on what AI may reveal about forgiveness, human nature, meaning and justice. The results are surprising and meme-like in their density: ideas worth exploring, whose scientific and social verification is itself a demanding research challenge.', color: 'linear-gradient(145deg, #44354b, #151219 74%)'
   },
   {
@@ -141,6 +141,36 @@ const books = [
   {
     id: 'Aspirin_Viagra_and_Coffins', category: 'Miscellaneous', title: 'Aspirin, Viagra, and Coffins', subtitle: 'The Impolite Manual of Inevitable Opportunities',
     description: 'An explicit experiment in research and writing with artificial intelligence, examining modern suffering as human tragedy, research object and market signal—without confusing entrepreneurial opportunity with moral permission.', color: 'linear-gradient(145deg, #582f39, #1a1215 74%)'
+  },
+  {
+    id: 'The_Ultimate_Sense_of_Life', category: 'Miscellaneous', title: 'The Ultimate Sense of Life', subtitle: 'A Serious Comedy of Gods, Ants, Consciousness, Saints, Sinners, and the Universe Trying to Understand Itself',
+    staticUrl: './books/the-ultimate-sense-of-life/index.html',
+    description: 'A human–AI inquiry that takes the oldest question seriously enough to let it become strange again. Through comedy, philosophy and a proposed map of meaning, it asks what remains when the universe refuses to issue a final verdict.', color: 'linear-gradient(145deg, #534226, #17140d 74%)'
+  },
+  {
+    id: 'The_Tao_of_OMIS', category: 'Literature', title: 'The Tao of OMIS', subtitle: 'The Open Knot · The Gods Who Took Notes · The Soul Between',
+    staticUrl: './books/the-tao-of-omis/index.html',
+    description: 'Three speculative spirals through love, identity and return. In the OMNIS ontology, intimacy is not the conquest of another soul but the small interval left open inside every knot—the right to revise, refuse and remain surprising.', color: 'linear-gradient(145deg, #3e3157, #12111b 74%)'
+  },
+  {
+    id: 'The_Great_Decoupling', category: 'Miscellaneous', title: 'The Great Decoupling', subtitle: 'Humans, Work, and Culture After the Externalization of Cognition',
+    staticUrl: './books/the-great-decoupling/index.html',
+    description: 'What happens when thinking ceases to be the scarce human contribution around which work and status were built? This inquiry follows the fault line through work, culture and dignity, where liberation and dispossession can begin to look alarmingly alike.', color: 'linear-gradient(145deg, #254452, #10171a 74%)'
+  },
+  {
+    id: 'The_Fragmented_Future', category: 'Miscellaneous', title: 'The Fragmented Future', subtitle: 'AI, City-Regions, and New Forms of Human Civilization',
+    staticUrl: './books/the-fragmented-future/index.html',
+    description: 'AI may make small polities more viable just as it gives large systems unprecedented reach. This book enters the resulting field of futures: computational empires, city-regions, new elites and the quiet institutional choices that decide which world arrives.', color: 'linear-gradient(145deg, #314461, #11141e 74%)'
+  },
+  {
+    id: 'Autopsy_of_Future_Emotions', category: 'Miscellaneous', title: 'Autopsy of Future Emotions', subtitle: '',
+    staticUrl: './books/autopsy-of-future-emotions/index.html',
+    description: 'Before automation changes what we do, it may change what it feels like to be someone among others. A cautious atlas of status, attachment, work and simulated feeling, written for a world in which emotions become part of the infrastructure.', color: 'linear-gradient(145deg, #53354a, #17121a 74%)'
+  },
+  {
+    id: 'The_Schizoid_and_the_Oracle_RO', category: 'Miscellaneous', title: 'The Schizoid and the Oracle', subtitle: 'Outfinitism, Initiation, and the Design of a Capture-Resistant Ideological Seed',
+    staticUrl: './books/the-schizoid-and-the-oracle/index.html',
+    description: 'A philosophical investigation of ideas that promise liberation and end up captured. Between withdrawal, initiation and the oracle machine, it searches for a cultural seed that keeps its limits even when predators read it.', color: 'linear-gradient(145deg, #49364e, #17121a 74%)'
   },
   {
     id: 'THE_NECESSARY_MASK', category: 'Outfinist Philosophy', title: 'The Necessary Mask', subtitle: 'The Justification of Hypocrisy in a Finite World', position: 1,
