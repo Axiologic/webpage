@@ -20,17 +20,17 @@ const books = [
     description: 'An examination of personal data, algorithmic power and the constitutional questions that emerge when the public sphere is shaped by private infrastructures.', color: 'linear-gradient(145deg, #3f4c4c, #111617 74%)'
   },
   {
-    id: 'The_Founder_Lottery', category: 'Outfinitist Philosophy', title: 'The Founder Lottery', subtitle: 'Why We Mistake Historical Accidents for Merit', position: 5,
+    id: 'The_Founder_Lottery', category: 'Miscellaneous', title: 'The Founder Lottery', subtitle: 'Why We Mistake Historical Accidents for Merit', position: 5,
     staticUrl: './books/the-founder-lottery/index.html',
     description: 'A challenge to the stories through which historical luck becomes merit, authority and inherited legitimacy—and a search for more accountable alternatives.', color: 'linear-gradient(145deg, #51342c, #1a1110 74%)'
   },
   {
-    id: 'Decentralised_Brands', category: 'Outfinitist Philosophy', title: 'Decentralised Brands', subtitle: 'How Communities Can Own What They Build', position: 6,
+    id: 'Decentralised_Brands', category: 'Miscellaneous', title: 'Decentralised Brands', subtitle: 'How Communities Can Own What They Build', position: 6,
     staticUrl: './books/decentralised-brands/index.html',
     description: 'A study of the conditions under which communities can share identity, value and governance without placing their common work beyond revision.', color: 'linear-gradient(145deg, #424743, #131615 74%)'
   },
   {
-    id: 'Investing_in_an_AI_Dominated_Economy', category: 'Outfinitist Philosophy', title: 'Investing in an AI-Dominated Economy', subtitle: 'The Outfinity Investment Thesis', position: 7,
+    id: 'Investing_in_an_AI_Dominated_Economy', category: 'Miscellaneous', title: 'Investing in an AI-Dominated Economy', subtitle: 'The Outfinity Investment Thesis', position: 7,
     staticUrl: './books/investing-in-an-ai-dominated-economy/index.html',
     description: 'A practical inquiry into investment, value creation and strategic judgment in an economy reshaped by artificial intelligence.', color: 'linear-gradient(145deg, #4c4130, #17140f 74%)'
   },
