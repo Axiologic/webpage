@@ -738,7 +738,7 @@ p {
 .category-head > span { color: var(--accent-2); font-size: 12px; letter-spacing: .1em; }
 .category-head h2 { margin: 0; font-size: clamp(28px, 4vw, 42px); letter-spacing: -.045em; }
 .category-head p { justify-self: end; max-width: none; font-size: 14px; text-align: right; color: var(--muted); white-space: nowrap; }
-.books-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 28px 14px; padding-top: 28px; }
+.books-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 26px 12px; padding-top: 28px; }
 .book-card { display: grid; gap: 15px; align-content: start; }
 .book-cover { position: relative; aspect-ratio: .7; overflow: hidden; border-radius: 4px 9px 9px 4px; background: var(--cover, linear-gradient(145deg,#1c3833,#0b1113)); border: 1px solid rgba(255,255,255,.12); box-shadow: 15px 22px 28px rgba(0,0,0,.32); }
 .book-cover img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; image-rendering: auto; opacity: 0; transition: opacity .2s ease; }
@@ -758,6 +758,11 @@ p {
 .book-cover img:is([data-cover="Too_Convinced_to_Stop"], [data-cover="The_Zodiac_on_Trial"], [data-cover="The_Thousand_Handed_Devil"], [data-cover="The_Right_to_Help"], [data-cover="Revocable_Nobility"], [data-cover="Cones_of_Meaning"], [data-cover="An_Autopsy_of_a_Digital_Mind"], [data-cover="OMNIS"]) { width: 200%; max-width: none; height: 100%; inset: 0 auto auto 0; object-fit: fill; }
 /* New covers use the same landscape export: the portrait artwork occupies its left half. */
 .book-cover img:is([data-cover="The_Ultimate_Sense_of_Life"], [data-cover="The_Tao_of_OMIS"], [data-cover="The_Great_Decoupling"], [data-cover="The_Fragmented_Future"], [data-cover="Autopsy_of_Future_Emotions"], [data-cover="The_Schizoid_and_the_Oracle_RO"], [data-cover="The_Frontier_Is_Correction"]) { width: 200%; max-width: none; height: 100%; inset: 0 auto auto 0; object-fit: fill; }
+/* The Outfinitist Philosophy additions use the same landscape export. */
+.book-cover img:is([data-cover="Outfinitism_Meta_Rationality"], [data-cover="Metacult"], [data-cover="THE_LICENCE_AND_THE_SHARED_NAME"], [data-cover="The_Captured_Internet"], [data-cover="The_Founder_Lottery"], [data-cover="Decentralised_Brands"], [data-cover="Investing_in_an_AI_Dominated_Economy"]) { width: 200%; max-width: none; height: 100%; inset: 0 auto auto 0; object-fit: fill; }
+/* These two files have a much narrower portrait cover on a transparent landscape canvas. */
+.book-cover img[data-cover="THE_LICENCE_AND_THE_SHARED_NAME"] { width: auto; height: 164%; inset: 0 auto auto 0; object-fit: contain; }
+.book-cover img[data-cover="The_Captured_Internet"] { width: auto; height: 140%; inset: 0 auto auto 0; object-fit: contain; }
 /* Their transparent export margins are not identical, so crop to each actual portrait boundary. */
 .book-cover img[data-cover="The_Tao_of_OMIS"] { width: 210.3%; height: 109.3%; inset: -5.6% auto auto 0; }
 .book-cover img[data-cover="The_Great_Decoupling"] { width: 209%; height: 104.4%; inset: -.9% auto auto 0; }
@@ -822,6 +827,7 @@ p {
 @media (max-width: 760px) { .edition-hero, .edition-content { grid-template-columns: 1fr; } .edition-hero { padding-top: 36px; } .edition-cover { max-width: 250px; } .edition-content { padding-top: 28px; } }
 .coming-soon { display: inline-flex; align-items: center; min-height: 46px; padding: 0 17px; border: 1px solid rgba(255,255,255,.14); border-radius: 999px; color: var(--muted); font-size: 13px; letter-spacing: .06em; text-transform: uppercase; }
 
+@media (max-width: 1280px) { .books-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); } }
 @media (max-width: 1100px) { .books-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 @media (max-width: 900px) { .books-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 

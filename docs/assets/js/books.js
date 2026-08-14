@@ -1,5 +1,40 @@
 const books = [
   {
+    id: 'Outfinitism_Meta_Rationality', category: 'Outfinitist Philosophy', title: 'Outfinitism', subtitle: 'Meta-Rationality and the Limits of Finite Human Reason', position: 1,
+    staticUrl: './books/outfinitism-meta-rationality/index.html',
+    description: 'An introduction to Outfinitism as a practice of reasoning that keeps human models, institutions and ambitions open to criticism, revision and further possibility.', color: 'linear-gradient(145deg, #49433b, #171613 74%)'
+  },
+  {
+    id: 'Metacult', category: 'Outfinitist Philosophy', title: 'Metacult', subtitle: 'Modernizing Humanity’s Oldest Social Technology: How to Build Collective Power Without Crushing the Individual', position: 2,
+    staticUrl: './books/metacult/index.html',
+    description: 'An inquiry into collective power, shared meaning and the institutional safeguards that let a culture coordinate without demanding the surrender of the individual.', color: 'linear-gradient(145deg, #3c3932, #121513 74%)'
+  },
+  {
+    id: 'THE_LICENCE_AND_THE_SHARED_NAME', category: 'Technology', title: 'The Licence and the Shared Name', subtitle: 'How to Give an Idea Away Without Letting It Be Captured', position: 5,
+    staticUrl: './books/the-licence-and-the-shared-name/index.html',
+    description: 'A proposal for sharing an idea while preserving its conditions of openness, correction and resistance to capture by an owner, faction or institution.', color: 'linear-gradient(145deg, #4a3d2d, #171411 74%)'
+  },
+  {
+    id: 'The_Captured_Internet', category: 'Technology', title: 'The Captured Internet', subtitle: 'Personal Data, Algorithmic Power, and the Coming Constitutional Crisis', position: 6,
+    staticUrl: './books/the-captured-internet/index.html',
+    description: 'An examination of personal data, algorithmic power and the constitutional questions that emerge when the public sphere is shaped by private infrastructures.', color: 'linear-gradient(145deg, #3f4c4c, #111617 74%)'
+  },
+  {
+    id: 'The_Founder_Lottery', category: 'Outfinitist Philosophy', title: 'The Founder Lottery', subtitle: 'Why We Mistake Historical Accidents for Merit', position: 5,
+    staticUrl: './books/the-founder-lottery/index.html',
+    description: 'A challenge to the stories through which historical luck becomes merit, authority and inherited legitimacy—and a search for more accountable alternatives.', color: 'linear-gradient(145deg, #51342c, #1a1110 74%)'
+  },
+  {
+    id: 'Decentralised_Brands', category: 'Outfinitist Philosophy', title: 'Decentralised Brands', subtitle: 'How Communities Can Own What They Build', position: 6,
+    staticUrl: './books/decentralised-brands/index.html',
+    description: 'A study of the conditions under which communities can share identity, value and governance without placing their common work beyond revision.', color: 'linear-gradient(145deg, #424743, #131615 74%)'
+  },
+  {
+    id: 'Investing_in_an_AI_Dominated_Economy', category: 'Outfinitist Philosophy', title: 'Investing in an AI-Dominated Economy', subtitle: 'The Outfinity Investment Thesis', position: 7,
+    staticUrl: './books/investing-in-an-ai-dominated-economy/index.html',
+    description: 'A practical inquiry into investment, value creation and strategic judgment in an economy reshaped by artificial intelligence.', color: 'linear-gradient(145deg, #4c4130, #17140f 74%)'
+  },
+  {
     id: 'AssistOS', category: 'Technology', title: 'AssistOS',
     staticUrl: './books/assistos/index.html',
     subtitle: '',
@@ -90,11 +125,11 @@ const books = [
     description: 'A work of literature, available here to read.', color: 'linear-gradient(145deg, #543d56, #171219 74%)'
   },
   {
-    id: 'Holding_the_Dirty_Thing_by_the_Clean_Side', category: 'Outfinist Philosophy', title: 'Holding the Dirty Thing by the Clean Side', subtitle: 'A History of Strategies for Social Success and a Search for Theoretical Legitimacy',
+    id: 'Holding_the_Dirty_Thing_by_the_Clean_Side', category: 'Outfinitist Philosophy', title: 'Holding the Dirty Thing by the Clean Side', subtitle: 'A History of Strategies for Social Success and a Search for Theoretical Legitimacy',
     description: 'An inquiry into the ways societies persuade people to carry a cost while calling it duty, order, opportunity or virtue—and a search for social technologies that make burden, voice, exit and accountability more inspectable.', color: 'linear-gradient(145deg, #4e332a, #181312 74%)'
   },
   {
-    id: 'ANTI_IDIOCRACY', category: 'Outfinist Philosophy', title: 'Anti-Idiocracy', subtitle: 'The Outfinitist Metacult Investigation',
+    id: 'ANTI_IDIOCRACY', category: 'Outfinitist Philosophy', title: 'Anti-Idiocracy', subtitle: 'The Outfinitist Metacult Investigation',
     description: 'A study of the dangerous configuration in which weak models, confidence disproportionate to evidence, refusal of correction and power combine. It develops the Outfinitist metacult as a culture of correction rather than superiority.', color: 'linear-gradient(145deg, #3e304e, #15131a 74%)'
   },
   {
@@ -114,8 +149,8 @@ const books = [
     description: 'An experiment with AI that assembles arguments for treating the zodiac as more than superstition. It is written for readers drawn to destiny and astrology, but also for sceptics willing to practise a more open-minded encounter with beliefs they do not share.', color: 'linear-gradient(145deg, #403852, #12131b 74%)'
   },
   {
-    id: 'The_Thousand_Handed_Devil', category: 'Outfinist Philosophy', title: 'The Thousand-Handed Devil', subtitle: '',
-    description: 'A search for a new metaphor for modern evil. The book asks whether the moral responsibilities of AI must expand the idea of absolute evil beyond violence and lying, toward the immense and often unmeasurable complexity of the systems that shape human lives. It is compatible with Outfinist philosophy without relying on its terminology.', color: 'linear-gradient(145deg, #53352e, #191211 74%)'
+    id: 'The_Thousand_Handed_Devil', category: 'Outfinitist Philosophy', title: 'The Thousand-Handed Devil', subtitle: '',
+    description: 'A search for a new metaphor for modern evil. The book asks whether the moral responsibilities of AI must expand the idea of absolute evil beyond violence and lying, toward the immense and often unmeasurable complexity of the systems that shape human lives. It is compatible with Outfinitist philosophy without relying on its terminology.', color: 'linear-gradient(145deg, #53352e, #191211 74%)'
   },
   {
     id: 'The_Right_to_Help', category: 'Miscellaneous', title: 'The Right to Help', subtitle: '', position: 1,
@@ -123,7 +158,7 @@ const books = [
     description: 'A human confession voiced through an AI, and a courtroom for the good that may sometimes be done by force. This reflective book examines care, responsibility and the troubling possibilities that can hide behind the language of doing good.', color: 'linear-gradient(145deg, #294b4b, #101817 74%)'
   },
   {
-    id: 'Revocable_Nobility', category: 'Outfinist Philosophy', title: 'Revocable Nobility', subtitle: '',
+    id: 'Revocable_Nobility', category: 'Outfinitist Philosophy', title: 'Revocable Nobility', subtitle: '',
     description: 'A creative philosophical experiment using AI-generated theoretical models and simulations to explore nobility and possible forms of neo-feudalism. Rather than a settled scientific claim, it is part of a wider effort to test how AI might contribute to executable science—and to ask whether, if new hierarchies are coming, we can still choose their form.', color: 'linear-gradient(145deg, #55432d, #18140f 74%)'
   },
   {
@@ -135,7 +170,7 @@ const books = [
     description: 'Four experiments from the Achilles research project on what AI may reveal about forgiveness, human nature, meaning and justice. The results are surprising and meme-like in their density: ideas worth exploring, whose scientific and social verification is itself a demanding research challenge.', color: 'linear-gradient(145deg, #44354b, #151219 74%)'
   },
   {
-    id: 'THE_CIVILIZED_MIND', category: 'Outfinist Philosophy', title: 'The Civilized Mind', subtitle: 'Truth, Power, and the Survival of Plural Democracies in the Age of Extremes', position: 99,
+    id: 'THE_CIVILIZED_MIND', category: 'Outfinitist Philosophy', title: 'The Civilized Mind', subtitle: 'Truth, Power, and the Survival of Plural Democracies in the Age of Extremes', position: 99,
     description: 'An invitation to cultivate a way of thinking that seeks truth without cruelty, exercises power without arrogance and meets the future with enough ambition to build—and enough humility to learn.', color: 'linear-gradient(145deg, #28354e, #11131b 74%)'
   },
   {
@@ -173,7 +208,7 @@ const books = [
     description: 'A philosophical investigation of ideas that promise liberation and end up captured. Between withdrawal, initiation and the oracle machine, it searches for a cultural seed that keeps its limits even when predators read it.', color: 'linear-gradient(145deg, #49364e, #17121a 74%)'
   },
   {
-    id: 'THE_NECESSARY_MASK', category: 'Outfinist Philosophy', title: 'The Necessary Mask', subtitle: 'The Justification of Hypocrisy in a Finite World', position: 1,
+    id: 'THE_NECESSARY_MASK', category: 'Outfinitist Philosophy', title: 'The Necessary Mask', subtitle: 'The Justification of Hypocrisy in a Finite World', position: 8,
     fileId: 'The_Necessary_Mask',
     description: 'A constructive argument about hypocrisy, moral psychology, unequal power and institutional life. It asks which adaptive function a hypocrisy performs, and how its deception or transferred harm can be reduced.', color: 'linear-gradient(145deg, #3d4d39, #131713 74%)'
   },
@@ -210,7 +245,7 @@ function locateCover(image) {
 }
 
 function renderListing() {
-  ['Outfinist Philosophy', 'Literature', 'Miscellaneous', 'Executable Science', 'Technology'].forEach(category => {
+  ['Outfinitist Philosophy', 'Literature', 'Miscellaneous', 'Executable Science', 'Technology'].forEach(category => {
     const grid = document.getElementById(`${category.toLowerCase().replaceAll(' ', '-')}-grid`);
     if (!grid) return;
     grid.innerHTML = books.filter(book => book.category === category).sort((a, b) => (a.position || Number.MAX_SAFE_INTEGER) - (b.position || Number.MAX_SAFE_INTEGER)).map(book => `
