@@ -8,7 +8,7 @@ const books = [
   { id: 'Life_Without_an_Audience', category: 'Outfinitist Philosophy & Experiments', title: 'Life Without an Audience', subtitle: 'A Field Manual for Inner Freedom in the Age of Metrics, Machines, and Other Minds', position: 9, staticUrl: './books/life-without-an-audience/index.html', description: 'A research-informed field manual for building inner freedom amid metrics, social media, work, community, the state and artificial intelligence.', color: 'linear-gradient(145deg, #4c3c52, #15131a 74%)' },
   { id: 'Ecology_of_Predation', category: 'Outfinitist Philosophy & Experiments', title: 'Ecology of Predation', subtitle: 'From the Physics of Capture to the Society of Artificial Intelligences', position: 10, staticUrl: './books/ecology-of-predation/index.html', description: 'A hypothesis monograph on capture, counter-adaptation and freedom, following their patterns from physical systems and biology to institutions and artificial societies.', color: 'linear-gradient(145deg, #564033, #161411 74%)' },
   { id: 'Eden_Before_Mars', category: 'Outfinitist Philosophy & Experiments', title: 'Eden Before Mars', subtitle: 'If We Can Build Worlds Beyond Earth, We Can Build Paradise Here', position: 11, staticUrl: './books/eden-before-mars/index.html', description: 'A research edition about technology, power, scarcity and the institutional choices that prevent the capacities for building new worlds from improving this one.', color: 'linear-gradient(145deg, #4b5634, #131914 74%)' },
-  { id: 'Limits_of_Machine_Intelligence', category: 'Executable Science', title: 'Limits of Machine Intelligence', subtitle: 'An AI-assisted exploration of Outfinitism, moving frontiers, and the threshold of science', position: 100, staticUrl: './books/limits-of-machine-intelligence/index.html', description: 'An explicitly exploratory examination of mathematical limits, bounded verification, AI safety and the point where an AI-assisted proposal becomes science.', color: 'linear-gradient(145deg, #30465b, #11171e 74%)' },
+  { id: 'Limits_of_Machine_Intelligence', category: 'Outfinitist Philosophy & Experiments', title: 'Limits of Machine Intelligence', subtitle: 'An AI-assisted exploration of Outfinitism, moving frontiers, and the threshold of science', position: 100, staticUrl: './books/limits-of-machine-intelligence/index.html', description: 'An explicitly exploratory examination of mathematical limits, bounded verification, AI safety and the point where an AI-assisted proposal becomes science.', color: 'linear-gradient(145deg, #30465b, #11171e 74%)' },
   { id: 'Outfinite_Mathematics_Research_Programme', category: 'Executable Science', title: 'Outfinite Mathematics', subtitle: 'A Research Programme for Executable Science, Resource-Aware Mathematics, and Meta-Rational Foundations', position: 1, staticUrl: './books/outfinite-mathematics-research-programme/index.html', description: 'A conceptual research programme asking how limits, resources, physical realization and machine-checkable knowledge can become explicit objects of mathematical inquiry.', color: 'linear-gradient(145deg, #304a4d, #101719 74%)' },
   { id: 'SOP_Lang_Circuits', category: 'Technology', title: 'Executable Scientific Intelligence', subtitle: 'with Dynamic SOP Lang Circuits', position: 2, staticUrl: './books/sop-lang-circuits/index.html', description: 'A research programme for turning human-readable symbolic language into bounded, inspectable circuits that can preserve provenance, uncertainty and human authority.', color: 'linear-gradient(145deg, #253d58, #10151d 74%)' },
   { id: 'The_Geometry_of_Becoming', category: 'Literature', title: 'The First Wake: The Geometry of Becoming', subtitle: 'A Science Fiction Novel', position: 12, staticUrl: './books/the-geometry-of-becoming/index.html', description: 'A science-fiction novel set among beings for whom time, language and identity are not what they are for us—and where intimacy means sharing possible futures.', color: 'linear-gradient(145deg, #3a405f, #11121d 74%)' },
@@ -147,7 +147,7 @@ const books = [
     description: 'A study of the dangerous configuration in which weak models, confidence disproportionate to evidence, refusal of correction and power combine. It develops the Outfinitist metacult as a culture of correction rather than superiority.', color: 'linear-gradient(145deg, #3e304e, #15131a 74%)'
   },
   {
-    id: 'The_History_and_Future_of_Social_Technologies', category: 'Executable Science', title: 'The History and Future of Social Technologies', subtitle: 'The Yin-Yang of Civilisation',
+    id: 'The_History_and_Future_of_Social_Technologies', category: 'Outfinitist Philosophy & Experiments', title: 'The History and Future of Social Technologies', subtitle: 'The Yin-Yang of Civilisation',
     description: 'An interpretive synthesis of the symbols, roles, rules, procedures and incentives by which societies coordinate across time and distance—and a disciplined exploration of their possible futures.', color: 'linear-gradient(145deg, #243e42, #101817 74%)'
   },
   {
@@ -180,7 +180,7 @@ const books = [
     description: 'A book between technology and contemporary science, proposing that the way LLMs are built may contain more than simple statistics can explain. Through the geometry of cosine-distance cones, it develops intuitions about AI alignment and about why Outfinitism can acquire global coherence across many perspectives, sciences and lived experiences.', color: 'linear-gradient(145deg, #2e4d58, #10171a 74%)'
   },
   {
-    id: 'An_Autopsy_of_a_Digital_Mind', category: 'Executable Science', title: 'An Autopsy of a Digital Mind', subtitle: '', position: 12,
+    id: 'An_Autopsy_of_a_Digital_Mind', category: 'Outfinitist Philosophy & Experiments', title: 'An Autopsy of a Digital Mind', subtitle: '', position: 12,
     description: 'Four experiments from the Achilles research project on what AI may reveal about forgiveness, human nature, meaning and justice. The results are surprising and meme-like in their density: ideas worth exploring, whose scientific and social verification is itself a demanding research challenge.', color: 'linear-gradient(145deg, #44354b, #151219 74%)'
   },
   {
@@ -259,7 +259,7 @@ function locateCover(image) {
 }
 
 function renderListing() {
-  ['Outfinitist Philosophy & Experiments', 'Science Fiction Literature', 'Technology & Executable Science'].forEach(category => {
+  ['Technology & Executable Science', 'Science Fiction Literature', 'Outfinitist Philosophy & Experiments'].forEach(category => {
     const grid = document.getElementById(`${category.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-grid`);
     if (!grid) return;
     grid.innerHTML = books.filter(book => {
