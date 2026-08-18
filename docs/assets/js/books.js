@@ -2,20 +2,30 @@ const books = [
   {
     id: 'Outfinitism_Meta_Rationality', category: 'Outfinitist Philosophy & Experiments', title: 'Outfinitism', subtitle: 'Meta-Rationality and the Limits of Finite Human Reason', position: 1,
     staticUrl: './books/outfinitism-meta-rationality/index.html',
+    fileId: 'Outfinitism_Third_Edition',
     description: 'An introduction to Outfinitism as a practice of reasoning that keeps human models, institutions and ambitions open to criticism, revision and further possibility.', color: 'linear-gradient(145deg, #49433b, #171613 74%)'
   },
+  { id: 'Life_Without_an_Audience', category: 'Outfinitist Philosophy & Experiments', title: 'Life Without an Audience', subtitle: 'A Field Manual for Inner Freedom in the Age of Metrics, Machines, and Other Minds', position: 9, staticUrl: './books/life-without-an-audience/index.html', description: 'A research-informed field manual for building inner freedom amid metrics, social media, work, community, the state and artificial intelligence.', color: 'linear-gradient(145deg, #4c3c52, #15131a 74%)' },
+  { id: 'Ecology_of_Predation', category: 'Outfinitist Philosophy & Experiments', title: 'Ecology of Predation', subtitle: 'From the Physics of Capture to the Society of Artificial Intelligences', position: 10, staticUrl: './books/ecology-of-predation/index.html', description: 'A hypothesis monograph on capture, counter-adaptation and freedom, following their patterns from physical systems and biology to institutions and artificial societies.', color: 'linear-gradient(145deg, #564033, #161411 74%)' },
+  { id: 'Eden_Before_Mars', category: 'Outfinitist Philosophy & Experiments', title: 'Eden Before Mars', subtitle: 'If We Can Build Worlds Beyond Earth, We Can Build Paradise Here', position: 11, staticUrl: './books/eden-before-mars/index.html', description: 'A research edition about technology, power, scarcity and the institutional choices that prevent the capacities for building new worlds from improving this one.', color: 'linear-gradient(145deg, #4b5634, #131914 74%)' },
+  { id: 'Limits_of_Machine_Intelligence', category: 'Executable Science', title: 'Limits of Machine Intelligence', subtitle: 'An AI-assisted exploration of Outfinitism, moving frontiers, and the threshold of science', position: 100, staticUrl: './books/limits-of-machine-intelligence/index.html', description: 'An explicitly exploratory examination of mathematical limits, bounded verification, AI safety and the point where an AI-assisted proposal becomes science.', color: 'linear-gradient(145deg, #30465b, #11171e 74%)' },
+  { id: 'Outfinite_Mathematics_Research_Programme', category: 'Executable Science', title: 'Outfinite Mathematics', subtitle: 'A Research Programme for Executable Science, Resource-Aware Mathematics, and Meta-Rational Foundations', position: 1, staticUrl: './books/outfinite-mathematics-research-programme/index.html', description: 'A conceptual research programme asking how limits, resources, physical realization and machine-checkable knowledge can become explicit objects of mathematical inquiry.', color: 'linear-gradient(145deg, #304a4d, #101719 74%)' },
+  { id: 'SOP_Lang_Circuits', category: 'Technology', title: 'Executable Scientific Intelligence', subtitle: 'with Dynamic SOP Lang Circuits', position: 2, staticUrl: './books/sop-lang-circuits/index.html', description: 'A research programme for turning human-readable symbolic language into bounded, inspectable circuits that can preserve provenance, uncertainty and human authority.', color: 'linear-gradient(145deg, #253d58, #10151d 74%)' },
+  { id: 'The_Geometry_of_Becoming', category: 'Literature', title: 'The First Wake: The Geometry of Becoming', subtitle: 'A Science Fiction Novel', position: 12, staticUrl: './books/the-geometry-of-becoming/index.html', description: 'A science-fiction novel set among beings for whom time, language and identity are not what they are for us—and where intimacy means sharing possible futures.', color: 'linear-gradient(145deg, #3a405f, #11121d 74%)' },
+  { id: 'The_Houses_of_Europe', category: 'Literature', title: 'The Houses of Europe', subtitle: 'Europe\'s Techno-Feudalism in 2050', position: 13, staticUrl: './books/the-houses-of-europe/index.html', description: 'A novel of a Europe governed through houses, strategic reclamation and machines whose apparent neutrality conceals the politics of whoever wrote their objectives.', color: 'linear-gradient(145deg, #4c3a30, #181310 74%)' },
+  { id: 'The_Science_and_Wisdom_of_Limits', category: 'Literature', title: 'The Science and Wisdom of Limits', subtitle: 'The Story of a World That Learned to Be Large Without Becoming Blind', position: 14, staticUrl: './books/the-science-and-wisdom-of-limits/index.html', description: 'A future-facing story about building systems large enough for planetary problems while remaining intelligible, contestable and repairable for those who live within them.', color: 'linear-gradient(145deg, #3c4c43, #121816 74%)' },
   {
     id: 'Metacult', category: 'Outfinitist Philosophy & Experiments', title: 'Metacult', subtitle: 'Modernizing Humanity’s Oldest Social Technology: How to Build Collective Power Without Crushing the Individual', position: 2,
     staticUrl: './books/metacult/index.html',
     description: 'An inquiry into collective power, shared meaning and the institutional safeguards that let a culture coordinate without demanding the surrender of the individual.', color: 'linear-gradient(145deg, #3c3932, #121513 74%)'
   },
   {
-    id: 'THE_LICENCE_AND_THE_SHARED_NAME', category: 'Technology', title: 'The Licence and the Shared Name', subtitle: 'How to Give an Idea Away Without Letting It Be Captured', position: 5,
+    id: 'THE_LICENCE_AND_THE_SHARED_NAME', category: 'Technology', title: 'The Licence and the Shared Name', subtitle: 'How to Give an Idea Away Without Letting It Be Captured', position: 10,
     staticUrl: './books/the-licence-and-the-shared-name/index.html',
     description: 'A proposal for sharing an idea while preserving its conditions of openness, correction and resistance to capture by an owner, faction or institution.', color: 'linear-gradient(145deg, #4a3d2d, #171411 74%)'
   },
   {
-    id: 'The_Captured_Internet', category: 'Technology', title: 'The Captured Internet', subtitle: 'Personal Data, Algorithmic Power, and the Coming Constitutional Crisis', position: 6,
+    id: 'The_Captured_Internet', category: 'Technology', title: 'The Captured Internet', subtitle: 'Personal Data, Algorithmic Power, and the Coming Constitutional Crisis', position: 9,
     staticUrl: './books/the-captured-internet/index.html',
     description: 'An examination of personal data, algorithmic power and the constitutional questions that emerge when the public sphere is shaped by private infrastructures.', color: 'linear-gradient(145deg, #3f4c4c, #111617 74%)'
   },
@@ -36,6 +46,7 @@ const books = [
   },
   {
     id: 'AssistOS', category: 'Technology', title: 'AssistOS',
+    position: 6,
     staticUrl: './books/assistos/index.html',
     subtitle: '',
     description: 'AssistOS presents a product, market and research vision for an open operating layer where local models, agents, tools, files and people can work together. It examines how intelligence can become installable, governable, portable and useful across devices, organisations and models—without pretending that every long-term ambition is already complete.',
@@ -43,6 +54,7 @@ const books = [
   },
   {
     id: 'Agentic_AI_2026', category: 'Technology', title: 'Agentic AI 2026',
+    position: 5,
     staticUrl: './books/agentic-ai-2026/index.html',
     subtitle: '',
     description: 'The first wave of language-model applications was organised around prompts; the next is organised around delegated action. This book studies the runtime that allocates authority among models, tools, memory, validators and human reviewers, and asks how bounded delegation can turn uncertain model competence into useful, controlled work.',
@@ -50,12 +62,14 @@ const books = [
   },
   {
     id: 'OpenDSU', category: 'Technology', title: 'OpenDSU', subtitle: 'Essential Philosophy',
+    position: 11,
     fileId: 'OpenDSU_Essential_Philosophy',
     description: 'OpenDSU is presented as a conceptual framework for controlled, reconstructable and verifiable digital objects. It examines the relationship among bounded data, cryptographic authority, protected storage, verifiable history, provenance, validation, discovery and governance—while keeping its concepts independent of any single implementation.',
     color: 'linear-gradient(145deg, #25454d, #0f171b 72%)'
   },
   {
     id: 'MRP_VM_Book', category: 'Technology', title: 'MRP-VM', subtitle: 'Automating the Construction of Trustworthy Custom Agentic Harnesses',
+    position: 8,
     description: 'MRP-VM is an architecture for automating the construction and controlled improvement of custom agentic harnesses. It gives powerful models a disciplined environment in which purpose, source authority, tool permissions, qualification, traceability, version identity and human control can be preserved.',
     color: 'linear-gradient(145deg, #3c3153, #15121c 72%)'
   },
@@ -162,11 +176,11 @@ const books = [
     description: 'A creative philosophical experiment using AI-generated theoretical models and simulations to explore nobility and possible forms of neo-feudalism. Rather than a settled scientific claim, it is part of a wider effort to test how AI might contribute to executable science—and to ask whether, if new hierarchies are coming, we can still choose their form.', color: 'linear-gradient(145deg, #55432d, #18140f 74%)'
   },
   {
-    id: 'Cones_of_Meaning', category: 'Executable Science', title: 'Cones of Meaning', subtitle: '', position: 3,
+    id: 'Cones_of_Meaning', category: 'Executable Science', title: 'Cones of Meaning', subtitle: '', position: 7,
     description: 'A book between technology and contemporary science, proposing that the way LLMs are built may contain more than simple statistics can explain. Through the geometry of cosine-distance cones, it develops intuitions about AI alignment and about why Outfinitism can acquire global coherence across many perspectives, sciences and lived experiences.', color: 'linear-gradient(145deg, #2e4d58, #10171a 74%)'
   },
   {
-    id: 'An_Autopsy_of_a_Digital_Mind', category: 'Executable Science', title: 'An Autopsy of a Digital Mind', subtitle: '',
+    id: 'An_Autopsy_of_a_Digital_Mind', category: 'Executable Science', title: 'An Autopsy of a Digital Mind', subtitle: '', position: 12,
     description: 'Four experiments from the Achilles research project on what AI may reveal about forgiveness, human nature, meaning and justice. The results are surprising and meme-like in their density: ideas worth exploring, whose scientific and social verification is itself a demanding research challenge.', color: 'linear-gradient(145deg, #44354b, #151219 74%)'
   },
   {
@@ -213,11 +227,11 @@ const books = [
     description: 'A constructive argument about hypocrisy, moral psychology, unequal power and institutional life. It asks which adaptive function a hypocrisy performs, and how its deception or transferred harm can be reduced.', color: 'linear-gradient(145deg, #3d4d39, #131713 74%)'
   },
   {
-    id: 'Executable_Natural_Language', category: 'Executable Science', title: 'Executable Natural Language', subtitle: '', position: 2,
+    id: 'Executable_Natural_Language', category: 'Executable Science', title: 'Executable Natural Language', subtitle: '', position: 4,
     description: 'A survey and proposal for auditable chains from source language to grounded symbols, executable formal objects and verified results. It studies how language models and symbolic systems can work together without turning generated explanation into uncheckable authority.', color: 'linear-gradient(145deg, #5a4030, #171519 74%)'
   },
   {
-    id: 'The_Frontier_Is_Correction', category: 'Executable Science', title: 'The Frontier Is Correction', subtitle: 'Novelty, Executable Science, and the Human-AI Research System', position: 1,
+    id: 'The_Frontier_Is_Correction', category: 'Executable Science', title: 'The Frontier Is Correction', subtitle: 'Novelty, Executable Science, and the Human-AI Research System', position: 3,
     staticUrl: './books/the-frontier-is-correction/index.html',
     description: 'Candidate science is becoming abundant before justification becomes scalable. This book argues that the real frontier is correction: the quality-adjusted rate at which claims acquire support, are narrowed by better explanations, or are rejected before they consume scarce attention.', color: 'linear-gradient(145deg, #263d52, #10161d 74%)'
   }

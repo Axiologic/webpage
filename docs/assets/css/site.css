@@ -759,7 +759,11 @@ p {
 /* New covers use the same landscape export: the portrait artwork occupies its left half. */
 .book-cover img:is([data-cover="The_Ultimate_Sense_of_Life"], [data-cover="The_Tao_of_OMIS"], [data-cover="The_Great_Decoupling"], [data-cover="The_Fragmented_Future"], [data-cover="Autopsy_of_Future_Emotions"], [data-cover="The_Schizoid_and_the_Oracle_RO"], [data-cover="The_Frontier_Is_Correction"]) { width: 200%; max-width: none; height: 100%; inset: 0 auto auto 0; object-fit: fill; }
 /* The Outfinitist Philosophy additions use the same landscape export. */
-.book-cover img:is([data-cover="Outfinitism_Meta_Rationality"], [data-cover="Metacult"], [data-cover="THE_LICENCE_AND_THE_SHARED_NAME"], [data-cover="The_Captured_Internet"], [data-cover="The_Founder_Lottery"], [data-cover="Decentralised_Brands"], [data-cover="Investing_in_an_AI_Dominated_Economy"]) { width: 200%; max-width: none; height: 100%; inset: 0 auto auto 0; object-fit: fill; }
+.book-cover img:is([data-cover="Metacult"], [data-cover="THE_LICENCE_AND_THE_SHARED_NAME"], [data-cover="The_Captured_Internet"], [data-cover="The_Founder_Lottery"], [data-cover="Decentralised_Brands"], [data-cover="Investing_in_an_AI_Dominated_Economy"], [data-cover="Life_Without_an_Audience"], [data-cover="Ecology_of_Predation"], [data-cover="Eden_Before_Mars"], [data-cover="Limits_of_Machine_Intelligence"], [data-cover="Outfinite_Mathematics_Research_Programme"], [data-cover="The_Geometry_of_Becoming"], [data-cover="The_Houses_of_Europe"], [data-cover="The_Science_and_Wisdom_of_Limits"]) { width: 200%; max-width: none; height: 100%; inset: 0 auto auto 0; object-fit: fill; }
+/* This export contains the cover only in its left 44%; crop that panel proportionally. */
+.book-cover img[data-cover="Limits_of_Machine_Intelligence"] { width: 225%; max-width: none; height: auto; inset: 0 auto auto 0; object-fit: initial; }
+/* This export contains the cover in its left half; retain its proportions with a small vertical crop. */
+.book-cover img[data-cover="Outfinite_Mathematics_Research_Programme"] { width: auto; max-width: none; height: 104.5%; inset: 0 auto auto 0; object-fit: contain; }
 /* These two files have a much narrower portrait cover on a transparent landscape canvas. */
 .book-cover img[data-cover="THE_LICENCE_AND_THE_SHARED_NAME"] { width: auto; height: 164%; inset: 0 auto auto 0; object-fit: contain; }
 .book-cover img[data-cover="The_Captured_Internet"] { width: auto; height: 140%; inset: 0 auto auto 0; object-fit: contain; }
