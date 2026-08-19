@@ -14,10 +14,10 @@
   --radius-sm: 10px;
   --shadow-soft: 0 18px 60px rgba(0, 0, 0, 0.38);
   --glow: 0 18px 60px rgba(154, 242, 198, 0.16);
-  --content-width: 1840px;
+  --content-width: 1920px;
   --copy-font: 'Space Grotesk', 'Segoe UI', sans-serif;
-  --copy-size: 18px;
-  --copy-line: 1.55;
+  --copy-size: 20px;
+  --copy-line: 1.6;
 }
 
 *,
@@ -42,7 +42,7 @@ a {
 .page {
   position: relative;
   min-height: 100vh;
-  padding: 32px 18px 72px;
+  padding: 32px 4px 72px;
   overflow: hidden;
   isolation: isolate;
 }
@@ -143,6 +143,14 @@ p {
   margin-top: -6px;
 }
 
+.hero-title {
+  max-width: 1120px;
+  font-size: clamp(30px, 2.1vw, 40px);
+  line-height: 1.04;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
 .lede {
   font-size: var(--copy-size);
   color: #d6dae2;
@@ -151,14 +159,25 @@ p {
 
 .hero-summary {
   display: grid;
-  gap: 6px;
+  gap: 18px;
 }
 
 .hero-summary p {
   margin: 0;
+  padding-left: 18px;
+  border-left: 2px solid rgba(154, 242, 198, 0.3);
   color: #cfd4dd;
   font-size: var(--copy-size);
   line-height: var(--copy-line);
+  text-align: justify;
+}
+
+.books-invitation {
+  margin-top: 26px;
+  padding: 16px 18px;
+  border-left: 2px solid var(--accent-2);
+  background: linear-gradient(90deg, rgba(242, 209, 143, 0.1), transparent 76%);
+  color: #edf0f6;
   text-align: justify;
 }
 
@@ -622,7 +641,7 @@ p {
   text-wrap: balance;
 }
 
-.innovation-card p { font-size: 16px; }
+.innovation-card p { font-size: var(--copy-size); line-height: var(--copy-line); }
 
 .partner-line {
   display: grid;
@@ -653,7 +672,7 @@ p {
 }
 
 .partnership-callout h2 { margin: 8px 0 0; }
-.partnership-callout p { font-size: 16px; }
+.partnership-callout p { font-size: var(--copy-size); line-height: var(--copy-line); }
 
 .link {
   display: inline-flex;
@@ -732,13 +751,13 @@ p {
 .books-header { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
 .books-intro { max-width: none; padding: 30px 0 28px; }
 .books-intro h1 { margin: 10px 0 14px; font-size: clamp(36px, 4.6vw, 58px); line-height: .98; letter-spacing: -.06em; }
-.books-intro p { max-width: none; font-size: clamp(16px, 1.45vw, 19px); line-height: 1.42; color: #dce0e8; }
+.books-intro p { max-width: none; font-size: var(--copy-size); line-height: var(--copy-line); color: #dce0e8; }
 .book-category { margin: 0 0 72px; }
 .category-head { display: block; padding-bottom: 17px; border-bottom: 1px solid rgba(255,255,255,.15); }
 .category-head > span { color: var(--accent-2); font-size: 12px; letter-spacing: .1em; }
 .category-head h2 { margin: 0; color: #fff; font-size: clamp(22px, 2.7vw, 32px); font-weight: 700; letter-spacing: -.04em; line-height: 1.05; white-space: nowrap; }
-.category-head p { justify-self: end; max-width: 62ch; font-size: 14px; line-height: 1.4; text-align: right; color: var(--muted); }
-.books-grid { display: grid; grid-template-columns: repeat(11, minmax(0, 1fr)); gap: 22px 10px; padding-top: 24px; }
+.category-head p { justify-self: end; max-width: 62ch; font-size: var(--copy-size); line-height: var(--copy-line); text-align: right; color: var(--muted); }
+.books-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 22px 2px; padding-top: 24px; }
 .book-card { display: grid; gap: 15px; align-content: start; }
 .book-cover { position: relative; aspect-ratio: .7; overflow: hidden; border-radius: 4px 9px 9px 4px; background: var(--cover, linear-gradient(145deg,#1c3833,#0b1113)); border: 1px solid rgba(255,255,255,.12); box-shadow: 15px 22px 28px rgba(0,0,0,.32); }
 .book-cover img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; image-rendering: auto; opacity: 0; transition: opacity .2s ease; }
@@ -760,6 +779,9 @@ p {
 .book-cover img:is([data-cover="The_Ultimate_Sense_of_Life"], [data-cover="The_Tao_of_OMIS"], [data-cover="The_Great_Decoupling"], [data-cover="The_Fragmented_Future"], [data-cover="Autopsy_of_Future_Emotions"], [data-cover="The_Schizoid_and_the_Oracle_RO"], [data-cover="The_Frontier_Is_Correction"]) { width: 200%; max-width: none; height: 100%; inset: 0 auto auto 0; object-fit: fill; }
 /* The Outfinitist Philosophy additions use the same landscape export. */
 .book-cover img:is([data-cover="Metacult"], [data-cover="THE_LICENCE_AND_THE_SHARED_NAME"], [data-cover="The_Captured_Internet"], [data-cover="The_Founder_Lottery"], [data-cover="Decentralised_Brands"], [data-cover="Investing_in_an_AI_Dominated_Economy"], [data-cover="Life_Without_an_Audience"], [data-cover="Ecology_of_Predation"], [data-cover="Eden_Before_Mars"], [data-cover="Limits_of_Machine_Intelligence"], [data-cover="Outfinite_Mathematics_Research_Programme"], [data-cover="The_Geometry_of_Becoming"], [data-cover="The_Houses_of_Europe"], [data-cover="The_Science_and_Wisdom_of_Limits"]) { width: 200%; max-width: none; height: 100%; inset: 0 auto auto 0; object-fit: fill; }
+/* These landscape exports place the complete cover at their left edge. */
+.book-cover img:is([data-cover="Anti-Trivialization_Machines_of_the_Future"], [data-cover="The_Future_of_Research_Infrastructure"]) { width: auto; max-width: none; height: 127%; inset: 0 auto auto 0; object-fit: initial; }
+.book-cover img[data-cover^="The_Gospel_of_the_Basilisk"] { width: auto; max-width: none; height: 106%; inset: -3% auto auto -3%; object-fit: initial; }
 /* This export contains the cover only in its left 44%; crop that panel proportionally. */
 .book-cover img[data-cover="Limits_of_Machine_Intelligence"] { width: 225%; max-width: none; height: auto; inset: 0 auto auto 0; object-fit: initial; }
 /* This export contains the cover in its left half; retain its proportions with a small vertical crop. */
@@ -774,27 +796,34 @@ p {
 .book-cover img[data-cover="The_Great_Decoupling"] { width: 209%; height: 104.4%; inset: -.9% auto auto 0; }
 .book-cover img[data-cover="The_Schizoid_and_the_Oracle_RO"] { width: 210.3%; height: 109.3%; inset: -5.6% auto auto 0; }
 .book-cover img[data-cover="The_Right_to_Help"] { height: 107%; }
+/* Grid thumbnails are already cropped. Do not apply source-image canvas corrections to them. */
+.book-cover img.thumbnail { width: 100%; max-width: 100%; height: 100%; inset: 0; object-fit: cover; object-position: center; }
 .book-meta { display: flex; justify-content: space-between; gap: 10px; color: var(--muted); font-size: 10px; letter-spacing: .13em; text-transform: uppercase; }
 .book-card h3 { margin: -7px 0 0; font-size: 19px; line-height: 1.15; }
-.book-card p { font-size: 14px; line-height: 1.45; color: #bfc6d1; }
-.book-detail { min-height: 68vh; display: grid; grid-template-columns: minmax(300px, .95fr) minmax(0, 1.05fr); gap: clamp(32px, 6vw, 76px); align-items: center; padding: 72px 3vw 90px; }
+.book-card p { font-size: var(--copy-size); line-height: var(--copy-line); color: #bfc6d1; }
+.book-detail { width: min(100%, 1440px); min-height: 68vh; display: grid; grid-template-columns: minmax(300px, .95fr) minmax(0, 1.05fr); gap: clamp(32px, 6vw, 76px); align-items: center; margin: 0 auto; padding: 72px 0 90px; }
 .book-cover-link { display: grid; }
 .book-detail .book-cover { width: min(100%, 440px); justify-self: center; }
 .book-detail-copy { display: grid; gap: 20px; align-content: center; }
 .book-detail-copy .eyebrow { color: var(--accent-2); }
 .book-detail h1 { font-size: clamp(36px, 5vw, 68px); letter-spacing: -.06em; line-height: .96; }
 .book-subtitle { margin-top: -10px; color: var(--accent-2) !important; font-size: 16px !important; line-height: 1.4 !important; text-align: left; text-wrap: pretty; }
-.book-detail-copy > p:not(.book-subtitle) { max-width: 62ch; font-size: clamp(17px, 2vw, 20px); line-height: 1.55; color: #d6dbe3; text-align: justify; text-justify: inter-word; hyphens: auto; text-wrap: pretty; }
+.book-detail-copy > p:not(.book-subtitle) { max-width: 68ch; font-size: var(--copy-size); line-height: var(--copy-line); color: #d6dbe3; text-align: justify; text-justify: inter-word; hyphens: auto; text-wrap: pretty; }
 .book-actions { display: flex; flex-wrap: wrap; gap: 12px; padding-top: 5px; }
 .collection-note { margin-top: 12px; color: var(--accent-2) !important; font-size: 14px !important; }
 
 /* Static research-edition pages */
 .edition-page { padding-top: 28px; }
+.edition-page .shell > article { width: min(100%, 1440px); margin: 0 auto; }
 .edition-hero { display: grid; grid-template-columns: minmax(220px, 350px) minmax(0, 1fr); gap: clamp(28px, 6vw, 72px); align-items: center; padding: 56px 0 42px; }
 .edition-cover { display: block; width: min(100%, 320px); aspect-ratio: .665; object-fit: cover; object-position: left top; border-radius: 5px 10px 10px 5px; box-shadow: var(--shadow-soft); background: #0b0d12; }
+.edition-cover-frame { position: relative; width: min(100%, 320px); aspect-ratio: .665; overflow: hidden; border-radius: 5px 10px 10px 5px; box-shadow: var(--shadow-soft); background: #0b0d12; }
+.edition-cover-frame .edition-cover { position: absolute; width: auto; max-width: none; height: 100%; aspect-ratio: auto; border-radius: 0; box-shadow: none; }
+.edition-cover-frame :is(.edition-cover--anti-trivialization, .edition-cover--research-infrastructure) { height: 127%; top: 0; left: 0; }
+.edition-cover-frame .edition-cover--gospel-basilisk { height: 106%; top: -3%; left: -3%; }
 .edition-kicker { color: var(--accent-2); margin-bottom: 14px; }
 .edition-subtitle { margin: 12px 0 18px; color: var(--accent-2); font-size: 19px; }
-.edition-why { font-size: clamp(20px, 2.3vw, 28px); line-height: 1.35; color: #f0f2f7; max-width: 32ch; }
+.edition-why { max-width: none; font-size: clamp(20px, 2.3vw, 28px); line-height: 1.35; color: #f0f2f7; text-align: justify; text-justify: inter-word; hyphens: auto; }
 .edition-actions { margin: 26px 0 18px; display: flex; flex-wrap: wrap; gap: 12px; }
 .language-picker { position: relative; }
 .language-picker summary { list-style: none; cursor: pointer; }
@@ -802,16 +831,16 @@ p {
 .language-picker[open] summary { margin-bottom: 8px; }
 .language-picker a { color: var(--text); font-size: 14px; }
 .edition-facts { display: flex; flex-wrap: wrap; gap: 8px 18px; color: var(--muted); font-size: 13px; }
-.edition-content { display: grid; grid-template-columns: minmax(0, 1fr) minmax(230px, 300px); gap: clamp(28px, 5vw, 70px); padding: 36px 0 72px; border-top: 1px solid var(--border); }
-.edition-reading { max-width: 760px; }
+.edition-content { display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, 340px); gap: clamp(28px, 4vw, 64px); padding: 36px 0 72px; border-top: 1px solid var(--border); }
+.edition-reading { max-width: none; }
 .edition-reading h2 { margin-top: 42px; }
 .edition-reading h2:first-child { margin-top: 0; }
-.edition-reading p { margin: 0 0 19px; color: #d7dce5; text-align: justify; hyphens: auto; }
+.edition-reading p { max-width: 76ch; margin: 0 0 19px; color: #d7dce5; text-align: justify; text-justify: inter-word; hyphens: auto; text-wrap: pretty; }
 .edition-reading .pull-quote { border-left: 2px solid var(--accent); padding: 4px 0 4px 20px; color: #f3f5f9; font-size: 21px; line-height: 1.45; }
 .edition-aside { display: grid; align-content: start; gap: 14px; }
 .edition-aside .panel { padding: 18px; }
 .edition-aside h3 { margin: 0 0 9px; font-size: 16px; }
-.edition-aside p, .edition-aside li { font-size: 14px; line-height: 1.5; color: #cbd1dc; }
+.edition-aside p, .edition-aside li { font-size: var(--copy-size); line-height: var(--copy-line); color: #cbd1dc; text-align: justify; text-justify: inter-word; hyphens: auto; text-wrap: pretty; }
 .edition-aside ul { margin: 0; padding-left: 18px; }
 .related-books { display: grid; gap: 8px; }
 .related-books a { color: var(--accent); font-size: 14px; }
@@ -823,7 +852,7 @@ p {
 .path-node::after { content: '→'; position: absolute; right: -15px; top: 50%; z-index: 2; color: var(--accent); font-size: 26px; }
 .path-node:nth-child(3n)::after, .path-node:last-child::after { display: none; }
 .path-node h2 { position: relative; z-index: 1; margin-bottom: 10px; font-size: clamp(17px, 1.7vw, 22px); white-space: nowrap; letter-spacing: -.035em; }
-.path-node p { position: relative; z-index: 1; min-height: 6em; margin-bottom: 0; font-size: 15px; line-height: 1.5; text-align: justify; }
+.path-node p { position: relative; z-index: 1; min-height: 6em; margin-bottom: 0; font-size: var(--copy-size); line-height: var(--copy-line); text-align: justify; }
 .path-books { position: relative; z-index: 1; display: flex; gap: 8px; margin-top: 18px; }
 .path-books { flex-wrap: wrap; }
 .path-books a { width: 44px; height: 66px; overflow: hidden; border-radius: 3px; border: 1px solid rgba(255,255,255,.2); transition: transform 140ms ease, border-color 140ms ease; }
