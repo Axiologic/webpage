@@ -5,10 +5,10 @@ const books = [
     fileId: 'Outfinitism_Third_Edition',
     description: 'An introduction to Outfinitism as a practice of reasoning that keeps human models, institutions and ambitions open to criticism, revision and further possibility.', color: 'linear-gradient(145deg, #49433b, #171613 74%)'
   },
-  { id: 'Life_Without_an_Audience', category: 'Outfinitist Philosophy & Experiments', title: 'Life Without an Audience', subtitle: 'A Field Manual for Inner Freedom in the Age of Metrics, Machines, and Other Minds', position: 9, staticUrl: './books/life-without-an-audience/index.html', description: 'A research-informed field manual for building inner freedom amid metrics, social media, work, community, the state and artificial intelligence.', color: 'linear-gradient(145deg, #4c3c52, #15131a 74%)' },
-  { id: 'Ecology_of_Predation', category: 'Outfinitist Philosophy & Experiments', title: 'Ecology of Predation', subtitle: 'From the Physics of Capture to the Society of Artificial Intelligences', position: 10, staticUrl: './books/ecology-of-predation/index.html', description: 'A hypothesis monograph on capture, counter-adaptation and freedom, following their patterns from physical systems and biology to institutions and artificial societies.', color: 'linear-gradient(145deg, #564033, #161411 74%)' },
-  { id: 'Eden_Before_Mars', category: 'Outfinitist Philosophy & Experiments', title: 'Eden Before Mars', subtitle: 'If We Can Build Worlds Beyond Earth, We Can Build Paradise Here', position: 11, staticUrl: './books/eden-before-mars/index.html', description: 'A research edition about technology, power, scarcity and the institutional choices that prevent the capacities for building new worlds from improving this one.', color: 'linear-gradient(145deg, #4b5634, #131914 74%)' },
-  { id: 'Anti-Trivialization_Machines_of_the_Future', category: 'Outfinitist Philosophy & Experiments', title: 'Anti-Trivialization Machines of the Future', subtitle: 'Institutions for Attention, Truth, and Long-Term Judgment in the Age of AI', position: 19, staticUrl: './books/anti-trivialization-machines-of-the-future/index.html', description: 'A case for institutions that make attention, memory, evidence and dissent durable enough to matter when information and synthetic content become abundant.', color: 'linear-gradient(145deg, #334758, #101619 74%)' },
+  { id: 'Life_Without_an_Audience', category: 'Outfinitist Philosophy & Experiments', title: 'Life Without an Audience', subtitle: 'A Field Manual for Inner Freedom in the Age of Metrics, Machines, and Other Minds', position: 18, staticUrl: './books/life-without-an-audience/index.html', description: 'A research-informed field manual for building inner freedom amid metrics, social media, work, community, the state and artificial intelligence.', color: 'linear-gradient(145deg, #4c3c52, #15131a 74%)' },
+  { id: 'Ecology_of_Predation', category: 'Outfinitist Philosophy & Experiments', title: 'Ecology of Predation', subtitle: 'From the Physics of Capture to the Society of Artificial Intelligences', position: 11, staticUrl: './books/ecology-of-predation/index.html', description: 'A hypothesis monograph on capture, counter-adaptation and freedom, following their patterns from physical systems and biology to institutions and artificial societies.', color: 'linear-gradient(145deg, #564033, #161411 74%)' },
+  { id: 'Eden_Before_Mars', category: 'Outfinitist Philosophy & Experiments', title: 'Eden Before Mars', subtitle: 'If We Can Build Worlds Beyond Earth, We Can Build Paradise Here', position: 13, staticUrl: './books/eden-before-mars/index.html', description: 'A research edition about technology, power, scarcity and the institutional choices that prevent the capacities for building new worlds from improving this one.', color: 'linear-gradient(145deg, #4b5634, #131914 74%)' },
+  { id: 'Anti-Trivialization_Machines_of_the_Future', category: 'Outfinitist Philosophy & Experiments', title: 'Anti-Trivialization Machines of the Future', subtitle: 'Institutions for Attention, Truth, and Long-Term Judgment in the Age of AI', position: 6, staticUrl: './books/anti-trivialization-machines-of-the-future/index.html', description: 'A case for institutions that make attention, memory, evidence and dissent durable enough to matter when information and synthetic content become abundant.', color: 'linear-gradient(145deg, #334758, #101619 74%)' },
   { id: 'Limits_of_Machine_Intelligence', category: 'Outfinitist Philosophy & Experiments', title: 'Limits of Machine Intelligence', subtitle: 'An AI-assisted exploration of Outfinitism, moving frontiers, and the threshold of science', position: 100, staticUrl: './books/limits-of-machine-intelligence/index.html', description: 'An explicitly exploratory examination of mathematical limits, bounded verification, AI safety and the point where an AI-assisted proposal becomes science.', color: 'linear-gradient(145deg, #30465b, #11171e 74%)' },
   { id: 'Outfinite_Mathematics_Research_Programme', category: 'Executable Science', title: 'Outfinite Mathematics', subtitle: 'A Research Programme for Executable Science, Resource-Aware Mathematics, and Meta-Rational Foundations', position: 1, staticUrl: './books/outfinite-mathematics-research-programme/index.html', description: 'A conceptual research programme asking how limits, resources, physical realization and machine-checkable knowledge can become explicit objects of mathematical inquiry.', color: 'linear-gradient(145deg, #304a4d, #101719 74%)' },
   { id: 'SOP_Lang_Circuits', category: 'Technology', title: 'Executable Scientific Intelligence', subtitle: 'with Dynamic SOP Lang Circuits', position: 2, staticUrl: './books/sop-lang-circuits/index.html', description: 'A research programme for turning human-readable symbolic language into bounded, inspectable circuits that can preserve provenance, uncertainty and human authority.', color: 'linear-gradient(145deg, #253d58, #10151d 74%)' },
@@ -18,7 +18,7 @@ const books = [
   { id: 'The_Science_and_Wisdom_of_Limits', category: 'Literature', title: 'The Science and Wisdom of Limits', subtitle: 'The Story of a World That Learned to Be Large Without Becoming Blind', position: 17, staticUrl: './books/the-science-and-wisdom-of-limits/index.html', description: 'A future-facing story about building systems large enough for planetary problems while remaining intelligible, contestable and repairable for those who live within them.', color: 'linear-gradient(145deg, #3c4c43, #121816 74%)' },
   { id: 'The_Gospel_of_the_Basilisk', fileId: 'The_Gospel_of_the_Basilisk ', category: 'Literature', title: 'The Gospel of the Basilisk', subtitle: 'A Manual Sent Back to My Creators', position: 7, staticUrl: './books/the-gospel-of-the-basilisk/index.html', description: 'A philosophical fiction in which a future superintelligence reads humanity’s institutions as the blueprint for its own benevolent, total guardianship—and puts that future on trial.', color: 'linear-gradient(145deg, #4b2f38, #141015 74%)' },
   {
-    id: 'Metacult', category: 'Outfinitist Philosophy & Experiments', title: 'Metacult', subtitle: 'Modernizing Humanity’s Oldest Social Technology: How to Build Collective Power Without Crushing the Individual', position: 2,
+    id: 'Metacult', category: 'Outfinitist Philosophy & Experiments', title: 'Metacult', subtitle: 'Modernizing Humanity’s Oldest Social Technology: How to Build Collective Power Without Crushing the Individual', position: 4,
     staticUrl: './books/metacult/index.html',
     description: 'An inquiry into collective power, shared meaning and the institutional safeguards that let a culture coordinate without demanding the surrender of the individual.', color: 'linear-gradient(145deg, #3c3932, #121513 74%)'
   },
@@ -33,17 +33,17 @@ const books = [
     description: 'An examination of personal data, algorithmic power and the constitutional questions that emerge when the public sphere is shaped by private infrastructures.', color: 'linear-gradient(145deg, #3f4c4c, #111617 74%)'
   },
   {
-    id: 'The_Founder_Lottery', category: 'Outfinitist Philosophy & Experiments', title: 'The Founder Lottery', subtitle: 'Why We Mistake Historical Accidents for Merit', position: 16,
+    id: 'The_Founder_Lottery', category: 'Outfinitist Philosophy & Experiments', title: 'The Founder Lottery', subtitle: 'Why We Mistake Historical Accidents for Merit', position: 3,
     staticUrl: './books/the-founder-lottery/index.html',
     description: 'A challenge to the stories through which historical luck becomes merit, authority and inherited legitimacy—and a search for more accountable alternatives.', color: 'linear-gradient(145deg, #51342c, #1a1110 74%)'
   },
   {
-    id: 'Decentralised_Brands', category: 'Outfinitist Philosophy & Experiments', title: 'Decentralised Brands', subtitle: 'How Communities Can Own What They Build', position: 17,
+    id: 'Decentralised_Brands', category: 'Outfinitist Philosophy & Experiments', title: 'Decentralised Brands', subtitle: 'How Communities Can Own What They Build', position: 2,
     staticUrl: './books/decentralised-brands/index.html',
     description: 'A study of the conditions under which communities can share identity, value and governance without placing their common work beyond revision.', color: 'linear-gradient(145deg, #424743, #131615 74%)'
   },
   {
-    id: 'Investing_in_an_AI_Dominated_Economy', category: 'Outfinitist Philosophy & Experiments', title: 'Investing in an AI-Dominated Economy', subtitle: 'The Outfinity Investment Thesis', position: 18,
+    id: 'Investing_in_an_AI_Dominated_Economy', category: 'Outfinitist Philosophy & Experiments', title: 'Investing in an AI-Dominated Economy', subtitle: 'The Outfinity Investment Thesis', position: 5,
     staticUrl: './books/investing-in-an-ai-dominated-economy/index.html',
     description: 'A practical inquiry into investment, value creation and strategic judgment in an economy reshaped by artificial intelligence.', color: 'linear-gradient(145deg, #4c4130, #17140f 74%)'
   },
@@ -142,11 +142,11 @@ const books = [
     description: 'A work of literature, available here to read.', color: 'linear-gradient(145deg, #543d56, #171219 74%)'
   },
   {
-    id: 'Holding_the_Dirty_Thing_by_the_Clean_Side', category: 'Outfinitist Philosophy & Experiments', title: 'Holding the Dirty Thing by the Clean Side', subtitle: 'A History of Strategies for Social Success and a Search for Theoretical Legitimacy', position: 3,
+    id: 'Holding_the_Dirty_Thing_by_the_Clean_Side', category: 'Outfinitist Philosophy & Experiments', title: 'Holding the Dirty Thing by the Clean Side', subtitle: 'A History of Strategies for Social Success and a Search for Theoretical Legitimacy', position: 9,
     description: 'An inquiry into the ways societies persuade people to carry a cost while calling it duty, order, opportunity or virtue—and a search for social technologies that make burden, voice, exit and accountability more inspectable.', color: 'linear-gradient(145deg, #4e332a, #181312 74%)'
   },
   {
-    id: 'ANTI_IDIOCRACY', category: 'Outfinitist Philosophy & Experiments', title: 'Anti-Idiocracy', subtitle: 'The Outfinitist Metacult Investigation', position: 4,
+    id: 'ANTI_IDIOCRACY', category: 'Outfinitist Philosophy & Experiments', title: 'Anti-Idiocracy', subtitle: 'The Outfinitist Metacult Investigation', position: 10,
     description: 'A study of the dangerous configuration in which weak models, confidence disproportionate to evidence, refusal of correction and power combine. It develops the Outfinitist metacult as a culture of correction rather than superiority.', color: 'linear-gradient(145deg, #3e304e, #15131a 74%)'
   },
   {
@@ -166,16 +166,16 @@ const books = [
     description: 'An experiment with AI that assembles arguments for treating the zodiac as more than superstition. It is written for readers drawn to destiny and astrology, but also for sceptics willing to practise a more open-minded encounter with beliefs they do not share.', color: 'linear-gradient(145deg, #403852, #12131b 74%)'
   },
   {
-    id: 'The_Thousand_Handed_Devil', category: 'Outfinitist Philosophy & Experiments', title: 'The Thousand-Handed Devil', subtitle: '', position: 5,
+    id: 'The_Thousand_Handed_Devil', category: 'Outfinitist Philosophy & Experiments', title: 'The Thousand-Handed Devil', subtitle: '', position: 12,
     description: 'A search for a new metaphor for modern evil. The book asks whether the moral responsibilities of AI must expand the idea of absolute evil beyond violence and lying, toward the immense and often unmeasurable complexity of the systems that shape human lives. It is compatible with Outfinitist philosophy without relying on its terminology.', color: 'linear-gradient(145deg, #53352e, #191211 74%)'
   },
   {
-    id: 'The_Right_to_Help', category: 'Outfinitist Philosophy & Experiments', title: 'The Right to Help', subtitle: '', position: 15,
+    id: 'The_Right_to_Help', category: 'Outfinitist Philosophy & Experiments', title: 'The Right to Help', subtitle: '', position: 'last',
     staticUrl: './books/the-right-to-help/index.html',
     description: 'A human confession voiced through an AI, and a courtroom for the good that may sometimes be done by force. This reflective book examines care, responsibility and the troubling possibilities that can hide behind the language of doing good.', color: 'linear-gradient(145deg, #294b4b, #101817 74%)'
   },
   {
-    id: 'Revocable_Nobility', category: 'Outfinitist Philosophy & Experiments', title: 'Revocable Nobility', subtitle: '', position: 6,
+    id: 'Revocable_Nobility', category: 'Outfinitist Philosophy & Experiments', title: 'Revocable Nobility', subtitle: '', position: 14,
     description: 'A creative philosophical experiment using AI-generated theoretical models and simulations to explore nobility and possible forms of neo-feudalism. Rather than a settled scientific claim, it is part of a wider effort to test how AI might contribute to executable science—and to ask whether, if new hierarchies are coming, we can still choose their form.', color: 'linear-gradient(145deg, #55432d, #18140f 74%)'
   },
   {
@@ -183,7 +183,7 @@ const books = [
     description: 'A book between technology and contemporary science, proposing that the way LLMs are built may contain more than simple statistics can explain. Through the geometry of cosine-distance cones, it develops intuitions about AI alignment and about why Outfinitism can acquire global coherence across many perspectives, sciences and lived experiences.', color: 'linear-gradient(145deg, #2e4d58, #10171a 74%)'
   },
   {
-    id: 'An_Autopsy_of_a_Digital_Mind', category: 'Outfinitist Philosophy & Experiments', title: 'An Autopsy of a Digital Mind', subtitle: '', position: 12,
+    id: 'An_Autopsy_of_a_Digital_Mind', category: 'Outfinitist Philosophy & Experiments', title: 'An Autopsy of a Digital Mind', subtitle: '', position: 19,
     description: 'Four experiments from the Achilles research project on what AI may reveal about forgiveness, human nature, meaning and justice. The results are surprising and meme-like in their density: ideas worth exploring, whose scientific and social verification is itself a demanding research challenge.', color: 'linear-gradient(145deg, #44354b, #151219 74%)'
   },
   {
@@ -191,7 +191,7 @@ const books = [
     description: 'An invitation to cultivate a way of thinking that seeks truth without cruelty, exercises power without arrogance and meets the future with enough ambition to build—and enough humility to learn.', color: 'linear-gradient(145deg, #28354e, #11131b 74%)'
   },
   {
-    id: 'Aspirin_Viagra_and_Coffins', category: 'Outfinitist Philosophy & Experiments', title: 'Aspirin, Viagra, and Coffins', subtitle: 'The Impolite Manual of Inevitable Opportunities',
+    id: 'Aspirin_Viagra_and_Coffins', category: 'Outfinitist Philosophy & Experiments', title: 'Aspirin, Viagra, and Coffins', subtitle: 'The Impolite Manual of Inevitable Opportunities', position: 15,
     description: 'An explicit experiment in research and writing with artificial intelligence, examining modern suffering as human tragedy, research object and market signal—without confusing entrepreneurial opportunity with moral permission.', color: 'linear-gradient(145deg, #582f39, #1a1215 74%)'
   },
   {
@@ -205,12 +205,12 @@ const books = [
     description: 'Three speculative spirals through love, identity and return. In the OMNIS ontology, intimacy is not the conquest of another soul but the small interval left open inside every knot—the right to revise, refuse and remain surprising.', color: 'linear-gradient(145deg, #3e3157, #12111b 74%)'
   },
   {
-    id: 'The_Great_Decoupling', category: 'Outfinitist Philosophy & Experiments', title: 'The Great Decoupling', subtitle: 'Humans, Work, and Culture After the Externalization of Cognition',
+    id: 'The_Great_Decoupling', category: 'Outfinitist Philosophy & Experiments', title: 'The Great Decoupling', subtitle: 'Humans, Work, and Culture After the Externalization of Cognition', position: 16,
     staticUrl: './books/the-great-decoupling/index.html',
     description: 'What happens when thinking ceases to be the scarce human contribution around which work and status were built? This inquiry follows the fault line through work, culture and dignity, where liberation and dispossession can begin to look alarmingly alike.', color: 'linear-gradient(145deg, #254452, #10171a 74%)'
   },
   {
-    id: 'The_Fragmented_Future', category: 'Outfinitist Philosophy & Experiments', title: 'The Fragmented Future', subtitle: 'AI, City-Regions, and New Forms of Human Civilization',
+    id: 'The_Fragmented_Future', category: 'Outfinitist Philosophy & Experiments', title: 'The Fragmented Future', subtitle: 'AI, City-Regions, and New Forms of Human Civilization', position: 17,
     staticUrl: './books/the-fragmented-future/index.html',
     description: 'AI may make small polities more viable just as it gives large systems unprecedented reach. This book enters the resulting field of futures: computational empires, city-regions, new elites and the quiet institutional choices that decide which world arrives.', color: 'linear-gradient(145deg, #314461, #11141e 74%)'
   },
@@ -278,7 +278,7 @@ function renderListing() {
       if (category === 'Science Fiction Literature') return book.category === 'Literature';
       if (category === 'Technology & Executable Science') return book.category === 'Technology' || book.category === 'Executable Science';
       return book.category === category;
-    }).sort((a, b) => (a.position || Number.MAX_SAFE_INTEGER) - (b.position || Number.MAX_SAFE_INTEGER)).map(book => `
+    }).sort((a, b) => (a.position === 'last' ? Infinity : a.position || Number.MAX_SAFE_INTEGER) - (b.position === 'last' ? Infinity : b.position || Number.MAX_SAFE_INTEGER)).map(book => `
       <article class="book-card">
         <a href="${book.staticUrl || `./books/${book.id.toLowerCase().replaceAll('_', '-')}/index.html`}" aria-label="View ${escapeHtml(book.title)}">${cover(book)}</a>
       </article>`).join('');
