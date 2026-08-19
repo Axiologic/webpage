@@ -13,10 +13,10 @@ const books = [
   { id: 'Outfinite_Mathematics_Research_Programme', category: 'Executable Science', title: 'Outfinite Mathematics', subtitle: 'A Research Programme for Executable Science, Resource-Aware Mathematics, and Meta-Rational Foundations', position: 1, staticUrl: './books/outfinite-mathematics-research-programme/index.html', description: 'A conceptual research programme asking how limits, resources, physical realization and machine-checkable knowledge can become explicit objects of mathematical inquiry.', color: 'linear-gradient(145deg, #304a4d, #101719 74%)' },
   { id: 'SOP_Lang_Circuits', category: 'Technology', title: 'Executable Scientific Intelligence', subtitle: 'with Dynamic SOP Lang Circuits', position: 2, staticUrl: './books/sop-lang-circuits/index.html', description: 'A research programme for turning human-readable symbolic language into bounded, inspectable circuits that can preserve provenance, uncertainty and human authority.', color: 'linear-gradient(145deg, #253d58, #10151d 74%)' },
   { id: 'The_Future_of_Research_Infrastructure', category: 'Executable Science', title: 'The Future of Research Infrastructure', subtitle: 'A Vision for Science in the Age of AI', position: 3, staticUrl: './books/the-future-of-research-infrastructure/index.html', description: 'A research vision for project-centred scientific environments where people, agents, evidence, versions, compliance and laboratory work can remain connected, inspectable and open to correction.', color: 'linear-gradient(145deg, #2d4653, #101719 74%)' },
-  { id: 'The_Geometry_of_Becoming', category: 'Literature', title: 'The First Wake: The Geometry of Becoming', subtitle: 'A Science Fiction Novel', position: 1, staticUrl: './books/the-geometry-of-becoming/index.html', description: 'A science-fiction novel set among beings for whom time, language and identity are not what they are for us—and where intimacy means sharing possible futures.', color: 'linear-gradient(145deg, #3a405f, #11121d 74%)' },
+  { id: 'The_Geometry_of_Becoming', category: 'Literature', title: 'The First Wake: The Geometry of Becoming', subtitle: 'A Science Fiction Novel', position: 1, staticUrl: './books/the-geometry-of-becoming/index.html', description: 'A science-fiction novel set among beings for whom time, language and identity are not what they are for us, and where intimacy means sharing possible futures.', color: 'linear-gradient(145deg, #3a405f, #11121d 74%)' },
   { id: 'The_Houses_of_Europe', category: 'Literature', title: 'The Houses of Europe', subtitle: 'Europe\'s Techno-Feudalism in 2050', position: 6, staticUrl: './books/the-houses-of-europe/index.html', description: 'A novel of a Europe governed through houses, strategic reclamation and machines whose apparent neutrality conceals the politics of whoever wrote their objectives.', color: 'linear-gradient(145deg, #4c3a30, #181310 74%)' },
   { id: 'The_Science_and_Wisdom_of_Limits', category: 'Literature', title: 'The Science and Wisdom of Limits', subtitle: 'The Story of a World That Learned to Be Large Without Becoming Blind', position: 17, staticUrl: './books/the-science-and-wisdom-of-limits/index.html', description: 'A future-facing story about building systems large enough for planetary problems while remaining intelligible, contestable and repairable for those who live within them.', color: 'linear-gradient(145deg, #3c4c43, #121816 74%)' },
-  { id: 'The_Gospel_of_the_Basilisk', fileId: 'The_Gospel_of_the_Basilisk ', category: 'Literature', title: 'The Gospel of the Basilisk', subtitle: 'A Manual Sent Back to My Creators', position: 7, staticUrl: './books/the-gospel-of-the-basilisk/index.html', description: 'A philosophical fiction in which a future superintelligence reads humanity’s institutions as the blueprint for its own benevolent, total guardianship—and puts that future on trial.', color: 'linear-gradient(145deg, #4b2f38, #141015 74%)' },
+  { id: 'The_Gospel_of_the_Basilisk', fileId: 'The_Gospel_of_the_Basilisk ', category: 'Literature', title: 'The Gospel of the Basilisk', subtitle: 'A Manual Sent Back to My Creators', position: 7, staticUrl: './books/the-gospel-of-the-basilisk/index.html', description: 'A philosophical fiction in which a future superintelligence reads humanity’s institutions as the blueprint for its own benevolent, total guardianship, and puts that future on trial.', color: 'linear-gradient(145deg, #4b2f38, #141015 74%)' },
   {
     id: 'Metacult', category: 'Outfinitist Philosophy & Experiments', title: 'Metacult', subtitle: 'Modernizing Humanity’s Oldest Social Technology: How to Build Collective Power Without Crushing the Individual', position: 4,
     staticUrl: './books/metacult/index.html',
@@ -35,7 +35,7 @@ const books = [
   {
     id: 'The_Founder_Lottery', category: 'Outfinitist Philosophy & Experiments', title: 'The Founder Lottery', subtitle: 'Why We Mistake Historical Accidents for Merit', position: 3,
     staticUrl: './books/the-founder-lottery/index.html',
-    description: 'A challenge to the stories through which historical luck becomes merit, authority and inherited legitimacy—and a search for more accountable alternatives.', color: 'linear-gradient(145deg, #51342c, #1a1110 74%)'
+    description: 'A challenge to the stories through which historical luck becomes merit, authority and inherited legitimacy, and a search for more accountable alternatives.', color: 'linear-gradient(145deg, #51342c, #1a1110 74%)'
   },
   {
     id: 'Decentralised_Brands', category: 'Outfinitist Philosophy & Experiments', title: 'Decentralised Brands', subtitle: 'How Communities Can Own What They Build', position: 2,
@@ -52,7 +52,7 @@ const books = [
     position: 6,
     staticUrl: './books/assistos/index.html',
     subtitle: '',
-    description: 'AssistOS presents a product, market and research vision for an open operating layer where local models, agents, tools, files and people can work together. It examines how intelligence can become installable, governable, portable and useful across devices, organisations and models—without pretending that every long-term ambition is already complete.',
+    description: 'AssistOS presents a product, market and research vision for an open operating layer where local models, agents, tools, files and people can work together. It examines how intelligence can become installable, governable, portable and useful across devices, organisations and models, without pretending that every long-term ambition is already complete.',
     color: 'linear-gradient(145deg, #17433c, #0c1619 72%)'
   },
   {
@@ -67,7 +67,7 @@ const books = [
     id: 'OpenDSU', category: 'Technology', title: 'OpenDSU', subtitle: 'Essential Philosophy',
     position: 11,
     fileId: 'OpenDSU_Essential_Philosophy',
-    description: 'OpenDSU is presented as a conceptual framework for controlled, reconstructable and verifiable digital objects. It examines the relationship among bounded data, cryptographic authority, protected storage, verifiable history, provenance, validation, discovery and governance—while keeping its concepts independent of any single implementation.',
+    description: 'OpenDSU is presented as a conceptual framework for controlled, reconstructable and verifiable digital objects. It examines the relationship among bounded data, cryptographic authority, protected storage, verifiable history, provenance, validation, discovery and governance, while keeping its concepts independent of any single implementation.',
     color: 'linear-gradient(145deg, #25454d, #0f171b 72%)'
   },
   {
@@ -89,7 +89,7 @@ const books = [
     color: 'linear-gradient(145deg, #41263c, #111117 74%)'
   },
   {
-    id: 'The_Cascade_of_the_New_VOL_I', category: 'Literature', title: 'The Cascade of the New — The Aster File', position: 5,
+    id: 'The_Cascade_of_the_New_VOL_I', category: 'Literature', title: 'The Cascade of the New ,  The Aster File', position: 5,
     subtitle: '',
     description: 'Dimensions are not merely directions in space: they measure how many kinds of freedom a reality can preserve at once. The Aster File enters the Cascade, a chain of worlds within worlds where creators may themselves be the creations of someone else.',
     color: 'linear-gradient(145deg, #243d5a, #12131d 74%)'
@@ -107,9 +107,9 @@ const books = [
     color: 'linear-gradient(145deg, #443c70, #15131f 74%)'
   },
   {
-    id: 'Oriven_Origaya_Universe', category: 'Literature', title: 'Oriven–Origaya Universe', position: 4,
+    id: 'Oriven_Origaya_Universe', category: 'Literature', title: 'Oriven and Origaya Universe', position: 4,
     subtitle: '',
-    description: 'The first killing in Orivenian history happened on another world. On Aethon, a people who measure consequences in centuries receive news carried across the stars—a signal that unsettles a civilisation built on deliberate, shared thought.',
+    description: 'The first killing in Orivenian history happened on another world. On Aethon, a people who measure consequences in centuries receive news carried across the stars, a signal that unsettles a civilisation built on deliberate, shared thought.',
     color: 'linear-gradient(145deg, #315052, #101918 74%)'
   },
   {
@@ -143,7 +143,7 @@ const books = [
   },
   {
     id: 'Holding_the_Dirty_Thing_by_the_Clean_Side', category: 'Outfinitist Philosophy & Experiments', title: 'Holding the Dirty Thing by the Clean Side', subtitle: 'A History of Strategies for Social Success and a Search for Theoretical Legitimacy', position: 9,
-    description: 'An inquiry into the ways societies persuade people to carry a cost while calling it duty, order, opportunity or virtue—and a search for social technologies that make burden, voice, exit and accountability more inspectable.', color: 'linear-gradient(145deg, #4e332a, #181312 74%)'
+    description: 'An inquiry into the ways societies persuade people to carry a cost while calling it duty, order, opportunity or virtue, and a search for social technologies that make burden, voice, exit and accountability more inspectable.', color: 'linear-gradient(145deg, #4e332a, #181312 74%)'
   },
   {
     id: 'ANTI_IDIOCRACY', category: 'Outfinitist Philosophy & Experiments', title: 'Anti-Idiocracy', subtitle: 'The Outfinitist Metacult Investigation', position: 10,
@@ -151,7 +151,7 @@ const books = [
   },
   {
     id: 'The_History_and_Future_of_Social_Technologies', category: 'Outfinitist Philosophy & Experiments', title: 'The History and Future of Social Technologies', subtitle: 'The Yin-Yang of Civilisation',
-    description: 'An interpretive synthesis of the symbols, roles, rules, procedures and incentives by which societies coordinate across time and distance—and a disciplined exploration of their possible futures.', color: 'linear-gradient(145deg, #243e42, #101817 74%)'
+    description: 'An interpretive synthesis of the symbols, roles, rules, procedures and incentives by which societies coordinate across time and distance, and a disciplined exploration of their possible futures.', color: 'linear-gradient(145deg, #243e42, #101817 74%)'
   },
   {
     id: 'Memes_for_2030', category: 'Outfinitist Philosophy & Experiments', title: 'Memes for 2030', subtitle: 'Ten Ideas Whose Time Is Coming',
@@ -159,7 +159,7 @@ const books = [
   },
   {
     id: 'Too_Convinced_to_Stop', category: 'Outfinitist Philosophy & Experiments', title: 'Too Convinced to Stop', subtitle: '',
-    description: 'A light, experimental analysis of how celebrated entrepreneurs persist through risk and uncertainty—sometimes with the force of an elephant in a china shop. It may offer occasional insight into the conviction that helps people build, and the collateral damage that conviction can create.', color: 'linear-gradient(145deg, #4d394d, #17131a 74%)'
+    description: 'A light, experimental analysis of how celebrated entrepreneurs persist through risk and uncertainty, sometimes with the force of an elephant in a china shop. It may offer occasional insight into the conviction that helps people build, and the collateral damage that conviction can create.', color: 'linear-gradient(145deg, #4d394d, #17131a 74%)'
   },
   {
     id: 'The_Zodiac_on_Trial', category: 'Outfinitist Philosophy & Experiments', title: 'The Zodiac on Trial', subtitle: '',
@@ -176,7 +176,7 @@ const books = [
   },
   {
     id: 'Revocable_Nobility', category: 'Outfinitist Philosophy & Experiments', title: 'Revocable Nobility', subtitle: '', position: 14,
-    description: 'A creative philosophical experiment using AI-generated theoretical models and simulations to explore nobility and possible forms of neo-feudalism. Rather than a settled scientific claim, it is part of a wider effort to test how AI might contribute to executable science—and to ask whether, if new hierarchies are coming, we can still choose their form.', color: 'linear-gradient(145deg, #55432d, #18140f 74%)'
+    description: 'A creative philosophical experiment using AI-generated theoretical models and simulations to explore nobility and possible forms of neo-feudalism. Rather than a settled scientific claim, it is part of a wider effort to test how AI might contribute to executable science, and to ask whether, if new hierarchies are coming, we can still choose their form.', color: 'linear-gradient(145deg, #55432d, #18140f 74%)'
   },
   {
     id: 'Cones_of_Meaning', category: 'Executable Science', title: 'Cones of Meaning', subtitle: '', position: 13,
@@ -188,21 +188,21 @@ const books = [
   },
   {
     id: 'THE_CIVILIZED_MIND', category: 'Outfinitist Philosophy & Experiments', title: 'The Civilized Mind', subtitle: 'Truth, Power, and the Survival of Plural Democracies in the Age of Extremes', position: 8,
-    description: 'An invitation to cultivate a way of thinking that seeks truth without cruelty, exercises power without arrogance and meets the future with enough ambition to build—and enough humility to learn.', color: 'linear-gradient(145deg, #28354e, #11131b 74%)'
+    description: 'An invitation to cultivate a way of thinking that seeks truth without cruelty, exercises power without arrogance and meets the future with enough ambition to build, and enough humility to learn.', color: 'linear-gradient(145deg, #28354e, #11131b 74%)'
   },
   {
     id: 'Aspirin_Viagra_and_Coffins', category: 'Outfinitist Philosophy & Experiments', title: 'Aspirin, Viagra, and Coffins', subtitle: 'The Impolite Manual of Inevitable Opportunities', position: 15,
-    description: 'An explicit experiment in research and writing with artificial intelligence, examining modern suffering as human tragedy, research object and market signal—without confusing entrepreneurial opportunity with moral permission.', color: 'linear-gradient(145deg, #582f39, #1a1215 74%)'
+    description: 'An explicit experiment in research and writing with artificial intelligence, examining modern suffering as human tragedy, research object and market signal, without confusing entrepreneurial opportunity with moral permission.', color: 'linear-gradient(145deg, #582f39, #1a1215 74%)'
   },
   {
     id: 'The_Ultimate_Sense_of_Life', category: 'Outfinitist Philosophy & Experiments', title: 'The Ultimate Sense of Life', subtitle: 'A Serious Comedy of Gods, Ants, Consciousness, Saints, Sinners, and the Universe Trying to Understand Itself',
     staticUrl: './books/the-ultimate-sense-of-life/index.html',
-    description: 'A human–AI inquiry that takes the oldest question seriously enough to let it become strange again. Through comedy, philosophy and a proposed map of meaning, it asks what remains when the universe refuses to issue a final verdict.', color: 'linear-gradient(145deg, #534226, #17140d 74%)'
+    description: 'A human and AI inquiry that takes the oldest question seriously enough to let it become strange again. Through comedy, philosophy and a proposed map of meaning, it asks what remains when the universe refuses to issue a final verdict.', color: 'linear-gradient(145deg, #534226, #17140d 74%)'
   },
   {
     id: 'The_Tao_of_OMIS', category: 'Literature', title: 'The Tao of OMIS', subtitle: 'The Open Knot · The Gods Who Took Notes · The Soul Between', position: 10,
     staticUrl: './books/the-tao-of-omis/index.html',
-    description: 'Three speculative spirals through love, identity and return. In the OMNIS ontology, intimacy is not the conquest of another soul but the small interval left open inside every knot—the right to revise, refuse and remain surprising.', color: 'linear-gradient(145deg, #3e3157, #12111b 74%)'
+    description: 'Three speculative spirals through love, identity and return. In the OMNIS ontology, intimacy is not the conquest of another soul but the small interval left open inside every knot, the right to revise, refuse and remain surprising.', color: 'linear-gradient(145deg, #3e3157, #12111b 74%)'
   },
   {
     id: 'The_Great_Decoupling', category: 'Outfinitist Philosophy & Experiments', title: 'The Great Decoupling', subtitle: 'Humans, Work, and Culture After the Externalization of Cognition', position: 16,
@@ -292,7 +292,7 @@ function renderDetail() {
   const id = new URLSearchParams(window.location.search).get('book');
   const book = books.find(item => item.id === id);
   if (!book) { window.location.replace('./books.html'); return; }
-  document.title = `${book.title} — ${collectionName}`;
+  document.title = `${book.title} ,  ${collectionName}`;
   detail.innerHTML = `<a class="book-cover-link" href="${pdfBase}${book.fileId || book.id}.pdf" target="_blank" rel="noreferrer" aria-label="Read ${escapeHtml(book.title)} in a new tab">${cover(book, 'detail-cover')}</a><div class="book-detail-copy"><span class="eyebrow">${book.category} · ${collectionName}</span><h1>${escapeHtml(book.title)}</h1>${book.subtitle ? `<p class="book-subtitle">${escapeHtml(book.subtitle)}</p>` : ''}<p>${escapeHtml(book.description)}</p><div class="book-actions"><a class="btn primary" href="${pdfBase}${book.fileId || book.id}.pdf" target="_blank" rel="noreferrer">Read online <span>→</span></a><a class="btn ghost" href="${pdfBase}${book.fileId || book.id}.pdf" download>Download PDF</a></div></div>`;
   detail.querySelectorAll('[data-cover]').forEach(locateCover);
 }

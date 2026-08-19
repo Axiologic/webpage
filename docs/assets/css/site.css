@@ -172,6 +172,12 @@ p {
   text-align: justify;
 }
 
+.hero-summary p:nth-child(2),
+.books-intro p:nth-of-type(2) { border-left-color: rgba(242, 209, 143, 0.6); }
+
+.hero-summary p:nth-child(3),
+.books-intro p:nth-of-type(3) { border-left-color: rgba(143, 186, 242, 0.65); }
+
 .books-invitation {
   margin-top: 26px;
   padding: 16px 18px;
@@ -751,7 +757,8 @@ p {
 .books-header { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
 .books-intro { max-width: none; padding: 30px 0 28px; }
 .books-intro h1 { margin: 10px 0 14px; font-size: clamp(36px, 4.6vw, 58px); line-height: .98; letter-spacing: -.06em; }
-.books-intro p { max-width: none; font-size: var(--copy-size); line-height: var(--copy-line); color: #dce0e8; }
+.books-intro p { max-width: none; padding-left: 18px; border-left: 2px solid rgba(154, 242, 198, 0.3); font-size: var(--copy-size); line-height: var(--copy-line); color: #dce0e8; text-align: justify; text-justify: inter-word; hyphens: auto; }
+.books-intro p + p { margin-top: 12px; }
 .book-category { margin: 0 0 72px; }
 .category-head { display: block; padding-bottom: 17px; border-bottom: 1px solid rgba(255,255,255,.15); }
 .category-head > span { color: var(--accent-2); font-size: 12px; letter-spacing: .1em; }
