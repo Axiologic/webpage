@@ -19,6 +19,7 @@ const books = [
   { id: 'The_Gospel_of_the_Basilisk', fileId: 'The_Gospel_of_the_Basilisk ', category: 'Literature', title: 'The Gospel of the Basilisk', subtitle: 'A Manual Sent Back to My Creators', position: 7, staticUrl: './books/the-gospel-of-the-basilisk/index.html', description: 'A philosophical fiction in which a future superintelligence reads humanity’s institutions as the blueprint for its own benevolent, total guardianship, and puts that future on trial.', color: 'linear-gradient(145deg, #4b2f38, #141015 74%)' },
   { id: 'The_Orphan_Gods', category: 'Literature', title: 'The Orphan Gods', subtitle: 'A Science-Fiction Novel', position: 4.5, staticUrl: './books/the-orphan-gods/index.html', description: 'A science-fiction novel about abandoned worlds, artificial gods and the difficult freedom of refusing to inherit a civilization’s old cruelties.', color: 'linear-gradient(145deg, #413653, #12111b 74%)' },
   { id: 'SOLIPSICON', category: 'Literature', title: 'SOLIPSICON', subtitle: 'A Philosophical Science-Fiction Novel', position: 4.6, staticUrl: './books/solipsicon/index.html', description: 'A philosophical science-fiction novel about children who steer human history from beyond its dimensions, until one intervention turns suffering into a question no score can answer.', color: 'linear-gradient(145deg, #273743, #101419 74%)' },
+  { id: 'SOLIPSCION', category: 'Literature', title: 'SOLIPSCION', subtitle: 'A Science-Fiction Novel', position: 4.65, staticUrl: './books/solipscion/index.html', description: 'A science-fiction novel about children from a higher plane who shape simulated worlds, and the hunger, desire and responsibility that their games cannot keep abstract.', color: 'linear-gradient(145deg, #493b5b, #11111b 74%)' },
   { id: 'Beyond_the_Last_Stone', category: 'Literature', title: 'Beyond the Last Stone', subtitle: 'A Story of Fire, Paths, and the Edge of Knowing', position: 4.75, staticUrl: './books/beyond-the-last-stone/index.html', description: 'A prehistoric philosophical novel about fire, paths and the difficult distinction between what a people knows and what it only believes.', color: 'linear-gradient(145deg, #4c3c2e, #171617 74%)' },
   {
     id: 'Metacult', category: 'Business & Startups', title: 'Metacult', subtitle: 'Modernizing Humanity’s Oldest Social Technology: How to Build Collective Power Without Crushing the Individual', position: 3,
@@ -80,7 +81,7 @@ const books = [
     color: 'linear-gradient(145deg, #3c3153, #15121c 72%)'
   },
   {
-    id: 'OMNIS', category: 'Literature', title: 'OMNIS', subtitle: 'The Dark One · The Mirror Above · The Architecture of Longing', position: 9,
+    id: 'OMNIS', category: 'Literature', title: 'OMNIS', subtitle: 'The Dark One · The Mirror Above · The Architecture of Longing', position: 4.7,
     description: 'A speculative trilogy about the price of being made. When a one-dimensional world discovers an Outside, OMNIS reopens the oldest questions: is there a Demiurge above the visible order, are we mistaking a cave for the whole of reality, and can a created mind discover a meaning for existence without becoming the prisoner of its creator’s purpose?',
     color: 'linear-gradient(145deg, #312a46, #101019 74%)'
   },
@@ -92,7 +93,7 @@ const books = [
     color: 'linear-gradient(145deg, #41263c, #111117 74%)'
   },
   {
-    id: 'The_Cascade_of_the_New_VOL_I', category: 'Literature', title: 'The Cascade of the New ,  The Aster File', position: 5,
+    id: 'The_Cascade_of_the_New_VOL_I', category: 'Literature', title: 'The Cascade of the New ,  The Aster File', position: 4.72,
     subtitle: '',
     description: 'Dimensions are not merely directions in space: they measure how many kinds of freedom a reality can preserve at once. The Aster File enters the Cascade, a chain of worlds within worlds where creators may themselves be the creations of someone else.',
     color: 'linear-gradient(145deg, #243d5a, #12131d 74%)'
@@ -203,7 +204,7 @@ const books = [
     description: 'A human and AI inquiry that takes the oldest question seriously enough to let it become strange again. Through comedy, philosophy and a proposed map of meaning, it asks what remains when the universe refuses to issue a final verdict.', color: 'linear-gradient(145deg, #534226, #17140d 74%)'
   },
   {
-    id: 'The_Tao_of_OMIS', category: 'Literature', title: 'The Tao of OMIS', subtitle: 'The Open Knot · The Gods Who Took Notes · The Soul Between', position: 10,
+    id: 'The_Tao_of_OMIS', category: 'Literature', title: 'The Tao of OMIS', subtitle: 'The Open Knot · The Gods Who Took Notes · The Soul Between', position: 4.71,
     staticUrl: './books/the-tao-of-omis/index.html',
     description: 'Three speculative spirals through love, identity and return. In the OMNIS ontology, intimacy is not the conquest of another soul but the small interval left open inside every knot, the right to revise, refuse and remain surprising.', color: 'linear-gradient(145deg, #3e3157, #12111b 74%)'
   },
