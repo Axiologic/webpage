@@ -130,7 +130,7 @@ p {
   margin: 40px 0 64px;
   display: grid;
   gap: 28px;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: 1fr;
 }
 
 .hero-text {
@@ -144,16 +144,17 @@ p {
 }
 
 .hero-title {
-  max-width: 1120px;
+  max-width: none;
   font-size: clamp(30px, 2.1vw, 40px);
   line-height: 1.04;
-  text-align: justify;
-  text-justify: inter-word;
+  text-align: left;
 }
 
 .lede {
+  padding-left: 18px;
+  border-left: 2px solid #f2a38f;
   font-size: var(--copy-size);
-  color: #d6dae2;
+  color: #f2a38f;
   text-align: justify;
 }
 
@@ -165,18 +166,16 @@ p {
 .hero-summary p {
   margin: 0;
   padding-left: 18px;
-  border-left: 2px solid rgba(154, 242, 198, 0.3);
-  color: #cfd4dd;
+  border-left: 2px solid var(--accent);
+  color: var(--accent);
   font-size: var(--copy-size);
   line-height: var(--copy-line);
   text-align: justify;
 }
 
-.hero-summary p:nth-child(2),
-.books-intro p:nth-of-type(2) { border-left-color: rgba(242, 209, 143, 0.6); }
+.hero-summary p:nth-child(2) { border-left-color: var(--accent-2); color: var(--accent-2); }
 
-.hero-summary p:nth-child(3),
-.books-intro p:nth-of-type(3) { border-left-color: rgba(143, 186, 242, 0.65); }
+.hero-summary p:nth-child(3) { border-left-color: #8fbaf2; color: #8fbaf2; }
 
 .books-intro p.outfinitism-note {
   border-left-color: #cd8ff2;
@@ -191,9 +190,9 @@ p {
 .books-invitation {
   margin-top: 26px;
   padding: 16px 18px;
-  border-left: 2px solid var(--accent-2);
-  background: linear-gradient(90deg, rgba(242, 209, 143, 0.1), transparent 76%);
-  color: #edf0f6;
+  border-left: 2px solid #ffffff;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.06), transparent 76%);
+  color: #ffffff;
   text-align: justify;
 }
 
@@ -237,6 +236,7 @@ p {
 
 .panel-stack {
   display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
 }
 
@@ -251,6 +251,12 @@ p {
   margin: 0 0 10px;
   font-size: 20px;
   color: #f6f7fb;
+}
+
+.hero .panel h3 {
+  font-size: clamp(16px, 1vw, 18px);
+  letter-spacing: -.02em;
+  white-space: nowrap;
 }
 
 .panel p {
@@ -594,7 +600,7 @@ p {
 }
 
 .recognition-intro {
-  max-width: 730px;
+  max-width: none;
   margin-top: 42px;
   color: #dfe3ec;
   font-size: clamp(20px, 2.2vw, 28px);
@@ -654,7 +660,7 @@ p {
   font-size: clamp(23px, 2.45vw, 32px);
   letter-spacing: -.04em;
   line-height: 1.08;
-  text-wrap: balance;
+  text-wrap: wrap;
 }
 
 .innovation-card p { font-size: var(--copy-size); line-height: var(--copy-line); }
@@ -907,7 +913,7 @@ p {
 .coming-soon { display: inline-flex; align-items: center; min-height: 46px; padding: 0 17px; border: 1px solid rgba(255,255,255,.14); border-radius: 999px; color: var(--muted); font-size: 13px; letter-spacing: .06em; text-transform: uppercase; }
 
 @media (max-width: 1280px) { .books-grid { grid-template-columns: repeat(7, minmax(0, 1fr)); } }
-@media (max-width: 1100px) { .books-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+@media (max-width: 1100px) { .books-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } .panel-stack { grid-template-columns: 1fr; } }
 @media (max-width: 900px) { .books-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 
 @media (max-width: 720px) {
@@ -935,6 +941,7 @@ p {
     grid-template-columns: 1fr;
     gap: 16px;
   }
+  .hero .panel h3 { white-space: normal; }
   .panel-icon {
     text-align: left;
   }
