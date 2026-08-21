@@ -2,6 +2,8 @@
   const matrixGlyphs = '01<>/\\{}[]*+−=ABCDEFGHIJKLMNOPQRSTUVWXYZ';
   const holdDuration = 4000;
   const choiceDuration = 30000;
+  const bookPalette = ['var(--accent)', 'var(--accent-2)', '#8fbaf2', '#f2a38f', '#cd8ff2', '#ffffff'];
+  const homePalette = ['var(--accent)', 'var(--accent-2)', '#8fbaf2', '#f2a38f', '#ffffff'];
   const readAloud = (() => {
     const supported = 'speechSynthesis' in window && 'SpeechSynthesisUtterance' in window;
     let enabled = false;
@@ -107,6 +109,7 @@
   const initCarousel = (source) => {
     const cards = [...source.querySelectorAll(':scope > p')];
     if (cards.length < 2) return;
+    const palette = source.classList.contains('books-intro') ? bookPalette : homePalette;
 
     const carousel = document.createElement('section');
     carousel.className = 'books-intro-carousel is-awaiting-choice';
@@ -134,6 +137,7 @@
     cards.forEach((card, index) => {
       card.dataset.speechText = card.textContent.trim();
       card.classList.add('books-intro-card');
+      card.style.setProperty('--intro-card-color', palette[index % palette.length]);
       card.setAttribute('role', 'group');
       card.setAttribute('aria-roledescription', 'slide');
       card.setAttribute('aria-label', `Paragraph ${index + 1} of ${cards.length}`);

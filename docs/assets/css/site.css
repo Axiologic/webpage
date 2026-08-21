@@ -177,6 +177,10 @@ p {
 
 .hero-summary p:nth-child(3) { border-left-color: #8fbaf2; color: #8fbaf2; }
 
+.hero-summary p:nth-child(4) { border-left-color: #f2a38f; color: #f2a38f; }
+
+.hero-summary p:nth-child(5) { border-left-color: #ffffff; color: #ffffff; }
+
 .books-intro p.outfinitism-note {
   border-left-color: #cd8ff2;
   color: #cd8ff2;
@@ -802,9 +806,11 @@ p {
   padding: clamp(20px, 3vw, 34px);
   border: 1px solid rgba(255, 255, 255, .1);
   border-left-width: 3px;
+  border-left-color: var(--intro-card-color, var(--accent));
   border-radius: 4px var(--radius-md) var(--radius-md) 4px;
   background: linear-gradient(135deg, rgba(255, 255, 255, .035), rgba(255, 255, 255, .01));
   box-shadow: 0 16px 42px rgba(0, 0, 0, .16);
+  color: var(--intro-card-color, var(--accent));
   overflow: hidden;
 }
 .books-intro-carousel .books-intro-card[hidden] { display: none; }
