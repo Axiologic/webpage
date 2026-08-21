@@ -375,7 +375,7 @@ p {
   text-transform: uppercase;
 }
 
-.back-link { color: #dfe3ec; font-size: 14px; font-weight: 600; }
+.back-link { color: #dfe3ec; font-size: 16px; font-weight: 600; }
 
 .recognition-banners {
   display: grid;
@@ -760,6 +760,7 @@ p {
 
 /* Books */
 .books-header { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+.newsletter-header-actions { display: flex; align-items: center; justify-content: flex-end; gap: 18px; margin-left: auto; }
 .books-intro { max-width: none; padding: 30px 0 28px; }
 .books-intro h1 { margin: 10px 0 14px; font-size: clamp(36px, 4.6vw, 58px); line-height: .98; letter-spacing: -.06em; }
 .books-intro p { max-width: none; padding-left: 18px; border-left: 2px solid rgba(154, 242, 198, 0.3); font-size: var(--copy-size); line-height: var(--copy-line); color: #dce0e8; text-align: justify; text-justify: inter-word; hyphens: auto; }
@@ -828,7 +829,7 @@ p {
 
 /* Static research-edition pages */
 .edition-page { padding-top: 28px; }
-.edition-page .shell > article { width: min(100%, 1440px); margin: 0 auto; }
+.edition-page .shell > article { width: 100%; }
 .edition-hero { display: grid; grid-template-columns: minmax(220px, 350px) minmax(0, 1fr); gap: clamp(28px, 6vw, 72px); align-items: center; padding: 56px 0 42px; }
 .edition-cover { display: block; width: min(100%, 320px); aspect-ratio: .665; object-fit: cover; object-position: left top; border-radius: 5px 10px 10px 5px; box-shadow: var(--shadow-soft); background: #0b0d12; }
 .edition-cover-frame { position: relative; width: min(100%, 320px); aspect-ratio: .665; overflow: hidden; border-radius: 5px 10px 10px 5px; box-shadow: var(--shadow-soft); background: #0b0d12; }
@@ -849,7 +850,7 @@ p {
 .edition-reading { max-width: none; }
 .edition-reading h2 { margin-top: 42px; }
 .edition-reading h2:first-child { margin-top: 0; }
-.edition-reading p { max-width: 76ch; margin: 0 0 19px; color: #d7dce5; text-align: justify; text-justify: inter-word; hyphens: auto; text-wrap: pretty; }
+.edition-reading p { max-width: none; margin: 0 0 19px; color: #d7dce5; text-align: justify; text-justify: inter-word; hyphens: auto; text-wrap: pretty; }
 .edition-reading .pull-quote { border-left: 2px solid var(--accent); padding: 4px 0 4px 20px; color: #f3f5f9; font-size: 21px; line-height: 1.45; }
 .edition-aside { display: grid; align-content: start; gap: 14px; }
 .edition-aside .panel { padding: 18px; }
@@ -867,7 +868,7 @@ p {
 .edition-aside .newsletter-form button { min-height: 40px; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }
 .newsletter-modal { position: fixed; z-index: 100; inset: 0; display: grid; place-items: center; padding: 20px; background: rgba(4, 7, 12, .72); }
-.newsletter-top-trigger { position: fixed; z-index: 90; top: 18px; right: 20px; min-height: 40px; padding: 9px 15px; border: 1px solid rgba(154, 242, 198, .6); border-radius: 999px; background: rgba(11, 13, 18, .92); color: var(--accent); box-shadow: 0 8px 24px rgba(0, 0, 0, .28); cursor: pointer; font: inherit; font-weight: 700; }
+.newsletter-top-trigger { min-height: 40px; padding: 9px 15px; border: 1px solid rgba(154, 242, 198, .6); border-radius: 999px; background: rgba(11, 13, 18, .92); color: var(--accent); box-shadow: 0 8px 24px rgba(0, 0, 0, .28); cursor: pointer; font: inherit; font-weight: 700; }
 .newsletter-top-trigger:hover { background: var(--accent); color: #0a1514; }
 .newsletter-dialog { position: relative; width: min(100%, 860px); padding: clamp(30px, 5vw, 52px); border: 1px solid rgba(154, 242, 198, .3); border-radius: var(--radius-lg); background: #11151d; box-shadow: var(--shadow-soft); }
 .newsletter-dialog h2 { margin: 8px 42px 12px 0; font-size: clamp(24px, 2.5vw, 30px); line-height: 1.12; white-space: nowrap; }
@@ -910,9 +911,12 @@ p {
     align-items: flex-start;
   }
 
+  .books-header { flex-wrap: wrap; align-items: flex-start; }
+  .newsletter-header-actions { gap: 12px; margin-left: auto; }
+
   .logo { height: 42px; max-width: 100%; }
   .books-header .logo { height: 32px; max-width: 175px; }
-  .books-header .back-link { font-size: 12px; white-space: nowrap; }
+  .books-header .back-link { white-space: nowrap; }
 
   .footer {
     flex-direction: column;

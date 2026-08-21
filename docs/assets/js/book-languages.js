@@ -59,7 +59,7 @@
     });
   });
   document.addEventListener('click', (event) => {
-    if (menu && !menu.contains(event.target) && event.target !== activeButton) closeMenu();
+    if (menu && !menu.contains(event.target) && !activeButton?.contains(event.target)) closeMenu();
   });
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') closeMenu();
