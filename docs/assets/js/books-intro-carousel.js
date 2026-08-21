@@ -166,7 +166,9 @@
     let revealTimer;
     let advanceTimer;
     let voiceTimer;
+    let countdownTimer;
     let choiceTimer;
+    let nextChangeAt = 0;
     const mutePreference = 'axiologic-read-aloud-muted';
     let voiceMuted = (() => {
       try { return window.localStorage.getItem(mutePreference) === 'true'; }
@@ -199,6 +201,8 @@
       window.clearTimeout(revealTimer);
       window.clearTimeout(advanceTimer);
       window.clearTimeout(voiceTimer);
+      window.clearInterval(countdownTimer);
+      nextChangeAt = 0;
     };
     const syncVoiceControl = () => {
       muteButton.hidden = !readAloud.enabled();
@@ -206,13 +210,16 @@
       muteButton.setAttribute('aria-pressed', String(voiceMuted));
     };
     const updateReading = () => {
-      const voiceState = readAloud.enabled() ? (voiceMuted ? ' · Voice muted' : ' · Voice on') : '';
-      reading.textContent = `${paused ? 'Paused' : `Auto · ${readingTime(cards[active])} sec + 4 sec`}${voiceState}`;
+      const seconds = Math.max(0, Math.ceil((nextChangeAt - Date.now()) / 1000));
+      reading.textContent = paused ? 'Paused' : `Next in ${seconds} sec`;
     };
     const schedule = () => {
       clearTimers();
-      if (paused) return;
+      if (paused) { updateReading(); return; }
       const duration = readingTime(cards[active]) * 1000;
+      nextChangeAt = Date.now() + duration + 500 + holdDuration;
+      updateReading();
+      countdownTimer = window.setInterval(updateReading, 250);
       revealTimer = window.setTimeout(() => {
         cards[active].classList.add('is-resting');
         advanceTimer = window.setTimeout(() => show(active + 1), holdDuration);
