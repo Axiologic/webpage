@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#11120f">
+  <meta name="description" content="Axiologic's adaptable online reader for books, web editions and audiobooks.">
+  <title>Reader · Axiologic</title>
+  <link rel="stylesheet" href="./reader.css?v=20260825-1">
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="e252999d-4479-42d7-9526-5f778846d4f6"></script>
+</head>
+<body>
+  <main class="reader-app" data-reader-app>
+    <header class="reader-header">
+      <a class="reader-back" href="../books.html" data-reader-back aria-label="Return to the book page">← <span>Back</span></a>
+      <div class="reader-identification">
+        <p class="reader-kicker" data-reader-format>Preparing edition</p>
+        <h1 data-reader-title>Reader</h1>
+      </div>
+      <div class="reader-header-actions">
+        <button class="reader-icon-button" type="button" data-reader-reset title="Start this edition again" aria-label="Start this edition again">↺</button>
+        <a class="reader-icon-button" href="#" data-reader-original title="Open the original file" aria-label="Open the original file" target="_blank" rel="noreferrer">↗</a>
+      </div>
+    </header>
+
+    <section class="reader-stage-wrap" aria-live="polite">
+      <div class="reader-loading" data-reader-loading>
+        <span class="reader-spinner" aria-hidden="true"></span>
+        <p>Preparing your reading edition…</p>
+      </div>
+      <div class="reader-stage" data-reader-stage></div>
+    </section>
+
+    <footer class="reader-controls" data-reader-controls>
+      <div class="reader-progress-row">
+        <p data-reader-status>Finding the best available edition…</p>
+        <p data-reader-location></p>
+      </div>
+      <label class="reader-seek" aria-label="Reading progress">
+        <input type="range" min="0" max="100" step="0.1" value="0" data-reader-seek>
+      </label>
+      <div class="reader-toolbar">
+        <div class="reader-control-group" data-reader-pdf-controls hidden>
+          <button type="button" class="reader-button" data-reader-previous aria-label="Previous page">‹</button>
+          <label class="reader-page-label">Page <input type="number" min="1" inputmode="numeric" data-reader-page aria-label="Page number"> <span data-reader-page-total></span></label>
+          <button type="button" class="reader-button" data-reader-next aria-label="Next page">›</button>
+        </div>
+        <div class="reader-control-group" data-reader-reading-controls hidden>
+          <button type="button" class="reader-button" data-reader-reading-previous aria-label="Previous reading page">‹</button>
+          <span class="reader-virtual-page" data-reader-virtual-page>Page 1</span>
+          <button type="button" class="reader-button" data-reader-reading-next aria-label="Next reading page">›</button>
+        </div>
+        <div class="reader-control-group" data-reader-text-controls>
+          <button type="button" class="reader-button" data-reader-text-smaller aria-label="Decrease text size">A−</button>
+          <button type="button" class="reader-button reader-button-text" data-reader-text-size aria-label="Reset text size">Text</button>
+          <button type="button" class="reader-button" data-reader-text-larger aria-label="Increase text size">A+</button>
+        </div>
+        <div class="reader-control-group" data-reader-zoom-controls hidden>
+          <button type="button" class="reader-button" data-reader-zoom-out aria-label="Zoom out">−</button>
+          <button type="button" class="reader-button reader-button-text" data-reader-fit>Fit width</button>
+          <button type="button" class="reader-button" data-reader-zoom-in aria-label="Zoom in">+</button>
+        </div>
+        <button type="button" class="reader-button reader-theme-button" data-reader-theme aria-label="Change reader theme">◐</button>
+        <div class="reader-audio" data-reader-audio hidden>
+          <audio controls preload="metadata" data-reader-audio-player></audio>
+        </div>
+      </div>
+    </footer>
+  </main>
+  <script defer src="./reader.js?v=20260824-12"></script>
+</body>
+</html>

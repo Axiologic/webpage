@@ -1,0 +1,13 @@
+<svg width="160" height="80" viewBox="0 0 160 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AssistOS logo">
+  <title>AssistOS</title>
+  <defs>
+    <linearGradient id="assist-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9af2c6"/>
+      <stop offset="100%" stop-color="#f2d18f"/>
+    </linearGradient>
+  </defs>
+  <rect width="160" height="80" rx="18" fill="#0a0c10"/>
+  <path d="M48 60 L70 20 L92 60" stroke="url(#assist-gradient)" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <circle cx="80" cy="42" r="10" fill="#0a0c10" stroke="url(#assist-gradient)" stroke-width="5"/>
+  <circle cx="78" cy="40" r="4" fill="#0a0c10"/>
+</svg>
