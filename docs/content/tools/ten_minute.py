@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
-"""Build concise, source-linked ten-minute reading guides for every English PDF edition."""
+"""Build editorial ten-minute syntheses for every English PDF edition."""
 
 from __future__ import annotations
 
 import argparse
-from dataclasses import dataclass
 from html import escape
-from html.parser import HTMLParser
+import json
 from pathlib import Path
 import re
 import sys
+from typing import Any
 from urllib.parse import quote
 
 
@@ -17,225 +17,23 @@ REPO_ROOT = Path(__file__).resolve().parents[3]
 CONTENT_ROOT = REPO_ROOT / "docs" / "content"
 SOURCE_DIRECTORY = CONTENT_ROOT / "htmls" / "EN"
 OUTPUT_DIRECTORY = CONTENT_ROOT / "10minutes"
-TARGET_WORDS = 1_400
-MIN_WORDS = 18
-MAX_WORDS = 320
-OMIT_TEXT = re.compile(
-    r"\b(?:copyright|all rights reserved|author(?:'s)? note|publication and research note|"
-    r"ai[- ]assistance disclosure|selected references|references and current resources|bibliography)\b",
-    re.IGNORECASE,
-)
-END_MATTER_HEADING = re.compile(r"\b(?:bibliography|references|selected reading)\b", re.IGNORECASE)
-
-
-def normalize(value: str) -> str:
-    text = re.sub(r"\s+", " ", value).strip()
-    return re.sub(r"^[A-Z][A-Za-z ]{2,70}\s·\s\d{1,4}\s+", "", text)
+SUMMARY_DIRECTORY = CONTENT_ROOT / "tools" / "ten_minute_summaries"
+MIN_SUMMARY_WORDS = 1_000
+MAX_SUMMARY_WORDS = 1_500
+MIN_SHORT_WORDS = 18
+MAX_LISTING_WORDS = 60
+MAX_HOOK_WORDS = 75
+FINAL_HEADING = "Why read the complete book"
+TITLE_SUFFIX = ": A 10-Minute Synthesis"
+HOOK_META_LANGUAGE = re.compile(r"\b(?:this|the)\s+(?:guide|overview|summary)\b", re.IGNORECASE)
 
 
 def words(value: str) -> list[str]:
     return re.findall(r"[\w’'-]+", value)
 
 
-@dataclass(frozen=True)
-class Entry:
-    tag: str
-    text: str
-
-
-@dataclass(frozen=True)
-class Passage:
-    position: int
-    heading: str
-    text: str
-
-    @property
-    def word_count(self) -> int:
-        return len(words(self.text))
-
-
-class ReflowParser(HTMLParser):
-    """Collect readable headings and paragraphs from a generated reflow edition."""
-
-    def __init__(self) -> None:
-        super().__init__(convert_charrefs=True)
-        self.entries: list[Entry] = []
-        self._tag: str | None = None
-        self._parts: list[str] = []
-
-    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
-        if tag in {"h1", "h2", "h3", "p"}:
-            self._tag = tag
-            self._parts = []
-
-    def handle_data(self, data: str) -> None:
-        if self._tag:
-            self._parts.append(data)
-
-    def handle_endtag(self, tag: str) -> None:
-        if tag != self._tag:
-            return
-        text = normalize("".join(self._parts))
-        if text:
-            self.entries.append(Entry(tag, text))
-        self._tag = None
-        self._parts = []
-
-
-def parse_source(path: Path) -> list[Entry]:
-    parser = ReflowParser()
-    parser.feed(path.read_text(encoding="utf-8"))
-    parser.close()
-    return parser.entries
-
-
-def acceptable(text: str, heading: str) -> bool:
-    count = len(words(text))
-    if count < MIN_WORDS or count > MAX_WORDS:
-        return False
-    if OMIT_TEXT.search(heading) or OMIT_TEXT.search(text):
-        return False
-    if text.count("http") > 1 or text.count(";") > 10:
-        return False
-    return True
-
-
-def split_passage(text: str) -> list[str]:
-    """Keep long PDF-extraction paragraphs readable without cutting a sentence."""
-    sentences = re.split(r"(?<=[.!?])\s+(?=[A-Z‘“])", text)
-    chunks: list[str] = []
-    current: list[str] = []
-    current_words = 0
-    for sentence in sentences:
-        sentence_words = len(words(sentence))
-        if current and current_words + sentence_words > 190:
-            chunks.append(" ".join(current))
-            current = []
-            current_words = 0
-        current.append(sentence)
-        current_words += sentence_words
-    if current:
-        chunks.append(" ".join(current))
-    return chunks
-
-
-def passages(entries: list[Entry]) -> list[Passage]:
-    current_heading = ""
-    result: list[Passage] = []
-    for position, entry in enumerate(entries):
-        if entry.tag in {"h1", "h2", "h3"}:
-            # A table of contents may list “References” before the book begins.
-            # End matter only starts after a substantial body of readable prose.
-            if len(result) >= 20 and END_MATTER_HEADING.search(entry.text):
-                break
-            current_heading = entry.text
-        elif entry.tag == "p":
-            for fragment_index, fragment in enumerate(split_passage(entry.text)):
-                if acceptable(fragment, current_heading):
-                    result.append(Passage(position * 100 + fragment_index, current_heading, fragment))
-    return result
-
-
-def score(passage: Passage) -> float:
-    """Prefer self-contained prose near a substantial, non-bibliographic section."""
-    length_score = 1 - abs(145 - passage.word_count) / 145
-    sentence_score = min(passage.text.count(".") + passage.text.count("?") + passage.text.count("!"), 5) / 5
-    heading_score = 0.18 if passage.heading else 0
-    citation_penalty = min(passage.text.count("(") * 0.04, 0.2)
-    return length_score + sentence_score + heading_score - citation_penalty
-
-
-def choose_passages(candidates: list[Passage]) -> list[Passage]:
-    if not candidates:
-        raise ValueError("no readable passages found")
-
-    selected: list[Passage] = []
-    selected_positions: set[int] = set()
-    bucket_count = 10
-    for bucket in range(bucket_count):
-        start = bucket * len(candidates) // bucket_count
-        end = (bucket + 1) * len(candidates) // bucket_count
-        group = candidates[start:end] or candidates[start:start + 1]
-        choice = max(group, key=score)
-        selected.append(choice)
-        selected_positions.add(choice.position)
-
-    selected.sort(key=lambda passage: passage.position)
-    total = sum(passage.word_count for passage in selected)
-    for candidate in sorted(candidates, key=score, reverse=True):
-        if total >= TARGET_WORDS:
-            break
-        if candidate.position in selected_positions:
-            continue
-        selected.append(candidate)
-        selected_positions.add(candidate.position)
-        total += candidate.word_count
-
-    return sorted(selected, key=lambda passage: passage.position)
-
-
-def document_title(entries: list[Entry], fallback: str) -> str:
-    for entry in entries:
-        if entry.tag in {"h1", "h2"} and 1 < len(entry.text) < 150 and not OMIT_TEXT.search(entry.text):
-            return entry.text
-    return fallback.replace("_", " ").strip()
-
-
 def encoded(relative: Path) -> str:
     return quote(relative.as_posix(), safe="/")
-
-
-def render(pdf: Path, source: Path, destination: Path) -> str:
-    entries = parse_source(source)
-    selection = choose_passages(passages(entries))
-    title = document_title(entries, pdf.stem)
-    word_count = sum(passage.word_count for passage in selection)
-    full_html = encoded(Path("..") / "htmls" / "EN" / source.name)
-    original_pdf = encoded(Path("..") / "EN" / pdf.name)
-
-    sections: list[str] = []
-    previous_heading = ""
-    for passage in selection:
-        heading = passage.heading if passage.heading and passage.heading != previous_heading else ""
-        if heading:
-            sections.append(f"<h2>{escape(heading)}</h2>")
-            previous_heading = passage.heading
-        sections.append(f"<p>{escape(passage.text)}</p>")
-
-    return f"""<!doctype html>
-<html lang=\"en\">
-<head>
-  <meta charset=\"utf-8\">
-  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
-  <meta name=\"description\" content=\"A ten-minute guided reading of {escape(title, quote=True)}.\">
-  <meta name=\"reading-time\" content=\"10 minutes\">
-  <meta name=\"source-pdf\" content=\"{escape(pdf.name, quote=True)}\">
-  <title>{escape(title)} · 10-minute read</title>
-  <link rel=\"stylesheet\" href=\"../../reader/standalone.css?v=20260827-3\">
-  <style>
-    .ten-minute-header {{ margin-bottom: 2.4rem; padding-bottom: 1.5rem; border-bottom: 1px solid color-mix(in srgb, currentColor 22%, transparent); }}
-    .ten-minute-header p {{ text-indent: 0; text-align: left; }}
-    .ten-minute-kicker {{ color: var(--standalone-link); font: 700 .78em/1.2 system-ui, sans-serif; letter-spacing: .12em; text-transform: uppercase; }}
-    .ten-minute-links {{ display: flex; flex-wrap: wrap; gap: .8rem 1.1rem; margin-top: 1.2rem; font-family: system-ui, sans-serif; font-size: .82em; }}
-    .ten-minute-note {{ font-size: .86em; color: color-mix(in srgb, currentColor 72%, transparent); }}
-  </style>
-  <script defer src=\"https://cloud.umami.is/script.js\" data-website-id=\"e252999d-4479-42d7-9526-5f778846d4f6\"></script>
-</head>
-<body>
-  <header class=\"ten-minute-header\">
-    <p class=\"ten-minute-kicker\">10-minute reading guide</p>
-    <h1>{escape(title)}</h1>
-    <p>About 10 minutes · {word_count:,} words</p>
-    <p class=\"ten-minute-note\">This guided edition selects substantial passages from the English source to make the central argument readable in one sitting. It is not a replacement for the complete edition.</p>
-    <nav class=\"ten-minute-links\" aria-label=\"Edition links\"><a href=\"{full_html}\">Read the full HTML edition</a><a href=\"{original_pdf}\">Download the original PDF</a></nav>
-  </header>
-  <main>
-    {''.join(sections)}
-  </main>
-  <script defer src=\"../../reader/standalone.js?v=20260827-1\"></script>
-</body>
-</html>
-"""
 
 
 def targets() -> list[tuple[Path, Path, Path]]:
@@ -248,18 +46,156 @@ def targets() -> list[tuple[Path, Path, Path]]:
     return pairs
 
 
-def build() -> int:
+def summary_path(book_id: str) -> Path:
+    return SUMMARY_DIRECTORY / f"{book_id}.json"
+
+
+def summary_word_count(summary: dict[str, Any]) -> int:
+    return sum(len(words(paragraph)) for section in summary["sections"] for paragraph in section["paragraphs"])
+
+
+def validate_summary(summary: Any, expected_id: str | None = None) -> list[str]:
+    problems: list[str] = []
+    if not isinstance(summary, dict):
+        return ["summary must be a JSON object"]
+
+    required = {"id", "title", "listing_description", "reader_hook", "sections"}
+    missing = required - set(summary)
+    extra = set(summary) - required
+    if missing:
+        problems.append(f"missing fields: {', '.join(sorted(missing))}")
+    if extra:
+        problems.append(f"unexpected fields: {', '.join(sorted(extra))}")
+    if problems:
+        return problems
+
+    book_id = summary["id"]
+    if not isinstance(book_id, str) or not book_id:
+        problems.append("id must be a non-empty string")
+    elif expected_id is not None and book_id != expected_id:
+        problems.append(f"id is {book_id!r}, expected {expected_id!r}")
+
+    for field, maximum in (("listing_description", MAX_LISTING_WORDS), ("reader_hook", MAX_HOOK_WORDS)):
+        value = summary[field]
+        if not isinstance(value, str):
+            problems.append(f"{field} must be a string")
+            continue
+        count = len(words(value))
+        if count < MIN_SHORT_WORDS or count > maximum:
+            problems.append(f"{field} has {count} words; expected {MIN_SHORT_WORDS}-{maximum}")
+    if isinstance(summary["reader_hook"], str) and HOOK_META_LANGUAGE.search(summary["reader_hook"]):
+        problems.append("reader_hook must invite readers into the book, not mention a guide, overview or summary")
+
+    if not isinstance(summary["title"], str) or not summary["title"].strip():
+        problems.append("title must be a non-empty string")
+    elif not summary["title"].endswith(TITLE_SUFFIX):
+        problems.append(f"title must end with {TITLE_SUFFIX!r}")
+
+    sections = summary["sections"]
+    if not isinstance(sections, list) or not 6 <= len(sections) <= 9:
+        problems.append("sections must contain 6-9 thematic sections")
+        return problems
+    for index, section in enumerate(sections, start=1):
+        if not isinstance(section, dict) or set(section) != {"heading", "paragraphs"}:
+            problems.append(f"section {index} must contain only heading and paragraphs")
+            continue
+        if not isinstance(section["heading"], str) or not section["heading"].strip():
+            problems.append(f"section {index} has no heading")
+        paragraphs = section["paragraphs"]
+        if not isinstance(paragraphs, list) or not paragraphs:
+            problems.append(f"section {index} has no paragraphs")
+        elif any(not isinstance(paragraph, str) or not paragraph.strip() for paragraph in paragraphs):
+            problems.append(f"section {index} contains an empty or invalid paragraph")
+    if isinstance(sections[-1], dict) and sections[-1].get("heading") != FINAL_HEADING:
+        problems.append(f"final section must be titled {FINAL_HEADING!r}")
+
+    if not problems:
+        count = summary_word_count(summary)
+        if count < MIN_SUMMARY_WORDS or count > MAX_SUMMARY_WORDS:
+            problems.append(f"synthesis has {count} words; expected {MIN_SUMMARY_WORDS}-{MAX_SUMMARY_WORDS}")
+    return problems
+
+
+def load_summary(book_id: str) -> dict[str, Any]:
+    path = summary_path(book_id)
+    if not path.is_file():
+        raise FileNotFoundError(f"missing editorial source {path.relative_to(REPO_ROOT)}")
+    summary = json.loads(path.read_text(encoding="utf-8"))
+    problems = validate_summary(summary, book_id)
+    if problems:
+        raise ValueError(f"invalid {path.relative_to(REPO_ROOT)}: {'; '.join(problems)}")
+    return summary
+
+
+def render(pdf: Path, source: Path, destination: Path) -> str:
+    del destination
+    summary = load_summary(pdf.stem)
+    title = summary["title"]
+    book_title = title.removesuffix(TITLE_SUFFIX)
+    word_count = summary_word_count(summary)
+    full_html = encoded(Path("..") / "htmls" / "EN" / source.name)
+    original_pdf = encoded(Path("..") / "EN" / pdf.name)
+
+    sections = []
+    for section in summary["sections"]:
+        paragraphs = "".join(f"<p>{escape(paragraph)}</p>" for paragraph in section["paragraphs"])
+        sections.append(f"<section><h2>{escape(section['heading'])}</h2>{paragraphs}</section>")
+
+    return f"""<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A ten-minute synthesis of {escape(book_title, quote=True)}.">
+  <meta name="reading-time" content="10 minutes">
+  <meta name="source-pdf" content="{escape(pdf.name, quote=True)}">
+  <title>{escape(book_title)} · 10-minute synthesis</title>
+  <link rel="stylesheet" href="../../reader/standalone.css?v=20260827-3">
+  <style>
+    .ten-minute-header {{ margin-bottom: 2.4rem; padding-bottom: 1.5rem; border-bottom: 1px solid color-mix(in srgb, currentColor 22%, transparent); }}
+    .ten-minute-header p {{ text-indent: 0; text-align: left; }}
+    .ten-minute-kicker {{ color: var(--standalone-link); font: 700 .78em/1.2 system-ui, sans-serif; letter-spacing: .12em; text-transform: uppercase; }}
+    .ten-minute-links {{ display: flex; flex-wrap: wrap; gap: .8rem 1.1rem; margin-top: 1.2rem; font-family: system-ui, sans-serif; font-size: .82em; }}
+  </style>
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="e252999d-4479-42d7-9526-5f778846d4f6"></script>
+</head>
+<body>
+  <header class="ten-minute-header">
+    <p class="ten-minute-kicker">10-minute synthesis</p>
+    <h1>{escape(title)}</h1>
+    <p>About 10 minutes · {word_count:,} words</p>
+    <nav class="ten-minute-links" aria-label="Edition links"><a href="{full_html}">Read the full HTML edition</a><a href="{original_pdf}">Download the original PDF</a></nav>
+  </header>
+  <main>
+    {''.join(sections)}
+  </main>
+  <script defer src="../../reader/standalone.js?v=20260827-1"></script>
+</body>
+</html>
+"""
+
+
+def build(available_only: bool = False) -> int:
     OUTPUT_DIRECTORY.mkdir(parents=True, exist_ok=True)
+    built = 0
     for pdf, source, destination in targets():
+        if available_only and not summary_path(pdf.stem).is_file():
+            continue
         destination.write_text(render(pdf, source, destination), encoding="utf-8")
-    print(f"Built {len(targets())} ten-minute reading guides in {OUTPUT_DIRECTORY.relative_to(REPO_ROOT)}.")
+        built += 1
+    qualifier = " available" if available_only else ""
+    print(f"Built {built}{qualifier} editorial ten-minute syntheses in {OUTPUT_DIRECTORY.relative_to(REPO_ROOT)}.")
     return 0
 
 
 def check() -> int:
     problems = []
     for pdf, source, destination in targets():
-        expected = render(pdf, source, destination)
+        try:
+            expected = render(pdf, source, destination)
+        except (FileNotFoundError, ValueError, json.JSONDecodeError) as error:
+            problems.append(str(error))
+            continue
         if not destination.is_file():
             problems.append(f"missing {destination.relative_to(REPO_ROOT)}")
         elif destination.read_text(encoding="utf-8") != expected:
@@ -267,14 +203,53 @@ def check() -> int:
     if problems:
         print("\n".join(problems), file=sys.stderr)
         return 1
-    print(f"Ten-minute reading guides are current ({len(targets())} files).")
+    print(f"Editorial ten-minute syntheses are current ({len(targets())} files).")
+    return 0
+
+
+def import_batch(path: Path) -> int:
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    summaries = payload.get("summaries") if isinstance(payload, dict) else None
+    if not isinstance(summaries, list) or not summaries:
+        raise ValueError("batch must contain a non-empty summaries array")
+    for summary in summaries:
+        if isinstance(summary, dict) and isinstance(summary.get("title"), str):
+            summary["title"] = summary["title"].replace(
+                ": A 10-Minute Reading Guide", TITLE_SUFFIX
+            )
+    known_ids = {pdf.stem for pdf, _, _ in targets()}
+    failures = []
+    for summary in summaries:
+        book_id = summary.get("id", "<missing>") if isinstance(summary, dict) else "<invalid>"
+        issues = validate_summary(summary)
+        if book_id not in known_ids:
+            issues.append(f"id {book_id!r} does not match an English PDF")
+        if issues:
+            failures.append(f"{book_id}: {'; '.join(issues)}")
+    if failures:
+        raise ValueError("\n".join(failures))
+
+    SUMMARY_DIRECTORY.mkdir(parents=True, exist_ok=True)
+    for summary in summaries:
+        destination = summary_path(summary["id"])
+        destination.write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        print(f"Imported {destination.relative_to(REPO_ROOT)}")
     return 0
 
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=("build", "check"))
+    parser.add_argument("command", choices=("build", "build-available", "check", "import"))
+    parser.add_argument("path", nargs="?", type=Path, help="JSON batch to import")
     args = parser.parse_args(argv)
+    if args.command == "import":
+        if args.path is None:
+            parser.error("import requires a JSON batch path")
+        return import_batch(args.path)
+    if args.path is not None:
+        parser.error(f"{args.command} does not accept a path")
+    if args.command == "build-available":
+        return build(available_only=True)
     return build() if args.command == "build" else check()
 
 

@@ -10,7 +10,7 @@ globalThis.__AXIOLOGIC_CONTENT_INDEX__ = {
     "PT",
     "RO"
   ],
-  "fileCount": 1917,
+  "fileCount": 1923,
   "books": [
     {
       "id": "A_Balance_of_Iron_and_Salt",
@@ -358,6 +358,19 @@ globalThis.__AXIOLOGIC_CONTENT_INDEX__ = {
           "pdf": "EN/Beyond_the_Last_Stone.pdf",
           "html": "htmls/EN/Beyond_the_Last_Stone.html",
           "tenMinuteHtml": "10minutes/Beyond_the_Last_Stone.html"
+        }
+      ]
+    },
+    {
+      "id": "Can’t_See_the_Forest_for_the_Trees",
+      "slug": "cant-see-the-forest-for-the-trees",
+      "editions": [
+        {
+          "language": "EN",
+          "label": "English",
+          "pdf": "EN/Can’t_See_the_Forest_for_the_Trees.pdf",
+          "html": "htmls/EN/Can’t_See_the_Forest_for_the_Trees.html",
+          "tenMinuteHtml": "10minutes/Can’t_See_the_Forest_for_the_Trees.html"
         }
       ]
     },
@@ -2429,6 +2442,10 @@ globalThis.__AXIOLOGIC_CONTENT_INDEX__ = {
       "kind": "file"
     },
     {
+      "path": "10minutes/Can’t_See_the_Forest_for_the_Trees.html",
+      "kind": "file"
+    },
+    {
       "path": "10minutes/Coherence_Pressure.html",
       "kind": "file"
     },
@@ -2893,6 +2910,11 @@ globalThis.__AXIOLOGIC_CONTENT_INDEX__ = {
     },
     {
       "path": "EN/Beyond_the_Last_Stone.pdf",
+      "kind": "pdf",
+      "language": "EN"
+    },
+    {
+      "path": "EN/Can’t_See_the_Forest_for_the_Trees.pdf",
       "kind": "pdf",
       "language": "EN"
     },
@@ -4279,6 +4301,10 @@ globalThis.__AXIOLOGIC_CONTENT_INDEX__ = {
       "kind": "cover"
     },
     {
+      "path": "covers/Can’t_See_the_Forest_for_the_Trees.png",
+      "kind": "cover"
+    },
+    {
       "path": "covers/Coherence_Pressure.png",
       "kind": "cover"
     },
@@ -5545,6 +5571,16 @@ globalThis.__AXIOLOGIC_CONTENT_INDEX__ = {
     },
     {
       "path": "htmls/EN/Beyond_the_Last_Stone.html",
+      "kind": "html",
+      "language": "EN"
+    },
+    {
+      "path": "htmls/EN/Can’t_See_the_Forest_for_the_Trees.assets/page-0001-image-01.png",
+      "kind": "html-asset",
+      "language": "EN"
+    },
+    {
+      "path": "htmls/EN/Can’t_See_the_Forest_for_the_Trees.html",
       "kind": "html",
       "language": "EN"
     },
@@ -11468,6 +11504,10 @@ globalThis.__AXIOLOGIC_CONTENT_INDEX__ = {
     },
     {
       "path": "thumbnails/Beyond_the_Last_Stone.webp",
+      "kind": "thumbnail"
+    },
+    {
+      "path": "thumbnails/Can’t_See_the_Forest_for_the_Trees.webp",
       "kind": "thumbnail"
     },
     {

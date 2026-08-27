@@ -47,7 +47,7 @@
     loadMailerLite();
     const modal = document.createElement('div');
     modal.className = 'newsletter-modal';
-    modal.innerHTML = `<div class="newsletter-dialog" role="dialog" aria-modal="true" aria-labelledby="newsletter-modal-title"><button class="newsletter-close" type="button" aria-label="Close newsletter signup">×</button><span class="eyebrow">Newsletter</span><h2 id="newsletter-modal-title">Get notified when new editions are released.</h2><p>Occasional updates about new books and revisions.</p><div class="newsletter-form ${formClass}">${formMarkup('newsletter-popup-email')}</div></div>`;
+    modal.innerHTML = `<div class="newsletter-dialog" role="dialog" aria-modal="true" aria-labelledby="newsletter-modal-title"><button class="newsletter-close" type="button" aria-label="Close newsletter signup">×</button><span class="eyebrow">Newsletter</span><h2 id="newsletter-modal-title">Get notified when new editions are released.</h2><p>Occasional updates about new books or substantial revisions.</p><div class="newsletter-form ${formClass}">${formMarkup('newsletter-popup-email')}</div></div>`;
     modal.addEventListener('click', (event) => { if (event.target === modal) closeModal(); });
     modal.querySelector('.newsletter-close').addEventListener('click', closeModal);
     modal.querySelector('form').addEventListener('submit', () => {

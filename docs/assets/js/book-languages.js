@@ -24,7 +24,7 @@
     const html = tenMinute ? edition.tenMinuteHtml : edition.html;
     const reader = new URL('../../reader/index.html', window.location.href);
     reader.searchParams.set('id', `${tenMinute ? 'ten-minute' : 'edition'}:${new URL(html).pathname}`);
-    reader.searchParams.set('title', `${title} · ${tenMinute ? '10-minute guide' : edition.label}`);
+    reader.searchParams.set('title', `${title} · ${tenMinute ? '10-minute synthesis' : edition.label}`);
     reader.searchParams.set('pdf', edition.pdf);
     reader.searchParams.set('html', html);
     if (tenMinute) reader.searchParams.set('mode', 'ten-minute');
@@ -95,7 +95,7 @@
       tenMinute.className = 'btn ghost';
       tenMinute.href = readerUrl(tenMinuteEdition, 'ten-minute');
       tenMinute.textContent = 'Read in 10 min';
-      tenMinute.title = `Read a ten-minute guide to the ${tenMinuteEdition.label} edition in the adaptable online reader`;
+      tenMinute.title = `Read a ten-minute synthesis of the ${tenMinuteEdition.label} edition in the adaptable online reader`;
     }
 
     if (editions.length > 1) {

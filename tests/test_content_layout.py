@@ -18,6 +18,7 @@ def load_script(name: str):
 
 
 content_index = load_script("content_index")
+ten_minute = load_script("ten_minute")
 
 
 class ContentLayoutTests(unittest.TestCase):
@@ -47,6 +48,48 @@ class ContentLayoutTests(unittest.TestCase):
         self.assertEqual(len(books), len(pages))
         self.assertTrue(all(book["editions"] for book in books))
 
+    def test_book_listing_has_balanced_categories_in_editorial_order(self):
+        listing = (REPO_ROOT / "docs" / "books.html").read_text(encoding="utf-8")
+        labels = [
+            "Business &amp; Startups",
+            "Executable Science &amp; Research",
+            "AI Systems &amp; Infrastructure",
+            "Cosmic &amp; Metaphysical SF",
+            "Political &amp; Social SF",
+            "Human &amp; Philosophical SF",
+            "Outfinitist Foundations",
+            "Power, Institutions &amp; Society",
+            "Experiments",
+        ]
+        positions = [listing.index(label) for label in labels]
+        self.assertEqual(positions, sorted(positions))
+
+        catalog = (REPO_ROOT / "docs" / "assets" / "js" / "books.js").read_text(encoding="utf-8")
+        expected_counts = {
+            "Business & Startups": 10,
+            "Executable Science & Research": 9,
+            "AI Systems & Infrastructure": 8,
+            "Outfinitist Foundations": 7,
+            "Power, Institutions & Society": 8,
+        }
+        for category, expected in expected_counts.items():
+            self.assertEqual(catalog.count(f"category: '{category}'"), expected, category)
+        self.assertRegex(
+            catalog,
+            r"id: 'Can’t_See_the_Forest_for_the_Trees'.*?category: 'Business & Startups'.*?position: 0",
+        )
+        self.assertRegex(
+            catalog,
+            r"id: 'The_Geometry_of_Becoming'.*?category: 'Cosmic & Metaphysical SF'.*?position: 0",
+        )
+        self.assertRegex(
+            catalog,
+            r"id: 'HUNGER_AFTER_ALL_THE_WORLDS'.*?category: 'Human & Philosophical SF'.*?position: 'last'",
+        )
+        self.assertRegex(catalog, r"id: 'Coherence_Pressure'.*?position: 8")
+        self.assertRegex(catalog, r"id: 'SstarLM'.*?position: 9")
+        self.assertRegex(catalog, r"(?s)id: 'OpenDSU'.*?position: 11")
+
     def test_book_pages_do_not_hardcode_edition_availability(self):
         for page in (REPO_ROOT / "docs" / "books").glob("*/index.html"):
             source = page.read_text(encoding="utf-8")
@@ -56,7 +99,7 @@ class ContentLayoutTests(unittest.TestCase):
             self.assertIn("data-book-actions", source, page)
             self.assertIn("data-book-availability", source, page)
 
-    def test_english_editions_have_ten_minute_reading_guides(self):
+    def test_english_editions_have_editorial_ten_minute_syntheses(self):
         for book in content_index.discover_books():
             english = next((edition for edition in book["editions"] if edition["language"] == "EN"), None)
             if not english:
@@ -64,7 +107,16 @@ class ContentLayoutTests(unittest.TestCase):
             self.assertIn("tenMinuteHtml", english, book["id"])
             guide = CONTENT_ROOT / english["tenMinuteHtml"]
             self.assertTrue(guide.is_file(), book["id"])
-            self.assertIn('../../reader/standalone.js', guide.read_text(encoding="utf-8"), book["id"])
+            source = guide.read_text(encoding="utf-8")
+            self.assertIn('../../reader/standalone.js', source, book["id"])
+            self.assertIn('10-minute synthesis', source, book["id"])
+            self.assertIn('Why read the complete book', source, book["id"])
+            self.assertNotIn('This guided edition selects substantial passages', source, book["id"])
+            self.assertNotIn('Editorial synthesis in progress', source, book["id"])
+
+            book_id = Path(english["pdf"]).stem
+            summary = ten_minute.load_summary(book_id)
+            self.assertEqual([], ten_minute.validate_summary(summary, book_id), book["id"])
 
 
 if __name__ == "__main__":

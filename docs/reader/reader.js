@@ -179,7 +179,7 @@ function setControls(type) {
   formatNode.textContent = type === 'epub'
     ? 'Reflowable EPUB edition'
     : type === 'html'
-      ? readingMode === 'ten-minute' ? '10-minute adaptable edition' : 'Adaptable web edition'
+      ? readingMode === 'ten-minute' ? 'Adaptable 10-minute synthesis' : 'Adaptable web edition'
       : 'PDF edition';
 }
 

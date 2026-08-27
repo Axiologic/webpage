@@ -1,0 +1,57 @@
+{
+  "id": "MRP_VM_Book",
+  "title": "MRP-VM: A 10-Minute Synthesis",
+  "listing_description": "A systems-level proposal for turning impressive LLM responses into repeatable organizational capabilities. MRP-VM combines versioned knowledge units, explicit plans, qualified outputs, governed tools, traceability and controlled improvement to describe trustworthy agentic harnesses for consequential work.",
+  "reader_hook": "What would it take for an excellent AI answer to become a capability an organization can safely reuse? Step inside MRP-VM, where models remain flexible but their permissions, evidence, plans, revisions and effects become inspectable—and where learning means earning publication into a versioned operational system.",
+  "sections": [
+    {
+      "heading": "From successful answers to dependable practice",
+      "paragraphs": [
+        "MRP-VM starts with a deceptively simple distinction: a good answer is an event, while a capability is a reusable institutional commitment. One model response may succeed because of fortunate sampling, an unrecorded prompt variation, temporary access to a source or an expert’s hidden intervention. Unless the conditions and method can be identified, the organization has gained a useful artifact but not a reliable way of working. The book exists to explain how semantic flexibility can be retained while purpose, evidence, authority and repeatability become explicit.",
+        "A capability therefore means more than a prompt. It names a coherent responsibility, admissible inputs, exclusions, required resources, output contract, tests, failure modes, qualification rules and ownership. “Review contracts” is too broad; identifying clauses that alter a governing-law assumption within an approved template family is closer to an operational claim. Narrow scope is not timidity. It permits stronger evaluation and makes negative transfer visible when a procedure activates outside the cases for which it was designed."
+      ]
+    },
+    {
+      "heading": "The harness as an engineering layer",
+      "paragraphs": [
+        "The custom agentic harness sits between a user’s intention and systems capable of producing consequences. It combines large language models with retrieval, deterministic programs, solvers, simulators, connectors and human decisions, assigning each a bounded role. Rather than letting an agentic loop interpret goals, choose tools and retain results through an opaque conversational history, the harness represents meaningful responsibilities and dependencies. It exposes where a request became a plan, where evidence entered, which interpreter acted and why a provisional output was allowed to propagate.",
+        "This architecture is explicitly pro-LLM. Better models can improve interpretation, planning and synthesis without silently redefining what the organization trusts. The harness keeps the claim smaller and stronger: a particular configuration is designed and evaluated for a stated practice under declared conditions. Model replacement then becomes an interpreter change tested against persistent obligations, rather than an invisible product transformation. MRP-VM is accordingly not a foundation model, universal agent, compliance certificate or attempt to reduce all reasoning to symbolic computation."
+      ]
+    },
+    {
+      "heading": "Meta-rational pragmatics and semantic pluralism",
+      "paragraphs": [
+        "The philosophical foundation is Meta-Rational Pragmatics: reasoning includes choosing and revising the frame in which local reasoning occurs. Different subproblems call for different regimes of representation, evidence and validation. Ambiguous interpretation may benefit from an LLM; a constraint problem may belong to a solver; a transformation may require exact code; a value conflict may need human judgment. Competence includes recognizing the kind of problem, stabilizing an adequate local frame and routing it to an interpreter whose outputs can be qualified appropriately.",
+        "Natural language remains executable without being treated as completely formal. A Standard Operating Procedure becomes a lightweight program of named responsibilities and dependencies. Each unit receives a local contract containing only relevant context, authority, resources and expected artifacts. This limits accidental context leakage and makes revisions intelligible: if an upstream premise changes, strong dependencies can trigger recomputation while weaker relations preserve guidance without pretending to be logical necessity. Plans remain adaptable, but the runtime—not generated prose—controls legitimate changes to execution state."
+      ]
+    },
+    {
+      "heading": "A stable kernel and versioned knowledge",
+      "paragraphs": [
+        "The authority-bearing runtime is intentionally thinner and more stable than the domain practices it executes. It parses programs, maintains graph state, schedules dependencies, enforces budgets and permissions, isolates untrusted code, records effects, pins versions and controls publication. Domain instructions, methods, knowledge, rubrics and optional interpreters live in versioned Agentic Knowledge Units, or AKUs. This separation prevents an active system from casually rewriting the rules that decide whether its own rewrite is acceptable, while still allowing maintained practice to evolve through a distinct lifecycle.",
+        "AKUs consolidate an organization’s “how to do this” into portable, inspectable units. Selection should activate a small relevant set rather than flooding every request with a growing library. Planning composes those units into request-specific work, while generation pinning ensures that one execution sees a coherent capability and settings configuration. Outputs remain provisional until qualification accepts, rejects or leaves them unresolved. Retention is another authorized transition: request-local prose does not silently become reusable knowledge merely because it sounded convincing."
+      ]
+    },
+    {
+      "heading": "Evidence, trace and controlled improvement",
+      "paragraphs": [
+        "Operational experience motivates change but does not directly alter active behavior. A trace records the versions, selections, plans, dependencies, tool effects, provisional artifacts, qualification outcomes, revisions, stopping conditions and retention decisions involved in a request. It is not a demand to expose hidden chain-of-thought. Its purpose is lifecycle accountability: teams should be able to identify which configuration acted, reconstruct meaningful decisions, inspect failures and compare later behavior without confusing a transcript with a structured operational explanation.",
+        "When traces reveal a recurring capability gap, people or coding agents may author a candidate AKU, procedure or test set in isolation. Evaluation compares the candidate with an explicit baseline across target cases, regressions, negative-transfer cases, cost and risk-relevant measures. Only approved candidates enter a coherently published generation, and the previous generation remains a rollback target. Learning thus becomes governed publication, not memory accumulation or self-modification by anecdote. Failure and unresolved status remain evidence rather than being erased to preserve a narrative of continual improvement."
+      ]
+    },
+    {
+      "heading": "Trustworthiness, adoption and regulation",
+      "paragraphs": [
+        "The book evaluates trustworthiness as a property of an entire socio-technical system in context, not as praise for a model. Validity, reliability, safety, security, resilience, transparency, explainability, privacy, fairness and human responsibility may conflict and must be balanced against intended purpose. A strong benchmark cannot establish those properties alone. Higher-risk tasks require stronger evidence, narrower tools, meaningful approval points, documented escalation, incident handling and monitoring that can detect drift after deployment.",
+        "MRP-VM appears most promising for bounded but nontrivial work: tasks repeated often enough to justify a maintained method, variable enough to require semantic judgment and consequential enough to demand evidence or controlled action. The AssistOS and Achilles research context grounds the architecture in specification-driven development and neuro-symbolic experimentation. For regulated uses, the text connects technical controls to documentation, data governance, provider risk, resilience and human oversight, while warning that its legal synthesis is not legal advice and that deployment-specific law must be verified."
+      ]
+    },
+    {
+      "heading": "Why read the complete book",
+      "paragraphs": [
+        "The abbreviated account necessarily omits the architecture’s operational detail: the distinctions among answers, capabilities, candidates and active generations; the mechanics of planner frontiers and dependency-sensitive revision; the trusted boundaries around connectors and interpreters; and the difference between replaying a structural trace and reproducing nondeterministic model internals. The complete book develops these responsibilities through concrete examples, diagrams, tables and failure scenarios that show where apparently sensible agent workflows lose provenance, scope or authority.",
+        "The appendices also turn the conceptual proposal into something readers can challenge. They state design invariants, outcome families, evaluation questions and core metrics, then supply a glossary precise enough to expose disagreements about terms such as qualification, retention, intended purpose and unresolved status. The research and regulatory chapters preserve important qualifications about model risk, institutional roles and changing legal requirements. Reading them reveals that MRP-VM is an implementation direction and research program—not proof that any current deployment is trustworthy merely because it adopts the vocabulary."
+      ]
+    }
+  ]
+}

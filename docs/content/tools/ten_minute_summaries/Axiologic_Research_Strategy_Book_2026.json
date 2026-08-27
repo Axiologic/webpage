@@ -1,0 +1,57 @@
+{
+  "id": "Axiologic_Research_Strategy_Book_2026",
+  "title": "Axiologic Research Strategy Book 2026: A 10-Minute Synthesis",
+  "listing_description": "A strategic blueprint for moving AI-assisted work from fluent generation toward executable, evidence-bearing, correctable knowledge. The book integrates agent infrastructure, provenance, scientific memory, peer-review support, enterprise governance, and falsifiable research programmes while candidly distinguishing concepts, prototypes, products, and validated capabilities.",
+  "reader_hook": "When candidate explanations, code, reviews, and research plans become cheap, judgment may become the real bottleneck. Axiologic Research Strategy Book develops a wager: the next valuable layer is not another generic generator, but an inspectable infrastructure that remembers evidence, executes under control, exposes uncertainty, and can be corrected without losing institutional accountability.",
+  "sections": [
+    {
+      "heading": "A strategy built for revision",
+      "paragraphs": [
+        "The book is intentionally more expansive than a conventional strategy document for a small organization. Its purpose is not to promise execution of every idea or to announce a fixed master plan. It makes assumptions, technical assets, research interests, dependencies, collaboration needs, and possible products visible enough to be criticized and revised. A small organization cannot match frontier laboratories in scale, but it may contribute through architectural coherence, rapid prototyping, integration across specialties, and the willingness to abandon attractive concepts that fail decisive tests.",
+        "The document also demonstrates the publication form it advocates: a living research book. Evidence, interpretation, engineering judgment, and speculative commitments occupy different layers. Existing implementations are distinguished from working names and proposals. Future editions may narrow or remove programmes as prototype evidence, market conditions, partnerships, funding opportunities, regulation, and model progress change. Strategy becomes a maintained map against which changes can be reasoned about, not a narrative retrofitted after each opportunity appears."
+      ]
+    },
+    {
+      "heading": "The reversal of scarcity and Executable Science",
+      "paragraphs": [
+        "The central diagnosis is that foundation models reduce the cost of producing candidate explanations, software, experiments, reviews, and strategies faster than they reduce the cost of establishing truth, novelty, safety, relevance, or value. Abundant fluent output may increase verification work because plausible claims arrive faster than experts can inspect them. Axiologic therefore places correction at the strategic center: the infrastructure through which generated possibilities acquire evidence, executable procedures, provenance, permissions, uncertainty, criticism, and the capacity for repair.",
+        "Executable Science does not mean reducing every scientific judgment to code or replacing prose with one formal language. It means moving more research from static documents and transient chats into versioned, machine-addressable artifacts. Claims should have stable identities; evidence should retain provenance; procedures should be rerunnable; assumptions should be challengeable; corrections should propagate across dependent objects. The familiar paper remains a citable human argument, but it points into a richer structure that supports inspection by researchers, institutions, and machines."
+      ]
+    },
+    {
+      "heading": "The project-centered operating layer",
+      "paragraphs": [
+        "AssistOS is conceived as the sovereign operating environment holding projects together across models, conversations, files, tools, repositories, personnel, and time. Models should remain replaceable while project state, permissions, organizational memory, and accountability persist. Agentic action is treated as a runtime problem rather than a prompting trick: acting systems require budgets, identities, state, tool boundaries, observability, interruption, rollback, and recovery. The model is only one component inside a governed environment where language can produce consequences.",
+        "Around that layer sit proposed representations and capability systems. MRP-VM and Agentic Knowledge Units aim to turn repeated model-assisted work into qualified, versioned capabilities rather than fragile prompt improvisation. SOP Lang, dynamic circuits, SLEnglish, and Executable Natural Language investigate the boundary between flexible prose and exact execution. OpenDSU contributes identity, lineage, rights, and controlled exchange. The goal is not symbolic theater but explicit intermediate structures whose claimed gains in reliability, reuse, inspectability, and portability must be compared against simpler workflows and conventional code."
+      ]
+    },
+    {
+      "heading": "Corrective intelligence and evidence portfolios",
+      "paragraphs": [
+        "The Epistemic Guardian would monitor whether a project updates beliefs responsibly: whether claims use evidence, alternatives remain visible, confidence changes for stated reasons, and experiments actually discriminate among live hypotheses. The Axiological Guardian addresses a different question—what deserves scarce time and resources when several actions are epistemically defensible but embody different values, risks, opportunity costs, and social purposes. Keeping these functions separate prevents factual warrant from silently deciding normative priority.",
+        "NOVA extends this corrective layer into contribution assessment. It decomposes a proposal into problem, mechanism, novelty, evidence, results, limitations, and intended use; strips rhetorical branding through architectural canonicalization; searches adversarially for prior art; and asks what evidence would reduce uncertainty. Evidence Portfolio Retrieval seeks complementary sources rather than a pile of similar passages: support, contradiction, replication, method, negative results, and constraints. Novelty, validity, relevance, utility, feasibility, risk, and option value become an inspectable dossier rather than one seductive score."
+      ]
+    },
+    {
+      "heading": "Reality gaps, smoothing, and earned coherence",
+      "paragraphs": [
+        "The strategy repeatedly confronts a danger exposed by AI-assisted long-form work: terminology and architecture can grow faster than external constraint. A weak intuition acquires names, modules, diagrams, benchmarks, and internal references until conceptual uncertainty looks like engineering maturity. RealityGap tools are proposed as disconfirming machines. Prior-art adversaries search for antecedents, canonicalizers rewrite branded ideas in standard terms, oracle auditors detect privileged information, baseline planners demand simpler comparisons, falsifiers seek boundary cases, and independence auditors trace shared error sources.",
+        "Smoothing analysis asks which actors, consequences, alternatives, uncertainties, time relations, or normative choices disappear during transformation. Coherence-pressure analysis asks when a new explanatory bridge makes separate phenomena appear unified without sufficient support. These programmes are themselves hypotheses, not established disciplines. The strategy insists that they earn distinctness through benchmarks, effects on decisions, comparisons with existing measures, and falsification. Imagination remains welcome, but its type must remain visible: metaphor must not silently become mechanism, and a product concept must not become a demonstrated market."
+      ]
+    },
+    {
+      "heading": "Reliable epistemic AI as a research programme",
+      "paragraphs": [
+        "The state-of-the-art review argues that impressive model progress has not dissolved coupled problems in abstraction, causality, grounding, long-horizon planning, persistent memory, knowledge revision, calibration, interpretability, alignment, security, and robustness. Hallucination is treated as a family of failures—factual, evidential, attributional, procedural, uncertainty, and scope errors—requiring different remedies. Enterprise value must include integration, human verification, failure cost, observability, reversibility, compliance, vendor dependence, and learning effects, not just benchmark accuracy or time saved.",
+        "For science, the near-term opportunity is not automatic paper production but a closed loop in which hypotheses meet code execution, simulation, measurement, replication, and external rejection. Peer-review systems may map claims, check artifacts, search literature, probe statistics, and generate adversarial questions, but they should not silently acquire authority. The proposed five-year programme begins with shared evidence objects and bounded pilots, advances through integrated workflows and prospective scientific portfolios, and permits partial autonomy only after replicated value, security controls, calibrated evaluation, rollback, and explicit decision gates justify it."
+      ]
+    },
+    {
+      "heading": "Why read the complete book",
+      "paragraphs": [
+        "A ten-minute synthesis necessarily omits the book’s detailed strategic portfolio: named components, maturity tracks, product possibilities, consortium roles, standards, partner categories, European project routes, and potential spin-off structures. The complete text shows how AssistOS, executable representations, provenance infrastructure, Guardians, NOVA, RealityGap, living books, and review tools might interact without becoming one monolith. It also records the specific experiments, baselines, stage gates, claim ledgers, and kill criteria intended to prevent an appealing architectural diagram from masquerading as validated capability.",
+        "The appended 2026 state-of-the-art report supplies the evidential depth behind the strategy. It distinguishes capability from reliability, context from memory, prediction from intervention, citations from evidential support, interpretability from assurance, and adoption from dependable deployment. Its sections on benchmark contamination, model judges, scientific agents, peer-review attacks, privacy, intellectual property, human deskilling, prospective evaluation, cost accounting, and risk registers add qualifications impossible to retain here. The full book is where the strategic wager becomes testable enough to disagree with productively."
+      ]
+    }
+  ]
+}
