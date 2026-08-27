@@ -10,7 +10,7 @@
     "PT",
     "RO"
   ],
-  "fileCount": 1832,
+  "fileCount": 1917,
   "books": [
     {
       "id": "A_Balance_of_Iron_and_Salt",
@@ -20,7 +20,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/A_Balance_of_Iron_and_Salt.pdf",
-          "html": "htmls/EN/A_Balance_of_Iron_and_Salt.html"
+          "html": "htmls/EN/A_Balance_of_Iron_and_Salt.html",
+          "tenMinuteHtml": "10minutes/A_Balance_of_Iron_and_Salt.html"
         },
         {
           "language": "FR",
@@ -74,7 +75,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/Agentic_AI_2026.pdf",
-          "html": "htmls/EN/Agentic_AI_2026.html"
+          "html": "htmls/EN/Agentic_AI_2026.html",
+          "tenMinuteHtml": "10minutes/Agentic_AI_2026.html"
         }
       ]
     },
@@ -86,7 +88,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/AI_ADOPTION_BEYOND_THE_SLOP.pdf",
-          "html": "htmls/EN/AI_ADOPTION_BEYOND_THE_SLOP.html"
+          "html": "htmls/EN/AI_ADOPTION_BEYOND_THE_SLOP.html",
+          "tenMinuteHtml": "10minutes/AI_ADOPTION_BEYOND_THE_SLOP.html"
         }
       ]
     },
@@ -98,7 +101,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/An_Autopsy_of_a_Digital_Mind.pdf",
-          "html": "htmls/EN/An_Autopsy_of_a_Digital_Mind.html"
+          "html": "htmls/EN/An_Autopsy_of_a_Digital_Mind.html",
+          "tenMinuteHtml": "10minutes/An_Autopsy_of_a_Digital_Mind.html"
         },
         {
           "language": "PT",
@@ -122,7 +126,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/Anatomy_Of_An_Echo.pdf",
-          "html": "htmls/EN/Anatomy_Of_An_Echo.html"
+          "html": "htmls/EN/Anatomy_Of_An_Echo.html",
+          "tenMinuteHtml": "10minutes/Anatomy_Of_An_Echo.html"
         },
         {
           "language": "FR",
@@ -176,7 +181,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/ANTI_IDIOCRACY.pdf",
-          "html": "htmls/EN/ANTI_IDIOCRACY.html"
+          "html": "htmls/EN/ANTI_IDIOCRACY.html",
+          "tenMinuteHtml": "10minutes/ANTI_IDIOCRACY.html"
         }
       ]
     },
@@ -188,7 +194,21 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/Anti-Trivialization_Machines_of_the_Future.pdf",
-          "html": "htmls/EN/Anti-Trivialization_Machines_of_the_Future.html"
+          "html": "htmls/EN/Anti-Trivialization_Machines_of_the_Future.html",
+          "tenMinuteHtml": "10minutes/Anti-Trivialization_Machines_of_the_Future.html"
+        }
+      ]
+    },
+    {
+      "id": "Artificial_Impossibility",
+      "slug": "artificial-impossibility",
+      "editions": [
+        {
+          "language": "EN",
+          "label": "English",
+          "pdf": "EN/Artificial_Impossibility.pdf",
+          "html": "htmls/EN/Artificial_Impossibility.html",
+          "tenMinuteHtml": "10minutes/Artificial_Impossibility.html"
         }
       ]
     },
@@ -200,7 +220,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/Aspirin_Viagra_and_Coffins.pdf",
-          "html": "htmls/EN/Aspirin_Viagra_and_Coffins.html"
+          "html": "htmls/EN/Aspirin_Viagra_and_Coffins.html",
+          "tenMinuteHtml": "10minutes/Aspirin_Viagra_and_Coffins.html"
         },
         {
           "language": "FR",
@@ -254,7 +275,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/AssistOS.pdf",
-          "html": "htmls/EN/AssistOS.html"
+          "html": "htmls/EN/AssistOS.html",
+          "tenMinuteHtml": "10minutes/AssistOS.html"
         }
       ]
     },
@@ -266,7 +288,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/Autopsy_of_Future_Emotions.pdf",
-          "html": "htmls/EN/Autopsy_of_Future_Emotions.html"
+          "html": "htmls/EN/Autopsy_of_Future_Emotions.html",
+          "tenMinuteHtml": "10minutes/Autopsy_of_Future_Emotions.html"
         },
         {
           "language": "FR",
@@ -320,7 +343,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/Axiologic_Research_Strategy_Book_2026.pdf",
-          "html": "htmls/EN/Axiologic_Research_Strategy_Book_2026.html"
+          "html": "htmls/EN/Axiologic_Research_Strategy_Book_2026.html",
+          "tenMinuteHtml": "10minutes/Axiologic_Research_Strategy_Book_2026.html"
         }
       ]
     },
@@ -332,7 +356,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/Beyond_the_Last_Stone.pdf",
-          "html": "htmls/EN/Beyond_the_Last_Stone.html"
+          "html": "htmls/EN/Beyond_the_Last_Stone.html",
+          "tenMinuteHtml": "10minutes/Beyond_the_Last_Stone.html"
         }
       ]
     },
@@ -344,7 +369,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/Coherence_Pressure.pdf",
-          "html": "htmls/EN/Coherence_Pressure.html"
+          "html": "htmls/EN/Coherence_Pressure.html",
+          "tenMinuteHtml": "10minutes/Coherence_Pressure.html"
         }
       ]
     },
@@ -356,7 +382,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/Concordia_Universe.pdf",
-          "html": "htmls/EN/Concordia_Universe.html"
+          "html": "htmls/EN/Concordia_Universe.html",
+          "tenMinuteHtml": "10minutes/Concordia_Universe.html"
         },
         {
           "language": "FR",
@@ -410,7 +437,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/Cones_of_Meaning.pdf",
-          "html": "htmls/EN/Cones_of_Meaning.html"
+          "html": "htmls/EN/Cones_of_Meaning.html",
+          "tenMinuteHtml": "10minutes/Cones_of_Meaning.html"
         },
         {
           "language": "FR",
@@ -464,7 +492,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/Decentralised_Brands.pdf",
-          "html": "htmls/EN/Decentralised_Brands.html"
+          "html": "htmls/EN/Decentralised_Brands.html",
+          "tenMinuteHtml": "10minutes/Decentralised_Brands.html"
         },
         {
           "language": "FR",
@@ -518,7 +547,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/Ecology_of_Predation.pdf",
-          "html": "htmls/EN/Ecology_of_Predation.html"
+          "html": "htmls/EN/Ecology_of_Predation.html",
+          "tenMinuteHtml": "10minutes/Ecology_of_Predation.html"
         }
       ]
     },
@@ -530,7 +560,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/Eden_Before_Mars.pdf",
-          "html": "htmls/EN/Eden_Before_Mars.html"
+          "html": "htmls/EN/Eden_Before_Mars.html",
+          "tenMinuteHtml": "10minutes/Eden_Before_Mars.html"
         },
         {
           "language": "RO",
@@ -548,7 +579,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/Executable_Natural_Language.pdf",
-          "html": "htmls/EN/Executable_Natural_Language.html"
+          "html": "htmls/EN/Executable_Natural_Language.html",
+          "tenMinuteHtml": "10minutes/Executable_Natural_Language.html"
         },
         {
           "language": "FR",
@@ -602,7 +634,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/Four_Realities.pdf",
-          "html": "htmls/EN/Four_Realities.html"
+          "html": "htmls/EN/Four_Realities.html",
+          "tenMinuteHtml": "10minutes/Four_Realities.html"
         },
         {
           "language": "RO",
@@ -621,7 +654,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/Holding_the_Dirty_Thing_by_the_Clean_Side.pdf",
-          "html": "htmls/EN/Holding_the_Dirty_Thing_by_the_Clean_Side.html"
+          "html": "htmls/EN/Holding_the_Dirty_Thing_by_the_Clean_Side.html",
+          "tenMinuteHtml": "10minutes/Holding_the_Dirty_Thing_by_the_Clean_Side.html"
         },
         {
           "language": "FR",
@@ -675,7 +709,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/HUNGER_AFTER_ALL_THE_WORLDS.pdf",
-          "html": "htmls/EN/HUNGER_AFTER_ALL_THE_WORLDS.html"
+          "html": "htmls/EN/HUNGER_AFTER_ALL_THE_WORLDS.html",
+          "tenMinuteHtml": "10minutes/HUNGER_AFTER_ALL_THE_WORLDS.html"
         },
         {
           "language": "RO",
@@ -693,7 +728,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/Investing_in_an_AI_Dominated_Economy.pdf",
-          "html": "htmls/EN/Investing_in_an_AI_Dominated_Economy.html"
+          "html": "htmls/EN/Investing_in_an_AI_Dominated_Economy.html",
+          "tenMinuteHtml": "10minutes/Investing_in_an_AI_Dominated_Economy.html"
         },
         {
           "language": "FR",
@@ -747,7 +783,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/Life_Without_an_Audience.pdf",
-          "html": "htmls/EN/Life_Without_an_Audience.html"
+          "html": "htmls/EN/Life_Without_an_Audience.html",
+          "tenMinuteHtml": "10minutes/Life_Without_an_Audience.html"
         }
       ]
     },
@@ -759,7 +796,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/Limits_of_Machine_Intelligence.pdf",
-          "html": "htmls/EN/Limits_of_Machine_Intelligence.html"
+          "html": "htmls/EN/Limits_of_Machine_Intelligence.html",
+          "tenMinuteHtml": "10minutes/Limits_of_Machine_Intelligence.html"
         }
       ]
     },
@@ -771,7 +809,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/Me_and_My_Robots.pdf",
-          "html": "htmls/EN/Me_and_My_Robots.html"
+          "html": "htmls/EN/Me_and_My_Robots.html",
+          "tenMinuteHtml": "10minutes/Me_and_My_Robots.html"
         },
         {
           "language": "FR",
@@ -825,7 +864,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/Memes_for_2030.pdf",
-          "html": "htmls/EN/Memes_for_2030.html"
+          "html": "htmls/EN/Memes_for_2030.html",
+          "tenMinuteHtml": "10minutes/Memes_for_2030.html"
         },
         {
           "language": "FR",
@@ -879,7 +919,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/Metacult.pdf",
-          "html": "htmls/EN/Metacult.html"
+          "html": "htmls/EN/Metacult.html",
+          "tenMinuteHtml": "10minutes/Metacult.html"
         }
       ]
     },
@@ -891,7 +932,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/More_Words_Than_Reality.pdf",
-          "html": "htmls/EN/More_Words_Than_Reality.html"
+          "html": "htmls/EN/More_Words_Than_Reality.html",
+          "tenMinuteHtml": "10minutes/More_Words_Than_Reality.html"
         },
         {
           "language": "RO",
@@ -909,7 +951,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/MRP_VM_Book.pdf",
-          "html": "htmls/EN/MRP_VM_Book.html"
+          "html": "htmls/EN/MRP_VM_Book.html",
+          "tenMinuteHtml": "10minutes/MRP_VM_Book.html"
         }
       ]
     },
@@ -921,7 +964,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/OMNIS.pdf",
-          "html": "htmls/EN/OMNIS.html"
+          "html": "htmls/EN/OMNIS.html",
+          "tenMinuteHtml": "10minutes/OMNIS.html"
         },
         {
           "language": "FR",
@@ -975,7 +1019,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/OpenDSU_Essential_Philosophy.pdf",
-          "html": "htmls/EN/OpenDSU_Essential_Philosophy.html"
+          "html": "htmls/EN/OpenDSU_Essential_Philosophy.html",
+          "tenMinuteHtml": "10minutes/OpenDSU_Essential_Philosophy.html"
         }
       ]
     },
@@ -987,7 +1032,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/Oriven_Origaya_Universe.pdf",
-          "html": "htmls/EN/Oriven_Origaya_Universe.html"
+          "html": "htmls/EN/Oriven_Origaya_Universe.html",
+          "tenMinuteHtml": "10minutes/Oriven_Origaya_Universe.html"
         },
         {
           "language": "FR",
@@ -1029,7 +1075,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/Outfinite_Mathematics_Research_Programme.pdf",
-          "html": "htmls/EN/Outfinite_Mathematics_Research_Programme.html"
+          "html": "htmls/EN/Outfinite_Mathematics_Research_Programme.html",
+          "tenMinuteHtml": "10minutes/Outfinite_Mathematics_Research_Programme.html"
         }
       ]
     },
@@ -1041,7 +1088,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/Outfinitism_Third_Edition.pdf",
-          "html": "htmls/EN/Outfinitism_Third_Edition.html"
+          "html": "htmls/EN/Outfinitism_Third_Edition.html",
+          "tenMinuteHtml": "10minutes/Outfinitism_Third_Edition.html"
         }
       ]
     },
@@ -1053,7 +1101,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/Predator_in_the_Name_of_the_Dead.pdf",
-          "html": "htmls/EN/Predator_in_the_Name_of_the_Dead.html"
+          "html": "htmls/EN/Predator_in_the_Name_of_the_Dead.html",
+          "tenMinuteHtml": "10minutes/Predator_in_the_Name_of_the_Dead.html"
         },
         {
           "language": "FR",
@@ -1107,7 +1156,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/RAG_and_EPR.pdf",
-          "html": "htmls/EN/RAG_and_EPR.html"
+          "html": "htmls/EN/RAG_and_EPR.html",
+          "tenMinuteHtml": "10minutes/RAG_and_EPR.html"
         }
       ]
     },
@@ -1119,7 +1169,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/Revocable_Nobility.pdf",
-          "html": "htmls/EN/Revocable_Nobility.html"
+          "html": "htmls/EN/Revocable_Nobility.html",
+          "tenMinuteHtml": "10minutes/Revocable_Nobility.html"
         },
         {
           "language": "FR",
@@ -1173,7 +1224,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/SOLIPSCION.pdf",
-          "html": "htmls/EN/SOLIPSCION.html"
+          "html": "htmls/EN/SOLIPSCION.html",
+          "tenMinuteHtml": "10minutes/SOLIPSCION.html"
         }
       ]
     },
@@ -1185,7 +1237,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/SOLIPSICON.pdf",
-          "html": "htmls/EN/SOLIPSICON.html"
+          "html": "htmls/EN/SOLIPSICON.html",
+          "tenMinuteHtml": "10minutes/SOLIPSICON.html"
         }
       ]
     },
@@ -1197,7 +1250,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/SOP_Lang_Circuits.pdf",
-          "html": "htmls/EN/SOP_Lang_Circuits.html"
+          "html": "htmls/EN/SOP_Lang_Circuits.html",
+          "tenMinuteHtml": "10minutes/SOP_Lang_Circuits.html"
         }
       ]
     },
@@ -1209,7 +1263,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/SstarLM.pdf",
-          "html": "htmls/EN/SstarLM.html"
+          "html": "htmls/EN/SstarLM.html",
+          "tenMinuteHtml": "10minutes/SstarLM.html"
         }
       ]
     },
@@ -1221,7 +1276,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/The_Basilisk_Internal_Critique_of_Outfinitism.pdf",
-          "html": "htmls/EN/The_Basilisk_Internal_Critique_of_Outfinitism.html"
+          "html": "htmls/EN/The_Basilisk_Internal_Critique_of_Outfinitism.html",
+          "tenMinuteHtml": "10minutes/The_Basilisk_Internal_Critique_of_Outfinitism.html"
         },
         {
           "language": "FR",
@@ -1275,7 +1331,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/The_Captured_Internet.pdf",
-          "html": "htmls/EN/The_Captured_Internet.html"
+          "html": "htmls/EN/The_Captured_Internet.html",
+          "tenMinuteHtml": "10minutes/The_Captured_Internet.html"
         },
         {
           "language": "FR",
@@ -1323,7 +1380,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/The_Cascade_of_the_New_VOL_I.pdf",
-          "html": "htmls/EN/The_Cascade_of_the_New_VOL_I.html"
+          "html": "htmls/EN/The_Cascade_of_the_New_VOL_I.html",
+          "tenMinuteHtml": "10minutes/The_Cascade_of_the_New_VOL_I.html"
         },
         {
           "language": "RO",
@@ -1341,7 +1399,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/THE_CIVILIZED_MIND.pdf",
-          "html": "htmls/EN/THE_CIVILIZED_MIND.html"
+          "html": "htmls/EN/THE_CIVILIZED_MIND.html",
+          "tenMinuteHtml": "10minutes/THE_CIVILIZED_MIND.html"
         }
       ]
     },
@@ -1353,7 +1412,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/The_Founder_Lottery.pdf",
-          "html": "htmls/EN/The_Founder_Lottery.html"
+          "html": "htmls/EN/The_Founder_Lottery.html",
+          "tenMinuteHtml": "10minutes/The_Founder_Lottery.html"
         },
         {
           "language": "DE",
@@ -1401,7 +1461,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/The_Fragmented_Future.pdf",
-          "html": "htmls/EN/The_Fragmented_Future.html"
+          "html": "htmls/EN/The_Fragmented_Future.html",
+          "tenMinuteHtml": "10minutes/The_Fragmented_Future.html"
         },
         {
           "language": "FR",
@@ -1455,7 +1516,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/The_Frontier_Is_Correction.pdf",
-          "html": "htmls/EN/The_Frontier_Is_Correction.html"
+          "html": "htmls/EN/The_Frontier_Is_Correction.html",
+          "tenMinuteHtml": "10minutes/The_Frontier_Is_Correction.html"
         }
       ]
     },
@@ -1467,7 +1529,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/The_Future_of_Research_Infrastructure.pdf",
-          "html": "htmls/EN/The_Future_of_Research_Infrastructure.html"
+          "html": "htmls/EN/The_Future_of_Research_Infrastructure.html",
+          "tenMinuteHtml": "10minutes/The_Future_of_Research_Infrastructure.html"
         }
       ]
     },
@@ -1479,7 +1542,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/The_Geometry_of_Becoming.pdf",
-          "html": "htmls/EN/The_Geometry_of_Becoming.html"
+          "html": "htmls/EN/The_Geometry_of_Becoming.html",
+          "tenMinuteHtml": "10minutes/The_Geometry_of_Becoming.html"
         }
       ]
     },
@@ -1491,7 +1555,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/The_Gospel_of_the_Basilisk .pdf",
-          "html": "htmls/EN/The_Gospel_of_the_Basilisk .html"
+          "html": "htmls/EN/The_Gospel_of_the_Basilisk .html",
+          "tenMinuteHtml": "10minutes/The_Gospel_of_the_Basilisk .html"
         }
       ]
     },
@@ -1503,7 +1568,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/The_Great_Decoupling.pdf",
-          "html": "htmls/EN/The_Great_Decoupling.html"
+          "html": "htmls/EN/The_Great_Decoupling.html",
+          "tenMinuteHtml": "10minutes/The_Great_Decoupling.html"
         },
         {
           "language": "FR",
@@ -1557,7 +1623,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/The_History_and_Future_of_Social_Technologies.pdf",
-          "html": "htmls/EN/The_History_and_Future_of_Social_Technologies.html"
+          "html": "htmls/EN/The_History_and_Future_of_Social_Technologies.html",
+          "tenMinuteHtml": "10minutes/The_History_and_Future_of_Social_Technologies.html"
         },
         {
           "language": "FR",
@@ -1611,7 +1678,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/The_Houses_of_Europe.pdf",
-          "html": "htmls/EN/The_Houses_of_Europe.html"
+          "html": "htmls/EN/The_Houses_of_Europe.html",
+          "tenMinuteHtml": "10minutes/The_Houses_of_Europe.html"
         }
       ]
     },
@@ -1623,7 +1691,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/The_Illness_Machine.pdf",
-          "html": "htmls/EN/The_Illness_Machine.html"
+          "html": "htmls/EN/The_Illness_Machine.html",
+          "tenMinuteHtml": "10minutes/The_Illness_Machine.html"
         }
       ]
     },
@@ -1635,7 +1704,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/THE_LICENCE_AND_THE_SHARED_NAME.pdf",
-          "html": "htmls/EN/THE_LICENCE_AND_THE_SHARED_NAME.html"
+          "html": "htmls/EN/THE_LICENCE_AND_THE_SHARED_NAME.html",
+          "tenMinuteHtml": "10minutes/THE_LICENCE_AND_THE_SHARED_NAME.html"
         },
         {
           "language": "FR",
@@ -1689,7 +1759,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/THE_LIVING_RESEARCH_BOOK.pdf",
-          "html": "htmls/EN/THE_LIVING_RESEARCH_BOOK.html"
+          "html": "htmls/EN/THE_LIVING_RESEARCH_BOOK.html",
+          "tenMinuteHtml": "10minutes/THE_LIVING_RESEARCH_BOOK.html"
         }
       ]
     },
@@ -1701,7 +1772,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/The_Makers_of_Reality.pdf",
-          "html": "htmls/EN/The_Makers_of_Reality.html"
+          "html": "htmls/EN/The_Makers_of_Reality.html",
+          "tenMinuteHtml": "10minutes/The_Makers_of_Reality.html"
         },
         {
           "language": "RO",
@@ -1719,7 +1791,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/The_Museum_of_Good_Reasons.pdf",
-          "html": "htmls/EN/The_Museum_of_Good_Reasons.html"
+          "html": "htmls/EN/The_Museum_of_Good_Reasons.html",
+          "tenMinuteHtml": "10minutes/The_Museum_of_Good_Reasons.html"
         },
         {
           "language": "FR",
@@ -1773,7 +1846,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/The_Necessary_Mask.pdf",
-          "html": "htmls/EN/The_Necessary_Mask.html"
+          "html": "htmls/EN/The_Necessary_Mask.html",
+          "tenMinuteHtml": "10minutes/The_Necessary_Mask.html"
         },
         {
           "language": "FR",
@@ -1827,7 +1901,21 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/The_Orphan_Gods.pdf",
-          "html": "htmls/EN/The_Orphan_Gods.html"
+          "html": "htmls/EN/The_Orphan_Gods.html",
+          "tenMinuteHtml": "10minutes/The_Orphan_Gods.html"
+        }
+      ]
+    },
+    {
+      "id": "The_Permission_Paradox",
+      "slug": "the-permission-paradox",
+      "editions": [
+        {
+          "language": "EN",
+          "label": "English",
+          "pdf": "EN/The_Permission_Paradox.pdf",
+          "html": "htmls/EN/The_Permission_Paradox.html",
+          "tenMinuteHtml": "10minutes/The_Permission_Paradox.html"
         }
       ]
     },
@@ -1839,7 +1927,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/The_Right_to_Help.pdf",
-          "html": "htmls/EN/The_Right_to_Help.html"
+          "html": "htmls/EN/The_Right_to_Help.html",
+          "tenMinuteHtml": "10minutes/The_Right_to_Help.html"
         },
         {
           "language": "FR",
@@ -1941,7 +2030,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/The_Science_and_Wisdom_of_Limits.pdf",
-          "html": "htmls/EN/The_Science_and_Wisdom_of_Limits.html"
+          "html": "htmls/EN/The_Science_and_Wisdom_of_Limits.html",
+          "tenMinuteHtml": "10minutes/The_Science_and_Wisdom_of_Limits.html"
         }
       ]
     },
@@ -1953,7 +2043,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/The_Silicon_Shadows_and_I.pdf",
-          "html": "htmls/EN/The_Silicon_Shadows_and_I.html"
+          "html": "htmls/EN/The_Silicon_Shadows_and_I.html",
+          "tenMinuteHtml": "10minutes/The_Silicon_Shadows_and_I.html"
         },
         {
           "language": "FR",
@@ -2007,7 +2098,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/THE_SMOOTHING.pdf",
-          "html": "htmls/EN/THE_SMOOTHING.html"
+          "html": "htmls/EN/THE_SMOOTHING.html",
+          "tenMinuteHtml": "10minutes/THE_SMOOTHING.html"
         }
       ]
     },
@@ -2019,7 +2111,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/The_Sovereignty_Archipelago.pdf",
-          "html": "htmls/EN/The_Sovereignty_Archipelago.html"
+          "html": "htmls/EN/The_Sovereignty_Archipelago.html",
+          "tenMinuteHtml": "10minutes/The_Sovereignty_Archipelago.html"
         },
         {
           "language": "FR",
@@ -2073,7 +2166,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/The_Substrate_Cycle.pdf",
-          "html": "htmls/EN/The_Substrate_Cycle.html"
+          "html": "htmls/EN/The_Substrate_Cycle.html",
+          "tenMinuteHtml": "10minutes/The_Substrate_Cycle.html"
         },
         {
           "language": "RO",
@@ -2091,7 +2185,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/The_Tao_of_OMIS.pdf",
-          "html": "htmls/EN/The_Tao_of_OMIS.html"
+          "html": "htmls/EN/The_Tao_of_OMIS.html",
+          "tenMinuteHtml": "10minutes/The_Tao_of_OMIS.html"
         },
         {
           "language": "RO",
@@ -2109,7 +2204,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/The_Thousand_Handed_Devil.pdf",
-          "html": "htmls/EN/The_Thousand_Handed_Devil.html"
+          "html": "htmls/EN/The_Thousand_Handed_Devil.html",
+          "tenMinuteHtml": "10minutes/The_Thousand_Handed_Devil.html"
         },
         {
           "language": "RO",
@@ -2127,7 +2223,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/The_Ultimate_Sense_of_Life.pdf",
-          "html": "htmls/EN/The_Ultimate_Sense_of_Life.html"
+          "html": "htmls/EN/The_Ultimate_Sense_of_Life.html",
+          "tenMinuteHtml": "10minutes/The_Ultimate_Sense_of_Life.html"
         },
         {
           "language": "FR",
@@ -2181,7 +2278,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/The_Zodiac_on_Trial.pdf",
-          "html": "htmls/EN/The_Zodiac_on_Trial.html"
+          "html": "htmls/EN/The_Zodiac_on_Trial.html",
+          "tenMinuteHtml": "10minutes/The_Zodiac_on_Trial.html"
         },
         {
           "language": "FR",
@@ -2235,7 +2333,8 @@
           "language": "EN",
           "label": "English",
           "pdf": "EN/Too_Convinced_to_Stop.pdf",
-          "html": "htmls/EN/Too_Convinced_to_Stop.html"
+          "html": "htmls/EN/Too_Convinced_to_Stop.html",
+          "tenMinuteHtml": "10minutes/Too_Convinced_to_Stop.html"
         },
         {
           "language": "FR",
@@ -2277,6 +2376,306 @@
     }
   ],
   "files": [
+    {
+      "path": "10minutes/AI_ADOPTION_BEYOND_THE_SLOP.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/ANTI_IDIOCRACY.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/A_Balance_of_Iron_and_Salt.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/Agentic_AI_2026.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/An_Autopsy_of_a_Digital_Mind.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/Anatomy_Of_An_Echo.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/Anti-Trivialization_Machines_of_the_Future.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/Artificial_Impossibility.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/Aspirin_Viagra_and_Coffins.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/AssistOS.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/Autopsy_of_Future_Emotions.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/Axiologic_Research_Strategy_Book_2026.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/Beyond_the_Last_Stone.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/Coherence_Pressure.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/Concordia_Universe.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/Cones_of_Meaning.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/Decentralised_Brands.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/Ecology_of_Predation.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/Eden_Before_Mars.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/Executable_Natural_Language.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/Four_Realities.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/HUNGER_AFTER_ALL_THE_WORLDS.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/Holding_the_Dirty_Thing_by_the_Clean_Side.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/Investing_in_an_AI_Dominated_Economy.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/Life_Without_an_Audience.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/Limits_of_Machine_Intelligence.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/MRP_VM_Book.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/Me_and_My_Robots.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/Memes_for_2030.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/Metacult.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/More_Words_Than_Reality.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/OMNIS.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/OpenDSU_Essential_Philosophy.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/Oriven_Origaya_Universe.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/Outfinite_Mathematics_Research_Programme.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/Outfinitism_Third_Edition.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/Predator_in_the_Name_of_the_Dead.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/RAG_and_EPR.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/Revocable_Nobility.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/SOLIPSCION.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/SOLIPSICON.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/SOP_Lang_Circuits.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/SstarLM.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/THE_CIVILIZED_MIND.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/THE_LICENCE_AND_THE_SHARED_NAME.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/THE_LIVING_RESEARCH_BOOK.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/THE_SMOOTHING.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/The_Basilisk_Internal_Critique_of_Outfinitism.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/The_Captured_Internet.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/The_Cascade_of_the_New_VOL_I.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/The_Founder_Lottery.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/The_Fragmented_Future.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/The_Frontier_Is_Correction.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/The_Future_of_Research_Infrastructure.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/The_Geometry_of_Becoming.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/The_Gospel_of_the_Basilisk .html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/The_Great_Decoupling.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/The_History_and_Future_of_Social_Technologies.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/The_Houses_of_Europe.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/The_Illness_Machine.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/The_Makers_of_Reality.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/The_Museum_of_Good_Reasons.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/The_Necessary_Mask.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/The_Orphan_Gods.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/The_Permission_Paradox.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/The_Right_to_Help.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/The_Science_and_Wisdom_of_Limits.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/The_Silicon_Shadows_and_I.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/The_Sovereignty_Archipelago.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/The_Substrate_Cycle.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/The_Tao_of_OMIS.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/The_Thousand_Handed_Devil.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/The_Ultimate_Sense_of_Life.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/The_Zodiac_on_Trial.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/Too_Convinced_to_Stop.html",
+      "kind": "file"
+    },
     {
       "path": "DE/A_Balance_of_Iron_and_Salt_DE.pdf",
       "kind": "pdf",
@@ -2464,6 +2863,11 @@
     },
     {
       "path": "EN/Anti-Trivialization_Machines_of_the_Future.pdf",
+      "kind": "pdf",
+      "language": "EN"
+    },
+    {
+      "path": "EN/Artificial_Impossibility.pdf",
       "kind": "pdf",
       "language": "EN"
     },
@@ -2744,6 +3148,11 @@
     },
     {
       "path": "EN/The_Orphan_Gods.pdf",
+      "kind": "pdf",
+      "language": "EN"
+    },
+    {
+      "path": "EN/The_Permission_Paradox.pdf",
       "kind": "pdf",
       "language": "EN"
     },
@@ -3846,6 +4255,10 @@
       "kind": "cover"
     },
     {
+      "path": "covers/Artificial_Impossibility.png",
+      "kind": "cover"
+    },
+    {
       "path": "covers/Aspirin_Viagra_and_Coffins.png",
       "kind": "cover"
     },
@@ -4071,6 +4484,10 @@
     },
     {
       "path": "covers/The_Orphan_Gods.png",
+      "kind": "cover"
+    },
+    {
+      "path": "covers/The_Permission_Paradox.png",
       "kind": "cover"
     },
     {
@@ -4973,6 +5390,16 @@
     },
     {
       "path": "htmls/EN/Anti-Trivialization_Machines_of_the_Future.html",
+      "kind": "html",
+      "language": "EN"
+    },
+    {
+      "path": "htmls/EN/Artificial_Impossibility.assets/page-0001-image-01.png",
+      "kind": "html-asset",
+      "language": "EN"
+    },
+    {
+      "path": "htmls/EN/Artificial_Impossibility.html",
       "kind": "html",
       "language": "EN"
     },
@@ -6373,6 +6800,16 @@
     },
     {
       "path": "htmls/EN/The_Orphan_Gods.html",
+      "kind": "html",
+      "language": "EN"
+    },
+    {
+      "path": "htmls/EN/The_Permission_Paradox.assets/page-0001-image-01.png",
+      "kind": "html-asset",
+      "language": "EN"
+    },
+    {
+      "path": "htmls/EN/The_Permission_Paradox.html",
       "kind": "html",
       "language": "EN"
     },
@@ -11010,6 +11447,10 @@
       "kind": "thumbnail"
     },
     {
+      "path": "thumbnails/Artificial_Impossibility.webp",
+      "kind": "thumbnail"
+    },
+    {
       "path": "thumbnails/Aspirin_Viagra_and_Coffins.webp",
       "kind": "thumbnail"
     },
@@ -11235,6 +11676,10 @@
     },
     {
       "path": "thumbnails/The_Orphan_Gods.webp",
+      "kind": "thumbnail"
+    },
+    {
+      "path": "thumbnails/The_Permission_Paradox.webp",
       "kind": "thumbnail"
     },
     {

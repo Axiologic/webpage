@@ -1,6 +1,8 @@
 :root {
   color-scheme: light;
-  --standalone-paper: #e9fff4;
+  --standalone-surround: #e3e6e4;
+  --standalone-paper: #ffffff;
+  --standalone-paper-line: #d7dcda;
   --standalone-ink: #10241b;
   --standalone-link: #176b4b;
   --standalone-size: 1.16rem;
@@ -9,17 +11,19 @@
 * { box-sizing: border-box; }
 
 html {
-  background: var(--standalone-paper);
+  background: var(--standalone-surround);
   color: var(--standalone-ink);
   scroll-behavior: smooth;
 }
 
 body {
-  width: min(calc(100% - 32px), 72ch);
+  width: min(calc(100% - 48px), 72ch);
   min-height: 100vh;
   margin: 0 auto;
   padding: clamp(34px, 7vw, 76px) clamp(24px, 6vw, 72px) 90px;
   background: var(--standalone-paper);
+  border-inline: 1px solid var(--standalone-paper-line);
+  box-shadow: 0 0 28px rgba(15, 23, 20, .08);
   color: var(--standalone-ink);
   font-family: Georgia, "Iowan Old Style", "Palatino Linotype", serif;
   font-size: var(--standalone-size);
@@ -56,13 +60,15 @@ blockquote { margin: 1.5em 0; padding: .4em 1.1em; border-left: 3px solid #43a97
 
 html[data-theme="night"] {
   color-scheme: dark;
-  --standalone-paper: #111416;
-  --standalone-ink: #edf0f2;
+  --standalone-surround: #3a3e42;
+  --standalone-paper: #080a0c;
+  --standalone-paper-line: #52575b;
+  --standalone-ink: #f1f3f0;
   --standalone-link: #9af2c6;
 }
 
 @media (max-width: 600px) {
-  body { width: 100%; padding: 34px 25px 72px; }
+  body { width: 100%; padding: 34px 25px 72px; border-inline: 0; box-shadow: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {

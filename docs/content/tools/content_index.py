@@ -14,6 +14,7 @@ from urllib.parse import unquote
 REPO_ROOT = Path(__file__).resolve().parents[3]
 CONTENT_ROOT = REPO_ROOT / "docs" / "content"
 INDEX_PATH = CONTENT_ROOT / "index.json"
+INDEX_SCRIPT_PATH = CONTENT_ROOT / "index.js"
 LANGUAGE_RE = re.compile(r"^[A-Z]{2}$")
 LANGUAGES = {
     "EN": "English",
@@ -103,6 +104,10 @@ def discover_books(root: Path = CONTENT_ROOT, docs_root: Path | None = None) -> 
                 "pdf": pdf.relative_to(root).as_posix(),
                 "html": html.relative_to(root).as_posix(),
             }
+            if language == "EN":
+                ten_minute = root / "10minutes" / pdf.with_suffix(".html").name
+                if ten_minute.is_file():
+                    edition["tenMinuteHtml"] = ten_minute.relative_to(root).as_posix()
             for extension in ("epub", "m4a", "mp3", "ogg"):
                 alternative = pdf.with_suffix(f".{extension}")
                 if alternative.is_file():
@@ -122,6 +127,7 @@ def inventory(root: Path = CONTENT_ROOT) -> dict[str, object]:
             for path in root.rglob("*")
             if path.is_file()
             and path.name != "index.json"
+            and path.name != "index.js"
             and path.name != ".gitkeep"
             and path.relative_to(root).parts[0] != "tools"
         ),
@@ -142,20 +148,33 @@ def serialize(root: Path = CONTENT_ROOT) -> str:
     return json.dumps(inventory(root), ensure_ascii=False, indent=2) + "\n"
 
 
+def serialize_script(root: Path = CONTENT_ROOT) -> str:
+    """Expose the JSON manifest as a local-file-safe JavaScript include."""
+    return "globalThis.__AXIOLOGIC_CONTENT_INDEX__ = " + serialize(root).rstrip() + ";\n"
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("command", choices=("build", "check"))
     args = parser.parse_args(argv)
     expected = serialize()
+    expected_script = serialize_script()
     if args.command == "build":
         INDEX_PATH.write_text(expected, encoding="utf-8")
-        print(f"Indexed {inventory()['fileCount']} files in {INDEX_PATH.relative_to(REPO_ROOT)}.")
+        INDEX_SCRIPT_PATH.write_text(expected_script, encoding="utf-8")
+        print(f"Indexed {inventory()['fileCount']} files in {INDEX_PATH.relative_to(REPO_ROOT)} and {INDEX_SCRIPT_PATH.relative_to(REPO_ROOT)}.")
         return 0
     if not INDEX_PATH.is_file():
         print(f"Missing {INDEX_PATH.relative_to(REPO_ROOT)}; run content_index.py build.", file=sys.stderr)
         return 1
     if INDEX_PATH.read_text(encoding="utf-8") != expected:
         print(f"Stale {INDEX_PATH.relative_to(REPO_ROOT)}; run content_index.py build.", file=sys.stderr)
+        return 1
+    if not INDEX_SCRIPT_PATH.is_file():
+        print(f"Missing {INDEX_SCRIPT_PATH.relative_to(REPO_ROOT)}; run content_index.py build.", file=sys.stderr)
+        return 1
+    if INDEX_SCRIPT_PATH.read_text(encoding="utf-8") != expected_script:
+        print(f"Stale {INDEX_SCRIPT_PATH.relative_to(REPO_ROOT)}; run content_index.py build.", file=sys.stderr)
         return 1
     print(f"Content index is current ({inventory()['fileCount']} files).")
     return 0

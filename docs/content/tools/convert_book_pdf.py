@@ -776,7 +776,7 @@ def convert_pdf(pdf_path: Path, force: bool = False) -> str:
             staged.append((image.source, assets_dir / filename))
             image_urls[(image.page, image.index)] = f"{quote(assets_dir.name)}/{quote(filename)}"
         reader_dir = REPO_ROOT / "docs" / "reader"
-        css_href = Path(os.path.relpath(reader_dir / "standalone.css", html_path.parent)).as_posix() + "?v=20260825-1"
+        css_href = Path(os.path.relpath(reader_dir / "standalone.css", html_path.parent)).as_posix() + "?v=20260827-3"
         script_href = Path(os.path.relpath(reader_dir / "standalone.js", html_path.parent)).as_posix() + "?v=20260824-1"
         pdf_href = Path(os.path.relpath(pdf_path, html_path.parent)).as_posix()
         document = hybrid_html(pages, extract_title(pdf_path), css_href, script_href, pdf_href, image_urls)

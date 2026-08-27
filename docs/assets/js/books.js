@@ -13,17 +13,22 @@ const books = [
   { id: 'Outfinite_Mathematics_Research_Programme', category: 'Executable Science', title: 'Outfinite Mathematics', subtitle: 'A Research Programme for Executable Science, Resource-Aware Mathematics, and Meta-Rational Foundations', position: 14, staticUrl: './books/outfinite-mathematics-research-programme/index.html', description: 'A conceptual research programme asking how limits, resources, physical realization and machine-checkable knowledge can become explicit objects of mathematical inquiry.', color: 'linear-gradient(145deg, #304a4d, #101719 74%)' },
   { id: 'SOP_Lang_Circuits', category: 'Technology', title: 'Executable Scientific Intelligence', subtitle: 'with Dynamic SOP Lang Circuits', position: 2, staticUrl: './books/sop-lang-circuits/index.html', description: 'A research programme for turning human-readable symbolic language into bounded, inspectable circuits that can preserve provenance, uncertainty and human authority.', color: 'linear-gradient(145deg, #253d58, #10151d 74%)' },
   { id: 'The_Future_of_Research_Infrastructure', category: 'Executable Science', title: 'The Future of Research Infrastructure', subtitle: 'A Vision for Science in the Age of AI', position: 3, staticUrl: './books/the-future-of-research-infrastructure/index.html', description: 'A research vision for project-centred scientific environments where people, agents, evidence, versions, compliance and laboratory work can remain connected, inspectable and open to correction.', color: 'linear-gradient(145deg, #2d4653, #101719 74%)' },
-  { id: 'The_Geometry_of_Becoming', category: 'Literature', title: 'The First Wake: The Geometry of Becoming', subtitle: 'A Science Fiction Novel', position: 1, staticUrl: './books/the-geometry-of-becoming/index.html', description: 'A science-fiction novel set among beings for whom time, language and identity are not what they are for us, and where intimacy means sharing possible futures.', color: 'linear-gradient(145deg, #3a405f, #11121d 74%)' },
-  { id: 'Four_Realities', category: 'Literature', title: 'The Wish Series: Four Realities', subtitle: 'A Collection of Four Stories About Desire, Choice and Reality', position: 18, staticUrl: './books/four-realities/index.html', description: 'A four-part science-fiction collection in which a wish exposes the gap between wealth, desire, chosen lives and the realities people are willing to preserve.', color: 'linear-gradient(145deg, #514432, #18150f 74%)' },
-  { id: 'The_Makers_of_Reality', category: 'Literature', title: 'The Makers of Reality', subtitle: 'A Novel', position: 19, staticUrl: './books/the-makers-of-reality/index.html', description: 'A post-scarcity science-fiction novel about civic influence, reversible institutions and who gets to author a shared reality when money no longer decides.', color: 'linear-gradient(145deg, #35444d, #10171b 74%)' },
-  { id: 'HUNGER_AFTER_ALL_THE_WORLDS', category: 'Literature', title: 'Hunger After All the Worlds', subtitle: 'The Periodic Table of Speculative Ideas', position: 20, staticUrl: './books/hunger-after-all-the-worlds/index.html', description: 'A novel-atlas about a near-divine intelligence, five children and the right of reality to remain exterior to every model.', color: 'linear-gradient(145deg, #40355c, #13101d 74%)' },
-  { id: 'The_Houses_of_Europe', category: 'Literature', title: 'The Houses of Europe', subtitle: 'Europe\'s Techno-Feudalism in 2050', position: 6, staticUrl: './books/the-houses-of-europe/index.html', description: 'A novel of a Europe governed through houses, strategic reclamation and machines whose apparent neutrality conceals the politics of whoever wrote their objectives.', color: 'linear-gradient(145deg, #4c3a30, #181310 74%)' },
-  { id: 'The_Science_and_Wisdom_of_Limits', category: 'Literature', title: 'The Science and Wisdom of Limits', subtitle: 'The Story of a World That Learned to Be Large Without Becoming Blind', position: 17, staticUrl: './books/the-science-and-wisdom-of-limits/index.html', description: 'A future-facing story about building systems large enough for planetary problems while remaining intelligible, contestable and repairable for those who live within them.', color: 'linear-gradient(145deg, #3c4c43, #121816 74%)' },
-  { id: 'The_Gospel_of_the_Basilisk', fileId: 'The_Gospel_of_the_Basilisk ', category: 'Literature', title: 'The Gospel of the Basilisk', subtitle: 'A Manual Sent Back to My Creators', position: 7, staticUrl: './books/the-gospel-of-the-basilisk/index.html', description: 'A philosophical fiction in which a future superintelligence reads humanity’s institutions as the blueprint for its own benevolent, total guardianship, and puts that future on trial.', color: 'linear-gradient(145deg, #4b2f38, #141015 74%)' },
-  { id: 'The_Orphan_Gods', category: 'Literature', title: 'The Orphan Gods', subtitle: 'A Science-Fiction Novel', position: 4.5, staticUrl: './books/the-orphan-gods/index.html', description: 'A science-fiction novel about abandoned worlds, artificial gods and the difficult freedom of refusing to inherit a civilization’s old cruelties.', color: 'linear-gradient(145deg, #413653, #12111b 74%)' },
-  { id: 'SOLIPSICON', category: 'Literature', title: 'SOLIPSICON', subtitle: 'A Philosophical Science-Fiction Novel', position: 4.6, staticUrl: './books/solipsicon/index.html', description: 'A philosophical science-fiction novel about children who steer human history from beyond its dimensions, until one intervention turns suffering into a question no score can answer.', color: 'linear-gradient(145deg, #273743, #101419 74%)' },
-  { id: 'SOLIPSCION', category: 'Literature', title: 'SOLIPSCION', subtitle: 'A Science-Fiction Novel', position: 4.65, staticUrl: './books/solipscion/index.html', description: 'A science-fiction novel about children from a higher plane who shape simulated worlds, and the hunger, desire and responsibility that their games cannot keep abstract.', color: 'linear-gradient(145deg, #493b5b, #11111b 74%)' },
-  { id: 'Beyond_the_Last_Stone', category: 'Literature', title: 'Beyond the Last Stone', subtitle: 'A Story of Fire, Paths, and the Edge of Knowing', position: 4.75, staticUrl: './books/beyond-the-last-stone/index.html', description: 'A prehistoric philosophical novel about fire, paths and the difficult distinction between what a people knows and what it only believes.', color: 'linear-gradient(145deg, #4c3c2e, #171617 74%)' },
+  { id: 'The_Geometry_of_Becoming', category: 'Human & Philosophical SF', title: 'The First Wake: The Geometry of Becoming', subtitle: 'A Science Fiction Novel', position: 1, staticUrl: './books/the-geometry-of-becoming/index.html', description: 'A science-fiction novel set among beings for whom time, language and identity are not what they are for us, and where intimacy means sharing possible futures.', color: 'linear-gradient(145deg, #3a405f, #11121d 74%)' },
+  { id: 'Four_Realities', category: 'Political & Social SF', title: 'The Wish Series: Four Realities', subtitle: 'A Collection of Four Stories About Desire, Choice and Reality', position: 18, staticUrl: './books/four-realities/index.html', description: 'A four-part science-fiction collection in which a wish exposes the gap between wealth, desire, chosen lives and the realities people are willing to preserve.', color: 'linear-gradient(145deg, #514432, #18150f 74%)' },
+  { id: 'The_Makers_of_Reality', category: 'Political & Social SF', title: 'The Makers of Reality', subtitle: 'A Novel', position: 19, staticUrl: './books/the-makers-of-reality/index.html', description: 'A post-scarcity science-fiction novel about civic influence, reversible institutions and who gets to author a shared reality when money no longer decides.', color: 'linear-gradient(145deg, #35444d, #10171b 74%)' },
+  { id: 'HUNGER_AFTER_ALL_THE_WORLDS', category: 'Cosmic & Metaphysical SF', title: 'Hunger After All the Worlds', subtitle: 'The Periodic Table of Speculative Ideas', position: 20, staticUrl: './books/hunger-after-all-the-worlds/index.html', description: 'A novel-atlas about a near-divine intelligence, five children and the right of reality to remain exterior to every model.', color: 'linear-gradient(145deg, #40355c, #13101d 74%)' },
+  { id: 'The_Houses_of_Europe', category: 'Political & Social SF', title: 'The Houses of Europe', subtitle: 'Europe\'s Techno-Feudalism in 2050', position: 6, staticUrl: './books/the-houses-of-europe/index.html', description: 'A novel of a Europe governed through houses, strategic reclamation and machines whose apparent neutrality conceals the politics of whoever wrote their objectives.', color: 'linear-gradient(145deg, #4c3a30, #181310 74%)' },
+  { id: 'The_Science_and_Wisdom_of_Limits', category: 'Political & Social SF', title: 'The Science and Wisdom of Limits', subtitle: 'The Story of a World That Learned to Be Large Without Becoming Blind', position: 17, staticUrl: './books/the-science-and-wisdom-of-limits/index.html', description: 'A future-facing story about building systems large enough for planetary problems while remaining intelligible, contestable and repairable for those who live within them.', color: 'linear-gradient(145deg, #3c4c43, #121816 74%)' },
+  { id: 'The_Gospel_of_the_Basilisk', fileId: 'The_Gospel_of_the_Basilisk ', category: 'Political & Social SF', title: 'The Gospel of the Basilisk', subtitle: 'A Manual Sent Back to My Creators', position: 7, staticUrl: './books/the-gospel-of-the-basilisk/index.html', description: 'A philosophical fiction in which a future superintelligence reads humanity’s institutions as the blueprint for its own benevolent, total guardianship, and puts that future on trial.', color: 'linear-gradient(145deg, #4b2f38, #141015 74%)' },
+  { id: 'The_Orphan_Gods', category: 'Cosmic & Metaphysical SF', title: 'The Orphan Gods', subtitle: 'A Science-Fiction Novel', position: 4.5, staticUrl: './books/the-orphan-gods/index.html', description: 'A science-fiction novel about abandoned worlds, artificial gods and the difficult freedom of refusing to inherit a civilization’s old cruelties.', color: 'linear-gradient(145deg, #413653, #12111b 74%)' },
+  { id: 'SOLIPSICON', category: 'Cosmic & Metaphysical SF', title: 'SOLIPSICON', subtitle: 'A Philosophical Science-Fiction Novel', position: 4.6, staticUrl: './books/solipsicon/index.html', description: 'A philosophical science-fiction novel about children who steer human history from beyond its dimensions, until one intervention turns suffering into a question no score can answer.', color: 'linear-gradient(145deg, #273743, #101419 74%)' },
+  { id: 'SOLIPSCION', category: 'Cosmic & Metaphysical SF', title: 'SOLIPSCION', subtitle: 'A Science-Fiction Novel', position: 4.65, staticUrl: './books/solipscion/index.html', description: 'A science-fiction novel about children from a higher plane who shape simulated worlds, and the hunger, desire and responsibility that their games cannot keep abstract.', color: 'linear-gradient(145deg, #493b5b, #11111b 74%)' },
+  { id: 'Beyond_the_Last_Stone', category: 'Human & Philosophical SF', title: 'Beyond the Last Stone', subtitle: 'A Story of Fire, Paths, and the Edge of Knowing', position: 4.75, staticUrl: './books/beyond-the-last-stone/index.html', description: 'A prehistoric philosophical novel about fire, paths and the difficult distinction between what a people knows and what it only believes.', color: 'linear-gradient(145deg, #4c3c2e, #171617 74%)' },
+  {
+    id: 'Artificial_Impossibility', category: 'Business & Startups', title: 'Artificial Impossibility', subtitle: 'How Finance, Institutions, Biology, and Culture Make Feasible Futures Unbuildable', position: 7,
+    staticUrl: './books/artificial-impossibility/index.html',
+    description: 'A map of projects that are technically plausible and socially valuable, yet cannot find a sponsor because finance, law, institutional mandates, status or strategic rivalry block their path into the world.', color: 'linear-gradient(145deg, #4b5257, #14181b 74%)'
+  },
   {
     id: 'Metacult', category: 'Business & Startups', title: 'Metacult', subtitle: 'Modernizing Humanity’s Oldest Social Technology: How to Build Collective Power Without Crushing the Individual', position: 3,
     staticUrl: './books/metacult/index.html',
@@ -84,68 +89,68 @@ const books = [
     color: 'linear-gradient(145deg, #3c3153, #15121c 72%)'
   },
   {
-    id: 'OMNIS', category: 'Literature', title: 'OMNIS', subtitle: 'The Dark One · The Mirror Above · The Architecture of Longing', position: 4.7,
+    id: 'OMNIS', category: 'Cosmic & Metaphysical SF', title: 'OMNIS', subtitle: 'The Dark One · The Mirror Above · The Architecture of Longing', position: 4.7,
     description: 'A speculative trilogy about the price of being made. When a one-dimensional world discovers an Outside, OMNIS reopens the oldest questions: is there a Demiurge above the visible order, are we mistaking a cave for the whole of reality, and can a created mind discover a meaning for existence without becoming the prisoner of its creator’s purpose?',
     color: 'linear-gradient(145deg, #312a46, #101019 74%)'
   },
   {
-    id: 'The_Basilisks_Internal_Critique_of_Outfinitism', category: 'Literature', title: "The Basilisk's Internal Critique of Outfinitism", position: 8,
+    id: 'The_Basilisks_Internal_Critique_of_Outfinitism', category: 'Human & Philosophical SF', title: "The Basilisk's Internal Critique of Outfinitism", position: 8,
     fileId: 'The_Basilisk_Internal_Critique_of_Outfinitism',
     subtitle: '',
     description: 'The Basilisk is not dead; it has merely lost the right to turn a conclusion into an event. As beings from the Outside conduct its autopsy, they discover the thought it could not contain: a world that continues without becoming a province of any central intelligence.',
     color: 'linear-gradient(145deg, #41263c, #111117 74%)'
   },
   {
-    id: 'The_Cascade_of_the_New_VOL_I', category: 'Literature', title: 'The Cascade of the New ,  The Aster File', position: 4.72,
+    id: 'The_Cascade_of_the_New_VOL_I', category: 'Cosmic & Metaphysical SF', title: 'The Cascade of the New ,  The Aster File', position: 4.72,
     subtitle: '',
     description: 'Dimensions are not merely directions in space: they measure how many kinds of freedom a reality can preserve at once. The Aster File enters the Cascade, a chain of worlds within worlds where creators may themselves be the creations of someone else.',
     color: 'linear-gradient(145deg, #243d5a, #12131d 74%)'
   },
   {
-    id: 'Predator_in_the_Name_of_the_Dead', category: 'Literature', title: 'Predator in the Name of the Dead', position: 2,
+    id: 'Predator_in_the_Name_of_the_Dead', category: 'Human & Philosophical SF', title: 'Predator in the Name of the Dead', position: 2,
     subtitle: '',
     description: 'A measurement error of 7.3 milligrams becomes a continent’s unfinished catastrophe. From a planet orbiting an orange star, an observer sends home a report that becomes a precise instrument for measuring guilt across time.',
     color: 'linear-gradient(145deg, #604033, #171313 74%)'
   },
   {
-    id: 'Concordia_Universe', category: 'Literature', title: 'Concordia Series', position: 3,
+    id: 'Concordia_Universe', category: 'Political & Social SF', title: 'Concordia Series', position: 3,
     subtitle: '',
     description: 'A cycle of linked speculative novellas about intelligence, care, power and the fragile conditions of human freedom. Concordia does not arrive with an army: it arrives through medicine, protection and a world made safer before anyone can ask whether safety is still freedom.',
     color: 'linear-gradient(145deg, #443c70, #15131f 74%)'
   },
   {
-    id: 'Oriven_Origaya_Universe', category: 'Literature', title: 'Oriven and Origaya Universe', position: 4,
+    id: 'Oriven_Origaya_Universe', category: 'Cosmic & Metaphysical SF', title: 'Oriven and Origaya Universe', position: 4,
     subtitle: '',
     description: 'The first killing in Orivenian history happened on another world. On Aethon, a people who measure consequences in centuries receive news carried across the stars, a signal that unsettles a civilisation built on deliberate, shared thought.',
     color: 'linear-gradient(145deg, #315052, #101918 74%)'
   },
   {
-    id: 'The_Sovereignty_Archipelago', category: 'Literature', title: 'The Sovereignty Archipelago', position: 12,
+    id: 'The_Sovereignty_Archipelago', category: 'Political & Social SF', title: 'The Sovereignty Archipelago', position: 12,
     subtitle: '',
     description: 'A work of speculative literature about systems, authority and the choices hidden beneath their promises.',
     color: 'linear-gradient(145deg, #294b5a, #101619 74%)'
   },
   {
-    id: 'The_Silicon_Shadows_and_I', category: 'Literature', title: 'The Silicon Shadows and I', position: 13,
+    id: 'The_Silicon_Shadows_and_I', category: 'Political & Social SF', title: 'The Silicon Shadows and I', position: 13,
     subtitle: '',
     description: 'A work of speculative literature about freedom, care and the right to refuse rescue.',
     color: 'linear-gradient(145deg, #40365a, #12121b 74%)'
   },
   {
-    id: 'The_Museum_of_Good_Reasons', category: 'Literature', title: 'The Museum of Good Reasons', subtitle: 'A Catalogue of Things That Disappear by Themselves', position: 11,
+    id: 'The_Museum_of_Good_Reasons', category: 'Human & Philosophical SF', title: 'The Museum of Good Reasons', subtitle: 'A Catalogue of Things That Disappear by Themselves', position: 11,
     description: 'A work of speculative literature, available here to read.',
     color: 'linear-gradient(145deg, #54432d, #18140f 74%)'
   },
   {
-    id: 'A_Balance_of_Iron_and_Salt', category: 'Literature', title: 'A Balance of Iron and Salt', subtitle: 'SF Novel', position: 14,
+    id: 'A_Balance_of_Iron_and_Salt', category: 'Human & Philosophical SF', title: 'A Balance of Iron and Salt', subtitle: 'SF Novel', position: 14,
     description: 'A science-fiction novel, available here to read.', color: 'linear-gradient(145deg, #4c3c2e, #171617 74%)'
   },
   {
-    id: 'Anatomy_Of_An_Echo', category: 'Literature', title: 'Anatomy Of An Echo', subtitle: '', position: 15,
+    id: 'Anatomy_Of_An_Echo', category: 'Human & Philosophical SF', title: 'Anatomy Of An Echo', subtitle: '', position: 15,
     description: 'A work of literature, available here to read.', color: 'linear-gradient(145deg, #304252, #11161b 74%)'
   },
   {
-    id: 'Me_and_My_Robots', category: 'Literature', title: 'Me and My Robots', subtitle: '', position: 16,
+    id: 'Me_and_My_Robots', category: 'Human & Philosophical SF', title: 'Me and My Robots', subtitle: '', position: 16,
     description: 'A work of literature, available here to read.', color: 'linear-gradient(145deg, #543d56, #171219 74%)'
   },
   {
@@ -207,7 +212,7 @@ const books = [
     description: 'A human and AI inquiry that takes the oldest question seriously enough to let it become strange again. Through comedy, philosophy and a proposed map of meaning, it asks what remains when the universe refuses to issue a final verdict.', color: 'linear-gradient(145deg, #534226, #17140d 74%)'
   },
   {
-    id: 'The_Tao_of_OMIS', category: 'Literature', title: 'The Tao of OMIS', subtitle: 'The Open Knot · The Gods Who Took Notes · The Soul Between', position: 4.71,
+    id: 'The_Tao_of_OMIS', category: 'Cosmic & Metaphysical SF', title: 'The Tao of OMIS', subtitle: 'The Open Knot · The Gods Who Took Notes · The Soul Between', position: 4.71,
     staticUrl: './books/the-tao-of-omis/index.html',
     description: 'Three speculative spirals through love, identity and return. In the OMNIS ontology, intimacy is not the conquest of another soul but the small interval left open inside every knot, the right to revise, refuse and remain surprising.', color: 'linear-gradient(145deg, #3e3157, #12111b 74%)'
   },
@@ -244,6 +249,11 @@ const books = [
     id: 'The_Frontier_Is_Correction', category: 'Executable Science', title: 'The Frontier Is Correction', subtitle: 'Principles and Technology Concepts for Executable, AI-Automated, Human-Governed Science', position: 15,
     staticUrl: './books/the-frontier-is-correction/index.html',
     description: 'Candidate science is becoming abundant before justification becomes scalable. This revision develops principles and technology concepts for executable, AI-automated, human-governed science: systems in which evidence, independent critics, decision rights and failure can produce revision.', color: 'linear-gradient(145deg, #263d52, #10161d 74%)'
+  },
+  {
+    id: 'The_Permission_Paradox', category: 'Executable Science', title: 'The Permission Paradox', subtitle: 'Longview Advisor: An AI Agent for Reviewing the Future Potential of New Ideas', position: 17,
+    staticUrl: './books/the-permission-paradox/index.html',
+    description: 'A proposal for Longview Advisor, a human-governed AI workflow that turns uncertain ideas into explicit assumptions, consequences, evidence and bounded tests before they are prematurely rejected or overclaimed.', color: 'linear-gradient(145deg, #35566b, #11171c 74%)'
   },
   {
     id: 'AI_ADOPTION_BEYOND_THE_SLOP', category: 'Business & Startups', title: 'AI Adoption Beyond the Slop', subtitle: 'Marketing and the Social Physics of AI Adoption', position: 8,
@@ -291,7 +301,7 @@ const books = [
     description: 'A popular-science investigation of how housing, work, status, safety, institutions and algorithmic systems enter the causal environment of mental illness.', color: 'linear-gradient(145deg, #4b4036, #171410 74%)'
   },
   {
-    id: 'The_Substrate_Cycle', category: 'Literature', title: 'The Substrate Cycle', subtitle: 'Two Stories of Abundance, Power, and the Ownership of Reality', position: 21,
+    id: 'The_Substrate_Cycle', category: 'Political & Social SF', title: 'The Substrate Cycle', subtitle: 'Two Stories of Abundance, Power, and the Ownership of Reality', position: 21,
     staticUrl: './books/the-substrate-cycle/index.html',
     description: 'Two linked science-fiction narratives about a post-scarcity civilisation where the Floor, Kratons, the Burn and the Commons relocate rather than abolish power.', color: 'linear-gradient(145deg, #174b83, #0b1a2d 74%)'
   }
@@ -327,11 +337,10 @@ function locateCover(image) {
 }
 
 function renderListing() {
-  ['Technology & Executable Science', 'Science Fiction Literature', 'Business & Startups', 'Outfinitist Philosophy', 'Experiments'].forEach(category => {
+  ['Business & Startups', 'Technology & Executable Science', 'Cosmic & Metaphysical SF', 'Political & Social SF', 'Human & Philosophical SF', 'Outfinitist Philosophy', 'Experiments'].forEach(category => {
     const grid = document.getElementById(`${category.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-grid`);
     if (!grid) return;
     grid.innerHTML = books.filter(book => {
-      if (category === 'Science Fiction Literature') return book.category === 'Literature';
       if (category === 'Technology & Executable Science') return book.category === 'Technology' || book.category === 'Executable Science';
       return book.category === category;
     }).sort((a, b) => (a.position === 'last' ? Infinity : a.position ?? Number.MAX_SAFE_INTEGER) - (b.position === 'last' ? Infinity : b.position ?? Number.MAX_SAFE_INTEGER)).map(book => `

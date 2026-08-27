@@ -36,6 +36,9 @@ class ContentLayoutTests(unittest.TestCase):
         index_path = CONTENT_ROOT / "index.json"
         self.assertTrue(index_path.is_file())
         self.assertEqual(index_path.read_text(encoding="utf-8"), content_index.serialize())
+        index_script_path = CONTENT_ROOT / "index.js"
+        self.assertTrue(index_script_path.is_file())
+        self.assertEqual(index_script_path.read_text(encoding="utf-8"), content_index.serialize_script())
         self.assertFalse(any(record["path"].startswith("tools/") for record in content_index.inventory()["files"]))
 
     def test_every_book_page_is_backed_by_manifest_editions(self):
@@ -52,6 +55,16 @@ class ContentLayoutTests(unittest.TestCase):
             self.assertIsNone(re.search(r"content/[A-Z]{2}/[^\" ]+\.pdf", source), page)
             self.assertIn("data-book-actions", source, page)
             self.assertIn("data-book-availability", source, page)
+
+    def test_english_editions_have_ten_minute_reading_guides(self):
+        for book in content_index.discover_books():
+            english = next((edition for edition in book["editions"] if edition["language"] == "EN"), None)
+            if not english:
+                continue
+            self.assertIn("tenMinuteHtml", english, book["id"])
+            guide = CONTENT_ROOT / english["tenMinuteHtml"]
+            self.assertTrue(guide.is_file(), book["id"])
+            self.assertIn('../../reader/standalone.js', guide.read_text(encoding="utf-8"), book["id"])
 
 
 if __name__ == "__main__":

@@ -1,7 +1,9 @@
 :root {
-  color-scheme: dark;
+  color-scheme: light;
   --reader-bg: #040404;
-  --reader-paper: #e9fff4;
+  --reader-surround: #e3e6e4;
+  --reader-paper: #ffffff;
+  --reader-paper-line: #d7dcda;
   --reader-ink: #10241b;
   --reader-muted: #aab0ba;
   --reader-line: rgba(255, 255, 255, .13);
@@ -66,8 +68,8 @@ button { cursor: pointer; }
 .reader-button:active, .reader-icon-button:active { transform: translateY(1px); }
 .reader-button-text { padding: 0 11px; min-width: 75px; font-size: .78rem; }
 
-.reader-stage-wrap { position: relative; min-height: 0; overflow: hidden; }
-.reader-stage { width: 100%; height: 100%; overflow: auto; overscroll-behavior: contain; }
+.reader-stage-wrap { position: relative; min-height: 0; overflow: hidden; background: var(--reader-surround); }
+.reader-stage { width: 100%; height: 100%; overflow: auto; overscroll-behavior: contain; background: var(--reader-surround); }
 .reader-loading, .reader-error { position: absolute; inset: 0; display: grid; place-content: center; gap: 14px; padding: 30px; text-align: center; z-index: 2; background: var(--reader-bg); }
 .reader-loading p, .reader-error p { max-width: 34rem; margin: 0; color: #d6dbe5; line-height: 1.5; }
 .reader-error a { color: var(--reader-accent); }
@@ -88,12 +90,14 @@ button { cursor: pointer; }
 .reader-theme-button { margin-left: 2px; }
 
 .reader-html-content {
-  width: min(calc(100% - 32px), 72ch);
+  width: min(calc(100% - 48px), 72ch);
   min-height: 100%;
   margin: 0 auto;
   padding: clamp(30px, 7vw, 72px) clamp(22px, 6vw, 76px) 96px;
   color: var(--reader-ink);
   background: var(--reader-paper);
+  border-inline: 1px solid var(--reader-paper-line);
+  box-shadow: 0 0 28px rgba(15, 23, 20, .08);
   font-family: Georgia, "Iowan Old Style", "Palatino Linotype", serif;
   font-size: var(--reader-font-size);
   line-height: 1.72;
@@ -121,7 +125,7 @@ button { cursor: pointer; }
 .reader-html-content a { color: #176b4b; }
 .reader-html-content blockquote { margin: 1.5em 0; padding: .4em 1.1em; border-left: 3px solid #43a978; color: #244d3b; }
 .reader-html-content :is(nav, header, footer, script, style, noscript, form, [hidden]) { display: none !important; }
-.reader-html-frame { display: block; width: 100%; height: 100%; border: 0; background: var(--reader-paper); }
+.reader-html-frame { display: block; width: 100%; height: 100%; border: 0; background: var(--reader-surround); }
 
 .reader-pdf-page { display: grid; min-height: 100%; place-content: center; padding: 18px; background: #262723; }
 .reader-pdf-page canvas { display: block; max-width: none; box-shadow: 0 10px 40px rgba(0, 0, 0, .42); background: white; }
@@ -132,7 +136,7 @@ button { cursor: pointer; }
 .reader-audio { display: flex; align-items: center; max-width: min(360px, 58vw); }
 .reader-audio audio { width: 100%; height: 35px; }
 
-[data-reader-app][data-theme="night"] { --reader-bg: #080a0c; --reader-paper: #151819; --reader-ink: #e9e9e1; --reader-muted: #a6a8a1; --reader-header: rgba(8, 10, 12, .94); --reader-accent: #b5dec0; }
+[data-reader-app][data-theme="night"] { --reader-bg: #080a0c; --reader-surround: #3a3e42; --reader-paper: #080a0c; --reader-paper-line: #52575b; --reader-ink: #f1f3f0; --reader-muted: #c2c6c4; --reader-header: rgba(8, 10, 12, .94); --reader-accent: #b5dec0; }
 [data-reader-app][data-theme="night"] .reader-html-content :is(h1, h2, h3, h4) { color: #fafaf0; }
 [data-reader-app][data-theme="night"] .reader-html-content a { color: #b5dec0; }
 [data-reader-app][data-theme="night"] .reader-html-content blockquote { color: #c2c8bd; border-left-color: #87a991; }
@@ -149,7 +153,7 @@ button { cursor: pointer; }
   .reader-control-group { gap: 4px; }
   .reader-virtual-page { min-width: 86px; height: 35px; padding: 0 6px; }
   .reader-button-text { min-width: 61px; padding: 0 7px; }
-  .reader-html-content { width: 100%; padding: 32px 25px 72px; }
+  .reader-html-content { width: 100%; padding: 32px 25px 72px; border-inline: 0; box-shadow: none; }
   .reader-pdf-page { padding: 8px; }
   .reader-audio { order: 3; width: 100%; max-width: none; }
   .reader-audio audio { width: 100%; }

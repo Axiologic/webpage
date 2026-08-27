@@ -44,6 +44,7 @@ const preferenceKey = 'axiologic-reader:preferences:v1';
 const sourceFromParam = (name) => query.get(name) ? new URL(query.get(name), window.location.href).href : '';
 const supplied = Object.fromEntries([...validTypes, 'audio'].map((type) => [type, sourceFromParam(type)]));
 const title = query.get('title') || 'Axiologic Reader';
+const readingMode = query.get('mode') === 'ten-minute' ? 'ten-minute' : 'full';
 const sourceId = query.get('id') || supplied.html || supplied.epub || supplied.pdf || title;
 const progressKey = `axiologic-reader:progress:v1:${sourceId}`;
 const isLocalFilePreview = window.location.protocol === 'file:';
@@ -175,7 +176,11 @@ function setControls(type) {
   readingControls.hidden = type === 'pdf';
   zoomControls.hidden = type !== 'pdf';
   textControls.hidden = type === 'pdf';
-  formatNode.textContent = type === 'epub' ? 'Reflowable EPUB edition' : type === 'html' ? 'Adaptable web edition' : 'PDF edition';
+  formatNode.textContent = type === 'epub'
+    ? 'Reflowable EPUB edition'
+    : type === 'html'
+      ? readingMode === 'ten-minute' ? '10-minute adaptable edition' : 'Adaptable web edition'
+      : 'PDF edition';
 }
 
 function updateReadingProgress(position, page, total) {
@@ -200,7 +205,7 @@ function applyTheme() {
   postHtmlFrameSettings();
   if (state.type === 'epub' && state.epub.rendition) {
     state.epub.rendition.themes.override('color', state.preferences.theme === 'night' ? '#e9e9e1' : '#10241b');
-    state.epub.rendition.themes.override('background', state.preferences.theme === 'night' ? '#151819' : '#e9fff4');
+    state.epub.rendition.themes.override('background', state.preferences.theme === 'night' ? '#080a0c' : '#ffffff');
   }
 }
 
