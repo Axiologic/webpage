@@ -38,6 +38,9 @@ h1, h2, h3, h4 {
   line-height: 1.22;
 }
 
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.34em; }
+
 h1:first-child, h2:first-child { margin-top: 0; }
 p {
   margin: 0 0 .72em;

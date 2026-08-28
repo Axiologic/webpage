@@ -47,6 +47,9 @@ STRUCTURAL_HEADING_RE = re.compile(
     r"^(?:chapter|part|volume|book|appendix|contents|abstract|introduction|preface|prologue|epilogue|references|sources|section)\b",
     re.IGNORECASE,
 )
+OUTLINE_HEADING_RE = re.compile(
+    r"^(?:(?:[A-Z]|\d{1,3})\.\d{1,3}(?:\.\d{1,3})*\s+(?=[A-ZÀ-Ž])|.{1,80}\s[A-Z]\.\d{1,3}(?:\.\d{1,3})*\s*$)"
+)
 CONTENTS_HEADING_RE = re.compile(
     r"^(?:contents?|content|inhalt|inhaltsverzeichnis|índice|indice|sommaire|table des matières|spis treści|cuprins)$",
     re.IGNORECASE,
@@ -191,7 +194,14 @@ def join_boxes(boxes: list[TextBox]) -> str:
 def group_visual_lines(boxes: list[TextBox]) -> list[VisualLine]:
     lines: list[VisualLine] = []
     for box in sorted((item for item in boxes if item.text), key=lambda item: (item.top, item.left)):
-        match = next((line for line in reversed(lines[-4:]) if abs(line.top - box.top) <= max(3.0, min(line.height, box.height) * 0.3)), None)
+        def same_visual_row(line: VisualLine) -> bool:
+            smaller_height = min(line.height, box.height)
+            overlap = min(line.top + line.height, box.top + box.height) - max(line.top, box.top)
+            similar_top = abs(line.top - box.top) <= max(3.0, smaller_height * 0.3)
+            substantial_overlap = overlap >= smaller_height * 0.55
+            return similar_top or substantial_overlap
+
+        match = next((line for line in reversed(lines[-4:]) if same_visual_row(line)), None)
         if match is None:
             lines.append(VisualLine([box]))
         else:
@@ -360,12 +370,18 @@ def looks_heading(line: VisualLine, body_size: float) -> bool:
     first_alpha = next((char for char in line.text if char.isalpha()), "")
     size_only_heading = line.font_size >= body_size * 1.35 and not first_alpha.islower() and not (is_finished(line.text) and not line.bold and upper_ratio < 0.82)
     uppercase_heading = upper_ratio >= 0.82 and len(letters) >= 5 and line.font_size >= body_size * 0.9
-    structural_heading = bool(STRUCTURAL_HEADING_RE.match(line.text)) and len(line.text) <= 100
+    structural_heading = looks_structural_heading(line)
     return bool(line.text) and len(line.text) <= 150 and (
         size_only_heading
         or (line.bold and line.font_size >= body_size * 1.05)
         or uppercase_heading
         or structural_heading
+    )
+
+
+def looks_structural_heading(line: VisualLine) -> bool:
+    return bool(line.text) and len(line.text) <= 100 and bool(
+        STRUCTURAL_HEADING_RE.match(line.text) or OUTLINE_HEADING_RE.match(line.text)
     )
 
 
@@ -380,12 +396,22 @@ def prose_run_indices(lines: list[VisualLine]) -> set[int]:
             previous, current = lines[cursor - 1], lines[cursor]
             similar_font = abs(previous.font_size - current.font_size) <= max(previous.font_size, current.font_size) * 0.08
             close = current.top - previous.top <= max(30.0, max(previous.font_size, current.font_size) * 1.8)
-            if not similar_font or not close:
+            if not similar_font or previous.bold != current.bold or not close:
                 break
             run.append(cursor)
             cursor += 1
         characters = sum(len(lines[index].text) for index in run)
-        if len(run) >= 3 and characters >= 180 and any(is_finished(lines[index].text) for index in run):
+        letters = [char for index in run for char in lines[index].text if char.isalpha()]
+        lowercase_ratio = sum(char.islower() for char in letters) / max(1, len(letters))
+        sustained_prose = len(run) >= 3 and characters >= 180 and any(is_finished(lines[index].text) for index in run)
+        sentence_like_display = (
+            len(run) >= 2
+            and characters >= 120
+            and not lines[run[0]].bold
+            and lowercase_ratio >= 0.5
+            and is_finished(lines[run[-1]].text)
+        )
+        if sustained_prose or sentence_like_display:
             result.update(run)
         start = cursor
     return result
@@ -404,7 +430,7 @@ def heading_run_indices(lines: list[VisualLine], body_size: float) -> set[int]:
         while cursor < len(lines):
             previous, current = lines[cursor - 1], lines[cursor]
             similar_font = abs(previous.font_size - current.font_size) <= max(previous.font_size, current.font_size) * 0.12
-            close = current.top - previous.top <= max(previous.font_size, current.font_size) * 1.9
+            close = current.top - previous.top <= max(previous.font_size, current.font_size) * 2.3
             if not looks_heading(current, body_size) or not similar_font or previous.bold != current.bold or not close:
                 break
             run.append(cursor)
@@ -512,6 +538,30 @@ def page_blocks(page: PdfPage, repeated: set[str]) -> list[ContentBlock]:
     if full_page:
         image = max(full_page, key=lambda item: item.width * item.height)
         return [ContentBlock(image.top, "image", image=image, page_anchor=page.number)]
+    isolated_display_title = bool(
+        not page.images
+        and 1 <= len(lines) <= 3
+        and all(line.bold and line.font_size >= page.height * 0.02 for line in lines)
+        and all(
+            abs(lines[0].font_size - line.font_size) <= max(lines[0].font_size, line.font_size) * 0.12
+            for line in lines[1:]
+        )
+        and all(
+            current.top - previous.top <= max(previous.font_size, current.font_size) * 1.75
+            for previous, current in zip(lines, lines[1:])
+        )
+    )
+    if isolated_display_title:
+        return [
+            ContentBlock(
+                lines[0].top,
+                "title",
+                text=clean_text(" ".join(line.text for line in lines)),
+                bold=True,
+                font_size=max(line.font_size for line in lines),
+                page_anchor=page.number,
+            )
+        ]
     regions = table_regions(lines, page.width)
     table_by_start = {indices[0]: (set(indices), rows) for indices, rows in regions}
     table_indices = {index for indices, _ in regions for index in indices}
@@ -558,14 +608,20 @@ def page_blocks(page: PdfPage, repeated: set[str]) -> list[ContentBlock]:
             continue
         previous_heading = blocks[-1] if blocks and not current and blocks[-1].kind == "heading" else None
         combined_heading = clean_text(f"{previous_heading.text} {line.text}") if previous_heading else line.text
+        structural_heading = looks_structural_heading(line)
+        heading_font_tolerance = 0.12 if previous_heading and previous_heading.bold else 0.08
         continuation_style = bool(
             previous_heading
             and previous_heading.font_size
-            and abs(previous_heading.font_size - line.font_size) <= max(previous_heading.font_size, line.font_size) * 0.12
+            and abs(previous_heading.font_size - line.font_size)
+            <= max(previous_heading.font_size, line.font_size) * heading_font_tolerance
+            and previous_heading.bold == line.bold
             and (previous_heading.bold or line.bold or previous_heading.font_size >= body_size * 1.25)
         )
         continues_heading = bool(
             previous_heading
+            and index not in prose_indices
+            and not structural_heading
             and continuation_style
             and line.top - (previous_heading.last_top if previous_heading.last_top is not None else previous_heading.top)
             <= max(previous_heading.font_size, line.font_size) * 2.3
@@ -578,7 +634,7 @@ def page_blocks(page: PdfPage, repeated: set[str]) -> list[ContentBlock]:
             previous_heading.last_top = line.top
             previous_index = index
             continue
-        if index not in prose_indices and looks_heading(line, body_size):
+        if (index not in prose_indices or structural_heading) and looks_heading(line, body_size):
             flush()
             previous = blocks[-1] if blocks else None
             same_heading_style = bool(
@@ -586,6 +642,8 @@ def page_blocks(page: PdfPage, repeated: set[str]) -> list[ContentBlock]:
                 and previous.kind == "heading"
                 and previous.font_size
                 and abs(previous.font_size - line.font_size) <= max(previous.font_size, line.font_size) * 0.12
+                and previous.bold == line.bold
+                and not structural_heading
                 and line.top - previous.top <= max(previous.font_size, line.font_size) * 1.75
             )
             if same_heading_style and previous is not None:
@@ -675,9 +733,10 @@ def hybrid_html(pages: list[PdfPage], title: str, css_href: str, script_href: st
     for page in pages:
         for block in page_blocks(page, repeated):
             anchor = f' id="page_{block.page_anchor}"' if block.page_anchor else ""
-            if block.kind == "heading":
+            if block.kind in {"heading", "title"}:
                 text = render_linked_text(block.text)
-                body.append(f"<h2{anchor}>{'<em>' + text + '</em>' if block.italic else text}</h2>")
+                level = 1 if block.kind == "title" else 2
+                body.append(f"<h{level}{anchor}>{'<em>' + text + '</em>' if block.italic else text}</h{level}>")
             elif block.kind == "table":
                 body.append(render_table(block.rows, anchor))
             elif block.kind == "image" and block.image:
@@ -776,7 +835,7 @@ def convert_pdf(pdf_path: Path, force: bool = False) -> str:
             staged.append((image.source, assets_dir / filename))
             image_urls[(image.page, image.index)] = f"{quote(assets_dir.name)}/{quote(filename)}"
         reader_dir = REPO_ROOT / "docs" / "reader"
-        css_href = Path(os.path.relpath(reader_dir / "standalone.css", html_path.parent)).as_posix() + "?v=20260827-3"
+        css_href = Path(os.path.relpath(reader_dir / "standalone.css", html_path.parent)).as_posix() + "?v=20260828-1"
         script_href = Path(os.path.relpath(reader_dir / "standalone.js", html_path.parent)).as_posix() + "?v=20260824-1"
         pdf_href = Path(os.path.relpath(pdf_path, html_path.parent)).as_posix()
         document = hybrid_html(pages, extract_title(pdf_path), css_href, script_href, pdf_href, image_urls)

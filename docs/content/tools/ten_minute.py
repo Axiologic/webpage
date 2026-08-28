@@ -69,7 +69,7 @@ def source_headings(source: str) -> list[tuple[re.Match[str], str]]:
 
 def opening_ten_minute_heading(source: str) -> str | None:
     """Return an explicitly labelled short opening chapter, when present."""
-    for index, (_, heading) in enumerate(source_headings(source)[:40]):
+    for index, (_, heading) in enumerate(source_headings(source)):
         if OPENING_TEN_MINUTE.search(heading) and (index < 12 or OPENING_NUMBERED_CHAPTER.search(heading)):
             return heading
     return None
@@ -227,7 +227,7 @@ def render(pdf: Path, source: Path, destination: Path) -> str:
   <meta name="reading-time" content="{reading_minutes} minutes">
   <meta name="source-pdf" content="{escape(pdf.name, quote=True)}">
   <title>{escape(document_title)}</title>
-  <link rel="stylesheet" href="../../reader/standalone.css?v=20260827-3">
+  <link rel="stylesheet" href="../../reader/standalone.css?v=20260828-1">
   <style>
     .ten-minute-header {{ margin-bottom: 2.4rem; padding-bottom: 1.5rem; border-bottom: 1px solid color-mix(in srgb, currentColor 22%, transparent); }}
     .ten-minute-header p {{ text-indent: 0; text-align: left; }}

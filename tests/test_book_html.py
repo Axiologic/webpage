@@ -384,6 +384,21 @@ class ConversionTests(unittest.TestCase):
         self.assertIn("<p><strong>NO BOUNDARY IS SACRED MERELY BECAUSE IT IS HIDDEN, AND NO OPENING IS LOVING MERELY BECAUSE IT IS SHARED.</strong></p>", converted)
         self.assertEqual(converted.count("<h2"), 1)
 
+    def test_hybrid_converter_joins_isolated_display_title_as_level_one_heading(self):
+        xml = """<?xml version="1.0" encoding="UTF-8"?>
+<pdf2xml><page number="13" width="648" height="972">
+<fontspec id="0" size="27" family="Sans"/>
+<text top="195" left="146" width="410" height="33" font="0"><b>Chapter 1. Ten Minutes Before the </b></text>
+<text top="229" left="297" width="80" height="33" font="0"><b>Gods </b></text>
+</page></pdf2xml>"""
+        with tempfile.TemporaryDirectory(dir=ROOT) as temp_dir:
+            xml_path = Path(temp_dir) / "isolated-display-title.xml"
+            xml_path.write_text(xml, encoding="utf-8")
+            pages = parse_pdf_xml(xml_path)
+        converted = hybrid_html(pages, "Chapter", "reader.css", "reader.js", "Chapter.pdf", {})
+        self.assertIn('<h1 id="page_13">Chapter 1. Ten Minutes Before the Gods</h1>', converted)
+        self.assertNotIn("</strong></p>\n<p><strong>Gods", converted)
+
     def test_hybrid_converter_does_not_merge_a_contents_run_into_one_heading(self):
         entries = [
             "CHAPTER 1 — THE FIRST QUESTION",
@@ -393,12 +408,12 @@ class ConversionTests(unittest.TestCase):
             "CHAPTER 5 — THE FIFTH QUESTION",
         ]
         text_nodes = "".join(
-            f'<text top="{100 + index * 24}" left="80" width="430" height="20" font="0"><b>{entry}</b></text>'
+            f'<text top="{100 + index * 37}" left="80" width="430" height="20" font="0"><b>{entry}</b></text>'
             for index, entry in enumerate(entries)
         )
         xml = f"""<?xml version="1.0" encoding="UTF-8"?>
 <pdf2xml><page number="2" width="600" height="800">
-<fontspec id="0" size="16" family="Sans"/><fontspec id="1" size="14" family="Serif"/>
+<fontspec id="0" size="17" family="Sans"/><fontspec id="1" size="14" family="Serif"/>
 {text_nodes}
 <text top="300" left="80" width="430" height="18" font="1">Ordinary prose establishes the page body size.</text>
 <text top="322" left="80" width="430" height="18" font="1">Another ordinary sentence confirms that body style.</text>
@@ -409,7 +424,147 @@ class ConversionTests(unittest.TestCase):
             pages = parse_pdf_xml(xml_path)
         converted = hybrid_html(pages, "Contents", "reader.css", "reader.js", "Contents.pdf", {})
         self.assertNotIn(" ".join(entries), converted)
+        self.assertNotIn(f"{entries[0]} {entries[1]}", converted)
         self.assertEqual(sum(converted.count(entry) for entry in entries), len(entries))
+
+    def test_hybrid_converter_keeps_overlapping_margin_label_with_prose_after_heading(self):
+        xml = """<?xml version="1.0" encoding="UTF-8"?>
+<pdf2xml><page number="15" width="648" height="972">
+<fontspec id="0" size="20" family="Sans"/><fontspec id="1" size="19" family="Serif"/><fontspec id="2" size="11" family="Sans"/>
+<text top="69" left="121" width="427" height="25" font="0"><b>1.1 What the Observer Who Does Not Kneel </b></text>
+<text top="94" left="94" width="54" height="25" font="0"><b>Sees </b></text>
+<text top="144" left="94" width="115" height="14" font="2"><b>COMPOSITE SCENE </b></text>
+<text top="136" left="212" width="362" height="24" font="1">In the same planetary hour, a bell calls a few dozen </text>
+<text top="169" left="107" width="466" height="24" font="1">people into an almost empty church in Europe; millions align their bodies toward a sacred place, </text>
+<text top="203" left="107" width="466" height="24" font="1">repeat a shared ritual, regulate attention, and bind emotion to a story larger than the person. </text>
+</page></pdf2xml>"""
+        with tempfile.TemporaryDirectory(dir=ROOT) as temp_dir:
+            xml_path = Path(temp_dir) / "overlapping-margin-label.xml"
+            xml_path.write_text(xml, encoding="utf-8")
+            pages = parse_pdf_xml(xml_path)
+        converted = hybrid_html(pages, "Label", "reader.css", "reader.js", "Label.pdf", {})
+        self.assertIn(
+            '<h2 id="page_15">1.1 What the Observer Who Does Not Kneel Sees</h2>',
+            converted,
+        )
+        self.assertIn(
+            "<p>COMPOSITE SCENE In the same planetary hour, a bell calls a few dozen people into an almost empty church",
+            converted,
+        )
+        self.assertNotIn("Sees In the same planetary hour", converted)
+
+    def test_hybrid_converter_does_not_absorb_unfinished_prose_after_bold_heading(self):
+        xml = """<?xml version="1.0" encoding="UTF-8"?>
+<pdf2xml><page number="29" width="594" height="891">
+<fontspec id="0" size="18" family="Sans"/><fontspec id="1" size="17" family="Serif"/>
+<text top="618" left="71" width="384" height="24" font="0"><b>Eden, Dilmun, and the Refusal of Mortality </b></text>
+<text top="649" left="71" width="454" height="23" font="1">The biblical garden is planted, watered by a river, and organized around a </text>
+<text top="674" left="71" width="455" height="23" font="1">prohibition that continues onto another physical line without sentence-ending </text>
+<text top="700" left="71" width="455" height="23" font="1">punctuation because the paragraph itself continues onto the following page </text>
+</page></pdf2xml>"""
+        with tempfile.TemporaryDirectory(dir=ROOT) as temp_dir:
+            xml_path = Path(temp_dir) / "heading-before-unfinished-prose.xml"
+            xml_path.write_text(xml, encoding="utf-8")
+            pages = parse_pdf_xml(xml_path)
+        converted = hybrid_html(pages, "Heading", "reader.css", "reader.js", "Heading.pdf", {})
+        self.assertIn(
+            '<h2 id="page_29">Eden, Dilmun, and the Refusal of Mortality</h2>',
+            converted,
+        )
+        self.assertIn("<p>The biblical garden is planted, watered by a river", converted)
+        self.assertNotIn("Mortality The biblical garden", converted)
+
+    def test_hybrid_converter_does_not_absorb_smaller_nonbold_prose_after_heading(self):
+        xml = """<?xml version="1.0" encoding="UTF-8"?>
+<pdf2xml><page number="94" width="612" height="792">
+<fontspec id="0" size="17" family="Serif"/><fontspec id="1" size="15" family="Serif"/><fontspec id="2" size="12" family="Serif"/>
+<text top="88" left="72" width="150" height="20" font="0">Model Equations </text>
+<text top="116" left="72" width="468" height="18" font="1">Innovation raises the growth rate when effort is allocated to discovery and </text>
+<text top="138" left="72" width="468" height="18" font="1">coordination remains effective across the institutions described by the model </text>
+<text top="160" left="72" width="468" height="18" font="1">on the next page without ending this physical line as a complete sentence </text>
+<text top="240" left="72" width="120" height="15" font="2">Parameter</text>
+<text top="280" left="72" width="120" height="15" font="2">Baseline</text>
+<text top="320" left="72" width="120" height="15" font="2">Lower bound</text>
+<text top="360" left="72" width="120" height="15" font="2">Upper bound</text>
+<text top="400" left="72" width="120" height="15" font="2">Sensitivity</text>
+</page></pdf2xml>"""
+        with tempfile.TemporaryDirectory(dir=ROOT) as temp_dir:
+            xml_path = Path(temp_dir) / "nonbold-heading-before-prose.xml"
+            xml_path.write_text(xml, encoding="utf-8")
+            pages = parse_pdf_xml(xml_path)
+        converted = hybrid_html(pages, "Equations", "reader.css", "reader.js", "Equations.pdf", {})
+        self.assertIn('<h2 id="page_94">Model Equations</h2>', converted)
+        self.assertIn("<p>Innovation raises the growth rate", converted)
+        self.assertNotIn("Model Equations Innovation raises", converted)
+
+    def test_hybrid_converter_keeps_large_sentence_like_display_copy_as_prose(self):
+        xml = """<?xml version="1.0" encoding="UTF-8"?>
+<pdf2xml><page number="153" width="612" height="792">
+<fontspec id="0" size="17" family="Sans"/><fontspec id="1" size="16" family="Sans"/><fontspec id="2" size="11" family="Sans"/>
+<text top="78" left="72" width="180" height="21" font="0"><b>SmoothTrace</b></text>
+<text top="106" left="72" width="468" height="20" font="1">A symbolic and contestable layer that compiles source and output into graphs </text>
+<text top="128" left="72" width="468" height="20" font="1">and localizes relevant differences. Its reference specification appears in Appendix </text>
+<text top="150" left="72" width="20" height="20" font="1">D. </text>
+<text top="230" left="72" width="110" height="14" font="2">Field</text>
+<text top="270" left="72" width="110" height="14" font="2">Purpose</text>
+<text top="310" left="72" width="110" height="14" font="2">Input</text>
+<text top="350" left="72" width="110" height="14" font="2">Output</text>
+<text top="390" left="72" width="110" height="14" font="2">Constraint</text>
+</page></pdf2xml>"""
+        with tempfile.TemporaryDirectory(dir=ROOT) as temp_dir:
+            xml_path = Path(temp_dir) / "large-display-copy.xml"
+            xml_path.write_text(xml, encoding="utf-8")
+            pages = parse_pdf_xml(xml_path)
+        converted = hybrid_html(pages, "Display copy", "reader.css", "reader.js", "Display.pdf", {})
+        self.assertIn('<h2 id="page_153">SmoothTrace</h2>', converted)
+        self.assertIn(
+            "<p>A symbolic and contestable layer that compiles source and output into graphs "
+            "and localizes relevant differences. Its reference specification appears in Appendix D.</p>",
+            converted,
+        )
+        self.assertNotIn("<h2>A symbolic and contestable layer", converted)
+
+    def test_hybrid_converter_preserves_unbolded_outline_heading_at_page_boundary(self):
+        xml = """<?xml version="1.0" encoding="UTF-8"?>
+<pdf2xml>
+<page number="94" width="612" height="792">
+<fontspec id="0" size="13" family="Serif"/>
+<text top="720" left="80" width="360" height="16" font="0">Balance = expertise − capture − staleness − churn </text>
+</page>
+<page number="95" width="612" height="792">
+<fontspec id="0" size="17" family="Serif"/><fontspec id="1" size="15" family="Serif"/>
+<text top="70" left="72" width="112" height="21" font="0">E.4 Results </text>
+<text top="108" left="72" width="468" height="18" font="1">The comparison reports the complete model runs for each architecture.</text>
+<text top="130" left="72" width="468" height="18" font="1">A second sentence establishes the ordinary prose size on this page.</text>
+<text top="152" left="72" width="468" height="18" font="1">A third sentence keeps the body font statistically dominant here.</text>
+<text top="174" left="72" width="468" height="18" font="1">A final sentence completes the surrounding prose sample.</text>
+</page>
+</pdf2xml>"""
+        with tempfile.TemporaryDirectory(dir=ROOT) as temp_dir:
+            xml_path = Path(temp_dir) / "outline-heading-page-boundary.xml"
+            xml_path.write_text(xml, encoding="utf-8")
+            pages = parse_pdf_xml(xml_path)
+        converted = hybrid_html(pages, "Outline", "reader.css", "reader.js", "Outline.pdf", {})
+        self.assertIn('<h2 id="page_95">E.4 Results</h2>', converted)
+        self.assertNotIn("churn E.4 Results", converted)
+
+    def test_hybrid_converter_does_not_hide_outline_heading_inside_same_style_prose(self):
+        xml = """<?xml version="1.0" encoding="UTF-8"?>
+<pdf2xml><page number="79" width="612" height="792">
+<fontspec id="0" size="15" family="Serif"/>
+<text top="160" left="96" width="468" height="18" font="0">The model samples a broad parameter space without claiming that every </text>
+<text top="179" left="72" width="468" height="18" font="0">point is equally probable in the real world. </text>
+<text top="217" left="72" width="100" height="18" font="0">Equations B.3 </text>
+<text top="244" left="96" width="468" height="18" font="0">Unit intensity after the efficiency improvement is represented as follows. </text>
+<text top="266" left="72" width="468" height="18" font="0">The next sentence continues in the same typeface and at the same size. </text>
+</page></pdf2xml>"""
+        with tempfile.TemporaryDirectory(dir=ROOT) as temp_dir:
+            xml_path = Path(temp_dir) / "outline-heading-in-prose-run.xml"
+            xml_path.write_text(xml, encoding="utf-8")
+            pages = parse_pdf_xml(xml_path)
+        converted = hybrid_html(pages, "Outline run", "reader.css", "reader.js", "Outline.pdf", {})
+        self.assertIn("<h2>Equations B.3</h2>", converted)
+        self.assertNotIn("real world. Equations B.3", converted)
 
 
 if __name__ == "__main__":
