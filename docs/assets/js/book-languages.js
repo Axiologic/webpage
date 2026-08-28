@@ -4,7 +4,7 @@
   const cover = document.querySelector('.edition-cover');
   if (!actions || !availability || !cover) return;
 
-  const indexUrl = new URL('../../content/index.json?v=20260828-1', window.location.href);
+  const indexUrl = new URL('../../content/index.json?v=20260828-2', window.location.href);
   const title = document.querySelector('.edition-hero h1, h1')?.textContent?.trim() || 'Axiologic Reader';
   const segments = window.location.pathname.split('/').filter(Boolean);
   const bookId = decodeURIComponent(new URL(cover.currentSrc || cover.src).pathname.split('/').pop()).replace(/\.[^.]+$/, '');

@@ -59,7 +59,7 @@ class ContentLayoutTests(unittest.TestCase):
             "Human &amp; Philosophical SF",
             "Outfinitist Foundations",
             "Power, Institutions &amp; Society",
-            "Experiments",
+            "Experiments and Speculations",
         ]
         positions = [listing.index(label) for label in labels]
         self.assertEqual(positions, sorted(positions))
@@ -70,13 +70,19 @@ class ContentLayoutTests(unittest.TestCase):
             "Executable Science & Research": 9,
             "AI Systems & Infrastructure": 8,
             "Outfinitist Foundations": 9,
-            "Power, Institutions & Society": 8,
+            "Power, Institutions & Society": 9,
+            "Experiments and Speculations": 10,
         }
         for category, expected in expected_counts.items():
             self.assertEqual(catalog.count(f"category: '{category}'"), expected, category)
+        self.assertNotIn("category: 'Experiments'", catalog)
         self.assertRegex(
             catalog,
             r"id: 'Cant_See_the_Forest_for_the_Trees'.*?category: 'Business & Startups'.*?position: 0",
+        )
+        self.assertRegex(
+            catalog,
+            r"id: 'The_Animal_That_Prays'.*?category: 'Power, Institutions & Society'.*?position: 1",
         )
         self.assertRegex(
             catalog,

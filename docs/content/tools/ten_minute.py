@@ -29,6 +29,7 @@ TITLE_SUFFIX = ": A 10-Minute Synthesis"
 HOOK_META_LANGUAGE = re.compile(r"\b(?:this|the)\s+(?:guide|overview|summary)\b", re.IGNORECASE)
 HEADING = re.compile(r"<h([1-6])(?:\s[^>]*)?>(.*?)</h\1>", re.IGNORECASE | re.DOTALL)
 OPENING_TEN_MINUTE = re.compile(r"\b(?:ten|10)[ -]?minutes?\b", re.IGNORECASE)
+OPENING_NUMBERED_CHAPTER = re.compile(r"^(?:chapter\s+(?:1|one)\b|1(?:[.):]|\s))", re.IGNORECASE)
 TAG = re.compile(r"<[^>]+>")
 
 
@@ -68,8 +69,8 @@ def source_headings(source: str) -> list[tuple[re.Match[str], str]]:
 
 def opening_ten_minute_heading(source: str) -> str | None:
     """Return an explicitly labelled short opening chapter, when present."""
-    for _, heading in source_headings(source)[:12]:
-        if OPENING_TEN_MINUTE.search(heading):
+    for index, (_, heading) in enumerate(source_headings(source)[:40]):
+        if OPENING_TEN_MINUTE.search(heading) and (index < 12 or OPENING_NUMBERED_CHAPTER.search(heading)):
             return heading
     return None
 

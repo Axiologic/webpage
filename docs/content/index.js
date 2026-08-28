@@ -10,7 +10,7 @@ globalThis.__AXIOLOGIC_CONTENT_INDEX__ = {
     "PT",
     "RO"
   ],
-  "fileCount": 1941,
+  "fileCount": 1950,
   "books": [
     {
       "id": "A_Balance_of_Iron_and_Salt",
@@ -1296,6 +1296,25 @@ globalThis.__AXIOLOGIC_CONTENT_INDEX__ = {
           "pdf": "EN/SstarLM.pdf",
           "html": "htmls/EN/SstarLM.html",
           "tenMinuteHtml": "10minutes/SstarLM.html"
+        }
+      ]
+    },
+    {
+      "id": "The_Animal_That_Prays",
+      "slug": "the-animal-that-prays",
+      "editions": [
+        {
+          "language": "EN",
+          "label": "English",
+          "pdf": "EN/The_Animal_That_Prays.pdf",
+          "html": "htmls/EN/The_Animal_That_Prays.html",
+          "tenMinuteHtml": "10minutes/The_Animal_That_Prays.html"
+        },
+        {
+          "language": "RO",
+          "label": "Română",
+          "pdf": "RO/The_Animal_That_Prays_RO.pdf",
+          "html": "htmls/RO/The_Animal_That_Prays_RO.html"
         }
       ]
     },
@@ -2617,6 +2636,10 @@ globalThis.__AXIOLOGIC_CONTENT_INDEX__ = {
       "kind": "file"
     },
     {
+      "path": "10minutes/The_Animal_That_Prays.html",
+      "kind": "file"
+    },
+    {
       "path": "10minutes/The_Basilisk_Internal_Critique_of_Outfinitism.html",
       "kind": "file"
     },
@@ -3129,6 +3152,11 @@ globalThis.__AXIOLOGIC_CONTENT_INDEX__ = {
     },
     {
       "path": "EN/THE_SMOOTHING.pdf",
+      "kind": "pdf",
+      "language": "EN"
+    },
+    {
+      "path": "EN/The_Animal_That_Prays.pdf",
       "kind": "pdf",
       "language": "EN"
     },
@@ -4218,6 +4246,11 @@ globalThis.__AXIOLOGIC_CONTENT_INDEX__ = {
       "language": "RO"
     },
     {
+      "path": "RO/The_Animal_That_Prays_RO.pdf",
+      "kind": "pdf",
+      "language": "RO"
+    },
+    {
       "path": "RO/The_Basilisk_Internal_Critique_of_Outfinitism_RO.pdf",
       "kind": "pdf",
       "language": "RO"
@@ -4495,6 +4528,10 @@ globalThis.__AXIOLOGIC_CONTENT_INDEX__ = {
     },
     {
       "path": "covers/THE_SMOOTHING.png",
+      "kind": "cover"
+    },
+    {
+      "path": "covers/The_Animal_That_Prays.png",
       "kind": "cover"
     },
     {
@@ -6478,6 +6515,16 @@ globalThis.__AXIOLOGIC_CONTENT_INDEX__ = {
     },
     {
       "path": "htmls/EN/THE_SMOOTHING.html",
+      "kind": "html",
+      "language": "EN"
+    },
+    {
+      "path": "htmls/EN/The_Animal_That_Prays.assets/page-0001-image-01.png",
+      "kind": "html-asset",
+      "language": "EN"
+    },
+    {
+      "path": "htmls/EN/The_Animal_That_Prays.html",
       "kind": "html",
       "language": "EN"
     },
@@ -11362,6 +11409,16 @@ globalThis.__AXIOLOGIC_CONTENT_INDEX__ = {
       "language": "RO"
     },
     {
+      "path": "htmls/RO/The_Animal_That_Prays_RO.assets/page-0001-image-01.png",
+      "kind": "html-asset",
+      "language": "RO"
+    },
+    {
+      "path": "htmls/RO/The_Animal_That_Prays_RO.html",
+      "kind": "html",
+      "language": "RO"
+    },
+    {
       "path": "htmls/RO/The_Basilisk_Internal_Critique_of_Outfinitism_RO.assets/page-0001-image-01.png",
       "kind": "html-asset",
       "language": "RO"
@@ -11759,6 +11816,10 @@ globalThis.__AXIOLOGIC_CONTENT_INDEX__ = {
     },
     {
       "path": "thumbnails/THE_SMOOTHING.webp",
+      "kind": "thumbnail"
+    },
+    {
+      "path": "thumbnails/The_Animal_That_Prays.webp",
       "kind": "thumbnail"
     },
     {
