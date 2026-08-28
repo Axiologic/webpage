@@ -4,8 +4,9 @@
 from __future__ import annotations
 
 import argparse
-from html import escape
+from html import escape, unescape
 import json
+from math import ceil
 from pathlib import Path
 import re
 import sys
@@ -26,6 +27,9 @@ MAX_HOOK_WORDS = 75
 FINAL_HEADING = "Why read the complete book"
 TITLE_SUFFIX = ": A 10-Minute Synthesis"
 HOOK_META_LANGUAGE = re.compile(r"\b(?:this|the)\s+(?:guide|overview|summary)\b", re.IGNORECASE)
+HEADING = re.compile(r"<h([1-6])(?:\s[^>]*)?>(.*?)</h\1>", re.IGNORECASE | re.DOTALL)
+OPENING_TEN_MINUTE = re.compile(r"\b(?:ten|10)[ -]?minutes?\b", re.IGNORECASE)
+TAG = re.compile(r"<[^>]+>")
 
 
 def words(value: str) -> list[str]:
@@ -54,12 +58,54 @@ def summary_word_count(summary: dict[str, Any]) -> int:
     return sum(len(words(paragraph)) for section in summary["sections"] for paragraph in section["paragraphs"])
 
 
+def plain_text(value: str) -> str:
+    return re.sub(r"\s+", " ", unescape(TAG.sub(" ", value))).strip()
+
+
+def source_headings(source: str) -> list[tuple[re.Match[str], str]]:
+    return [(match, plain_text(match.group(2))) for match in HEADING.finditer(source)]
+
+
+def opening_ten_minute_heading(source: str) -> str | None:
+    """Return an explicitly labelled short opening chapter, when present."""
+    for _, heading in source_headings(source)[:12]:
+        if OPENING_TEN_MINUTE.search(heading):
+            return heading
+    return None
+
+
+def extract_source_excerpt(source: str, excerpt: dict[str, str]) -> str:
+    headings = source_headings(source)
+    start_heading = excerpt["start_heading"]
+    end_heading = excerpt["end_heading"]
+    start_index = next((index for index, (_, heading) in enumerate(headings) if heading == start_heading), None)
+    if start_index is None:
+        raise ValueError(f"opening chapter start heading not found: {start_heading!r}")
+    end_match = next(
+        (match for match, heading in headings[start_index + 1 :] if heading == end_heading),
+        None,
+    )
+    if end_match is None:
+        raise ValueError(f"opening chapter end heading not found after start: {end_heading!r}")
+    start_match = headings[start_index][0]
+    content = source[start_match.start() : end_match.start()].strip()
+    if len(words(plain_text(content))) < 500:
+        raise ValueError(f"opening chapter excerpt is unexpectedly short: {start_heading!r}")
+    return re.sub(
+        r'(?P<attribute>src|href)="(?P<url>(?![a-z]+:|/|#)[^"]+)"',
+        lambda match: f'{match.group("attribute")}="../htmls/EN/{match.group("url")}"',
+        content,
+        flags=re.IGNORECASE,
+    )
+
+
 def validate_summary(summary: Any, expected_id: str | None = None) -> list[str]:
     problems: list[str] = []
     if not isinstance(summary, dict):
         return ["summary must be a JSON object"]
 
-    required = {"id", "title", "listing_description", "reader_hook", "sections"}
+    is_source_excerpt = "source_excerpt" in summary
+    required = {"id", "title", "listing_description", "reader_hook", "source_excerpt" if is_source_excerpt else "sections"}
     missing = required - set(summary)
     extra = set(summary) - required
     if missing:
@@ -88,8 +134,16 @@ def validate_summary(summary: Any, expected_id: str | None = None) -> list[str]:
 
     if not isinstance(summary["title"], str) or not summary["title"].strip():
         problems.append("title must be a non-empty string")
-    elif not summary["title"].endswith(TITLE_SUFFIX):
+    elif not is_source_excerpt and not summary["title"].endswith(TITLE_SUFFIX):
         problems.append(f"title must end with {TITLE_SUFFIX!r}")
+
+    if is_source_excerpt:
+        excerpt = summary["source_excerpt"]
+        if not isinstance(excerpt, dict) or set(excerpt) != {"start_heading", "end_heading"}:
+            problems.append("source_excerpt must contain only start_heading and end_heading")
+        elif any(not isinstance(excerpt[field], str) or not excerpt[field].strip() for field in excerpt):
+            problems.append("source_excerpt headings must be non-empty strings")
+        return problems
 
     sections = summary["sections"]
     if not isinstance(sections, list) or not 6 <= len(sections) <= 9:
@@ -131,25 +185,47 @@ def render(pdf: Path, source: Path, destination: Path) -> str:
     del destination
     summary = load_summary(pdf.stem)
     title = summary["title"]
-    book_title = title.removesuffix(TITLE_SUFFIX)
-    word_count = summary_word_count(summary)
+    source_html = source.read_text(encoding="utf-8")
+    original_heading = opening_ten_minute_heading(source_html)
+    is_source_excerpt = "source_excerpt" in summary
+    if original_heading and not is_source_excerpt:
+        raise ValueError(
+            f"{pdf.name} begins with {original_heading!r}; use its original chapter through source_excerpt"
+        )
+    book_title = title if is_source_excerpt else title.removesuffix(TITLE_SUFFIX)
     full_html = encoded(Path("..") / "htmls" / "EN" / source.name)
     original_pdf = encoded(Path("..") / "EN" / pdf.name)
 
-    sections = []
-    for section in summary["sections"]:
-        paragraphs = "".join(f"<p>{escape(paragraph)}</p>" for paragraph in section["paragraphs"])
-        sections.append(f"<section><h2>{escape(section['heading'])}</h2>{paragraphs}</section>")
+    if is_source_excerpt:
+        body = extract_source_excerpt(source_html, summary["source_excerpt"])
+        word_count = len(words(plain_text(body)))
+        reading_minutes = max(1, ceil(word_count / 200))
+        document_description = f"The original opening chapter of {book_title}."
+        document_title = f"{book_title} · original opening chapter"
+        kicker = "Original opening chapter"
+        reading_note = f"Author’s original text · About {reading_minutes} minutes · {word_count:,} words"
+    else:
+        sections = []
+        for section in summary["sections"]:
+            paragraphs = "".join(f"<p>{escape(paragraph)}</p>" for paragraph in section["paragraphs"])
+            sections.append(f"<section><h2>{escape(section['heading'])}</h2>{paragraphs}</section>")
+        body = "".join(sections)
+        word_count = summary_word_count(summary)
+        reading_minutes = 10
+        document_description = f"A ten-minute synthesis of {book_title}."
+        document_title = f"{book_title} · 10-minute synthesis"
+        kicker = "10-minute synthesis"
+        reading_note = f"About 10 minutes · {word_count:,} words"
 
     return f"""<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A ten-minute synthesis of {escape(book_title, quote=True)}.">
-  <meta name="reading-time" content="10 minutes">
+  <meta name="description" content="{escape(document_description, quote=True)}">
+  <meta name="reading-time" content="{reading_minutes} minutes">
   <meta name="source-pdf" content="{escape(pdf.name, quote=True)}">
-  <title>{escape(book_title)} · 10-minute synthesis</title>
+  <title>{escape(document_title)}</title>
   <link rel="stylesheet" href="../../reader/standalone.css?v=20260827-3">
   <style>
     .ten-minute-header {{ margin-bottom: 2.4rem; padding-bottom: 1.5rem; border-bottom: 1px solid color-mix(in srgb, currentColor 22%, transparent); }}
@@ -161,13 +237,13 @@ def render(pdf: Path, source: Path, destination: Path) -> str:
 </head>
 <body>
   <header class="ten-minute-header">
-    <p class="ten-minute-kicker">10-minute synthesis</p>
+    <p class="ten-minute-kicker">{escape(kicker)}</p>
     <h1>{escape(title)}</h1>
-    <p>About 10 minutes · {word_count:,} words</p>
+    <p>{escape(reading_note)}</p>
     <nav class="ten-minute-links" aria-label="Edition links"><a href="{full_html}">Read the full HTML edition</a><a href="{original_pdf}">Download the original PDF</a></nav>
   </header>
   <main>
-    {''.join(sections)}
+    {body}
   </main>
   <script defer src="../../reader/standalone.js?v=20260827-1"></script>
 </body>

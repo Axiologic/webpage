@@ -212,6 +212,7 @@
     let voiceTurn = 0;
     let countdownTimer;
     let nextChangeAt = 0;
+    let started = false;
     const mutePreference = 'axiologic-read-aloud-muted';
     let voiceMuted = (() => {
       try { return window.localStorage.getItem(mutePreference) === 'true'; }
@@ -268,6 +269,7 @@
     };
     const schedule = () => {
       clearTimers();
+      if (!started) return;
       if (paused) { updateReading(); return; }
       if (isVoiceMode()) { updateReading(); return; }
       const duration = messageDuration(cards[active]);
@@ -280,6 +282,7 @@
       }, duration);
     };
     const show = (index, restart = false, startVoice = false) => {
+      if (!started) return;
       if (startVoice) stopSpeech();
       const nextActive = (index + cards.length) % cards.length;
       if (restart && nextActive === active) {
@@ -387,6 +390,7 @@
       carousel.classList.remove('is-awaiting-choice');
     };
     const startText = () => {
+      started = true;
       closeChoice();
       readAloud.disable();
       paused = false;
@@ -395,8 +399,9 @@
       show(0, true);
     };
     const startVoice = () => {
-      closeChoice();
       if (!readAloud.enable()) { startText(); return; }
+      started = true;
+      closeChoice();
       voiceMuted = false;
       try { window.localStorage.setItem(mutePreference, 'false'); } catch { /* Storage is optional. */ }
       paused = false;

@@ -10,7 +10,7 @@
     "PT",
     "RO"
   ],
-  "fileCount": 1923,
+  "fileCount": 1941,
   "books": [
     {
       "id": "A_Balance_of_Iron_and_Salt",
@@ -362,15 +362,15 @@
       ]
     },
     {
-      "id": "Can’t_See_the_Forest_for_the_Trees",
+      "id": "Cant_See_the_Forest_for_the_Trees",
       "slug": "cant-see-the-forest-for-the-trees",
       "editions": [
         {
           "language": "EN",
           "label": "English",
-          "pdf": "EN/Can’t_See_the_Forest_for_the_Trees.pdf",
-          "html": "htmls/EN/Can’t_See_the_Forest_for_the_Trees.html",
-          "tenMinuteHtml": "10minutes/Can’t_See_the_Forest_for_the_Trees.html"
+          "pdf": "EN/Cant_See_the_Forest_for_the_Trees.pdf",
+          "html": "htmls/EN/Cant_See_the_Forest_for_the_Trees.html",
+          "tenMinuteHtml": "10minutes/Cant_See_the_Forest_for_the_Trees.html"
         }
       ]
     },
@@ -585,6 +585,25 @@
       ]
     },
     {
+      "id": "Enough_for_Everyone",
+      "slug": "enough-for-everyone",
+      "editions": [
+        {
+          "language": "EN",
+          "label": "English",
+          "pdf": "EN/Enough_for_Everyone.pdf",
+          "html": "htmls/EN/Enough_for_Everyone.html",
+          "tenMinuteHtml": "10minutes/Enough_for_Everyone.html"
+        },
+        {
+          "language": "RO",
+          "label": "Română",
+          "pdf": "RO/Enough_for_Everyone_RO.pdf",
+          "html": "htmls/RO/Enough_for_Everyone_RO.html"
+        }
+      ]
+    },
+    {
       "id": "Executable_Natural_Language",
       "slug": "executable-natural-language",
       "editions": [
@@ -654,8 +673,7 @@
           "language": "RO",
           "label": "Română",
           "pdf": "RO/Four_Realities_RO.pdf",
-          "html": "htmls/RO/Four_Realities_RO.html",
-          "epub": "RO/Four_Realities_RO.epub"
+          "html": "htmls/RO/Four_Realities_RO.html"
         }
       ]
     },
@@ -1933,6 +1951,19 @@
       ]
     },
     {
+      "id": "The_Predators_Niche",
+      "slug": "the-predators-niche",
+      "editions": [
+        {
+          "language": "EN",
+          "label": "English",
+          "pdf": "EN/The_Predators_Niche.pdf",
+          "html": "htmls/EN/The_Predators_Niche.html",
+          "tenMinuteHtml": "10minutes/The_Predators_Niche.html"
+        }
+      ]
+    },
+    {
       "id": "The_Right_to_Help",
       "slug": "the-right-to-help",
       "editions": [
@@ -2442,7 +2473,7 @@
       "kind": "file"
     },
     {
-      "path": "10minutes/Can’t_See_the_Forest_for_the_Trees.html",
+      "path": "10minutes/Cant_See_the_Forest_for_the_Trees.html",
       "kind": "file"
     },
     {
@@ -2467,6 +2498,10 @@
     },
     {
       "path": "10minutes/Eden_Before_Mars.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/Enough_for_Everyone.html",
       "kind": "file"
     },
     {
@@ -2651,6 +2686,10 @@
     },
     {
       "path": "10minutes/The_Permission_Paradox.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/The_Predators_Niche.html",
       "kind": "file"
     },
     {
@@ -2914,7 +2953,7 @@
       "language": "EN"
     },
     {
-      "path": "EN/Can’t_See_the_Forest_for_the_Trees.pdf",
+      "path": "EN/Cant_See_the_Forest_for_the_Trees.pdf",
       "kind": "pdf",
       "language": "EN"
     },
@@ -2945,6 +2984,11 @@
     },
     {
       "path": "EN/Eden_Before_Mars.pdf",
+      "kind": "pdf",
+      "language": "EN"
+    },
+    {
+      "path": "EN/Enough_for_Everyone.pdf",
       "kind": "pdf",
       "language": "EN"
     },
@@ -3175,6 +3219,11 @@
     },
     {
       "path": "EN/The_Permission_Paradox.pdf",
+      "kind": "pdf",
+      "language": "EN"
+    },
+    {
+      "path": "EN/The_Predators_Niche.pdf",
       "kind": "pdf",
       "language": "EN"
     },
@@ -4084,6 +4133,11 @@
       "language": "RO"
     },
     {
+      "path": "RO/Enough_for_Everyone_RO.pdf",
+      "kind": "pdf",
+      "language": "RO"
+    },
+    {
       "path": "RO/Executable_Natural_Language_RO.pdf",
       "kind": "pdf",
       "language": "RO"
@@ -4091,11 +4145,6 @@
     {
       "path": "RO/Fortati_sa_Performam_RO_Draft_0_3.pdf",
       "kind": "pdf",
-      "language": "RO"
-    },
-    {
-      "path": "RO/Four_Realities_RO.epub",
-      "kind": "epub",
       "language": "RO"
     },
     {
@@ -4301,7 +4350,7 @@
       "kind": "cover"
     },
     {
-      "path": "covers/Can’t_See_the_Forest_for_the_Trees.png",
+      "path": "covers/Cant_See_the_Forest_for_the_Trees.png",
       "kind": "cover"
     },
     {
@@ -4326,6 +4375,10 @@
     },
     {
       "path": "covers/Eden_Before_Mars.png",
+      "kind": "cover"
+    },
+    {
+      "path": "covers/Enough_for_Everyone.png",
       "kind": "cover"
     },
     {
@@ -4514,6 +4567,10 @@
     },
     {
       "path": "covers/The_Permission_Paradox.png",
+      "kind": "cover"
+    },
+    {
+      "path": "covers/The_Predators_Niche.png",
       "kind": "cover"
     },
     {
@@ -5575,12 +5632,12 @@
       "language": "EN"
     },
     {
-      "path": "htmls/EN/Can’t_See_the_Forest_for_the_Trees.assets/page-0001-image-01.png",
+      "path": "htmls/EN/Cant_See_the_Forest_for_the_Trees.assets/page-0001-image-01.png",
       "kind": "html-asset",
       "language": "EN"
     },
     {
-      "path": "htmls/EN/Can’t_See_the_Forest_for_the_Trees.html",
+      "path": "htmls/EN/Cant_See_the_Forest_for_the_Trees.html",
       "kind": "html",
       "language": "EN"
     },
@@ -5696,6 +5753,26 @@
     },
     {
       "path": "htmls/EN/Eden_Before_Mars.html",
+      "kind": "html",
+      "language": "EN"
+    },
+    {
+      "path": "htmls/EN/Enough_for_Everyone.assets/page-0001-image-01.png",
+      "kind": "html-asset",
+      "language": "EN"
+    },
+    {
+      "path": "htmls/EN/Enough_for_Everyone.assets/page-0031-image-01.png",
+      "kind": "html-asset",
+      "language": "EN"
+    },
+    {
+      "path": "htmls/EN/Enough_for_Everyone.assets/page-0064-image-01.png",
+      "kind": "html-asset",
+      "language": "EN"
+    },
+    {
+      "path": "htmls/EN/Enough_for_Everyone.html",
       "kind": "html",
       "language": "EN"
     },
@@ -6846,6 +6923,16 @@
     },
     {
       "path": "htmls/EN/The_Permission_Paradox.html",
+      "kind": "html",
+      "language": "EN"
+    },
+    {
+      "path": "htmls/EN/The_Predators_Niche.assets/page-0001-image-01.png",
+      "kind": "html-asset",
+      "language": "EN"
+    },
+    {
+      "path": "htmls/EN/The_Predators_Niche.html",
       "kind": "html",
       "language": "EN"
     },
@@ -10815,6 +10902,26 @@
       "language": "RO"
     },
     {
+      "path": "htmls/RO/Enough_for_Everyone_RO.assets/page-0001-image-01.png",
+      "kind": "html-asset",
+      "language": "RO"
+    },
+    {
+      "path": "htmls/RO/Enough_for_Everyone_RO.assets/page-0031-image-01.png",
+      "kind": "html-asset",
+      "language": "RO"
+    },
+    {
+      "path": "htmls/RO/Enough_for_Everyone_RO.assets/page-0064-image-01.png",
+      "kind": "html-asset",
+      "language": "RO"
+    },
+    {
+      "path": "htmls/RO/Enough_for_Everyone_RO.html",
+      "kind": "html",
+      "language": "RO"
+    },
+    {
       "path": "htmls/RO/Executable_Natural_Language_RO.assets/page-0001-image-01.png",
       "kind": "html-asset",
       "language": "RO"
@@ -11507,7 +11614,7 @@
       "kind": "thumbnail"
     },
     {
-      "path": "thumbnails/Can’t_See_the_Forest_for_the_Trees.webp",
+      "path": "thumbnails/Cant_See_the_Forest_for_the_Trees.webp",
       "kind": "thumbnail"
     },
     {
@@ -11532,6 +11639,10 @@
     },
     {
       "path": "thumbnails/Eden_Before_Mars.webp",
+      "kind": "thumbnail"
+    },
+    {
+      "path": "thumbnails/Enough_for_Everyone.webp",
       "kind": "thumbnail"
     },
     {
@@ -11720,6 +11831,10 @@
     },
     {
       "path": "thumbnails/The_Permission_Paradox.webp",
+      "kind": "thumbnail"
+    },
+    {
+      "path": "thumbnails/The_Predators_Niche.webp",
       "kind": "thumbnail"
     },
     {

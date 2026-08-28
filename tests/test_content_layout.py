@@ -69,14 +69,14 @@ class ContentLayoutTests(unittest.TestCase):
             "Business & Startups": 10,
             "Executable Science & Research": 9,
             "AI Systems & Infrastructure": 8,
-            "Outfinitist Foundations": 7,
+            "Outfinitist Foundations": 9,
             "Power, Institutions & Society": 8,
         }
         for category, expected in expected_counts.items():
             self.assertEqual(catalog.count(f"category: '{category}'"), expected, category)
         self.assertRegex(
             catalog,
-            r"id: 'Can’t_See_the_Forest_for_the_Trees'.*?category: 'Business & Startups'.*?position: 0",
+            r"id: 'Cant_See_the_Forest_for_the_Trees'.*?category: 'Business & Startups'.*?position: 0",
         )
         self.assertRegex(
             catalog,
@@ -99,7 +99,7 @@ class ContentLayoutTests(unittest.TestCase):
             self.assertIn("data-book-actions", source, page)
             self.assertIn("data-book-availability", source, page)
 
-    def test_english_editions_have_editorial_ten_minute_syntheses(self):
+    def test_english_editions_have_editorial_short_reads(self):
         for book in content_index.discover_books():
             english = next((edition for edition in book["editions"] if edition["language"] == "EN"), None)
             if not english:
@@ -109,14 +109,23 @@ class ContentLayoutTests(unittest.TestCase):
             self.assertTrue(guide.is_file(), book["id"])
             source = guide.read_text(encoding="utf-8")
             self.assertIn('../../reader/standalone.js', source, book["id"])
-            self.assertIn('10-minute synthesis', source, book["id"])
-            self.assertIn('Why read the complete book', source, book["id"])
             self.assertNotIn('This guided edition selects substantial passages', source, book["id"])
             self.assertNotIn('Editorial synthesis in progress', source, book["id"])
 
             book_id = Path(english["pdf"]).stem
             summary = ten_minute.load_summary(book_id)
             self.assertEqual([], ten_minute.validate_summary(summary, book_id), book["id"])
+            full_edition = (CONTENT_ROOT / english["html"]).read_text(encoding="utf-8")
+            opening_chapter = ten_minute.opening_ten_minute_heading(full_edition)
+            if opening_chapter:
+                self.assertIn("source_excerpt", summary, book["id"])
+                self.assertIn('Original opening chapter', source, book["id"])
+                self.assertIn('Author’s original text', source, book["id"])
+                self.assertNotIn('10-minute synthesis', source, book["id"])
+            else:
+                self.assertNotIn("source_excerpt", summary, book["id"])
+                self.assertIn('10-minute synthesis', source, book["id"])
+                self.assertIn('Why read the complete book', source, book["id"])
 
 
 if __name__ == "__main__":

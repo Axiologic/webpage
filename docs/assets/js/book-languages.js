@@ -4,7 +4,7 @@
   const cover = document.querySelector('.edition-cover');
   if (!actions || !availability || !cover) return;
 
-  const indexUrl = new URL('../../content/index.json?v=20260827-1', window.location.href);
+  const indexUrl = new URL('../../content/index.json?v=20260828-1', window.location.href);
   const title = document.querySelector('.edition-hero h1, h1')?.textContent?.trim() || 'Axiologic Reader';
   const segments = window.location.pathname.split('/').filter(Boolean);
   const bookId = decodeURIComponent(new URL(cover.currentSrc || cover.src).pathname.split('/').pop()).replace(/\.[^.]+$/, '');
@@ -24,7 +24,7 @@
     const html = tenMinute ? edition.tenMinuteHtml : edition.html;
     const reader = new URL('../../reader/index.html', window.location.href);
     reader.searchParams.set('id', `${tenMinute ? 'ten-minute' : 'edition'}:${new URL(html).pathname}`);
-    reader.searchParams.set('title', `${title} · ${tenMinute ? '10-minute synthesis' : edition.label}`);
+    reader.searchParams.set('title', `${title} · ${tenMinute ? 'short read' : edition.label}`);
     reader.searchParams.set('pdf', edition.pdf);
     reader.searchParams.set('html', html);
     if (tenMinute) reader.searchParams.set('mode', 'ten-minute');
@@ -95,7 +95,7 @@
       tenMinute.className = 'btn ghost';
       tenMinute.href = readerUrl(tenMinuteEdition, 'ten-minute');
       tenMinute.textContent = 'Read in 10 min';
-      tenMinute.title = `Read a ten-minute synthesis of the ${tenMinuteEdition.label} edition in the adaptable online reader`;
+      tenMinute.title = `Read the short ${tenMinuteEdition.label} edition in the adaptable online reader`;
     }
 
     if (editions.length > 1) {
@@ -124,7 +124,7 @@
       return;
     }
     const script = document.createElement('script');
-    script.src = new URL('../../content/index.js?v=20260827-1', window.location.href).href;
+    script.src = new URL('../../content/index.js?v=20260828-1', window.location.href).href;
     script.onload = () => globalThis.__AXIOLOGIC_CONTENT_INDEX__
       ? resolve(globalThis.__AXIOLOGIC_CONTENT_INDEX__)
       : reject(new Error('local content manifest did not define an index'));
