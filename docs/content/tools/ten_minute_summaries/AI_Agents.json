@@ -1,0 +1,10 @@
+{
+  "id": "AI_Agents",
+  "title": "AI Agents",
+  "listing_description": "An original opening chapter on the shift from generating answers to building bounded systems that can pursue outcomes through tools, state, and feedback.",
+  "reader_hook": "Start with the engineering distinction between a model response and an agent that acts, observes, revises, and knows when to stop.",
+  "source_excerpt": {
+    "start_heading": "1.1 From generating answers to pursuing outcomes",
+    "end_heading": "1.2 The anatomy of an agent and the autonomy spectrum"
+  }
+}

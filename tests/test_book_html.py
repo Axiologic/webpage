@@ -31,6 +31,16 @@ class RepairTests(unittest.TestCase):
         self.assertIn("therefore continues", repaired)
         self.assertNotIn("therefore</p><p", repaired)
 
+    def test_joins_line_fragments_when_the_first_fragment_carries_a_page_anchor(self):
+        source = document(
+            '<p id="page_9">That evening Daniel stood beneath the apple tree planted for his</p>'
+            '<p>daughter and listened to the distant machinery clearing the road.</p>'
+        )
+        repaired, stats = repair_source(source, "book.pdf")
+        self.assertEqual(stats["paragraph_joins"], 1)
+        self.assertIn("for his daughter and listened", repaired)
+        self.assertEqual(repaired.count('id="page_9"'), 1)
+
     def test_joins_short_fragment_before_uppercase_continuation(self):
         source = document('<p>She finally saw</p><p>&nbsp;</p><p>Maria crossing the square.</p>')
         repaired, stats = repair_source(source, "book.pdf")
@@ -314,6 +324,37 @@ class ConversionTests(unittest.TestCase):
         self.assertIn("</p>\n<p>— Ethan—</p>\n<p>— Nu am", converted)
         self.assertIn("avertiza și aceasta este o continuare a aceleiași replici.</p>", converted)
         self.assertIn("</p>\n<p>Ieși înainte", converted)
+
+    def test_hybrid_converter_does_not_split_a_slightly_indented_wrapped_line(self):
+        xml = """<?xml version="1.0" encoding="UTF-8"?>
+<pdf2xml><page number="3" width="600" height="800">
+<fontspec id="0" size="12" family="Serif"/>
+<text top="100" left="72" width="440" height="16" font="0">A physical PDF line can end before a paragraph has finished and the next line</text>
+<text top="118" left="82" width="430" height="16" font="0">may be shifted a few pixels by extraction without becoming a new paragraph.</text>
+</page></pdf2xml>"""
+        with tempfile.TemporaryDirectory(dir=ROOT) as temp_dir:
+            xml_path = Path(temp_dir) / "slight-indent.xml"
+            xml_path.write_text(xml, encoding="utf-8")
+            pages = parse_pdf_xml(xml_path)
+        converted = hybrid_html(pages, "Indent", "reader.css", "reader.js", "Indent.pdf", {})
+        self.assertIn("next line may be shifted a few pixels", converted)
+        self.assertNotIn("next line</p>\n<p>may be shifted", converted)
+
+    def test_hybrid_converter_preserves_a_recurring_first_line_indent(self):
+        xml = """<?xml version="1.0" encoding="UTF-8"?>
+<pdf2xml><page number="3" width="600" height="800">
+<fontspec id="0" size="12" family="Serif"/>
+<text top="100" left="90" width="410" height="16" font="0">The first paragraph begins with a repeated first-line indent and continues</text>
+<text top="118" left="72" width="440" height="16" font="0">on the normal body margin before reaching its conclusion.</text>
+<text top="136" left="90" width="410" height="16" font="0">The second paragraph uses that same first-line indent and must stay distinct.</text>
+<text top="154" left="72" width="440" height="16" font="0">Its continuation remains part of the second paragraph.</text>
+</page></pdf2xml>"""
+        with tempfile.TemporaryDirectory(dir=ROOT) as temp_dir:
+            xml_path = Path(temp_dir) / "recurring-indent.xml"
+            xml_path.write_text(xml, encoding="utf-8")
+            pages = parse_pdf_xml(xml_path)
+        converted = hybrid_html(pages, "Indent", "reader.css", "reader.js", "Indent.pdf", {})
+        self.assertIn("conclusion.</p>\n<p>The second paragraph", converted)
 
     def test_hybrid_converter_joins_wrapped_title_and_removes_footer_number(self):
         xml = """<?xml version="1.0" encoding="UTF-8"?>

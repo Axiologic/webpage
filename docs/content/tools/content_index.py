@@ -18,13 +18,13 @@ INDEX_SCRIPT_PATH = CONTENT_ROOT / "index.js"
 LANGUAGE_RE = re.compile(r"^[A-Z]{2}$")
 LANGUAGES = {
     "EN": "English",
-    "FR": "Français",
-    "DE": "Deutsch",
-    "ES": "Español",
-    "PT": "Português",
-    "IT": "Italiano",
     "RO": "Română",
     "PL": "Polski",
+    "IT": "Italiano",
+    "ES": "Español",
+    "PT": "Português",
+    "DE": "Deutsch",
+    "FR": "Français",
 }
 BOOK_ALIASES = {
     "Outfinitism_Meta_Rationality": "Outfinitism_Third_Edition",
@@ -56,27 +56,34 @@ def describe(path: Path, root: Path = CONTENT_ROOT) -> dict[str, str]:
     return record
 
 
-def find_edition_pdf(root: Path, language: str, basename: str, book_id: str) -> Path | None:
+def find_edition_file(root: Path, language: str, basename: str, book_id: str, suffix: str) -> Path | None:
     alias = EDITION_ALIASES.get((book_id, language))
     if alias:
-        path = root / language / f"{alias}.pdf"
+        path = root / language / f"{alias}{suffix}"
         return path if path.is_file() else None
-    candidates = list((root / language).glob(f"{basename}*.pdf"))
+    candidates = list((root / language).glob(f"{basename}*{suffix}"))
     if not candidates:
         return None
-    expected = basename if language == "EN" else f"{basename}_{language}"
+    expected = f"{basename}{suffix}" if language == "EN" else f"{basename}_{language}{suffix}"
 
     def rank(path: Path) -> tuple[int, int, str]:
-        stem = path.name.removesuffix(".pdf")
-        if stem == expected:
+        if path.name == expected:
             priority = 0
-        elif stem.startswith(expected):
+        elif path.name.startswith(expected.removesuffix(suffix)):
             priority = 1
         else:
             priority = 2
         return priority, len(path.name), path.name
 
     return min(candidates, key=rank)
+
+
+def find_edition_pdf(root: Path, language: str, basename: str, book_id: str) -> Path | None:
+    return find_edition_file(root, language, basename, book_id, ".pdf")
+
+
+def find_edition_html(root: Path, language: str, basename: str, book_id: str) -> Path | None:
+    return find_edition_file(root / "htmls", language, basename, book_id, ".html")
 
 
 def discover_books(root: Path = CONTENT_ROOT, docs_root: Path | None = None) -> list[dict[str, object]]:
@@ -91,25 +98,40 @@ def discover_books(root: Path = CONTENT_ROOT, docs_root: Path | None = None) -> 
         book_id = unquote(match.group(1))
         basename = BOOK_ALIASES.get(book_id, book_id)
         editions = []
-        for language, label in LANGUAGES.items():
-            pdf = find_edition_pdf(root, language, basename, book_id)
-            if pdf is None:
+        english_pdf = find_edition_pdf(root, "EN", basename, book_id)
+        english_html = find_edition_html(root, "EN", basename, book_id)
+        if (english_pdf is None) != (english_html is None):
+            missing = "PDF" if english_pdf is None else "HTML edition"
+            raise ValueError(f"missing English {missing} for {page.relative_to(REPO_ROOT)} ({book_id})")
+        if english_pdf is not None and english_html is not None:
+            english = {
+                "language": "EN",
+                "label": LANGUAGES["EN"],
+                "pdf": english_pdf.relative_to(root).as_posix(),
+                "html": english_html.relative_to(root).as_posix(),
+            }
+            ten_minute = root / "10minutes" / english_pdf.with_suffix(".html").name
+            if ten_minute.is_file():
+                english["tenMinuteHtml"] = ten_minute.relative_to(root).as_posix()
+            editions.append(english)
+
+        # Translated editions are generated from the English reader texts.
+        # They deliberately carry no PDF download because English is the sole
+        # canonical PDF source.
+        for language, label in list(LANGUAGES.items())[1:]:
+            html = find_edition_html(root, language, basename, book_id)
+            if html is None:
                 continue
-            html = root / "htmls" / language / pdf.with_suffix(".html").name
-            if not html.is_file():
-                raise ValueError(f"missing HTML edition for {pdf.relative_to(root)}")
             edition = {
                 "language": language,
                 "label": label,
-                "pdf": pdf.relative_to(root).as_posix(),
                 "html": html.relative_to(root).as_posix(),
             }
-            if language == "EN":
-                ten_minute = root / "10minutes" / pdf.with_suffix(".html").name
-                if ten_minute.is_file():
-                    edition["tenMinuteHtml"] = ten_minute.relative_to(root).as_posix()
+            translated_short = root / "10minutes" / language / html.name
+            if translated_short.is_file():
+                edition["tenMinuteHtml"] = translated_short.relative_to(root).as_posix()
             for extension in ("epub", "m4a", "mp3", "ogg"):
-                alternative = pdf.with_suffix(f".{extension}")
+                alternative = html.with_suffix(f".{extension}")
                 if alternative.is_file():
                     edition[extension if extension == "epub" else "audio"] = alternative.relative_to(root).as_posix()
                     break

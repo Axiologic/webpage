@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="The original opening chapter of Bias in AI.">
+  <meta name="reading-time" content="5 minutes">
+  <meta name="source-pdf" content="BIAS_IN_AI.pdf">
+  <title>Bias in AI · original opening chapter</title>
+  <link rel="stylesheet" href="../../reader/standalone.css?v=20260828-1">
+  <style>
+    .ten-minute-header { margin-bottom: 2.4rem; padding-bottom: 1.5rem; border-bottom: 1px solid color-mix(in srgb, currentColor 22%, transparent); }
+    .ten-minute-header p { text-indent: 0; text-align: left; }
+    .ten-minute-kicker { color: var(--standalone-link); font: 700 .78em/1.2 system-ui, sans-serif; letter-spacing: .12em; text-transform: uppercase; }
+    .ten-minute-links { display: flex; flex-wrap: wrap; gap: .8rem 1.1rem; margin-top: 1.2rem; font-family: system-ui, sans-serif; font-size: .82em; }
+  </style>
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="e252999d-4479-42d7-9526-5f778846d4f6"></script>
+</head>
+<body>
+  <header class="ten-minute-header">
+    <p class="ten-minute-kicker">Original opening chapter</p>
+    <h1>Bias in AI</h1>
+    <p>Author’s original text · About 5 minutes · 966 words</p>
+    <nav class="ten-minute-links" aria-label="Edition links"><a href="../htmls/EN/BIAS_IN_AI.html">Read the full HTML edition</a><a href="../EN/BIAS_IN_AI.pdf">Download the original PDF</a></nav>
+  </header>
+  <main>
+    <h2>1.2 Data are measurements made by institutions</h2>
+<p>Training data are often described as raw material. In consequential systems they are better understood as traces produced by institutions. A medical record is shaped by who obtained care, what clinicians measured, what insurance reimbursed, and what the software retained. A hiring history reflects who applied, who was screened, how jobs were advertised, and which managers were promoted. The dataset is already the result of a social and technical process before machine learning begins.</p>
+<p>The phrase</p>
+<p>&quot;training data&quot; makes records sound as if they existed naturally and were later collected. In many important applications the records are artifacts of a process. Arrest data depend on where police were deployed. Medical expenditure depends on access to care, insurance, and provider behavior. Performance reviews depend on managers and organizational culture. Toxicity labels depend on annotators, guidelines, platform norms, and the language varieties represented in the annotation pool. Even web text is not a census of human knowledge; it is shaped by connectivity, literacy, publishing incentives, moderation, language dominance, and the economics of hosting content.</p>
+<p>This distinction explains why removing a protected attribute rarely removes the relevant information. High-dimensional data contain proxies. Postal code can encode neighborhood segregation; names can correlate with language, region, ethnicity, or gender; school and employer histories can reflect socioeconomic opportunity. In language models, dialect, topics, stylistic patterns, and named entities can carry demographic information even when no explicit attribute is supplied. Proxy dependence is not automatically illegitimate, because the same features can contain task-relevant information. The question is whether the pathway from proxy to outcome is defensible for the intended use.</p>
+<p>When a model learns from such data, it is not merely learning</p>
+<p>&quot;the world&quot;.</p>
+<p>It is learning a projection of the world filtered through human institutions. Historical bias therefore does not require overt prejudice in the dataset. It can arise because the probability that an event is observed differs between groups. A model trained on hospital utilization may learn access rather than need. A fraud model trained on investigated cases may learn investigator attention rather than true fraud prevalence.</p>
+<p>Representation bias occurs when the training or evaluation distribution does not adequately cover the populations or conditions in which the system will be used. This is not simply class imbalance. The missing region may be an intersection: older speakers of a low-resource dialect, dark-skinned women under difficult lighting, rural users with older devices, or patients with a rare disease and a comorbidity. The combinatorial nature of intersectionality means that aggregate diversity statistics can look healthy while important cells remain nearly empty.</p>
+<p id="page_10">The Gender Shades study became influential because it made this visible in computer vision. Buolamwini and Gebru evaluated commercial gender classification systems across intersections of skin type and gender presentation and found dramatically higher error rates for darker-skinned women than for lighter-skinned men. The result was not merely</p>
+<p>&quot;the dataset is imbalanced&quot;.</p>
+<p>It demonstrated that performance had to be reported at intersectional granularity because aggregate accuracy concealed the failure mode.</p>
+<p>Speech recognition shows the same principle in another modality. Koenecke and colleagues reported substantially higher word error rates for Black speakers than for white speakers across several commercial automated speech recognition systems. This matters because speech systems are often treated as neutral input channels. If the channel itself is less reliable for some users, every downstream service inherits the asymmetry.</p>
+<p>Every supervised learning system converts a real-world goal into a target variable. That conversion is a design decision.</p>
+<p>&quot;Good employee&quot; becomes performance review, promotion, retention, sales, or manager rating.</p>
+<p>&quot;Health need&quot; becomes diagnosis, utilization, cost, hospitalization, or an expert score.</p>
+<p>&quot;Toxic&quot; becomes a crowd label produced under a particular instruction. &quot;Engaging recommendation&quot; becomes click-through, watch time, or purchase.</p>
+<p>The target may be noisy, biased, strategically manipulated, or simply narrower than the real construct. A system can then optimize the proxy while damaging the intended goal. This is closely related to specification gaming in reinforcement learning: once a measurable objective becomes the target, the system has no intrinsic reason to preserve the broader intention behind it.</p>
+<p>Engineers should therefore document the causal path from construct to measurement. Who creates the label? Under what incentives? What events are invisible? Does the label mean the same thing for all groups? Does observing the label require access to a service? Is it affected by previous model decisions? These questions are not social-science decoration. They determine whether the supervised target is usable evidence.</p>
+<p>Human annotation is often represented as ground truth, but many socially sensitive labels are intrinsically contestable. Different annotators can reasonably disagree about toxicity, offensiveness, political slant, professional quality, or acceptable risk. Disagreement can correlate with demographic background or cultural context. Majority vote produces a convenient single label but can turn a distribution of perspectives into an artificial certainty.</p>
+<p>LLM post-training magnifies this issue because preference data shape behavior directly. In RLHF, annotators compare outputs, and a reward model learns what kinds of responses are preferred. If raters reward confidence, verbosity, politeness, agreement, or a particular moral framing, the preference model can learn those preferences as behavioral objectives. Sycophancy is a concrete example. Research by Sharma and colleagues found that human preference data can reward responses that agree with the user&#x27;s stated beliefs, even when agreement conflicts with truthfulness. Preference optimization can therefore create a bias toward pleasing the evaluator.</p>
+<p>The appropriate response is not to eliminate humans. It is to treat annotation as measurement. Rater composition, instructions, disagreement, and uncertainty should be part of the dataset description, especially when labels encode values rather than facts.</p>
+<p>The dataset should therefore be documented as a measurement system with provenance and blind spots, not as a neutral sample of reality. That framing prepares the transition to objectives and deployment, where the same records acquire new meaning through optimization and action.</p>
+  </main>
+  <script defer src="../../reader/standalone.js?v=20260827-1"></script>
+</body>
+</html>

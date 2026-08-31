@@ -12,8 +12,8 @@
 
   const absoluteEdition = (edition) => ({
     ...edition,
-    pdf: new URL(edition.pdf, indexUrl).href,
     html: new URL(edition.html, indexUrl).href,
+    ...(edition.pdf ? { pdf: new URL(edition.pdf, indexUrl).href } : {}),
     ...(edition.tenMinuteHtml ? { tenMinuteHtml: new URL(edition.tenMinuteHtml, indexUrl).href } : {}),
     ...(edition.epub ? { epub: new URL(edition.epub, indexUrl).href } : {}),
     ...(edition.audio ? { audio: new URL(edition.audio, indexUrl).href } : {}),
@@ -25,7 +25,7 @@
     const reader = new URL('../../reader/index.html', window.location.href);
     reader.searchParams.set('id', `${tenMinute ? 'ten-minute' : 'edition'}:${new URL(html).pathname}`);
     reader.searchParams.set('title', `${title} · ${tenMinute ? 'short read' : edition.label}`);
-    reader.searchParams.set('pdf', edition.pdf);
+    if (edition.pdf) reader.searchParams.set('pdf', edition.pdf);
     reader.searchParams.set('html', html);
     if (tenMinute) reader.searchParams.set('mode', 'ten-minute');
     if (edition.epub) reader.searchParams.set('epub', edition.epub);
@@ -74,6 +74,8 @@
   const render = (book) => {
     const editions = book.editions.map(absoluteEdition);
     const defaultEdition = editions.find((edition) => edition.language === 'EN') || editions[0];
+    const downloadableEditions = editions.filter((edition) => edition.pdf);
+    const defaultDownload = downloadableEditions.find((edition) => edition.language === 'EN') || downloadableEditions[0];
     actions.innerHTML = '';
 
     const read = document.createElement('a');
@@ -82,12 +84,14 @@
     read.innerHTML = 'Read online <span>→</span>';
     read.title = `Read ${defaultEdition.label} edition in the adaptable online reader`;
 
-    const download = document.createElement('a');
-    download.className = 'btn ghost';
-    download.href = defaultEdition.pdf;
-    download.download = '';
-    download.textContent = 'Download PDF';
-    download.title = `Download ${defaultEdition.label} edition`;
+    const download = defaultDownload && document.createElement('a');
+    if (download) {
+      download.className = 'btn ghost';
+      download.href = defaultDownload.pdf;
+      download.download = '';
+      download.textContent = 'Download PDF';
+      download.title = 'Download ' + defaultDownload.label + ' edition';
+    }
 
     const tenMinuteEdition = editions.find((edition) => edition.tenMinuteHtml);
     const tenMinute = tenMinuteEdition && document.createElement('a');
@@ -99,22 +103,26 @@
     }
 
     if (editions.length > 1) {
-      [read, download].forEach((button) => {
-        button.setAttribute('aria-haspopup', 'menu');
-        button.setAttribute('aria-expanded', 'false');
-      });
+      read.setAttribute('aria-haspopup', 'menu');
+      read.setAttribute('aria-expanded', 'false');
       read.addEventListener('click', (event) => {
         event.preventDefault();
         openMenu(read, 'read', editions);
       });
+    }
+
+    if (downloadableEditions.length > 1 && download) {
+      download.setAttribute('aria-haspopup', 'menu');
+      download.setAttribute('aria-expanded', 'false');
       download.addEventListener('click', (event) => {
         event.preventDefault();
-        openMenu(download, 'download', editions);
+        openMenu(download, 'download', downloadableEditions);
       });
     }
 
     if (tenMinute) actions.append(tenMinute);
-    actions.append(read, download);
+    actions.append(read);
+    if (download) actions.append(download);
     availability.textContent = `Available in: ${editions.map((edition) => edition.label).join(' · ')}`;
   };
 

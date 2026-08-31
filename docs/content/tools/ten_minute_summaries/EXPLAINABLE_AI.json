@@ -1,0 +1,10 @@
+{
+  "id": "EXPLAINABLE_AI",
+  "title": "Explainable AI",
+  "listing_description": "An original opening chapter on why accuracy stops being enough once people need to understand, challenge, and rely on an intelligent system.",
+  "reader_hook": "Start with the explanatory problem itself: why a convincing rationale is not yet evidence of what a model actually did.",
+  "source_excerpt": {
+    "start_heading": "1.1 When accuracy stops being enough",
+    "end_heading": "1.2 The explanation contract: target, audience, claim, and evidence"
+  }
+}

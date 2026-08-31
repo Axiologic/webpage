@@ -1,0 +1,10 @@
+{
+  "id": "JUDGMENT_ENGINES",
+  "title": "Judgment Engines",
+  "listing_description": "The book’s original preface introduces the quiet shift from AI systems that generate answers to systems that evaluate, rank, and distribute authority.",
+  "reader_hook": "Begin where the stakes become visible: what changes when a language model is no longer only a writer, but also a judge.",
+  "source_excerpt": {
+    "start_heading": "Preface — The Quiet Shift from Generation to Judgment",
+    "end_heading": "Chapter 1 — From Language Models to Judgment Engines"
+  }
+}

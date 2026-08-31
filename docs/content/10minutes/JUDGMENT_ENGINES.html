@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="The original opening chapter of Judgment Engines.">
+  <meta name="reading-time" content="4 minutes">
+  <meta name="source-pdf" content="JUDGMENT_ENGINES.pdf">
+  <title>Judgment Engines · original opening chapter</title>
+  <link rel="stylesheet" href="../../reader/standalone.css?v=20260828-1">
+  <style>
+    .ten-minute-header { margin-bottom: 2.4rem; padding-bottom: 1.5rem; border-bottom: 1px solid color-mix(in srgb, currentColor 22%, transparent); }
+    .ten-minute-header p { text-indent: 0; text-align: left; }
+    .ten-minute-kicker { color: var(--standalone-link); font: 700 .78em/1.2 system-ui, sans-serif; letter-spacing: .12em; text-transform: uppercase; }
+    .ten-minute-links { display: flex; flex-wrap: wrap; gap: .8rem 1.1rem; margin-top: 1.2rem; font-family: system-ui, sans-serif; font-size: .82em; }
+  </style>
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="e252999d-4479-42d7-9526-5f778846d4f6"></script>
+</head>
+<body>
+  <header class="ten-minute-header">
+    <p class="ten-minute-kicker">Original opening chapter</p>
+    <h1>Judgment Engines</h1>
+    <p>Author’s original text · About 4 minutes · 669 words</p>
+    <nav class="ten-minute-links" aria-label="Edition links"><a href="../htmls/EN/JUDGMENT_ENGINES.html">Read the full HTML edition</a><a href="../EN/JUDGMENT_ENGINES.pdf">Download the original PDF</a></nav>
+  </header>
+  <main>
+    <h2 id="page_4">Preface — The Quiet Shift from Generation to Judgment</h2>
+<p>The first public wave of large language models was easy to describe because its outputs were visible. A model answered a question, wrote a paragraph, summarized a paper, generated code, or drafted a contract. The next wave is quieter. Increasingly, a language model sits behind another system and decides whether an answer is good enough, whether a document follows a policy, whether a code patch looks correct, whether a scientific review is useful, whether a candidate appears suitable, or whether another model should receive a reward. The text the judge produces may never be shown to the user. Its consequence can nevertheless be greater than the consequence of the text it judges. This book uses judge in a deliberately broad engineering sense. A judge may be a scorer, comparator, reviewer, critic, grader, verifier, gatekeeper, reward model, meta-reviewer, policy checker, or adjudication assistant. The common element is not a courtroom metaphor. It is a control function: the system maps an artifact or situation to an assessment that changes what happens next. A score can reorder a leaderboard. A pass/fail label can block a deployment. A preference signal can alter a training run. A review can influence a publication or hiring decision. A policy verdict can suppress an action. Once a model is placed in this role, its errors become part of the governance of the system around it. That difference changes the engineering problem. A generator can be useful while occasionally wrong if a competent person inspects its output. A judge often determines which outputs receive inspection. A generator can be corrected after the fact; a judge can systematically shape the data used to train future generators.</p>
+<p>If the evaluator has a stable but wrong preference for verbosity, politeness, self-similar language, or a particular cultural framing, the failure can propagate invisibly through benchmarks, optimization loops, and institutional decisions. This is why the phrase LLM-as-a-Judge should not be read as a claim that a model has become an autonomous authority. It names a systems pattern that must itself be evaluated. The literature has grown rapidly from benchmark evaluation toward general machine judgment. MT-Bench and Chatbot Arena made model-based comparison practical at scale [1]. G-Eval showed that explicit natural-language criteria could correlate better with human evaluation than older lexical metrics on open-ended generation [2]. Prometheus explored dedicated fine-grained evaluator models [3]. Later work documented position, length, self-preference, score-range, language, and other biases [4,9,15,16]. JudgeBench and newer meta-evaluation work shifted attention from the model under test to the evaluator itself [47,48]. By 2026 the research frontier is moving further: from a grader prompt toward explicit rubrics, typed evaluation graphs, multi-stage harnesses, external evidence, tool execution, and operational validation [10-13].</p>
+<p id="page_5">The industrial trajectory is similar. Evaluation products increasingly mix language-model scorers with code-based checks, datasets, traces, human labels, regression tests, CI gates, and production monitoring. The strongest lesson from both research and practice is therefore simple. The judge is not the LLM. The judge is the complete evaluation system: the norm, the evidence, the procedure, the model, the aggregation rule, the escalation policy, and the audit trail. The chapters that follow proceed in that order. We begin with what judgment means and what kinds of things are now being judged. We then examine the primitive forms of model-based evaluation, the harnesses that make them operational, and the evidence on reliability and bias. The middle of the book studies domains where machine judgment is already important: factuality, code, agents, education, hiring, science, medicine, law, safety, and creative work. The final chapters ask when a language model is the right evaluator, when a deterministic or symbolic component should take over, and how a more reliable neuro-symbolic judgment architecture could be built. Throughout, the goal is not to declare LLM judges trustworthy or untrustworthy in the abstract. The useful question is narrower and more engineering-oriented: under what conditions, for what kind of decision, and inside what harness can a machine judgment be relied upon?</p>
+  </main>
+  <script defer src="../../reader/standalone.js?v=20260827-1"></script>
+</body>
+</html>

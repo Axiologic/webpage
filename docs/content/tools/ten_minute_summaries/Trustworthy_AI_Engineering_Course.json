@@ -1,0 +1,10 @@
+{
+  "id": "Trustworthy_AI_Engineering_Course",
+  "title": "Trustworthy AI",
+  "listing_description": "An original opening chapter on moving from isolated model scores to justified reliance on an AI system operating in a real context.",
+  "reader_hook": "Start with the difference between a good model score and a warranted decision to rely on a changing technical and organizational system.",
+  "source_excerpt": {
+    "start_heading": "1.1 From Model Scores to Justified Reliance",
+    "end_heading": "1.2 Failure Has a Context, a Cost, and a Path to Harm"
+  }
+}

@@ -22,16 +22,18 @@ ten_minute = load_script("ten_minute")
 
 
 class ContentLayoutTests(unittest.TestCase):
-    def test_pdf_and_html_editions_are_exact_language_pairs(self):
+    def test_english_pdfs_are_the_only_pdf_sources_and_have_exact_html_pairs(self):
         pdfs = {
             path.relative_to(CONTENT_ROOT).with_suffix("")
-            for path in CONTENT_ROOT.glob("[A-Z][A-Z]/*.pdf")
+            for path in (CONTENT_ROOT / "EN").glob("*.pdf")
         }
         htmls = {
             path.relative_to(CONTENT_ROOT / "htmls").with_suffix("")
-            for path in (CONTENT_ROOT / "htmls").glob("[A-Z][A-Z]/*.html")
+            for path in (CONTENT_ROOT / "htmls" / "EN").glob("*.html")
         }
         self.assertEqual(pdfs, htmls)
+        translated_pdfs = list(CONTENT_ROOT.glob("[A-Z][A-Z]/*.pdf"))
+        self.assertEqual([], [path for path in translated_pdfs if path.parent.name != "EN"])
 
     def test_content_index_is_current(self):
         index_path = CONTENT_ROOT / "index.json"
@@ -47,6 +49,13 @@ class ContentLayoutTests(unittest.TestCase):
         pages = list((REPO_ROOT / "docs" / "books").glob("*/index.html"))
         self.assertEqual(len(books), len(pages))
         self.assertTrue(all(book["editions"] for book in books))
+        for book in books:
+            english = next((edition for edition in book["editions"] if edition["language"] == "EN"), None)
+            if english:
+                self.assertIn("pdf", english, book["id"])
+            for edition in book["editions"]:
+                if edition["language"] != "EN":
+                    self.assertNotIn("pdf", edition, (book["id"], edition["language"]))
 
     def test_book_listing_has_balanced_categories_in_editorial_order(self):
         listing = (REPO_ROOT / "docs" / "books.html").read_text(encoding="utf-8")
@@ -67,10 +76,10 @@ class ContentLayoutTests(unittest.TestCase):
         catalog = (REPO_ROOT / "docs" / "assets" / "js" / "books.js").read_text(encoding="utf-8")
         expected_counts = {
             "Business & Startups": 10,
-            "Executable Science & Research": 9,
-            "AI Systems & Infrastructure": 8,
-            "Outfinitist Foundations": 9,
-            "Power, Institutions & Society": 9,
+            "Executable Science & Research": 12,
+            "AI Systems & Infrastructure": 13,
+            "Outfinitist Foundations": 12,
+            "Power, Institutions & Society": 19,
             "Experiments and Speculations": 10,
         }
         for category, expected in expected_counts.items():
@@ -122,14 +131,14 @@ class ContentLayoutTests(unittest.TestCase):
             summary = ten_minute.load_summary(book_id)
             self.assertEqual([], ten_minute.validate_summary(summary, book_id), book["id"])
             full_edition = (CONTENT_ROOT / english["html"]).read_text(encoding="utf-8")
+            source_excerpt = "source_excerpt" in summary
             opening_chapter = ten_minute.opening_ten_minute_heading(full_edition)
-            if opening_chapter:
+            if source_excerpt:
                 self.assertIn("source_excerpt", summary, book["id"])
                 self.assertIn('Original opening chapter', source, book["id"])
                 self.assertIn('Author’s original text', source, book["id"])
                 self.assertNotIn('10-minute synthesis', source, book["id"])
             else:
-                self.assertNotIn("source_excerpt", summary, book["id"])
                 self.assertIn('10-minute synthesis', source, book["id"])
                 self.assertIn('Why read the complete book', source, book["id"])
 

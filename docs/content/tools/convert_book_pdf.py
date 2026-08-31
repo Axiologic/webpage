@@ -582,6 +582,22 @@ def page_blocks(page: PdfPage, repeated: set[str]) -> list[ContentBlock]:
     long_body_lines = [line for line in body_lines if line.width >= page.width * 0.52 or line.right >= page.width * 0.84]
     margin_candidates = long_body_lines or body_lines
     margin_left = min((round(line.left / 5) * 5 for line in margin_candidates), default=min((line.left for line in lines), default=0))
+    indent_threshold = max(8.0, page.width * 0.012)
+    # A first-line indent is meaningful only when it recurs at the same offset.
+    # Individual extracted lines often drift a few pixels to the right because
+    # of PDF glyph boxes or justification; treating every such drift as a new
+    # paragraph produces the arbitrary splits the reflow reader must avoid.
+    indent_offsets = Counter(
+        round((line.left - margin_left) / 5) * 5
+        for line in body_lines
+        if line.left >= margin_left + indent_threshold
+    )
+    recurring_indents = {offset for offset, count in indent_offsets.items() if count >= 2}
+
+    def is_recurring_indent(line: VisualLine) -> bool:
+        offset = line.left - margin_left
+        return any(abs(offset - indent) <= 4.0 for indent in recurring_indents)
+
     current: list[VisualLine] = []
 
     def flush() -> None:
@@ -669,7 +685,17 @@ def page_blocks(page: PdfPage, repeated: set[str]) -> list[ContentBlock]:
                 and abs(previous.font_size - line.font_size) <= max(previous.font_size, line.font_size) * 0.12
                 and line.top - previous.top <= max(previous.font_size, line.font_size) * 1.75
             )
-            if not continues_display and ((previous_index is not None and index != previous_index + 1) or line.left >= margin_left + max(8.0, page.width * 0.012) or line.top - previous.top > max(previous.height * 1.35, body_size * 1.8)):
+            line_gap = line.top - previous.top
+            has_extra_vertical_space = line_gap > max(previous.height * 1.28, body_size * 1.45)
+            starts_indented_paragraph = (
+                line.left >= margin_left + indent_threshold
+                and (is_recurring_indent(line) or has_extra_vertical_space)
+            )
+            if not continues_display and (
+                (previous_index is not None and index != previous_index + 1)
+                or starts_indented_paragraph
+                or line_gap > max(previous.height * 1.35, body_size * 1.8)
+            ):
                 flush()
         current.append(line)
         previous_index = index
@@ -851,7 +877,7 @@ def convert_pdf(pdf_path: Path, force: bool = False) -> str:
 
 
 def selected_pdfs(raw_paths: list[str], convert_all: bool) -> list[Path]:
-    paths = list(CONTENT_ROOT.glob("[A-Z][A-Z]/*.pdf")) if convert_all else [Path(raw) for raw in raw_paths]
+    paths = list((CONTENT_ROOT / "EN").glob("*.pdf")) if convert_all else [Path(raw) for raw in raw_paths]
     return sorted({path.resolve() for path in paths})
 
 

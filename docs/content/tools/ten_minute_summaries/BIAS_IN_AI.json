@@ -1,0 +1,10 @@
+{
+  "id": "BIAS_IN_AI",
+  "title": "Bias in AI",
+  "listing_description": "An original course chapter on the many distinct mechanisms hidden by the single word ‘bias,’ from statistical variation to social harm.",
+  "reader_hook": "Begin by separating the problems called bias before deciding what a model, a dataset, or an institution can responsibly claim to have fixed.",
+  "source_excerpt": {
+    "start_heading": "1.2 Data are measurements made by institutions",
+    "end_heading": "1.3 How objectives, deployment, and feedback create system bias"
+  }
+}

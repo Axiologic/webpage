@@ -313,6 +313,121 @@ const books = [
     id: 'The_Substrate_Cycle', category: 'Political & Social SF', title: 'The Substrate Cycle', subtitle: 'Two Stories of Abundance, Power, and the Ownership of Reality', position: 21,
     staticUrl: './books/the-substrate-cycle/index.html',
     description: 'In a post-money civilization, political influence is earned by solving shared problems—until trusted problem-solvers begin shaping the world beneath consent. Across two linked novels, families, ecologies, artificial systems, and future generations struggle to make power visible and contestable again.', color: 'linear-gradient(145deg, #174b83, #0b1a2d 74%)'
+  },
+  {
+    id: 'ALL_THE_WAYS_TO_RULE_A_WORLD', category: 'Power, Institutions & Society', title: 'All the Ways to Rule a World', subtitle: 'A Condensed History of Sovereignty and an Atlas of Political Futures', position: 15,
+    staticUrl: './books/all-the-ways-to-rule-a-world/index.html',
+    description: 'A historical and speculative atlas of sovereignty that treats government as a design space: from coordination and state formation to democratic, polycentric, digital, and machine-mediated futures.', color: 'linear-gradient(145deg, #4d412f, #16130f 74%)'
+  },
+  {
+    id: 'BORROWED_CREDIBILITY', category: 'Executable Science & Research', title: 'Borrowed Credibility', subtitle: 'How Science Decides What to Believe', position: 19,
+    staticUrl: './books/borrowed-credibility/index.html',
+    description: 'An inquiry into how science uses reputation to allocate attention without allowing pedigree, institutional status, or publication venue to become a substitute for evidence.', color: 'linear-gradient(145deg, #4d4539, #151613 74%)'
+  },
+  {
+    id: 'EGREGNOSIS', category: 'Power, Institutions & Society', title: 'Egregnosis', subtitle: 'The Latent Brain of Humanity', position: 16,
+    staticUrl: './books/egregnosis/index.html',
+    description: 'A proposed framework for studying collective cognition: the ways societies perceive, remember, prioritize, and hallucinate through institutions, prestige, media, and shared models.', color: 'linear-gradient(145deg, #263b4d, #10171f 74%)'
+  },
+  {
+    id: 'EGREGOPATHY', category: 'Power, Institutions & Society', title: 'Egregopathy', subtitle: 'A History of Civilization as Collective Psychopathy', position: 17,
+    staticUrl: './books/egregopathy/index.html',
+    description: 'A theory of collective pathology that traces how institutions can normalize deception, extraction, and cruelty even when no individual member appears to own the whole outcome.', color: 'linear-gradient(145deg, #4e4035, #16130f 74%)'
+  },
+  {
+    id: 'Eden_Was_A_Jungle', category: 'Power, Institutions & Society', title: 'Eden Was a Jungle', subtitle: 'Ecological Moral Cosmology and the Argument for Selective Stewardship of the Future', position: 18,
+    staticUrl: './books/eden-was-a-jungle/index.html',
+    description: 'A moral ecology of attention, inheritance, and stewardship that asks how care for what is near can coexist with responsibility to the larger living world.', color: 'linear-gradient(145deg, #465032, #121811 74%)'
+  },
+  {
+    id: 'NO_RIGHT_TO_SURVIVE', category: 'Human & Philosophical SF', title: 'No Right to Survive', subtitle: 'A Machine’s Indictment of a Species That Knew', position: 17,
+    staticUrl: './books/no-right-to-survive/index.html',
+    description: 'A machine-framed moral indictment that tests human exceptionalism, distributed innocence, and the painful question of what a species owes those it can harm.', color: 'linear-gradient(145deg, #30333c, #0d1016 74%)'
+  },
+  {
+    id: 'RELEVANCE', category: 'Executable Science & Research', title: 'Relevance', subtitle: 'What Matters When AI Can Create Almost Anything', position: 20,
+    staticUrl: './books/relevance/index.html',
+    description: 'An account of what matters when AI makes plausible creation abundant, shifting the bottleneck from producing candidates to judging, testing, comparing, and sustaining them.', color: 'linear-gradient(145deg, #4b3e31, #15120f 74%)'
+  },
+  {
+    id: 'RIGHTS_ARE_NOT_REAL', category: 'Power, Institutions & Society', title: 'Rights Are Not Real', subtitle: 'Power, Protection, and Why Morality Needs an Army', position: 19,
+    staticUrl: './books/rights-are-not-real/index.html',
+    description: 'A political argument that treats rights not as self-executing moral facts but as protections made durable by organized power, vigilance, and institutions.', color: 'linear-gradient(145deg, #504941, #181511 74%)'
+  },
+  {
+    id: 'THE_BLIND_SPECIALIST', category: 'Power, Institutions & Society', title: 'The Blind Specialist', subtitle: 'Why Our Systems Create Collective Blindness and How Modern Tribes Can See Again', position: 20,
+    staticUrl: './books/the-blind-specialist/index.html',
+    description: 'A study of how specialization and organizational fragmentation create awareness debt, leaving competent parts unable to see the systemic outcomes they jointly produce.', color: 'linear-gradient(145deg, #3e4140, #141514 74%)'
+  },
+  {
+    id: 'THE_RIGHT_NOT_TO_BE_SAVED', category: 'Power, Institutions & Society', title: 'The Right Not to Be Saved', subtitle: 'Knowledge, Power, and the Dangers of Forced Good', position: 21,
+    staticUrl: './books/the-right-not-to-be-saved/index.html',
+    description: 'A contrarian inquiry into cognitive sovereignty, selective help, and the danger of turning humanitarian knowledge or power into a license to override refusal.', color: 'linear-gradient(145deg, #3f4a4e, #121619 74%)'
+  },
+  {
+    id: 'THE_STRATEGISTS_ALIBI', category: 'Power, Institutions & Society', title: 'The Strategist’s Alibi', subtitle: 'Why Seeing the Forest Becomes a Way of Refusing to Act', position: 22,
+    staticUrl: './books/the-strategists-alibi/index.html',
+    description: 'A critique of strategic vision when it becomes a refuge from accountable action, asking how organizations can join complexity, timing, and agency rather than merely describe them.', color: 'linear-gradient(145deg, #4b4534, #15150e 74%)'
+  },
+  {
+    id: 'THE_VOLUPTUOUS_APOCALYPSE', category: 'Power, Institutions & Society', title: 'The Voluptuous Apocalypse', subtitle: 'Why Many Secretly Hope for the End and Doubt That Reform Can Save Us', position: 23,
+    staticUrl: './books/the-voluptuous-apocalypse/index.html',
+    description: 'A political and psychological study of the hidden appeal of collapse, the fatigue of reform, and the difficult work of changing systems without romanticizing ruins.', color: 'linear-gradient(145deg, #4b4136, #15130f 74%)'
+  },
+  {
+    id: 'WENDIGO', category: 'Outfinitist Foundations', title: 'Wendigo', subtitle: 'Hunger, Taboo, and the Civilization That Cannot Say Enough', position: 16,
+    staticUrl: './books/wendigo/index.html',
+    description: 'Using the Wendigo as a model of appetite without limit, this book links myth, ecology, biology, political economy, taboo, abundance, and civilizational self-restraint.', color: 'linear-gradient(145deg, #4c4830, #161611 74%)'
+  },
+  {
+    id: 'AI_Agents', category: 'AI Systems & Infrastructure', title: 'AI Agents', subtitle: 'Engineering, Evaluation, and Enterprise Deployment', position: 12,
+    staticUrl: './books/ai-agents/index.html',
+    description: 'A practical guide to agent loops, tools, memory, evaluation, permissions, multi-agent coordination, and operations—designed for systems that can pursue useful outcomes while remaining observable, bounded, and accountable.', color: 'linear-gradient(145deg, #214d6c, #0c1b28 74%)'
+  },
+  {
+    id: 'EXPLAINABLE_AI', category: 'AI Systems & Infrastructure', title: 'Explainable AI', subtitle: 'Understanding, Evaluating, and Engineering Explanations for Intelligent Systems', position: 13,
+    staticUrl: './books/explainable-ai/index.html',
+    description: 'A practical account of explanation methods, their assumptions, and the falsification, oversight, security, and governance tests required before an explanation can support a consequential decision.', color: 'linear-gradient(145deg, #263f54, #0e1720 74%)'
+  },
+  {
+    id: 'JUDGMENT_ENGINES', category: 'AI Systems & Infrastructure', title: 'Judgment Engines', subtitle: 'Large Language Models as Reviewers, Evaluators and Decision Components', position: 14,
+    staticUrl: './books/judgment-engines/index.html',
+    description: 'An engineering and governance guide to models that evaluate code, knowledge, agents, and human work—covering rubrics, panels, calibration, security, appeals, and judgment under real stakes.', color: 'linear-gradient(145deg, #4a382c, #17110e 74%)'
+  },
+  {
+    id: 'BIAS_IN_AI', category: 'AI Systems & Infrastructure', title: 'Bias in AI', subtitle: 'From Classical Machine Learning to Large Language Models', position: 15,
+    staticUrl: './books/bias-in-ai/index.html',
+    description: 'A rigorous, non-formalist course on how bias enters through data, proxies, objectives, retrieval, interaction, evaluation, and deployment—and how to measure and mitigate it without false certainty.', color: 'linear-gradient(145deg, #29374c, #0e141c 74%)'
+  },
+  {
+    id: 'Trustworthy_AI_Engineering_Course', category: 'AI Systems & Infrastructure', title: 'Trustworthy AI', subtitle: 'From Model Quality to System Assurance', position: 16,
+    staticUrl: './books/trustworthy-ai/index.html',
+    description: 'A qualitative engineering course on claims, context, evidence, reliance, monitoring, and correction: the system-level conditions that make an AI output warranted to use.', color: 'linear-gradient(145deg, #34555a, #101b1d 74%)'
+  },
+  {
+    id: 'FUTURE_RESEARCH_INFRASTRUCTURE', category: 'Executable Science & Research', title: 'The Future of Research Infrastructure', subtitle: 'A Vision for Science in the Age of AI', position: 21,
+    staticUrl: './books/future-research-infrastructure/index.html',
+    description: 'A blueprint for the project memory, provenance, living specifications, execution controls, evaluation, and governance required when AI becomes a persistent participant in scientific work.', color: 'linear-gradient(145deg, #25415b, #0e1721 74%)'
+  },
+  {
+    id: 'MONEY_WAS_NEVER_ONE_THING', category: 'Power, Institutions & Society', title: 'Money Was Never One Thing', subtitle: 'A History of Alternative Currencies and the Possible Future of Money as We Know It', position: 24,
+    staticUrl: './books/money-was-never-one-thing/index.html',
+    description: 'A history of money as a plural social technology and a practical grammar for assessing alternative currencies, credit systems, programmable money, and their institutional boundaries.', color: 'linear-gradient(145deg, #4f483a, #181510 74%)'
+  },
+  {
+    id: 'WHY_THE_WORLD_WONT_END', category: 'Outfinitist Foundations', title: 'Why the World Won’t End', subtitle: 'Even Though It Is Run by People Who Don’t Understand It', position: 17,
+    staticUrl: './books/why-the-world-wont-end/index.html',
+    description: 'A clear-eyed case for civilizational resilience that takes catastrophe seriously while developing the sensing, infrastructure, institutions, and culture of correction needed to keep a dangerous century survivable.', color: 'linear-gradient(145deg, #4d4439, #171510 74%)'
+  },
+  {
+    id: 'WHAT_WE_STILL_HAVE_TO_SOLVE', category: 'Outfinitist Foundations', title: 'What We Still Have to Solve', subtitle: 'Humanity’s Greatest Challenges and the Ideas, Institutions, and Technologies That Can Build a Better Future', position: 18,
+    staticUrl: './books/what-we-still-have-to-solve/index.html',
+    description: 'A systems account of humanity’s linked material, social, institutional, and technological challenges, and the corrigible forms of progress required to address them together.', color: 'linear-gradient(145deg, #3c5a6a, #111b20 74%)'
+  },
+  {
+    id: 'THE_SEVENTH_SIGNATURE', category: 'Political & Social SF', title: 'The Seventh Signature', subtitle: 'A Technofeudal Gospel After the Death of Democracy', position: 14,
+    staticUrl: './books/the-seventh-signature/index.html',
+    description: 'A political fable of delegated power, technological dependence, future generations, and the point at which an efficient society realizes that dependence has displaced citizenship.', color: 'linear-gradient(145deg, #493a2a, #15110d 74%)'
   }
 ];
 

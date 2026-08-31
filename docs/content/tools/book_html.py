@@ -31,7 +31,7 @@ ANALYTICS = (
     'data-website-id="e252999d-4479-42d7-9526-5f778846d4f6"></script>'
 )
 WARNING_ATTRIBUTE = 'data-pdf-conversion-warning="true"'
-REPAIR_VERSION = "3"
+REPAIR_VERSION = "4"
 PROCESSED_MARKER = f'<meta content="{REPAIR_VERSION}" name="pdf-reflow-repair"/>'
 PROCESSED_META_RE = re.compile(r'<meta\s+[^>]*name=["\']pdf-reflow-repair["\'][^>]*/?>', re.IGNORECASE)
 TAG_RE = re.compile(r"<!--.*?-->|<[^>]+>", re.DOTALL)
@@ -227,8 +227,6 @@ def candidate_edges(parser: BodyChildrenParser, source: str) -> list[tuple[Node,
         ):
             continue
         if is_page_number(previous_text) or is_page_number(current_text):
-            continue
-        if previous.page_id or current.page_id:
             continue
         if is_finished(previous_text):
             continue

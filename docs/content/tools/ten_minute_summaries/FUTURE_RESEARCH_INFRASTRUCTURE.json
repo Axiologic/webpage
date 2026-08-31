@@ -1,0 +1,10 @@
+{
+  "id": "FUTURE_RESEARCH_INFRASTRUCTURE",
+  "title": "The Future of Research Infrastructure",
+  "listing_description": "An original chapter on the move from AI-generated research outputs to governed research control, scientific state, and durable institutional memory.",
+  "reader_hook": "Start with the core engineering question: what must exist beneath AI systems if research is to remain cumulative, inspectable, and corrigible.",
+  "source_excerpt": {
+    "start_heading": "1.1 The shift from output generation to research control",
+    "end_heading": "1.2 The architecture: a scientific control plane"
+  }
+}

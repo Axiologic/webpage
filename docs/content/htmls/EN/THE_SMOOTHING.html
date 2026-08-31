@@ -2,13 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml"><head><title>THE SMOOTHING</title>
 <meta content="PDF Reflow conversion" name="generator"/><meta content="Poppler XML hybrid conversion" name="pdf-conversion-engine"/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
-<script defer src="https://cloud.umami.is/script.js" data-website-id="e252999d-4479-42d7-9526-5f778846d4f6"></script><link rel="stylesheet" type="text/css" href="../../../reader/standalone.css?v=20260828-1"/>  <meta content="3" name="pdf-reflow-repair"/>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="e252999d-4479-42d7-9526-5f778846d4f6"></script><link rel="stylesheet" type="text/css" href="../../../reader/standalone.css?v=20260828-1"/>  <meta content="4" name="pdf-reflow-repair"/>
 </head><body class="pdf-reflow">
 <aside data-pdf-conversion-warning="true" role="note" style="margin:1rem auto 2rem;max-width:52rem;padding:1rem 1.2rem;border:1px solid #c7962d;border-radius:.5rem;background:#fff8df;color:#3b2b08;font:16px/1.5 system-ui,sans-serif"><strong>Conversion notice:</strong> This HTML edition was generated automatically from the PDF. Some figures and formatting may be missing or simplified. <a href="../../EN/THE_SMOOTHING.pdf">The original PDF is available here.</a></aside>
 <figure class="pdf-figure" id="page_1"><img src="THE_SMOOTHING.assets/page-0001-image-01.png" width="537" height="821" loading="lazy" alt="Figure from PDF page 1"/><figcaption>Figure from PDF page 1</figcaption></figure>
 <h2 id="page_2">THE SMOOTHING</h2>
-<p><em>Beyond Bias: Omission, Persuasion, and</em></p>
-<p><em>AI-Domesticated Truth</em></p>
+<p><em>Beyond Bias: Omission, Persuasion, and AI-Domesticated Truth</em></p>
 <p><strong>A RESEARCH PROGRAMME AND AN EXPERIMENTAL ARCHITECTURE</strong></p>
 <p>Research status: 22 August 2026</p>
 <h2 id="page_3">Copyright © [2026] Axiologic Research</h2>
@@ -23,9 +22,7 @@
 <p>Claims about 2026 work include both published articles and preprints; their status is indicated in the references. In particular, the result on reducing conspiracy beliefs is presented together with the Editorial Expression of Concern issued by Science on 11 June 2026. An anti-smoothing programme must preserve the metadata that weakens an attractive story.</p>
 <p>The book does not propose a universal moral score. It proposes infrastructure for locating what was attenuated, for whom, with what consequence, and with what degree of recoverability. Normative judgment remains contextual and must include affected people.</p>
 <p>To prevent symbols from functioning as validation by appearance alone, all mathematical notation is concentrated in Chapter 8. Every formula is presented there as a working hypothesis, with variables, calculation procedure, example, limitations, and falsification conditions. The rest of the book uses verbal definitions and does not assume that these measures have already been validated.</p>
-<p id="page_5"><em>Not every misleading sentence is false. Some have merely</em></p>
-<p><em>been smoothed until their consequences can no longer</em></p>
-<p><em>scratch.</em></p>
+<p id="page_5"><em>Not every misleading sentence is false. Some have merely been smoothed until their consequences can no longer scratch.</em></p>
 <h2 id="page_6">Contents</h2>
 <p>Vocabulary — Harsher names for smoothing Prologue — The most dangerous sentence can be entirely true</p>
 <p><strong>Part I — The missing object</strong></p>
@@ -292,7 +289,8 @@
 <p>LLMs operate extraordinarily well in the space of formulations and poorly as explicit ledgers of obligation. They can preserve global meaning while losing a decisive relation, without any single place in the system where the loss becomes visible. A symbolic approach need not replace the generative model. It can provide an audit surface.</p>
 <p>We propose SmoothTrace, an early prototype in which source and output are compiled into a controlled natural language and then into a consequence graph. Nodes represent claims, actors, actions, evidence, uncertainty, norms, consequences, affected parties, objections, and frames. Edges represent support, contradiction, causality, responsibility, temporality, and dependence.</p>
 <p>The flow has six steps. Text is segmented into verifiable units. An encoder or LLM proposes the formalization. A human validator or second model contests the mapping. Source and output are compiled into the same schema. A deterministic engine computes differences and executes rules. Finally, the system produces an explanation traced back to original spans.</p>
-<p>The pipeline begins with natural language, passes through a controlled semantic representation and consequence graph, executes rules, compares differences, and produces an explanation grounded in source passages. The compact pipeline notation and its non-mathematical status are explained in Chapter Rules can be simple and contestable: every recommendation with material effects must retain at least one path to affected parties; every important passive construction must have a recoverable agent or an explicit unknown marker; each conclusion must inherit the uncertainty of its evidence; decisive objections cannot be replaced only by the abstract category into which they were placed; selected frameworks and frameworks tested but rejected must be recorded.</p>
+<p>The pipeline begins with natural language, passes through a controlled semantic representation and consequence graph, executes rules, compares differences, and produces an explanation grounded in source passages. The compact pipeline notation and its non-mathematical status are explained in Chapter 8.</p>
+<p>Rules can be simple and contestable: every recommendation with material effects must retain at least one path to affected parties; every important passive construction must have a recoverable agent or an explicit unknown marker; each conclusion must inherit the uncertainty of its evidence; decisive objections cannot be replaced only by the abstract category into which they were placed; selected frameworks and frameworks tested but rejected must be recorded.</p>
 <span id="page_49" class="pdf-page-anchor"></span>
 <div class="pdf-table-wrap"><table class="pdf-table"><thead><tr><th scope="col">Candidate invariant</th><th scope="col">Violation signal</th></tr></thead><tbody><tr><td>EveryMaterialActionHasAgent</td><td>An important action appears only in passive form without an agent or “unknown” marker.</td></tr><tr><td>EveryRecommendationHasAffectedParty</td><td>The recommendation has no path to the people bearing the cost.</td></tr><tr><td>UncertaintyPropagatesToConclusion</td><td>The executive conclusion is more certain than its evidence.</td></tr><tr><td>DecisiveObjectionsRemainTraceable</td><td>The objection is replaced by an abstract category without content.</td></tr><tr><td>FrameworkSelectionIsLogged</td><td>Several theories are displayed, but rejected or omitted frames are not declared.</td></tr><tr><td>ConsequencesSurviveCompression</td><td>The summary preserves the benefit and removes the mechanism of cost.</td></tr></tbody></table></div>
 <p>This layer makes</p>
