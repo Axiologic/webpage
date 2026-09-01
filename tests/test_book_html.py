@@ -221,6 +221,26 @@ class ConversionTests(unittest.TestCase):
         from convert_book_pdf import clean_text
         self.assertEqual(clean_text("The Assembly................................................................ 27"), "The Assembly")
 
+    def test_hybrid_converter_renders_contents_as_a_chapter_table_without_page_numbers(self):
+        xml = """<?xml version="1.0" encoding="UTF-8"?>
+<pdf2xml><page number="4" width="600" height="800">
+<fontspec id="0" size="18" family="Sans"/><fontspec id="1" size="13" family="Serif"/>
+<text top="80" left="80" width="120" height="22" font="0"><b>Contents</b></text>
+<text top="130" left="80" width="430" height="18" font="1">Chapter 1 — First question................................ 7</text>
+<text top="160" left="80" width="430" height="18" font="1">Chapter 2 — Second question............................. 19</text>
+<text top="190" left="80" width="430" height="18" font="1">Chapter 3 — Third question.............................. 31</text>
+</page></pdf2xml>"""
+        with tempfile.TemporaryDirectory(dir=ROOT) as temp_dir:
+            xml_path = Path(temp_dir) / "contents.xml"
+            xml_path.write_text(xml, encoding="utf-8")
+            pages = parse_pdf_xml(xml_path)
+        converted = hybrid_html(pages, "Contents", "reader.css", "reader.js", "Contents.pdf", {})
+        self.assertIn('class="pdf-table pdf-toc"', converted)
+        self.assertIn("Chapter 1 — First question", converted)
+        self.assertIn("Chapter 3 — Third question", converted)
+        self.assertNotIn("................", converted)
+        self.assertNotIn("Second question 19", converted)
+
     def test_splits_long_prose_only_after_complete_sentences(self):
         text = "First complete sentence. " + "A" * 1100 + ". " + "B" * 1100 + ". Final sentence."
         parts = long_prose_parts(text, maximum=1200)

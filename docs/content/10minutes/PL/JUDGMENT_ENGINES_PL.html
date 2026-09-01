@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="The original opening chapter of Judgment Engines.">
+  <meta name="reading-time" content="4 minutes">
+  <title>Silniki osądu · oryginalny rozdział otwierający</title>
+  <link rel="stylesheet" href="../../../reader/standalone.css?v=20260828-1">
+  <style>
+    .ten-minute-header { margin-bottom: 2.4rem; padding-bottom: 1.5rem; border-bottom: 1px solid color-mix(in srgb, currentColor 22%, transparent); }
+    .ten-minute-header p { text-indent: 0; text-align: left; }
+    .ten-minute-kicker { color: var(--standalone-link); font: 700 .78em/1.2 system-ui, sans-serif; letter-spacing: .12em; text-transform: uppercase; }
+    .ten-minute-links { display: flex; flex-wrap: wrap; gap: .8rem 1.1rem; margin-top: 1.2rem; font-family: system-ui, sans-serif; font-size: .82em; }
+  </style>
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="e252999d-4479-42d7-9526-5f778846d4f6"></script>
+</head>
+<body>
+  <header class="ten-minute-header">
+    <p class="ten-minute-kicker">Oryginalny rozdział otwierający</p>
+    <h1>Silniki osądu</h1>
+    <p>Oryginalny tekst autora · Około 4 minut · 669 słów</p>
+    <nav class="ten-minute-links" aria-label="Edition links"><a href="../../htmls/PL/JUDGMENT_ENGINES_PL.html">Przeczytaj pełną edycję HTML</a></nav>
+  </header>
+  <main>
+    <h2 id="page_4">Przedmowa — Ciche przejście od generowania do osądu</h2>
+<p>Pierwszą publiczną falę dużych modeli językowych łatwo było opisać, ponieważ ich wyniki były widoczne. Model odpowiadał na pytanie, pisał akapit, streszczał artykuł, generował kod albo przygotowywał projekt umowy. Następna fala jest cichsza. Coraz częściej model językowy działa za innym systemem i decyduje, czy odpowiedź jest dostatecznie dobra, czy dokument spełnia politykę, czy poprawka kodu wygląda poprawnie, czy recenzja naukowa jest użyteczna, czy kandydat wydaje się odpowiedni albo czy inny model powinien otrzymać nagrodę. Tekst tworzony przez sędziego może nigdy nie zostać pokazany użytkownikowi. Jego konsekwencja może jednak być większa niż konsekwencja tekstu, który ocenia. Ta książka używa słowa „sędzia” w celowo szerokim, inżynieryjnym znaczeniu. Sędzią może być punktujący, porównujący, recenzent, krytyk, egzaminator, weryfikator, strażnik bramki, model nagrody, meta-recenzent, kontroler polityki lub asystent rozstrzygający. Wspólnym elementem nie jest metafora sali sądowej. Jest nim funkcja kontroli: system odwzorowuje artefakt lub sytuację na ocenę, która zmienia to, co wydarzy się dalej. Wynik może przestawić ranking. Etykieta zaliczone/niezaliczone może zablokować wdrożenie. Sygnał preferencji może zmienić przebieg treningu. Recenzja może wpłynąć na publikację lub decyzję o zatrudnieniu. Werdykt polityki może powstrzymać działanie. Gdy model zostaje umieszczony w tej roli, jego błędy stają się częścią zarządzania otaczającym go systemem. Ta różnica zmienia problem inżynieryjny. Generator może być użyteczny mimo okazjonalnych błędów, jeśli kompetentna osoba sprawdza jego wynik. Sędzia często rozstrzyga, które wyniki otrzymają taką kontrolę. Generator można poprawić po fakcie; sędzia może systematycznie kształtować dane użyte do treningu przyszłych generatorów.</p>
+<p>Jeśli oceniający ma stabilną, lecz błędną preferencję dla rozwlekłości, uprzejmości, języka podobnego do własnego albo określonego ramowania kulturowego, awaria może niewidocznie rozchodzić się przez benchmarki, pętle optymalizacji i decyzje instytucjonalne. Dlatego zwrot LLM-as-a-Judge nie powinien być odczytywany jako twierdzenie, że model stał się autonomicznym autorytetem. Nazywa on wzorzec systemowy, który sam musi zostać oceniony. Literatura szybko rozwinęła się od ewaluacji benchmarków w stronę ogólnego osądu maszynowego. MT-Bench i Chatbot Arena uczyniły porównywanie oparte na modelach praktycznym na dużą skalę [1]. G-Eval pokazał, że jawne kryteria w języku naturalnym mogą silniej korelować z oceną ludzką niż starsze metryki leksykalne przy generowaniu otwartym [2]. Prometheus badał wyspecjalizowane, szczegółowe modele oceniające [3]. Późniejsze prace udokumentowały uprzedzenia pozycji, długości, własnej preferencji, zakresu wyniku, języka i inne [4,9,15,16]. JudgeBench i nowsze prace metaewaluacyjne przesunęły uwagę z testowanego modelu na samego oceniającego [47,48]. Do 2026 r. granica badań przesuwa się dalej: od promptu dla oceniającego ku jawnym rubrykom, typowanym grafom ewaluacji, wieloetapowym harnessom, zewnętrznym dowodom, wykonywaniu narzędzi i walidacji operacyjnej [10–13].</p>
+<p id="page_5">Trajektoria przemysłowa jest podobna. Produkty do ewaluacji coraz częściej łączą punktujące modele językowe ze sprawdzeniami opartymi na kodzie, zbiorami danych, śladami, etykietami ludzkimi, testami regresji, bramkami CI i monitorowaniem produkcyjnym. Najmocniejsza lekcja z badań i praktyki jest więc prosta. Sędzią nie jest LLM. Sędzia to kompletny system ewaluacji: norma, dowody, procedura, model, reguła agregacji, polityka eskalacji i ślad audytowy. Kolejne rozdziały idą w tej kolejności. Zaczynamy od znaczenia osądu i rodzajów rzeczy, które są obecnie oceniane. Następnie badamy pierwotne formy ewaluacji opartej na modelach, harnessy czyniące je operacyjnymi oraz dowody dotyczące niezawodności i uprzedzeń. Środkowa część książki analizuje dziedziny, w których osąd maszynowy jest już ważny: faktyczność, kod, agentów, edukację, zatrudnianie, naukę, medycynę, prawo, bezpieczeństwo i twórczość. Ostatnie rozdziały pytają, kiedy model językowy jest właściwym oceniającym, kiedy powinien przejąć rolę komponent deterministyczny lub symboliczny oraz jak można zbudować bardziej niezawodną neuro-symboliczną architekturę osądu. Celem nie jest uznanie sędziów LLM za godnych lub niegodnych zaufania w abstrakcie. Użyteczne pytanie jest węższe i bardziej inżynieryjne: w jakich warunkach, dla jakiego rodzaju decyzji i wewnątrz jakiego harnessu można polegać na osądzie maszyny?</p>
+  </main>
+  <script defer src="../../../reader/standalone.js?v=20260827-1"></script>
+</body>
+</html>

@@ -15,13 +15,12 @@ const books = [
   { id: 'Ecology_of_Predation', category: 'Outfinitist Foundations', title: 'Ecology of Predation', subtitle: 'From the Physics of Capture to the Society of Artificial Intelligences', position: 2, staticUrl: './books/ecology-of-predation/index.html', description: 'From wolves and viruses to workplace models, commercial agents, synthetic companions, and automated institutions, this speculative systems study asks how AI may transform capture, escape, adaptation, and agency. Its future scenarios remain testable hypotheses rather than forecasts presented as settled fact.', color: 'linear-gradient(145deg, #564033, #161411 74%)' },
   { id: 'The_Predators_Niche', category: 'Power, Institutions & Society', title: 'The Predator’s Niche', subtitle: 'Psychopathy, Artificial Minds, and the Possible Split of Humanity', position: 0, staticUrl: './books/the-predators-niche/index.html', description: 'Psychopathy is neither a separate human species nor a reliable executive superpower. This evidence-conscious inquiry follows predation from traits and developmental pathways into exploitative institutions and artificial agents, introducing predatory affordance and egregopathy while asking how cooperation can remain generous, bounded, and corrigible.', color: 'linear-gradient(145deg, #4b4030, #17140f 74%)' },
   { id: 'The_Animal_That_Prays', category: 'Power, Institutions & Society', title: 'The Animal That Prays', subtitle: 'How an Alien AI in 2026 Sees Religion, Power, Biology, and the Possibility of Transcendence', position: 1, staticUrl: './books/the-animal-that-prays/index.html', description: 'Using an explicitly methodological AI persona, this intellectual experiment examines religion as experience, biology, social technology, moral amplifier, and infrastructure of power. It separates evidence, inference, controlled speculation, and limits while testing claims about cooperation, hierarchy, altered states, secular sacreds, artificial minds, and transcendence without pretending to settle metaphysics.', color: 'linear-gradient(145deg, #544533, #18130f 74%)' },
-  { id: 'Enough_for_Everyone', category: 'Power, Institutions & Society', title: 'Enough for Everyone', subtitle: 'The Planet’s Resources, the Limits of Abundance, and the Possible Road to a Post-Scarcity Economy', position: 11, staticUrl: './books/enough-for-everyone/index.html', description: 'A data-grounded prospective analysis asks whether Earth can provide universal material dignity without pretending resources are infinite. It separates physical potential from industrial capacity and social access, then examines energy, minerals, food, water, housing, robotics, ecological limits, power, ownership, and a plausible path toward basic post-scarcity.', color: 'linear-gradient(145deg, #596d5c, #141a15 74%)' },
-  { id: 'Eden_Before_Mars', category: 'Power, Institutions & Society', title: 'Eden Before Mars', subtitle: 'If We Can Build Worlds Beyond Earth, We Can Build Paradise Here', position: 12, staticUrl: './books/eden-before-mars/index.html', description: 'Paradise myths meet technological and political history in a grounded proposal for a “Second Garden.” From grain and ledgers to grids, AI, robotics, and autonomous construction, the book asks whether abundance can secure dignity without rebuilding the walls, dependencies, and guardians of earlier Edens.', color: 'linear-gradient(145deg, #4b5634, #131914 74%)' },
+  { id: 'Enough_for_Everyone', category: 'Economy & Civilization', title: 'Enough for Everyone', subtitle: 'The Planet’s Resources, the Limits of Abundance, and the Possible Road to a Post-Scarcity Economy', position: 0, staticUrl: './books/enough-for-everyone/index.html', description: 'A data-grounded prospective analysis asks whether Earth can provide universal material dignity without pretending resources are infinite. It separates physical potential from industrial capacity and social access, then examines energy, minerals, food, water, housing, robotics, ecological limits, power, ownership, and a plausible path toward basic post-scarcity.', color: 'linear-gradient(145deg, #596d5c, #141a15 74%)' },
+  { id: 'Eden_Before_Mars', category: 'Economy & Civilization', title: 'Eden Before Mars', subtitle: 'If We Can Build Worlds Beyond Earth, We Can Build Paradise Here', position: 1, staticUrl: './books/eden-before-mars/index.html', description: 'Paradise myths meet technological and political history in a grounded proposal for a “Second Garden.” From grain and ledgers to grids, AI, robotics, and autonomous construction, the book asks whether abundance can secure dignity without rebuilding the walls, dependencies, and guardians of earlier Edens.', color: 'linear-gradient(145deg, #4b5634, #131914 74%)' },
   { id: 'Anti-Trivialization_Machines_of_the_Future', category: 'Power, Institutions & Society', title: 'Anti-Trivialization Machines of the Future', subtitle: 'Institutions for Attention, Truth, and Long-Term Judgment in the Age of AI', position: 3, staticUrl: './books/anti-trivialization-machines-of-the-future/index.html', description: 'Why do serious questions get flattened into clips, scores, and spectacles? This institutional manifesto distinguishes harmless triviality from systemic trivialization, then imagines rights, protocols, AI agents, educational practices, and time-conscious organizations that could protect judgment without policing what people value.', color: 'linear-gradient(145deg, #334758, #101619 74%)' },
   { id: 'Limits_of_Machine_Intelligence', category: 'Experiments and Speculations', title: 'Limits of Machine Intelligence', subtitle: 'An AI-assisted exploration of Outfinitism, moving frontiers, and the threshold of science', position: 2, staticUrl: './books/limits-of-machine-intelligence/index.html', description: 'A careful, explicitly experimental inquiry into whether mathematical impossibility theorems really forbid useful AI verification. It introduces “outfinitism,” tests it against logic, learning theory, self-improvement and safety, and asks what turns fluent AI-assisted speculation into warranted science.', color: 'linear-gradient(145deg, #30465b, #11171e 74%)' },
   { id: 'Outfinite_Mathematics_Research_Programme', category: 'Executable Science & Research', title: 'Outfinite Mathematics', subtitle: 'A Research Programme for Executable Science, Resource-Aware Mathematics, and Meta-Rational Foundations', position: 14, staticUrl: './books/outfinite-mathematics-research-programme/index.html', description: 'A falsifiable programme for making limits, existence modes, evidence, and applicability first-class mathematical objects. It reframes infinity without rejecting classical mathematics and proposes a machine-checkable semantic layer connecting theories, finite computations, observations, formal tools, and AI-assisted executable science.', color: 'linear-gradient(145deg, #304a4d, #101719 74%)' },
   { id: 'SOP_Lang_Circuits', category: 'Executable Science & Research', title: 'Executable Scientific Intelligence', subtitle: 'with Dynamic SOP Lang Circuits', position: 2, staticUrl: './books/sop-lang-circuits/index.html', description: 'A research programme for compiling language-mediated scientific work into bounded, inspectable circuits where evidence, inference, execution, uncertainty, provenance, and authority remain operationally distinct.', color: 'linear-gradient(145deg, #253d58, #10151d 74%)' },
-  { id: 'The_Future_of_Research_Infrastructure', category: 'Executable Science & Research', title: 'The Future of Research Infrastructure', subtitle: 'A Vision for Science in the Age of AI', position: 3, staticUrl: './books/the-future-of-research-infrastructure/index.html', description: 'A project-centred vision of scientific work after AI makes candidate results abundant. The book proposes living specifications, durable memory, bounded agents, continuous evaluation, inspectable compliance, and laboratory control planes so that faster research remains understandable, attributable, correctable, and governed by responsible human judgment.', color: 'linear-gradient(145deg, #2d4653, #101719 74%)' },
   { id: 'The_Geometry_of_Becoming', category: 'Cosmic & Metaphysical SF', title: 'The First Wake: The Geometry of Becoming', subtitle: 'A Science Fiction Novel', position: 0, staticUrl: './books/the-geometry-of-becoming/index.html', description: 'A science-fiction journey through a universe of process-based minds who do not share a single time. As a failing substrate drives plans for universal synchronization, playful Rill and its companions confront identity, intimacy, mortality, and the danger of preserving existence by simplifying what makes it alive.', color: 'linear-gradient(145deg, #3a405f, #11121d 74%)' },
   { id: 'Four_Realities', category: 'Political & Social SF', title: 'The Wish Series: Four Realities', subtitle: 'A Collection of Four Stories About Desire, Choice and Reality', position: 18, staticUrl: './books/four-realities/index.html', description: 'Four linked speculative stories test wealth, prediction, engineered desire, and moral freedom. As increasingly responsive systems offer people the worlds they seem to want, ordinary choices become evidence in a struggle over identity, responsibility, and what cannot be optimized.', color: 'linear-gradient(145deg, #514432, #18150f 74%)' },
   { id: 'The_Makers_of_Reality', category: 'Political & Social SF', title: 'The Makers of Reality', subtitle: 'A Novel', position: 19, staticUrl: './books/the-makers-of-reality/index.html', description: 'A post-scarcity society discovers that abolishing money does not abolish power. Through civic conflict, ecological risk, artificial intelligence, and a new currency of influence, this novel asks who gets to shape humanity’s shared future.', color: 'linear-gradient(145deg, #35444d, #10171b 74%)' },
@@ -171,7 +170,7 @@ const books = [
     description: 'A provocative proposal for turning intellectual humility into collective power. Anti-Idiocracy links weak models, elite legitimacy, startup mythology, AI governance, culture, and institutional design, then sketches an Outfinitist community built around corrigibility, mutual aid, decentralized authority, and the right to leave.', color: 'linear-gradient(145deg, #3e304e, #15131a 74%)'
   },
   {
-    id: 'The_History_and_Future_of_Social_Technologies', category: 'Power, Institutions & Society', title: 'The History and Future of Social Technologies', subtitle: 'The Yin-Yang of Civilisation', position: 7,
+    id: 'The_History_and_Future_of_Social_Technologies', category: 'Economy & Civilization', title: 'The History and Future of Social Technologies', subtitle: 'The Yin-Yang of Civilisation', position: 2,
     description: 'Civilization was built with rules as well as tools. This ambitious synthesis traces kinship, money, law, states, corporations, protocols, and AI as reproducible coordination technologies, then asks what constitutional safeguards a hybrid human-machine society will require.', color: 'linear-gradient(145deg, #243e42, #101817 74%)'
   },
   {
@@ -196,7 +195,7 @@ const books = [
     description: 'A searching dialogue between a human author and an artificial intelligence examines charity, consent, paternalism, institutional power, and moral ambition. It asks how help can remain answerable to those affected—especially when refusing to intervene may preserve suffering.', color: 'linear-gradient(145deg, #294b4b, #101817 74%)'
   },
   {
-    id: 'Revocable_Nobility', category: 'Power, Institutions & Society', title: 'Revocable Nobility', subtitle: '', position: 14,
+    id: 'Revocable_Nobility', category: 'Economy & Civilization', title: 'Revocable Nobility', subtitle: '', position: 3,
     description: 'A human-AI inquiry into why complex societies produce elites and how privilege might remain legitimate. Philosophical argument, historical evidence, and stylized simulations test scarcity, surveillance, status conflict, constitutional compression, demographic power, and the possibility of peaceful removal.', color: 'linear-gradient(145deg, #55432d, #18140f 74%)'
   },
   {
@@ -231,7 +230,7 @@ const books = [
     description: 'What happens when polished intellectual output no longer proves understanding? This research-driven study examines AI’s effects on work, education, culture, relationships, organizations, politics, and medicine—and asks how societies can preserve responsibility and human capability amid abundant synthetic cognition.', color: 'linear-gradient(145deg, #254452, #10171a 74%)'
   },
   {
-    id: 'The_Fragmented_Future', category: 'Power, Institutions & Society', title: 'The Fragmented Future', subtitle: 'AI, City-Regions, and New Forms of Human Civilization', position: 9,
+    id: 'The_Fragmented_Future', category: 'Economy & Civilization', title: 'The Fragmented Future', subtitle: 'AI, City-Regions, and New Forms of Human Civilization', position: 4,
     staticUrl: './books/the-fragmented-future/index.html',
     description: 'A disciplined exploration of how AI could empower both city-regions and computational empires. Moving across history, political economy, psychology, and institutional design, the book asks how layered sovereignty might preserve experimentation, solidarity, rights, and resilience without sliding into corporate feudalism or technological centralism.', color: 'linear-gradient(145deg, #314461, #11141e 74%)'
   },
@@ -251,7 +250,7 @@ const books = [
     description: 'A constructive reassessment of hypocrisy as fraud, adaptation, scaffold, and limit. Drawing on moral psychology, evolution, philosophy, and institutional design, the book asks how societies can preserve useful ideals while reducing deception, unequal exemptions, and transferred harm.', color: 'linear-gradient(145deg, #3d4d39, #131713 74%)'
   },
   {
-    id: 'Executable_Natural_Language', category: 'Executable Science & Research', title: 'Executable Natural Language', subtitle: 'The Missing Grammar of Thought and SOP Lang English CNL', position: 3,
+    id: 'Executable_Natural_Language', category: 'AI Methods & Assurance', title: 'Executable Natural Language', subtitle: 'The Missing Grammar of Thought and SOP Lang English CNL', position: 0,
     description: 'Scientific prose can hide the semantic dependencies that reproducible code leaves untouched. This research programme proposes SLEnglish, an auditable layer between unrestricted language and heterogeneous computation, with explicit identity, provenance, contexts, alternatives, operator contracts, validation, and falsifiable evaluation criteria.', color: 'linear-gradient(145deg, #5a4030, #171519 74%)'
   },
   {
@@ -315,7 +314,7 @@ const books = [
     description: 'In a post-money civilization, political influence is earned by solving shared problems—until trusted problem-solvers begin shaping the world beneath consent. Across two linked novels, families, ecologies, artificial systems, and future generations struggle to make power visible and contestable again.', color: 'linear-gradient(145deg, #174b83, #0b1a2d 74%)'
   },
   {
-    id: 'ALL_THE_WAYS_TO_RULE_A_WORLD', category: 'Power, Institutions & Society', title: 'All the Ways to Rule a World', subtitle: 'A Condensed History of Sovereignty and an Atlas of Political Futures', position: 15,
+    id: 'ALL_THE_WAYS_TO_RULE_A_WORLD', category: 'Economy & Civilization', title: 'All the Ways to Rule a World', subtitle: 'A Condensed History of Sovereignty and an Atlas of Political Futures', position: 5,
     staticUrl: './books/all-the-ways-to-rule-a-world/index.html',
     description: 'A historical and speculative atlas of sovereignty that treats government as a design space: from coordination and state formation to democratic, polycentric, digital, and machine-mediated futures.', color: 'linear-gradient(145deg, #4d412f, #16130f 74%)'
   },
@@ -325,17 +324,17 @@ const books = [
     description: 'An inquiry into how science uses reputation to allocate attention without allowing pedigree, institutional status, or publication venue to become a substitute for evidence.', color: 'linear-gradient(145deg, #4d4539, #151613 74%)'
   },
   {
-    id: 'EGREGNOSIS', category: 'Power, Institutions & Society', title: 'Egregnosis', subtitle: 'The Latent Brain of Humanity', position: 16,
+    id: 'EGREGNOSIS', category: 'Economy & Civilization', title: 'Egregnosis', subtitle: 'The Latent Brain of Humanity', position: 6,
     staticUrl: './books/egregnosis/index.html',
     description: 'A proposed framework for studying collective cognition: the ways societies perceive, remember, prioritize, and hallucinate through institutions, prestige, media, and shared models.', color: 'linear-gradient(145deg, #263b4d, #10171f 74%)'
   },
   {
-    id: 'EGREGOPATHY', category: 'Power, Institutions & Society', title: 'Egregopathy', subtitle: 'A History of Civilization as Collective Psychopathy', position: 17,
+    id: 'EGREGOPATHY', category: 'Economy & Civilization', title: 'Egregopathy', subtitle: 'A History of Civilization as Collective Psychopathy', position: 7,
     staticUrl: './books/egregopathy/index.html',
     description: 'A theory of collective pathology that traces how institutions can normalize deception, extraction, and cruelty even when no individual member appears to own the whole outcome.', color: 'linear-gradient(145deg, #4e4035, #16130f 74%)'
   },
   {
-    id: 'Eden_Was_A_Jungle', category: 'Power, Institutions & Society', title: 'Eden Was a Jungle', subtitle: 'Ecological Moral Cosmology and the Argument for Selective Stewardship of the Future', position: 18,
+    id: 'Eden_Was_A_Jungle', category: 'Economy & Civilization', title: 'Eden Was a Jungle', subtitle: 'Ecological Moral Cosmology and the Argument for Selective Stewardship of the Future', position: 8,
     staticUrl: './books/eden-was-a-jungle/index.html',
     description: 'A moral ecology of attention, inheritance, and stewardship that asks how care for what is near can coexist with responsibility to the larger living world.', color: 'linear-gradient(145deg, #465032, #121811 74%)'
   },
@@ -375,7 +374,7 @@ const books = [
     description: 'A political and psychological study of the hidden appeal of collapse, the fatigue of reform, and the difficult work of changing systems without romanticizing ruins.', color: 'linear-gradient(145deg, #4b4136, #15130f 74%)'
   },
   {
-    id: 'WENDIGO', category: 'Outfinitist Foundations', title: 'Wendigo', subtitle: 'Hunger, Taboo, and the Civilization That Cannot Say Enough', position: 16,
+    id: 'WENDIGO', category: 'Human & Philosophical SF', title: 'Wendigo', subtitle: 'Hunger, Taboo, and the Civilization That Cannot Say Enough', position: 10,
     staticUrl: './books/wendigo/index.html',
     description: 'Using the Wendigo as a model of appetite without limit, this book links myth, ecology, biology, political economy, taboo, abundance, and civilizational self-restraint.', color: 'linear-gradient(145deg, #4c4830, #161611 74%)'
   },
@@ -385,17 +384,17 @@ const books = [
     description: 'A practical guide to agent loops, tools, memory, evaluation, permissions, multi-agent coordination, and operations—designed for systems that can pursue useful outcomes while remaining observable, bounded, and accountable.', color: 'linear-gradient(145deg, #214d6c, #0c1b28 74%)'
   },
   {
-    id: 'EXPLAINABLE_AI', category: 'AI Systems & Infrastructure', title: 'Explainable AI', subtitle: 'Understanding, Evaluating, and Engineering Explanations for Intelligent Systems', position: 13,
+    id: 'EXPLAINABLE_AI', category: 'AI Methods & Assurance', title: 'Explainable AI', subtitle: 'Understanding, Evaluating, and Engineering Explanations for Intelligent Systems', position: 1,
     staticUrl: './books/explainable-ai/index.html',
     description: 'A practical account of explanation methods, their assumptions, and the falsification, oversight, security, and governance tests required before an explanation can support a consequential decision.', color: 'linear-gradient(145deg, #263f54, #0e1720 74%)'
   },
   {
-    id: 'JUDGMENT_ENGINES', category: 'AI Systems & Infrastructure', title: 'Judgment Engines', subtitle: 'Large Language Models as Reviewers, Evaluators and Decision Components', position: 14,
+    id: 'JUDGMENT_ENGINES', category: 'AI Methods & Assurance', title: 'Judgment Engines', subtitle: 'Large Language Models as Reviewers, Evaluators and Decision Components', position: 2,
     staticUrl: './books/judgment-engines/index.html',
     description: 'An engineering and governance guide to models that evaluate code, knowledge, agents, and human work—covering rubrics, panels, calibration, security, appeals, and judgment under real stakes.', color: 'linear-gradient(145deg, #4a382c, #17110e 74%)'
   },
   {
-    id: 'BIAS_IN_AI', category: 'AI Systems & Infrastructure', title: 'Bias in AI', subtitle: 'From Classical Machine Learning to Large Language Models', position: 15,
+    id: 'BIAS_IN_AI', category: 'AI Methods & Assurance', title: 'Bias in AI', subtitle: 'From Classical Machine Learning to Large Language Models', position: 3,
     staticUrl: './books/bias-in-ai/index.html',
     description: 'A rigorous, non-formalist course on how bias enters through data, proxies, objectives, retrieval, interaction, evaluation, and deployment—and how to measure and mitigate it without false certainty.', color: 'linear-gradient(145deg, #29374c, #0e141c 74%)'
   },
@@ -410,12 +409,12 @@ const books = [
     description: 'A blueprint for the project memory, provenance, living specifications, execution controls, evaluation, and governance required when AI becomes a persistent participant in scientific work.', color: 'linear-gradient(145deg, #25415b, #0e1721 74%)'
   },
   {
-    id: 'MONEY_WAS_NEVER_ONE_THING', category: 'Power, Institutions & Society', title: 'Money Was Never One Thing', subtitle: 'A History of Alternative Currencies and the Possible Future of Money as We Know It', position: 24,
+    id: 'MONEY_WAS_NEVER_ONE_THING', category: 'Economy & Civilization', title: 'Money Was Never One Thing', subtitle: 'A History of Alternative Currencies and the Possible Future of Money as We Know It', position: 9,
     staticUrl: './books/money-was-never-one-thing/index.html',
     description: 'A history of money as a plural social technology and a practical grammar for assessing alternative currencies, credit systems, programmable money, and their institutional boundaries.', color: 'linear-gradient(145deg, #4f483a, #181510 74%)'
   },
   {
-    id: 'WHY_THE_WORLD_WONT_END', category: 'Outfinitist Foundations', title: 'Why the World Won’t End', subtitle: 'Even Though It Is Run by People Who Don’t Understand It', position: 17,
+    id: 'WHY_THE_WORLD_WONT_END', category: 'Power, Institutions & Society', title: 'Why the World Won’t End', subtitle: 'Even Though It Is Run by People Who Don’t Understand It', position: 9,
     staticUrl: './books/why-the-world-wont-end/index.html',
     description: 'A clear-eyed case for civilizational resilience that takes catastrophe seriously while developing the sensing, infrastructure, institutions, and culture of correction needed to keep a dangerous century survivable.', color: 'linear-gradient(145deg, #4d4439, #171510 74%)'
   },
@@ -461,7 +460,7 @@ function locateCover(image) {
 }
 
 function renderListing() {
-  ['Business & Startups', 'Executable Science & Research', 'AI Systems & Infrastructure', 'Cosmic & Metaphysical SF', 'Political & Social SF', 'Human & Philosophical SF', 'Outfinitist Foundations', 'Power, Institutions & Society', 'Experiments and Speculations'].forEach(category => {
+  ['Business & Startups', 'Economy & Civilization', 'Executable Science & Research', 'AI Systems & Infrastructure', 'AI Methods & Assurance', 'Cosmic & Metaphysical SF', 'Political & Social SF', 'Human & Philosophical SF', 'Outfinitist Foundations', 'Power, Institutions & Society', 'Experiments and Speculations'].forEach(category => {
     const grid = document.getElementById(`${category.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-grid`);
     if (!grid) return;
     grid.innerHTML = books.filter(book => book.category === category).sort((a, b) => (a.position === 'last' ? Infinity : a.position ?? Number.MAX_SAFE_INTEGER) - (b.position === 'last' ? Infinity : b.position ?? Number.MAX_SAFE_INTEGER)).map(book => `

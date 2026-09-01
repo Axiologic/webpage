@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="The original opening chapter of Judgment Engines.">
+  <meta name="reading-time" content="4 minutes">
+  <title>Urteilsmaschinen · ursprüngliches Eröffnungskapitel</title>
+  <link rel="stylesheet" href="../../../reader/standalone.css?v=20260828-1">
+  <style>
+    .ten-minute-header { margin-bottom: 2.4rem; padding-bottom: 1.5rem; border-bottom: 1px solid color-mix(in srgb, currentColor 22%, transparent); }
+    .ten-minute-header p { text-indent: 0; text-align: left; }
+    .ten-minute-kicker { color: var(--standalone-link); font: 700 .78em/1.2 system-ui, sans-serif; letter-spacing: .12em; text-transform: uppercase; }
+    .ten-minute-links { display: flex; flex-wrap: wrap; gap: .8rem 1.1rem; margin-top: 1.2rem; font-family: system-ui, sans-serif; font-size: .82em; }
+  </style>
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="e252999d-4479-42d7-9526-5f778846d4f6"></script>
+</head>
+<body>
+  <header class="ten-minute-header">
+    <p class="ten-minute-kicker">Ursprüngliches Eröffnungskapitel</p>
+    <h1>Urteilsmaschinen</h1>
+    <p>Originaltext des Autors · Etwa 4 Minuten · 669 Wörter</p>
+    <nav class="ten-minute-links" aria-label="Edition links"><a href="../../htmls/DE/JUDGMENT_ENGINES_DE.html">Die vollständige HTML-Ausgabe lesen</a></nav>
+  </header>
+  <main>
+    <h2 id="page_4">Vorwort — Der stille Übergang von der Generierung zum Urteil</h2>
+<p>Die erste öffentliche Welle großer Sprachmodelle war leicht zu beschreiben, weil ihre Ausgaben sichtbar waren. Ein Modell beantwortete eine Frage, schrieb einen Absatz, fasste einen Aufsatz zusammen, erzeugte Code oder entwarf einen Vertrag. Die nächste Welle ist leiser. Zunehmend sitzt ein Sprachmodell hinter einem anderen System und entscheidet, ob eine Antwort gut genug ist, ob ein Dokument einer Richtlinie folgt, ob ein Code-Patch korrekt aussieht, ob eine wissenschaftliche Begutachtung nützlich ist, ob ein Kandidat geeignet erscheint oder ob ein anderes Modell eine Belohnung erhalten soll. Der Text, den der Richter erzeugt, wird dem Nutzer vielleicht nie gezeigt. Seine Folge kann dennoch größer sein als die Folge des Textes, den er beurteilt. Dieses Buch verwendet Richter in einem bewusst weiten ingenieurwissenschaftlichen Sinn. Ein Richter kann ein Bewerter, Vergleicher, Gutachter, Kritiker, Prüfer, Verifizierer, Gatekeeper, Belohnungsmodell, Meta-Gutachter, Richtlinienprüfer oder Entscheidungsassistent sein. Das Gemeinsame ist keine Gerichtsmetapher. Es ist eine Kontrollfunktion: Das System ordnet einem Artefakt oder einer Situation eine Bewertung zu, die verändert, was als Nächstes geschieht. Eine Punktzahl kann eine Rangliste neu ordnen. Ein Bestanden/Nichtbestanden-Label kann eine Bereitstellung blockieren. Ein Präferenzsignal kann einen Trainingslauf verändern. Eine Begutachtung kann eine Veröffentlichungs- oder Einstellungsentscheidung beeinflussen. Ein Richtlinienurteil kann eine Handlung unterdrücken. Sobald ein Modell in diese Rolle gestellt wird, werden seine Fehler Teil der Governance des Systems um es herum. Dieser Unterschied verändert das technische Problem. Ein Generator kann trotz gelegentlicher Fehler nützlich sein, wenn eine kompetente Person seine Ausgabe prüft. Ein Richter bestimmt oft, welche Ausgaben geprüft werden. Ein Generator kann im Nachhinein korrigiert werden; ein Richter kann die Daten, mit denen zukünftige Generatoren trainiert werden, systematisch prägen.</p>
+<p>Hat der Bewerter eine stabile, aber falsche Präferenz für Ausführlichkeit, Höflichkeit, selbstähnliche Sprache oder einen bestimmten kulturellen Rahmen, kann sich der Fehler unsichtbar über Benchmarks, Optimierungsschleifen und institutionelle Entscheidungen fortpflanzen. Deshalb sollte die Formulierung LLM-as-a-Judge nicht als Behauptung gelesen werden, ein Modell sei zu einer autonomen Autorität geworden. Sie bezeichnet ein Systemmuster, das selbst bewertet werden muss. Die Literatur hat sich rasch von der Benchmark-Evaluierung zum allgemeinen maschinellen Urteilen entwickelt. MT-Bench und Chatbot Arena machten modellbasierte Vergleiche im großen Maßstab praktikabel [1]. G-Eval zeigte, dass explizite Kriterien in natürlicher Sprache bei offener Generierung besser mit menschlicher Bewertung korrelieren können als ältere lexikalische Metriken [2]. Prometheus untersuchte spezialisierte, feingranulare Bewertermodelle [3]. Spätere Arbeiten dokumentierten Positions-, Längen-, Selbstpräferenz-, Punktebereichs-, Sprach- und weitere Verzerrungen [4,9,15,16]. JudgeBench und neuere Metaevaluierungsarbeiten verlagerten die Aufmerksamkeit vom getesteten Modell auf den Bewerter selbst [47,48]. Bis 2026 bewegt sich die Forschungsfront weiter: von einem Bewertungs-Prompt hin zu expliziten Rubriken, typisierten Bewertungsgraphen, mehrstufigen Harnesses, externer Evidenz, Werkzeugausführung und operativer Validierung [10-13].</p>
+<p id="page_5">Die industrielle Entwicklung ist ähnlich. Evaluierungsprodukte verbinden zunehmend Sprachmodell-Bewerter mit codebasierten Prüfungen, Datensätzen, Traces, menschlichen Labels, Regressionstests, CI-Gates und Produktionsmonitoring. Die wichtigste Lehre aus Forschung und Praxis ist daher einfach. Der Richter ist nicht das LLM. Der Richter ist das vollständige Evaluierungssystem: die Norm, die Evidenz, das Verfahren, das Modell, die Aggregationsregel, die Eskalationsrichtlinie und der Prüfpfad. Die folgenden Kapitel gehen in dieser Reihenfolge vor. Wir beginnen mit der Bedeutung von Urteilen und den Arten von Dingen, die heute beurteilt werden. Dann untersuchen wir die elementaren Formen modellbasierter Evaluierung, die Harnesses, die sie operativ machen, sowie die Evidenz zu Zuverlässigkeit und Verzerrung. Der Mittelteil des Buches behandelt Bereiche, in denen maschinelles Urteilen bereits wichtig ist: Faktentreue, Code, Agenten, Bildung, Einstellung, Wissenschaft, Medizin, Recht, Sicherheit und kreative Arbeit. Die letzten Kapitel fragen, wann ein Sprachmodell der richtige Bewerter ist, wann eine deterministische oder symbolische Komponente übernehmen sollte und wie sich eine verlässlichere neurosymbolische Urteilsarchitektur bauen ließe. Das Ziel ist durchgehend nicht, LLM-Richter abstrakt für vertrauenswürdig oder unzuverlässig zu erklären. Die nützliche Frage ist enger und stärker ingenieurorientiert: Unter welchen Bedingungen, für welche Art von Entscheidung und innerhalb welchen Harnesses kann man sich auf ein maschinelles Urteil verlassen?</p>
+  </main>
+  <script defer src="../../../reader/standalone.js?v=20260827-1"></script>
+</body>
+</html>

@@ -13,6 +13,7 @@ import sys
 from typing import Any
 from urllib.parse import quote
 
+import content_index
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
 CONTENT_ROOT = REPO_ROOT / "docs" / "content"
@@ -43,7 +44,10 @@ def encoded(relative: Path) -> str:
 
 def targets() -> list[tuple[Path, Path, Path]]:
     pairs = []
+    archived = {CONTENT_ROOT / str(edition["pdf"]) for editions in content_index.ARCHIVED_PDF_EDITIONS.values() for edition in editions}
     for pdf in sorted((CONTENT_ROOT / "EN").glob("*.pdf")):
+        if pdf in archived:
+            continue
         source = SOURCE_DIRECTORY / pdf.with_suffix(".html").name
         if not source.is_file():
             raise FileNotFoundError(f"missing English reflow edition for {pdf.relative_to(CONTENT_ROOT)}")

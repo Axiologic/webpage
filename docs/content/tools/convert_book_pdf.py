@@ -21,6 +21,7 @@ from urllib.parse import quote
 import xml.etree.ElementTree as ET
 
 from book_html import ANALYTICS, CONTENT_ROOT, HTML_ROOT, REPO_ROOT, html_for_pdf, repair_source, warning_html
+from content_index import ARCHIVED_PDF_EDITIONS
 
 
 PAGE_BREAK = "\f"
@@ -51,7 +52,15 @@ OUTLINE_HEADING_RE = re.compile(
     r"^(?:(?:[A-Z]|\d{1,3})\.\d{1,3}(?:\.\d{1,3})*\s+(?=[A-ZÀ-Ž])|.{1,80}\s[A-Z]\.\d{1,3}(?:\.\d{1,3})*\s*$)"
 )
 CONTENTS_HEADING_RE = re.compile(
-    r"^(?:contents?|content|inhalt|inhaltsverzeichnis|índice|indice|sommaire|table des matières|spis treści|cuprins)$",
+    r"^(?:(?:table\s+of\s+)?contents?|content|inhalt|inhaltsverzeichnis|índice|indice|sommaire|table des matières|spis treści|cuprins)$",
+    re.IGNORECASE,
+)
+TOC_ENTRY_START_RE = re.compile(
+    r"^(?:chapter|part|volume|book|appendix|section)\s+(?:\d+|[IVXLCDM]+)\b",
+    re.IGNORECASE,
+)
+TOC_ENTRY_BOUNDARY_RE = re.compile(
+    r"(?=(?:chapter|part|volume|book|appendix|section)\s+(?:\d+|[IVXLCDM]+)\b)",
     re.IGNORECASE,
 )
 LIGATURES = str.maketrans({"ﬀ": "ff", "ﬁ": "fi", "ﬂ": "fl", "ﬃ": "ffi", "ﬄ": "ffl", "ﬅ": "st", "ﬆ": "st"})
@@ -532,6 +541,62 @@ def long_prose_parts(text: str, maximum: int = 1800) -> list[str]:
     return parts
 
 
+def toc_entries(lines: list[VisualLine], contents_indices: set[int]) -> list[str]:
+    """Return a de-duplicated, page-number-free contents outline.
+
+    PDF contents pages are commonly extracted either as one visual line per
+    entry or as a single long line containing several chapter entries.  The
+    source PDF's page numbers are presentation metadata, not reader content,
+    so this preserves the chapter labels alone in a semantic one-column table.
+    """
+    candidates: list[str] = []
+    for index, line in enumerate(lines):
+        if index in contents_indices or PAGE_NUMBER_RE.fullmatch(line.text):
+            continue
+        text = clean_text(line.text)
+        if not text:
+            continue
+        chapter_match = TOC_ENTRY_START_RE.match(text)
+        if line.toc_entry:
+            text = re.sub(r"\s+\d{1,4}\s*$", "", text)
+        elif chapter_match and re.search(r".+\s+\d{1,4}\s*$", text[chapter_match.end():]):
+            # PDFs that put title and page number into neighboring columns may
+            # not contain dot leaders.  A second trailing number is still a
+            # page reference; keep the chapter's own leading number.
+            text = re.sub(r"\s+\d{1,4}\s*$", "", text)
+        parts = [part for part in TOC_ENTRY_BOUNDARY_RE.split(text) if part.strip()]
+        if len(parts) == 1 and not (line.toc_entry or TOC_ENTRY_START_RE.match(text)):
+            # A title-only contents entry has no chapter number, but Poppler
+            # marks it by the dot leader in the original text.  Do not turn
+            # explanatory prose on the same page into an outline row.
+            continue
+        if len(parts) > 1:
+            candidates.extend(clean_text(part) for part in parts if TOC_ENTRY_START_RE.match(clean_text(part)))
+        else:
+            candidates.append(clean_text(parts[0]))
+
+    # Some PDFs omit dot leaders and number their table of contents in a
+    # single paragraph.  Recover the chapter entries from that paragraph.
+    if not candidates:
+        for index, line in enumerate(lines):
+            if index in contents_indices:
+                continue
+            candidates.extend(
+                clean_text(part)
+                for part in TOC_ENTRY_BOUNDARY_RE.split(clean_text(line.text))
+                if TOC_ENTRY_START_RE.match(clean_text(part))
+            )
+
+    entries: list[str] = []
+    seen: set[str] = set()
+    for entry in candidates:
+        if not entry or PAGE_NUMBER_RE.fullmatch(entry) or entry.casefold() in seen:
+            continue
+        seen.add(entry.casefold())
+        entries.append(entry)
+    return entries
+
+
 def page_blocks(page: PdfPage, repeated: set[str]) -> list[ContentBlock]:
     lines = [line for line in page.lines if not is_page_furniture(line, page, repeated)]
     full_page = [image for image in page.images if image.width * image.height >= page.width * page.height * 0.72]
@@ -562,6 +627,33 @@ def page_blocks(page: PdfPage, repeated: set[str]) -> list[ContentBlock]:
                 page_anchor=page.number,
             )
         ]
+    contents_indices = {index for index, line in enumerate(lines) if CONTENTS_HEADING_RE.fullmatch(line.text.strip())}
+    toc_page = bool(contents_indices) or sum(line.toc_entry for line in lines) >= 3
+    if toc_page:
+        entries = toc_entries(lines, contents_indices)
+        # A lone title-plus-number is often a running header or an orphaned
+        # continuation from a multi-page contents spread, not an outline.
+        if len(entries) >= 2:
+            heading = next((lines[index] for index in sorted(contents_indices)), None)
+            blocks = [
+                ContentBlock(
+                    (heading.top if heading else lines[0].top),
+                    "heading",
+                    text=(heading.text if heading else "Contents"),
+                    bold=True,
+                    font_size=(heading.font_size if heading else 0.0),
+                ),
+                ContentBlock(
+                    (heading.top if heading else lines[0].top) + 0.001,
+                    "toc",
+                    rows=[[entry] for entry in entries],
+                ),
+            ]
+            blocks.extend(ContentBlock(image.top, "image", image=image) for image in page.images)
+            blocks.sort(key=lambda block: block.top)
+            blocks[0].page_anchor = page.number
+            return blocks
+
     regions = table_regions(lines, page.width)
     table_by_start = {indices[0]: (set(indices), rows) for indices, rows in regions}
     table_indices = {index for indices, _ in regions for index in indices}
@@ -570,10 +662,6 @@ def page_blocks(page: PdfPage, repeated: set[str]) -> list[ContentBlock]:
     body_size = statistics.median(body_sizes) if body_sizes else 12.0
     prose_indices = prose_run_indices(lines)
     list_heading_indices = heading_run_indices(lines, body_size)
-    contents_indices = {index for index, line in enumerate(lines) if CONTENTS_HEADING_RE.fullmatch(line.text.strip())}
-    toc_page = bool(contents_indices) or sum(line.toc_entry for line in lines) >= 3
-    if toc_page:
-        list_heading_indices.update(index for index in range(len(lines)) if index not in contents_indices)
     body_lines = [line for index, line in enumerate(lines) if index not in table_indices and (index in prose_indices or index in list_heading_indices or not looks_heading(line, body_size))]
     # In first-line-indented books, paragraph starts can outnumber wrapped
     # continuation lines. The statistical mode therefore selects the indent,
@@ -753,6 +841,18 @@ def render_table(rows: list[list[str]], anchor: str) -> str:
     return f'<div class="pdf-table-wrap"{anchor}><table class="pdf-table"><thead><tr>{head}</tr></thead><tbody>{body}</tbody></table></div>'
 
 
+def render_toc(rows: list[list[str]], anchor: str) -> str:
+    body = "".join(
+        f'<tr><td>{render_linked_text(row[0])}</td></tr>'
+        for row in rows
+    )
+    return (
+        f'<div class="pdf-table-wrap pdf-toc-wrap"{anchor}>'
+        '<table class="pdf-table pdf-toc"><thead><tr><th scope="col">Chapter</th>'
+        f'</tr></thead><tbody>{body}</tbody></table></div>'
+    )
+
+
 def hybrid_html(pages: list[PdfPage], title: str, css_href: str, script_href: str, pdf_name: str, image_urls: dict[tuple[int, int], str]) -> str:
     repeated = repeated_furniture(pages)
     body = [warning_html(pdf_name).strip()]
@@ -765,6 +865,8 @@ def hybrid_html(pages: list[PdfPage], title: str, css_href: str, script_href: st
                 body.append(f"<h{level}{anchor}>{'<em>' + text + '</em>' if block.italic else text}</h{level}>")
             elif block.kind == "table":
                 body.append(render_table(block.rows, anchor))
+            elif block.kind == "toc":
+                body.append(render_toc(block.rows, anchor))
             elif block.kind == "image" and block.image:
                 url = image_urls.get((block.image.page, block.image.index))
                 if url:
@@ -877,7 +979,8 @@ def convert_pdf(pdf_path: Path, force: bool = False) -> str:
 
 
 def selected_pdfs(raw_paths: list[str], convert_all: bool) -> list[Path]:
-    paths = list((CONTENT_ROOT / "EN").glob("*.pdf")) if convert_all else [Path(raw) for raw in raw_paths]
+    archived = {CONTENT_ROOT / str(edition["pdf"]) for editions in ARCHIVED_PDF_EDITIONS.values() for edition in editions}
+    paths = [path for path in (CONTENT_ROOT / "EN").glob("*.pdf") if path not in archived] if convert_all else [Path(raw) for raw in raw_paths]
     return sorted({path.resolve() for path in paths})
 
 

@@ -10,7 +10,7 @@
     "PT",
     "RO"
   ],
-  "fileCount": 1953,
+  "fileCount": 1997,
   "books": [
     {
       "id": "A_Balance_of_Iron_and_Salt",
@@ -26,37 +26,44 @@
         {
           "language": "RO",
           "label": "Română",
-          "html": "htmls/RO/A_Balance_of_Iron_and_Salt_RO.html"
+          "html": "htmls/RO/A_Balance_of_Iron_and_Salt_RO.html",
+          "tenMinuteHtml": "10minutes/RO/A_Balance_of_Iron_and_Salt_RO.html"
         },
         {
           "language": "PL",
           "label": "Polski",
-          "html": "htmls/PL/A_Balance_of_Iron_and_Salt_PL.html"
+          "html": "htmls/PL/A_Balance_of_Iron_and_Salt_PL.html",
+          "tenMinuteHtml": "10minutes/PL/A_Balance_of_Iron_and_Salt_PL.html"
         },
         {
           "language": "IT",
           "label": "Italiano",
-          "html": "htmls/IT/A_Balance_of_Iron_and_Salt_IT.html"
+          "html": "htmls/IT/A_Balance_of_Iron_and_Salt_IT.html",
+          "tenMinuteHtml": "10minutes/IT/A_Balance_of_Iron_and_Salt_IT.html"
         },
         {
           "language": "ES",
           "label": "Español",
-          "html": "htmls/ES/A_Balance_of_Iron_and_Salt_ES.html"
+          "html": "htmls/ES/A_Balance_of_Iron_and_Salt_ES.html",
+          "tenMinuteHtml": "10minutes/ES/A_Balance_of_Iron_and_Salt_ES.html"
         },
         {
           "language": "PT",
           "label": "Português",
-          "html": "htmls/PT/A_Balance_of_Iron_and_Salt_PT.html"
+          "html": "htmls/PT/A_Balance_of_Iron_and_Salt_PT.html",
+          "tenMinuteHtml": "10minutes/PT/A_Balance_of_Iron_and_Salt_PT.html"
         },
         {
           "language": "DE",
           "label": "Deutsch",
-          "html": "htmls/DE/A_Balance_of_Iron_and_Salt_DE.html"
+          "html": "htmls/DE/A_Balance_of_Iron_and_Salt_DE.html",
+          "tenMinuteHtml": "10minutes/DE/A_Balance_of_Iron_and_Salt_DE.html"
         },
         {
           "language": "FR",
           "label": "Français",
-          "html": "htmls/FR/A_Balance_of_Iron_and_Salt_FR.html"
+          "html": "htmls/FR/A_Balance_of_Iron_and_Salt_FR.html",
+          "tenMinuteHtml": "10minutes/FR/A_Balance_of_Iron_and_Salt_FR.html"
         }
       ]
     },
@@ -70,6 +77,21 @@
           "pdf": "EN/Agentic_AI_2026.pdf",
           "html": "htmls/EN/Agentic_AI_2026.html",
           "tenMinuteHtml": "10minutes/Agentic_AI_2026.html"
+        },
+        {
+          "language": "RO",
+          "label": "Română",
+          "tenMinuteHtml": "10minutes/RO/Agentic_AI_2026_RO.html"
+        },
+        {
+          "language": "IT",
+          "label": "Italiano",
+          "tenMinuteHtml": "10minutes/IT/Agentic_AI_2026_IT.html"
+        },
+        {
+          "language": "PT",
+          "label": "Português",
+          "tenMinuteHtml": "10minutes/PT/Agentic_AI_2026_PT.html"
         }
       ]
     },
@@ -699,6 +721,21 @@
           "pdf": "EN/EXPLAINABLE_AI.pdf",
           "html": "htmls/EN/EXPLAINABLE_AI.html",
           "tenMinuteHtml": "10minutes/EXPLAINABLE_AI.html"
+        },
+        {
+          "language": "RO",
+          "label": "Română",
+          "tenMinuteHtml": "10minutes/RO/EXPLAINABLE_AI_RO.html"
+        },
+        {
+          "language": "IT",
+          "label": "Italiano",
+          "tenMinuteHtml": "10minutes/IT/EXPLAINABLE_AI_IT.html"
+        },
+        {
+          "language": "ES",
+          "label": "Español",
+          "tenMinuteHtml": "10minutes/ES/EXPLAINABLE_AI_ES.html"
         }
       ]
     },
@@ -730,6 +767,26 @@
           "pdf": "EN/FUTURE_RESEARCH_INFRASTRUCTURE.pdf",
           "html": "htmls/EN/FUTURE_RESEARCH_INFRASTRUCTURE.html",
           "tenMinuteHtml": "10minutes/FUTURE_RESEARCH_INFRASTRUCTURE.html"
+        },
+        {
+          "language": "IT",
+          "label": "Italiano",
+          "tenMinuteHtml": "10minutes/IT/FUTURE_RESEARCH_INFRASTRUCTURE_IT.html"
+        },
+        {
+          "language": "ES",
+          "label": "Español",
+          "tenMinuteHtml": "10minutes/ES/FUTURE_RESEARCH_INFRASTRUCTURE_ES.html"
+        }
+      ],
+      "pdfEditions": [
+        {
+          "label": "Latest edition",
+          "pdf": "EN/FUTURE_RESEARCH_INFRASTRUCTURE.pdf"
+        },
+        {
+          "label": "Previous edition (104 pages)",
+          "pdf": "EN/The_Future_of_Research_Infrastructure.pdf"
         }
       ]
     },
@@ -857,6 +914,41 @@
           "pdf": "EN/JUDGMENT_ENGINES.pdf",
           "html": "htmls/EN/JUDGMENT_ENGINES.html",
           "tenMinuteHtml": "10minutes/JUDGMENT_ENGINES.html"
+        },
+        {
+          "language": "RO",
+          "label": "Română",
+          "tenMinuteHtml": "10minutes/RO/JUDGMENT_ENGINES_RO.html"
+        },
+        {
+          "language": "PL",
+          "label": "Polski",
+          "tenMinuteHtml": "10minutes/PL/JUDGMENT_ENGINES_PL.html"
+        },
+        {
+          "language": "IT",
+          "label": "Italiano",
+          "tenMinuteHtml": "10minutes/IT/JUDGMENT_ENGINES_IT.html"
+        },
+        {
+          "language": "ES",
+          "label": "Español",
+          "tenMinuteHtml": "10minutes/ES/JUDGMENT_ENGINES_ES.html"
+        },
+        {
+          "language": "PT",
+          "label": "Português",
+          "tenMinuteHtml": "10minutes/PT/JUDGMENT_ENGINES_PT.html"
+        },
+        {
+          "language": "DE",
+          "label": "Deutsch",
+          "tenMinuteHtml": "10minutes/DE/JUDGMENT_ENGINES_DE.html"
+        },
+        {
+          "language": "FR",
+          "label": "Français",
+          "tenMinuteHtml": "10minutes/FR/JUDGMENT_ENGINES_FR.html"
         }
       ]
     },
@@ -1005,6 +1097,41 @@
           "pdf": "EN/MONEY_WAS_NEVER_ONE_THING.pdf",
           "html": "htmls/EN/MONEY_WAS_NEVER_ONE_THING.html",
           "tenMinuteHtml": "10minutes/MONEY_WAS_NEVER_ONE_THING.html"
+        },
+        {
+          "language": "RO",
+          "label": "Română",
+          "tenMinuteHtml": "10minutes/RO/MONEY_WAS_NEVER_ONE_THING_RO.html"
+        },
+        {
+          "language": "PL",
+          "label": "Polski",
+          "tenMinuteHtml": "10minutes/PL/MONEY_WAS_NEVER_ONE_THING_PL.html"
+        },
+        {
+          "language": "IT",
+          "label": "Italiano",
+          "tenMinuteHtml": "10minutes/IT/MONEY_WAS_NEVER_ONE_THING_IT.html"
+        },
+        {
+          "language": "ES",
+          "label": "Español",
+          "tenMinuteHtml": "10minutes/ES/MONEY_WAS_NEVER_ONE_THING_ES.html"
+        },
+        {
+          "language": "PT",
+          "label": "Português",
+          "tenMinuteHtml": "10minutes/PT/MONEY_WAS_NEVER_ONE_THING_PT.html"
+        },
+        {
+          "language": "DE",
+          "label": "Deutsch",
+          "tenMinuteHtml": "10minutes/DE/MONEY_WAS_NEVER_ONE_THING_DE.html"
+        },
+        {
+          "language": "FR",
+          "label": "Français",
+          "tenMinuteHtml": "10minutes/FR/MONEY_WAS_NEVER_ONE_THING_FR.html"
         }
       ]
     },
@@ -1622,19 +1749,6 @@
       ]
     },
     {
-      "id": "The_Future_of_Research_Infrastructure",
-      "slug": "the-future-of-research-infrastructure",
-      "editions": [
-        {
-          "language": "EN",
-          "label": "English",
-          "pdf": "EN/The_Future_of_Research_Infrastructure.pdf",
-          "html": "htmls/EN/The_Future_of_Research_Infrastructure.html",
-          "tenMinuteHtml": "10minutes/The_Future_of_Research_Infrastructure.html"
-        }
-      ]
-    },
-    {
       "id": "The_Geometry_of_Becoming",
       "slug": "the-geometry-of-becoming",
       "editions": [
@@ -2064,37 +2178,44 @@
         {
           "language": "RO",
           "label": "Română",
-          "html": "htmls/RO/The_Schizoid_and_the_Oracle_RO.html"
+          "html": "htmls/RO/The_Schizoid_and_the_Oracle_RO.html",
+          "tenMinuteHtml": "10minutes/RO/The_Schizoid_and_the_Oracle_RO.html"
         },
         {
           "language": "PL",
           "label": "Polski",
-          "html": "htmls/PL/The_Schizoid_and_the_Oracle_PL.html"
+          "html": "htmls/PL/The_Schizoid_and_the_Oracle_PL.html",
+          "tenMinuteHtml": "10minutes/PL/The_Schizoid_and_the_Oracle_PL.html"
         },
         {
           "language": "IT",
           "label": "Italiano",
-          "html": "htmls/IT/The_Schizoid_and_the_Oracle_IT.html"
+          "html": "htmls/IT/The_Schizoid_and_the_Oracle_IT.html",
+          "tenMinuteHtml": "10minutes/IT/The_Schizoid_and_the_Oracle_IT.html"
         },
         {
           "language": "ES",
           "label": "Español",
-          "html": "htmls/ES/The_Schizoid_and_the_Oracle_ES.html"
+          "html": "htmls/ES/The_Schizoid_and_the_Oracle_ES.html",
+          "tenMinuteHtml": "10minutes/ES/The_Schizoid_and_the_Oracle_ES.html"
         },
         {
           "language": "PT",
           "label": "Português",
-          "html": "htmls/PT/The_Schizoid_and_the_Oracle_PT.html"
+          "html": "htmls/PT/The_Schizoid_and_the_Oracle_PT.html",
+          "tenMinuteHtml": "10minutes/PT/The_Schizoid_and_the_Oracle_PT.html"
         },
         {
           "language": "DE",
           "label": "Deutsch",
-          "html": "htmls/DE/The_Schizoid_and_the_Oracle_DE.html"
+          "html": "htmls/DE/The_Schizoid_and_the_Oracle_DE.html",
+          "tenMinuteHtml": "10minutes/DE/The_Schizoid_and_the_Oracle_DE.html"
         },
         {
           "language": "FR",
           "label": "Français",
-          "html": "htmls/FR/The_Schizoid_and_the_Oracle_FR.html"
+          "html": "htmls/FR/The_Schizoid_and_the_Oracle_FR.html",
+          "tenMinuteHtml": "10minutes/FR/The_Schizoid_and_the_Oracle_FR.html"
         }
       ]
     },
@@ -2121,6 +2242,41 @@
           "pdf": "EN/THE_SEVENTH_SIGNATURE.pdf",
           "html": "htmls/EN/THE_SEVENTH_SIGNATURE.html",
           "tenMinuteHtml": "10minutes/THE_SEVENTH_SIGNATURE.html"
+        },
+        {
+          "language": "RO",
+          "label": "Română",
+          "tenMinuteHtml": "10minutes/RO/THE_SEVENTH_SIGNATURE_RO.html"
+        },
+        {
+          "language": "PL",
+          "label": "Polski",
+          "tenMinuteHtml": "10minutes/PL/THE_SEVENTH_SIGNATURE_PL.html"
+        },
+        {
+          "language": "IT",
+          "label": "Italiano",
+          "tenMinuteHtml": "10minutes/IT/THE_SEVENTH_SIGNATURE_IT.html"
+        },
+        {
+          "language": "ES",
+          "label": "Español",
+          "tenMinuteHtml": "10minutes/ES/THE_SEVENTH_SIGNATURE_ES.html"
+        },
+        {
+          "language": "PT",
+          "label": "Português",
+          "tenMinuteHtml": "10minutes/PT/THE_SEVENTH_SIGNATURE_PT.html"
+        },
+        {
+          "language": "DE",
+          "label": "Deutsch",
+          "tenMinuteHtml": "10minutes/DE/THE_SEVENTH_SIGNATURE_DE.html"
+        },
+        {
+          "language": "FR",
+          "label": "Français",
+          "tenMinuteHtml": "10minutes/FR/THE_SEVENTH_SIGNATURE_FR.html"
         }
       ]
     },
@@ -2297,6 +2453,11 @@
           "language": "RO",
           "label": "Română",
           "html": "htmls/RO/Diavolul_cu_o_mie_de_maini_RO.html"
+        },
+        {
+          "language": "IT",
+          "label": "Italiano",
+          "html": "htmls/IT/The_Thousand_Handed_Devil_IT.html"
         }
       ]
     },
@@ -2488,6 +2649,41 @@
           "pdf": "EN/WHAT_WE_STILL_HAVE_TO_SOLVE.pdf",
           "html": "htmls/EN/WHAT_WE_STILL_HAVE_TO_SOLVE.html",
           "tenMinuteHtml": "10minutes/WHAT_WE_STILL_HAVE_TO_SOLVE.html"
+        },
+        {
+          "language": "RO",
+          "label": "Română",
+          "tenMinuteHtml": "10minutes/RO/WHAT_WE_STILL_HAVE_TO_SOLVE_RO.html"
+        },
+        {
+          "language": "PL",
+          "label": "Polski",
+          "tenMinuteHtml": "10minutes/PL/WHAT_WE_STILL_HAVE_TO_SOLVE_PL.html"
+        },
+        {
+          "language": "IT",
+          "label": "Italiano",
+          "tenMinuteHtml": "10minutes/IT/WHAT_WE_STILL_HAVE_TO_SOLVE_IT.html"
+        },
+        {
+          "language": "ES",
+          "label": "Español",
+          "tenMinuteHtml": "10minutes/ES/WHAT_WE_STILL_HAVE_TO_SOLVE_ES.html"
+        },
+        {
+          "language": "PT",
+          "label": "Português",
+          "tenMinuteHtml": "10minutes/PT/WHAT_WE_STILL_HAVE_TO_SOLVE_PT.html"
+        },
+        {
+          "language": "DE",
+          "label": "Deutsch",
+          "tenMinuteHtml": "10minutes/DE/WHAT_WE_STILL_HAVE_TO_SOLVE_DE.html"
+        },
+        {
+          "language": "FR",
+          "label": "Français",
+          "tenMinuteHtml": "10minutes/FR/WHAT_WE_STILL_HAVE_TO_SOLVE_FR.html"
         }
       ]
     },
@@ -2501,6 +2697,16 @@
           "pdf": "EN/WHY_THE_WORLD_WONT_END.pdf",
           "html": "htmls/EN/WHY_THE_WORLD_WONT_END.html",
           "tenMinuteHtml": "10minutes/WHY_THE_WORLD_WONT_END.html"
+        },
+        {
+          "language": "IT",
+          "label": "Italiano",
+          "tenMinuteHtml": "10minutes/IT/WHY_THE_WORLD_WONT_END_IT.html"
+        },
+        {
+          "language": "ES",
+          "label": "Español",
+          "tenMinuteHtml": "10minutes/ES/WHY_THE_WORLD_WONT_END_ES.html"
         }
       ]
     }
@@ -2591,6 +2797,30 @@
       "kind": "file"
     },
     {
+      "path": "10minutes/DE/A_Balance_of_Iron_and_Salt_DE.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/DE/JUDGMENT_ENGINES_DE.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/DE/MONEY_WAS_NEVER_ONE_THING_DE.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/DE/THE_SEVENTH_SIGNATURE_DE.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/DE/The_Schizoid_and_the_Oracle_DE.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/DE/WHAT_WE_STILL_HAVE_TO_SOLVE_DE.html",
+      "kind": "file"
+    },
+    {
       "path": "10minutes/Decentralised_Brands.html",
       "kind": "file"
     },
@@ -2600,6 +2830,46 @@
     },
     {
       "path": "10minutes/EGREGOPATHY.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/ES/A_Balance_of_Iron_and_Salt_ES.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/ES/EXPLAINABLE_AI_ES.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/ES/EXPLAINABLE_ES.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/ES/FUTURE_RESEARCH_INFRASTRUCTURE_ES.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/ES/JUDGMENT_ENGINES_ES.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/ES/MONEY_WAS_NEVER_ONE_THING_ES.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/ES/THE_SEVENTH_SIGNATURE_ES.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/ES/The_Schizoid_and_the_Oracle_ES.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/ES/WHAT_WE_STILL_HAVE_TO_SOLVE_ES.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/ES/WHY_THE_WORLD_WONT_END_ES.html",
       "kind": "file"
     },
     {
@@ -2627,6 +2897,30 @@
       "kind": "file"
     },
     {
+      "path": "10minutes/FR/A_Balance_of_Iron_and_Salt_FR.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/FR/JUDGMENT_ENGINES_FR.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/FR/MONEY_WAS_NEVER_ONE_THING_FR.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/FR/THE_SEVENTH_SIGNATURE_FR.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/FR/The_Schizoid_and_the_Oracle_FR.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/FR/WHAT_WE_STILL_HAVE_TO_SOLVE_FR.html",
+      "kind": "file"
+    },
+    {
       "path": "10minutes/FUTURE_RESEARCH_INFRASTRUCTURE.html",
       "kind": "file"
     },
@@ -2640,6 +2934,50 @@
     },
     {
       "path": "10minutes/Holding_the_Dirty_Thing_by_the_Clean_Side.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/IT/A_Balance_of_Iron_and_Salt_IT.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/IT/Agentic_AI_2026_IT.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/IT/EXPLAINABLE_AI_IT.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/IT/EXPLAINABLE_IT.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/IT/FUTURE_RESEARCH_INFRASTRUCTURE_IT.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/IT/JUDGMENT_ENGINES_IT.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/IT/MONEY_WAS_NEVER_ONE_THING_IT.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/IT/THE_SEVENTH_SIGNATURE_IT.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/IT/The_Schizoid_and_the_Oracle_IT.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/IT/WHAT_WE_STILL_HAVE_TO_SOLVE_IT.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/IT/WHY_THE_WORLD_WONT_END_IT.html",
       "kind": "file"
     },
     {
@@ -2707,6 +3045,62 @@
       "kind": "file"
     },
     {
+      "path": "10minutes/PL/A_Balance_of_Iron_and_Salt_PL.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/PL/EXPLAINABLE_PL.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/PL/JUDGMENT_ENGINES_PL.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/PL/MONEY_WAS_NEVER_ONE_THING_PL.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/PL/THE_SEVENTH_SIGNATURE_PL.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/PL/The_Schizoid_and_the_Oracle_PL.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/PL/WHAT_WE_STILL_HAVE_TO_SOLVE_PL.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/PT/A_Balance_of_Iron_and_Salt_PT.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/PT/Agentic_AI_2026_PT.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/PT/JUDGMENT_ENGINES_PT.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/PT/MONEY_WAS_NEVER_ONE_THING_PT.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/PT/THE_SEVENTH_SIGNATURE_PT.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/PT/The_Schizoid_and_the_Oracle_PT.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/PT/WHAT_WE_STILL_HAVE_TO_SOLVE_PT.html",
+      "kind": "file"
+    },
+    {
       "path": "10minutes/Predator_in_the_Name_of_the_Dead.html",
       "kind": "file"
     },
@@ -2720,6 +3114,38 @@
     },
     {
       "path": "10minutes/RIGHTS_ARE_NOT_REAL.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/RO/A_Balance_of_Iron_and_Salt_RO.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/RO/Agentic_AI_2026_RO.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/RO/EXPLAINABLE_AI_RO.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/RO/JUDGMENT_ENGINES_RO.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/RO/MONEY_WAS_NEVER_ONE_THING_RO.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/RO/THE_SEVENTH_SIGNATURE_RO.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/RO/The_Schizoid_and_the_Oracle_RO.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/RO/WHAT_WE_STILL_HAVE_TO_SOLVE_RO.html",
       "kind": "file"
     },
     {
@@ -2807,10 +3233,6 @@
       "kind": "file"
     },
     {
-      "path": "10minutes/The_Future_of_Research_Infrastructure.html",
-      "kind": "file"
-    },
-    {
       "path": "10minutes/The_Geometry_of_Becoming.html",
       "kind": "file"
     },
@@ -2860,6 +3282,10 @@
     },
     {
       "path": "10minutes/The_Right_to_Help.html",
+      "kind": "file"
+    },
+    {
+      "path": "10minutes/The_Schizoid_and_the_Oracle.html",
       "kind": "file"
     },
     {
@@ -3726,10 +4152,6 @@
     },
     {
       "path": "covers/The_Frontier_Is_Correction.png",
-      "kind": "cover"
-    },
-    {
-      "path": "covers/The_Future_of_Research_Infrastructure.png",
       "kind": "cover"
     },
     {
@@ -6605,56 +7027,6 @@
       "language": "EN"
     },
     {
-      "path": "htmls/EN/The_Future_of_Research_Infrastructure.assets/page-0001-image-01.png",
-      "kind": "html-asset",
-      "language": "EN"
-    },
-    {
-      "path": "htmls/EN/The_Future_of_Research_Infrastructure.assets/page-0010-image-01.png",
-      "kind": "html-asset",
-      "language": "EN"
-    },
-    {
-      "path": "htmls/EN/The_Future_of_Research_Infrastructure.assets/page-0029-image-01.png",
-      "kind": "html-asset",
-      "language": "EN"
-    },
-    {
-      "path": "htmls/EN/The_Future_of_Research_Infrastructure.assets/page-0037-image-01.png",
-      "kind": "html-asset",
-      "language": "EN"
-    },
-    {
-      "path": "htmls/EN/The_Future_of_Research_Infrastructure.assets/page-0050-image-01.png",
-      "kind": "html-asset",
-      "language": "EN"
-    },
-    {
-      "path": "htmls/EN/The_Future_of_Research_Infrastructure.assets/page-0055-image-01.png",
-      "kind": "html-asset",
-      "language": "EN"
-    },
-    {
-      "path": "htmls/EN/The_Future_of_Research_Infrastructure.assets/page-0059-image-01.png",
-      "kind": "html-asset",
-      "language": "EN"
-    },
-    {
-      "path": "htmls/EN/The_Future_of_Research_Infrastructure.assets/page-0064-image-01.png",
-      "kind": "html-asset",
-      "language": "EN"
-    },
-    {
-      "path": "htmls/EN/The_Future_of_Research_Infrastructure.assets/page-0067-image-01.png",
-      "kind": "html-asset",
-      "language": "EN"
-    },
-    {
-      "path": "htmls/EN/The_Future_of_Research_Infrastructure.html",
-      "kind": "html",
-      "language": "EN"
-    },
-    {
       "path": "htmls/EN/The_Geometry_of_Becoming.assets/page-0001-image-01.png",
       "kind": "html-asset",
       "language": "EN"
@@ -9156,6 +9528,11 @@
     },
     {
       "path": "htmls/IT/The_Sovereignty_Archipelago_IT.html",
+      "kind": "html",
+      "language": "IT"
+    },
+    {
+      "path": "htmls/IT/The_Thousand_Handed_Devil_IT.html",
       "kind": "html",
       "language": "IT"
     },
@@ -11841,10 +12218,6 @@
     },
     {
       "path": "thumbnails/The_Frontier_Is_Correction.webp",
-      "kind": "thumbnail"
-    },
-    {
-      "path": "thumbnails/The_Future_of_Research_Infrastructure.webp",
       "kind": "thumbnail"
     },
     {

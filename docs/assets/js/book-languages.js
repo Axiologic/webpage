@@ -4,7 +4,7 @@
   const cover = document.querySelector('.edition-cover');
   if (!actions || !availability || !cover) return;
 
-  const indexUrl = new URL('../../content/index.json?v=20260828-2', window.location.href);
+  const indexUrl = new URL('../../content/index.json?v=20260901-2', window.location.href);
   const title = document.querySelector('.edition-hero h1, h1')?.textContent?.trim() || 'Axiologic Reader';
   const segments = window.location.pathname.split('/').filter(Boolean);
   const bookId = decodeURIComponent(new URL(cover.currentSrc || cover.src).pathname.split('/').pop()).replace(/\.[^.]+$/, '');
@@ -12,11 +12,16 @@
 
   const absoluteEdition = (edition) => ({
     ...edition,
-    html: new URL(edition.html, indexUrl).href,
+    ...(edition.html ? { html: new URL(edition.html, indexUrl).href } : {}),
     ...(edition.pdf ? { pdf: new URL(edition.pdf, indexUrl).href } : {}),
     ...(edition.tenMinuteHtml ? { tenMinuteHtml: new URL(edition.tenMinuteHtml, indexUrl).href } : {}),
     ...(edition.epub ? { epub: new URL(edition.epub, indexUrl).href } : {}),
     ...(edition.audio ? { audio: new URL(edition.audio, indexUrl).href } : {}),
+  });
+
+  const absolutePdfEdition = (edition) => ({
+    ...edition,
+    pdf: new URL(edition.pdf, indexUrl).href,
   });
 
   const readerUrl = (edition, mode = 'full') => {
@@ -48,15 +53,15 @@
     menu = document.createElement('div');
     menu.className = 'language-choice-menu';
     menu.setAttribute('role', 'menu');
-    menu.innerHTML = `<p>${mode === 'download' ? 'Download in' : 'Read in'}</p>`;
+    menu.innerHTML = `<p>${mode === 'download' ? 'Choose PDF edition' : 'Read in'}</p>`;
     editions.forEach((edition) => {
       const link = document.createElement('a');
-      link.href = mode === 'download' ? edition.pdf : readerUrl(edition);
+      link.href = mode === 'download' ? edition.pdf : readerUrl(edition, mode);
       link.textContent = edition.label;
       link.setAttribute('role', 'menuitem');
       if (mode === 'download') {
         link.download = '';
-        link.title = `Download ${edition.label} edition`;
+        link.title = `Download ${edition.label}`;
       } else {
         link.title = `Read ${edition.label} edition in the adaptable online reader`;
       }
@@ -73,8 +78,11 @@
 
   const render = (book) => {
     const editions = book.editions.map(absoluteEdition);
-    const defaultEdition = editions.find((edition) => edition.language === 'EN') || editions[0];
-    const downloadableEditions = editions.filter((edition) => edition.pdf);
+    const fullEditions = editions.filter((edition) => edition.html);
+    const defaultEdition = fullEditions.find((edition) => edition.language === 'EN') || fullEditions[0];
+    const downloadableEditions = (book.pdfEditions?.length
+      ? book.pdfEditions.map(absolutePdfEdition)
+      : editions.filter((edition) => edition.pdf));
     const defaultDownload = downloadableEditions.find((edition) => edition.language === 'EN') || downloadableEditions[0];
     actions.innerHTML = '';
 
@@ -93,7 +101,8 @@
       download.title = 'Download ' + defaultDownload.label + ' edition';
     }
 
-    const tenMinuteEdition = editions.find((edition) => edition.tenMinuteHtml);
+    const tenMinuteEditions = editions.filter((edition) => edition.tenMinuteHtml);
+    const tenMinuteEdition = tenMinuteEditions.find((edition) => edition.language === 'EN') || tenMinuteEditions[0];
     const tenMinute = tenMinuteEdition && document.createElement('a');
     if (tenMinute) {
       tenMinute.className = 'btn ghost';
@@ -102,12 +111,21 @@
       tenMinute.title = `Read the short ${tenMinuteEdition.label} edition in the adaptable online reader`;
     }
 
-    if (editions.length > 1) {
+    if (fullEditions.length > 1) {
       read.setAttribute('aria-haspopup', 'menu');
       read.setAttribute('aria-expanded', 'false');
       read.addEventListener('click', (event) => {
         event.preventDefault();
-        openMenu(read, 'read', editions);
+        openMenu(read, 'read', fullEditions);
+      });
+    }
+
+    if (tenMinuteEditions.length > 1 && tenMinute) {
+      tenMinute.setAttribute('aria-haspopup', 'menu');
+      tenMinute.setAttribute('aria-expanded', 'false');
+      tenMinute.addEventListener('click', (event) => {
+        event.preventDefault();
+        openMenu(tenMinute, 'ten-minute', tenMinuteEditions);
       });
     }
 
@@ -132,7 +150,7 @@
       return;
     }
     const script = document.createElement('script');
-    script.src = new URL('../../content/index.js?v=20260828-1', window.location.href).href;
+    script.src = new URL('../../content/index.js?v=20260901-2', window.location.href).href;
     script.onload = () => globalThis.__AXIOLOGIC_CONTENT_INDEX__
       ? resolve(globalThis.__AXIOLOGIC_CONTENT_INDEX__)
       : reject(new Error('local content manifest did not define an index'));

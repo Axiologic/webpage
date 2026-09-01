@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="The original opening chapter of Judgment Engines.">
+  <meta name="reading-time" content="4 minutes">
+  <title>Motoare de judecată · capitolul de deschidere original</title>
+  <link rel="stylesheet" href="../../../reader/standalone.css?v=20260828-1">
+  <style>
+    .ten-minute-header { margin-bottom: 2.4rem; padding-bottom: 1.5rem; border-bottom: 1px solid color-mix(in srgb, currentColor 22%, transparent); }
+    .ten-minute-header p { text-indent: 0; text-align: left; }
+    .ten-minute-kicker { color: var(--standalone-link); font: 700 .78em/1.2 system-ui, sans-serif; letter-spacing: .12em; text-transform: uppercase; }
+    .ten-minute-links { display: flex; flex-wrap: wrap; gap: .8rem 1.1rem; margin-top: 1.2rem; font-family: system-ui, sans-serif; font-size: .82em; }
+  </style>
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="e252999d-4479-42d7-9526-5f778846d4f6"></script>
+</head>
+<body>
+  <header class="ten-minute-header">
+    <p class="ten-minute-kicker">Capitolul de deschidere original</p>
+    <h1>Motoare de judecată</h1>
+    <p>Text original al autorului · Aproximativ 4 minute · 669 de cuvinte</p>
+    <nav class="ten-minute-links" aria-label="Edition links"><a href="../../htmls/RO/JUDGMENT_ENGINES_RO.html">Citește ediția HTML completă</a></nav>
+  </header>
+  <main>
+    <h2 id="page_4">Prefață — Trecerea discretă de la generare la judecată</h2>
+<p>Primul val public al modelelor lingvistice mari a fost ușor de descris, fiindcă rezultatele sale erau vizibile. Un model răspundea la o întrebare, scria un paragraf, rezuma un articol, genera cod sau redacta un contract. Următorul val este mai discret. Tot mai des, un model lingvistic stă în spatele unui alt sistem și decide dacă un răspuns este suficient de bun, dacă un document respectă o politică, dacă un patch de cod pare corect, dacă o evaluare științifică este utilă, dacă un candidat pare potrivit sau dacă un alt model ar trebui să primească o recompensă. Textul produs de judecător poate să nu fie arătat niciodată utilizatorului. Totuși, consecința sa poate fi mai mare decât consecința textului pe care îl judecă. Această carte folosește termenul judecător într-un sens inginereasc intenționat larg. Un judecător poate fi un evaluator prin scor, comparator, recenzent, critic, corector, verificator, portar, model de recompensă, meta-recenzent, verificator de politici sau asistent de adjudecare. Elementul comun nu este metafora tribunalului. Este o funcție de control: sistemul transformă un artefact sau o situație într-o evaluare care schimbă ce urmează. Un scor poate reordona un clasament. O etichetă trece/eșuează poate bloca o implementare. Un semnal de preferință poate modifica un proces de antrenare. O recenzie poate influența publicarea sau o decizie de angajare. Un verdict de politică poate suprima o acțiune. Odată ce un model primește acest rol, erorile sale devin parte din guvernanța sistemului din jurul lui. Această diferență schimbă problema inginerească. Un generator poate fi util chiar dacă greșește uneori, dacă o persoană competentă îi inspectează rezultatul. Un judecător stabilește adesea care rezultate primesc inspecție. Un generator poate fi corectat după faptă; un judecător poate modela sistematic datele folosite pentru antrenarea viitorilor generatori.</p>
+<p>Dacă evaluatorul are o preferință stabilă, dar greșită, pentru verbositate, politețe, limbaj asemănător propriului stil sau o anumită încadrare culturală, eșecul se poate propaga invizibil prin benchmarkuri, bucle de optimizare și decizii instituționale. De aceea, expresia LLM-ca-judecător nu trebuie citită ca afirmația că un model a devenit o autoritate autonomă. Ea denumește un tipar de sistem care trebuie el însuși evaluat. Literatura a crescut rapid de la evaluarea benchmarkurilor către judecata automată generală. MT-Bench și Chatbot Arena au făcut practică la scară mare comparația bazată pe modele [1]. G-Eval a arătat că criteriile explicite în limbaj natural se pot corela mai bine cu evaluarea umană decât metricile lexicale mai vechi pentru generarea deschisă [2]. Prometheus a explorat modele evaluatoare specializate și granulare [3]. Lucrări ulterioare au documentat prejudecăți de poziție, lungime, auto-preferință, interval de scor, limbă și altele [4,9,15,16]. JudgeBench și lucrările mai noi de meta-evaluare au mutat atenția de la modelul testat către evaluatorul însuși [47,48]. Până în 2026, frontiera cercetării merge mai departe: de la un prompt de corectare către rubrici explicite, grafuri de evaluare tipizate, infrastructuri în mai multe etape, dovezi externe, execuția de instrumente și validare operațională [10-13].</p>
+<p id="page_5">Traiectoria industrială este asemănătoare. Produsele de evaluare combină tot mai mult evaluatori bazați pe modele lingvistice cu verificări bazate pe cod, seturi de date, urme de execuție, etichete umane, teste de regresie, porți CI și monitorizare în producție. Cea mai puternică lecție din cercetare și practică este, prin urmare, simplă. Judecătorul nu este LLM-ul. Judecătorul este întregul sistem de evaluare: norma, dovezile, procedura, modelul, regula de agregare, politica de escaladare și pista de audit. Capitolele următoare urmează această ordine. Începem cu ce înseamnă judecata și ce fel de lucruri sunt judecate acum. Apoi examinăm formele primitive ale evaluării bazate pe modele, infrastructurile care le fac operaționale și dovezile despre fiabilitate și părtinire. Mijlocul cărții studiază domenii în care judecata automată este deja importantă: factualitate, cod, agenți, educație, angajare, știință, medicină, drept, siguranță și muncă creativă. Capitolele finale întreabă când un model lingvistic este evaluatorul potrivit, când ar trebui să preia un component determinist sau simbolic și cum ar putea fi construită o arhitectură de judecată neuro-simbolică mai fiabilă. Pe tot parcursul, scopul nu este să declarăm judecătorii LLM demni sau nedemni de încredere în abstract. Întrebarea utilă este mai restrânsă și mai orientată spre inginerie: în ce condiții, pentru ce tip de decizie și în ce infrastructură se poate conta pe o judecată automată?</p>
+  </main>
+  <script defer src="../../../reader/standalone.js?v=20260827-1"></script>
+</body>
+</html>

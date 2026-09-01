@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="The original opening chapter of Judgment Engines.">
+  <meta name="reading-time" content="4 minutes">
+  <title>Judgment Engines · capítulo inicial original</title>
+  <link rel="stylesheet" href="../../../reader/standalone.css?v=20260828-1">
+  <style>
+    .ten-minute-header { margin-bottom: 2.4rem; padding-bottom: 1.5rem; border-bottom: 1px solid color-mix(in srgb, currentColor 22%, transparent); }
+    .ten-minute-header p { text-indent: 0; text-align: left; }
+    .ten-minute-kicker { color: var(--standalone-link); font: 700 .78em/1.2 system-ui, sans-serif; letter-spacing: .12em; text-transform: uppercase; }
+    .ten-minute-links { display: flex; flex-wrap: wrap; gap: .8rem 1.1rem; margin-top: 1.2rem; font-family: system-ui, sans-serif; font-size: .82em; }
+  </style>
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="e252999d-4479-42d7-9526-5f778846d4f6"></script>
+</head>
+<body>
+  <header class="ten-minute-header">
+    <p class="ten-minute-kicker">Capítulo inicial original</p>
+    <h1>Judgment Engines</h1>
+    <p>Texto original del autor · Unos 4 minutos · 669 palabras</p>
+    <nav class="ten-minute-links" aria-label="Edition links"><a href="../../htmls/ES/JUDGMENT_ENGINES_ES.html">Leer la edición HTML completa</a></nav>
+  </header>
+  <main>
+    <h2 id="page_4">Prefacio — El silencioso paso de la generación al juicio</h2>
+<p>La primera ola pública de grandes modelos de lenguaje fue fácil de describir porque sus resultados eran visibles. Un modelo respondía una pregunta, escribía un párrafo, resumía un artículo, generaba código o redactaba un contrato. La siguiente ola es más silenciosa. Cada vez más, un modelo de lenguaje se sitúa detrás de otro sistema y decide si una respuesta es suficientemente buena, si un documento sigue una política, si un parche de código parece correcto, si una revisión científica es útil, si un candidato parece adecuado o si otro modelo debe recibir una recompensa. Es posible que el texto que produce el juez nunca se muestre al usuario. Sin embargo, su consecuencia puede ser mayor que la consecuencia del texto que juzga. Este libro usa juez en un sentido de ingeniería deliberadamente amplio. Un juez puede ser un anotador, comparador, revisor, crítico, calificador, verificador, guardián, modelo de recompensa, metarrevisor, comprobador de políticas o asistente de adjudicación. El elemento común no es una metáfora de tribunal. Es una función de control: el sistema asigna a un artefacto o situación una evaluación que cambia lo que sucede después. Una puntuación puede reordenar una clasificación. Una etiqueta de aprobado/suspenso puede bloquear un despliegue. Una señal de preferencia puede alterar una ejecución de entrenamiento. Una revisión puede influir en una decisión de publicación o contratación. Un veredicto de política puede suprimir una acción. Cuando un modelo se coloca en este papel, sus errores pasan a formar parte de la gobernanza del sistema que lo rodea. Esa diferencia cambia el problema de ingeniería. Un generador puede ser útil aunque se equivoque ocasionalmente si una persona competente inspecciona su salida. Un juez suele determinar qué salidas reciben inspección. Un generador puede corregirse después; un juez puede dar forma sistemáticamente a los datos usados para entrenar futuros generadores.</p>
+<p>Si el evaluador tiene una preferencia estable pero errónea por la verbosidad, la cortesía, el lenguaje autosimilar o un encuadre cultural determinado, el fallo puede propagarse de manera invisible por benchmarks, bucles de optimización y decisiones institucionales. Por eso la expresión LLM-as-a-Judge no debe leerse como la afirmación de que un modelo se haya convertido en una autoridad autónoma. Nombra un patrón de sistemas que debe evaluarse por sí mismo. La bibliografía ha crecido rápidamente desde la evaluación de benchmarks hacia el juicio automático general. MT-Bench y Chatbot Arena hicieron práctica a escala la comparación basada en modelos [1]. G-Eval mostró que criterios explícitos en lenguaje natural podían correlacionarse mejor con la evaluación humana que las antiguas métricas léxicas en la generación abierta [2]. Prometheus exploró modelos evaluadores dedicados y de grano fino [3]. Trabajos posteriores documentaron sesgos de posición, longitud, autopreferencia, rango de puntuación, idioma y otros [4,9,15,16]. JudgeBench y trabajos de metaevaluación más recientes desplazaron la atención del modelo sometido a prueba al propio evaluador [47,48]. Para 2026, la frontera de investigación avanza más: desde una indicación para un calificador hacia rúbricas explícitas, grafos de evaluación tipados, arneses multietapa, evidencia externa, ejecución de herramientas y validación operativa [10-13].</p>
+<p id="page_5">La trayectoria industrial es parecida. Los productos de evaluación mezclan cada vez más evaluadores de modelos de lenguaje con comprobaciones basadas en código, conjuntos de datos, trazas, etiquetas humanas, pruebas de regresión, puertas de CI y supervisión de producción. La lección más fuerte de la investigación y la práctica es, por tanto, sencilla. El juez no es el LLM. El juez es el sistema de evaluación completo: la norma, la evidencia, el procedimiento, el modelo, la regla de agregación, la política de escalamiento y el rastro de auditoría. Los capítulos siguientes avanzan en ese orden. Comenzamos con lo que significa el juicio y qué tipos de cosas se juzgan ahora. Después examinamos las formas primitivas de evaluación basada en modelos, los arneses que las hacen operativas y la evidencia sobre fiabilidad y sesgo. La parte central del libro estudia dominios donde el juicio automático ya es importante: factualidad, código, agentes, educación, contratación, ciencia, medicina, derecho, seguridad y trabajo creativo. Los capítulos finales preguntan cuándo un modelo de lenguaje es el evaluador adecuado, cuándo debe asumir el control un componente determinista o simbólico y cómo podría construirse una arquitectura de juicio neurosimbólica más fiable. A lo largo de todo el libro, el objetivo no es declarar a los jueces LLM fiables o no fiables en abstracto. La pregunta útil es más estrecha y orientada a la ingeniería: ¿en qué condiciones, para qué tipo de decisión y dentro de qué arnés se puede confiar en un juicio automático?</p>
+  </main>
+  <script defer src="../../../reader/standalone.js?v=20260827-1"></script>
+</body>
+</html>

@@ -34,6 +34,24 @@ EDITION_ALIASES = {
     ("The_Right_to_Help", "RO"): "Dreptul_de_a_ajuta_RO",
     ("The_Thousand_Handed_Devil", "RO"): "Diavolul_cu_o_mie_de_maini_RO",
 }
+# A revised book may retain an earlier English PDF for archival download without
+# retaining that edition in either reader mode.  The current reader text stays
+# in ``editions``; these records are solely choices presented by Download PDF.
+ARCHIVED_PDF_EDITIONS = {
+    "FUTURE_RESEARCH_INFRASTRUCTURE": [
+        {
+            "label": "Previous edition (104 pages)",
+            "pdf": "EN/The_Future_of_Research_Infrastructure.pdf",
+        },
+    ],
+}
+# This legacy title was published as a Romanian text edition rather than a PDF.
+# Its English and other reader editions are text translations, so it is not part
+# of the English PDF/HTML-pair invariant.
+TEXT_ONLY_BOOK_SOURCES = {
+    "The_Schizoid_and_the_Oracle": "RO",
+}
+WORK_DIRECTORY_NAMES = {".translation-work"}
 
 
 def describe(path: Path, root: Path = CONTENT_ROOT) -> dict[str, str]:
@@ -100,6 +118,7 @@ def discover_books(root: Path = CONTENT_ROOT, docs_root: Path | None = None) -> 
         editions = []
         english_pdf = find_edition_pdf(root, "EN", basename, book_id)
         english_html = find_edition_html(root, "EN", basename, book_id)
+        text_only_source = TEXT_ONLY_BOOK_SOURCES.get(book_id)
         if (english_pdf is None) != (english_html is None):
             missing = "PDF" if english_pdf is None else "HTML edition"
             raise ValueError(f"missing English {missing} for {page.relative_to(REPO_ROOT)} ({book_id})")
@@ -114,31 +133,58 @@ def discover_books(root: Path = CONTENT_ROOT, docs_root: Path | None = None) -> 
             if ten_minute.is_file():
                 english["tenMinuteHtml"] = ten_minute.relative_to(root).as_posix()
             editions.append(english)
+        elif text_only_source and english_pdf is None:
+            text_edition = root / "htmls" / "EN" / f"{basename}.html"
+            if text_edition.is_file():
+                english = {
+                    "language": "EN",
+                    "label": LANGUAGES["EN"],
+                    "html": text_edition.relative_to(root).as_posix(),
+                }
+                ten_minute = root / "10minutes" / text_edition.name
+                if ten_minute.is_file():
+                    english["tenMinuteHtml"] = ten_minute.relative_to(root).as_posix()
+                editions.append(english)
 
         # Translated editions are generated from the English reader texts.
         # They deliberately carry no PDF download because English is the sole
         # canonical PDF source.
         for language, label in list(LANGUAGES.items())[1:]:
             html = find_edition_html(root, language, basename, book_id)
-            if html is None:
+            translated_short = find_edition_file(root / "10minutes", language, basename, book_id, ".html")
+            if html is None and translated_short is None:
                 continue
             edition = {
                 "language": language,
                 "label": label,
-                "html": html.relative_to(root).as_posix(),
             }
-            translated_short = root / "10minutes" / language / html.name
-            if translated_short.is_file():
+            if html is not None:
+                edition["html"] = html.relative_to(root).as_posix()
+            if translated_short is not None:
                 edition["tenMinuteHtml"] = translated_short.relative_to(root).as_posix()
-            for extension in ("epub", "m4a", "mp3", "ogg"):
-                alternative = html.with_suffix(f".{extension}")
-                if alternative.is_file():
-                    edition[extension if extension == "epub" else "audio"] = alternative.relative_to(root).as_posix()
-                    break
+            if html is not None:
+                for extension in ("epub", "m4a", "mp3", "ogg"):
+                    alternative = html.with_suffix(f".{extension}")
+                    if alternative.is_file():
+                        edition[extension if extension == "epub" else "audio"] = alternative.relative_to(root).as_posix()
+                        break
             editions.append(edition)
         if not editions:
             raise ValueError(f"no content editions found for {page.relative_to(REPO_ROOT)} ({book_id})")
-        books.append({"id": book_id, "slug": page.parent.name, "editions": editions})
+        book = {"id": book_id, "slug": page.parent.name, "editions": editions}
+        archived = ARCHIVED_PDF_EDITIONS.get(book_id, [])
+        if archived:
+            current = next((edition for edition in editions if edition["language"] == "EN"), None)
+            if current is None or "pdf" not in current:
+                raise ValueError(f"archived PDF editions require a current English PDF for {book_id}")
+            pdf_editions = [{"label": "Latest edition", "pdf": current["pdf"]}]
+            for archived_edition in archived:
+                pdf_path = root / str(archived_edition["pdf"])
+                if not pdf_path.is_file():
+                    raise ValueError(f"missing archived PDF {pdf_path.relative_to(REPO_ROOT)} for {book_id}")
+                pdf_editions.append(dict(archived_edition))
+            book["pdfEditions"] = pdf_editions
+        books.append(book)
     return books
 
 
@@ -152,6 +198,7 @@ def inventory(root: Path = CONTENT_ROOT) -> dict[str, object]:
             and path.name != "index.js"
             and path.name != ".gitkeep"
             and path.relative_to(root).parts[0] != "tools"
+            and not any(part in WORK_DIRECTORY_NAMES for part in path.relative_to(root).parts)
         ),
         key=lambda path: path.relative_to(root).as_posix(),
     )

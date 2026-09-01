@@ -2,6 +2,7 @@ import importlib.util
 from pathlib import Path
 import re
 import unittest
+from collections import Counter
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
@@ -31,7 +32,13 @@ class ContentLayoutTests(unittest.TestCase):
             path.relative_to(CONTENT_ROOT / "htmls").with_suffix("")
             for path in (CONTENT_ROOT / "htmls" / "EN").glob("*.html")
         }
-        self.assertEqual(pdfs, htmls)
+        archived = {
+            Path(edition["pdf"]).with_suffix("")
+            for editions in content_index.ARCHIVED_PDF_EDITIONS.values()
+            for edition in editions
+        }
+        self.assertEqual(pdfs - archived, htmls)
+        self.assertTrue(archived <= pdfs)
         translated_pdfs = list(CONTENT_ROOT.glob("[A-Z][A-Z]/*.pdf"))
         self.assertEqual([], [path for path in translated_pdfs if path.parent.name != "EN"])
 
@@ -43,6 +50,7 @@ class ContentLayoutTests(unittest.TestCase):
         self.assertTrue(index_script_path.is_file())
         self.assertEqual(index_script_path.read_text(encoding="utf-8"), content_index.serialize_script())
         self.assertFalse(any(record["path"].startswith("tools/") for record in content_index.inventory()["files"]))
+        self.assertFalse(any("/.translation-work/" in record["path"] for record in content_index.inventory()["files"]))
 
     def test_every_book_page_is_backed_by_manifest_editions(self):
         books = content_index.discover_books()
@@ -52,17 +60,23 @@ class ContentLayoutTests(unittest.TestCase):
         for book in books:
             english = next((edition for edition in book["editions"] if edition["language"] == "EN"), None)
             if english:
-                self.assertIn("pdf", english, book["id"])
+                if book["id"] in content_index.TEXT_ONLY_BOOK_SOURCES:
+                    self.assertNotIn("pdf", english, book["id"])
+                else:
+                    self.assertIn("pdf", english, book["id"])
             for edition in book["editions"]:
                 if edition["language"] != "EN":
                     self.assertNotIn("pdf", edition, (book["id"], edition["language"]))
+                    self.assertTrue("html" in edition or "tenMinuteHtml" in edition, (book["id"], edition["language"]))
 
     def test_book_listing_has_balanced_categories_in_editorial_order(self):
         listing = (REPO_ROOT / "docs" / "books.html").read_text(encoding="utf-8")
         labels = [
             "Business &amp; Startups",
+            "Economy &amp; Civilization",
             "Executable Science &amp; Research",
             "AI Systems &amp; Infrastructure",
+            "AI Methods &amp; Assurance",
             "Cosmic &amp; Metaphysical SF",
             "Political &amp; Social SF",
             "Human &amp; Philosophical SF",
@@ -74,16 +88,14 @@ class ContentLayoutTests(unittest.TestCase):
         self.assertEqual(positions, sorted(positions))
 
         catalog = (REPO_ROOT / "docs" / "assets" / "js" / "books.js").read_text(encoding="utf-8")
-        expected_counts = {
-            "Business & Startups": 10,
-            "Executable Science & Research": 12,
-            "AI Systems & Infrastructure": 13,
-            "Outfinitist Foundations": 12,
-            "Power, Institutions & Society": 19,
-            "Experiments and Speculations": 10,
-        }
-        for category, expected in expected_counts.items():
-            self.assertEqual(catalog.count(f"category: '{category}'"), expected, category)
+        categories = Counter(re.findall(r"category: '([^']+)'", catalog))
+        self.assertEqual(set(categories), {
+            "Business & Startups", "Economy & Civilization", "Executable Science & Research",
+            "AI Systems & Infrastructure", "AI Methods & Assurance", "Cosmic & Metaphysical SF",
+            "Political & Social SF", "Human & Philosophical SF", "Outfinitist Foundations",
+            "Power, Institutions & Society", "Experiments and Speculations",
+        })
+        self.assertTrue(all(count <= 10 for count in categories.values()), categories)
         self.assertNotIn("category: 'Experiments'", catalog)
         self.assertRegex(
             catalog,
@@ -117,7 +129,7 @@ class ContentLayoutTests(unittest.TestCase):
     def test_english_editions_have_editorial_short_reads(self):
         for book in content_index.discover_books():
             english = next((edition for edition in book["editions"] if edition["language"] == "EN"), None)
-            if not english:
+            if not english or "pdf" not in english:
                 continue
             self.assertIn("tenMinuteHtml", english, book["id"])
             guide = CONTENT_ROOT / english["tenMinuteHtml"]

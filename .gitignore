@@ -11,3 +11,5 @@
 .agents/skills/oskill-build/
 .agents/skills/review-specs/
 # <<< ploinky default-skills <<<
+docs/content/tools/.translation-cache/
+docs/content/.translation-work/

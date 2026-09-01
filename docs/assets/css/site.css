@@ -1026,7 +1026,7 @@ p {
 /* The Outfinitist Philosophy additions use the same landscape export. */
 .book-cover img:is([data-cover="Metacult"], [data-cover="THE_LICENCE_AND_THE_SHARED_NAME"], [data-cover="The_Captured_Internet"], [data-cover="The_Founder_Lottery"], [data-cover="Decentralised_Brands"], [data-cover="Investing_in_an_AI_Dominated_Economy"], [data-cover="Life_Without_an_Audience"], [data-cover="Ecology_of_Predation"], [data-cover="Eden_Before_Mars"], [data-cover="Limits_of_Machine_Intelligence"], [data-cover="Outfinite_Mathematics_Research_Programme"], [data-cover="The_Geometry_of_Becoming"], [data-cover="The_Houses_of_Europe"], [data-cover="The_Science_and_Wisdom_of_Limits"]) { width: 200%; max-width: none; height: 100%; inset: 0 auto auto 0; object-fit: fill; }
 /* These landscape exports place the complete cover at their left edge. */
-.book-cover img:is([data-cover="Anti-Trivialization_Machines_of_the_Future"], [data-cover="The_Future_of_Research_Infrastructure"]) { width: auto; max-width: none; height: 127%; inset: 0 auto auto 0; object-fit: initial; }
+.book-cover img[data-cover="Anti-Trivialization_Machines_of_the_Future"] { width: auto; max-width: none; height: 127%; inset: 0 auto auto 0; object-fit: initial; }
 .book-cover img[data-cover^="The_Gospel_of_the_Basilisk"] { width: auto; max-width: none; height: 106%; inset: -3% auto auto -3%; object-fit: initial; }
 /* This export contains the cover only in its left 44%; crop that panel proportionally. */
 .book-cover img[data-cover="Limits_of_Machine_Intelligence"] { width: 225%; max-width: none; height: auto; inset: 0 auto auto 0; object-fit: initial; }
