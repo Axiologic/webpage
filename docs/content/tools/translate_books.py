@@ -145,6 +145,8 @@ def reader_targets(languages: set[str] | None = None) -> list[tuple[dict[str, ob
     """Return full and short source/target records for all public books."""
     records = []
     for book in content_index.discover_books():
+        if book.get("scriptahubUrl"):
+            continue
         english = next((edition for edition in book["editions"] if edition["language"] == "EN"), None)
         if english:
             source_language = "EN"

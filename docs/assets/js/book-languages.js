@@ -4,7 +4,7 @@
   const cover = document.querySelector('.edition-cover');
   if (!actions || !availability || !cover) return;
 
-  const indexUrl = new URL('../../content/index.json?v=20260901-2', window.location.href);
+  const indexUrl = new URL('../../content/index.json?v=20260909-1', window.location.href);
   const title = document.querySelector('.edition-hero h1, h1')?.textContent?.trim() || 'Axiologic Reader';
   const segments = window.location.pathname.split('/').filter(Boolean);
   const bookId = decodeURIComponent(new URL(cover.currentSrc || cover.src).pathname.split('/').pop()).replace(/\.[^.]+$/, '');
@@ -77,6 +77,18 @@
   };
 
   const render = (book) => {
+    if (book.scriptahubUrl) {
+      actions.innerHTML = '';
+      const scriptahub = document.createElement('a');
+      scriptahub.className = 'btn primary';
+      scriptahub.href = book.scriptahubUrl;
+      scriptahub.innerHTML = 'Read on ScriptaHub <span>→</span>';
+      scriptahub.title = `Read ${title} on ScriptaHub`;
+      actions.append(scriptahub);
+      availability.textContent = 'Full book and available languages on ScriptaHub';
+      return;
+    }
+
     const editions = book.editions.map(absoluteEdition);
     const fullEditions = editions.filter((edition) => edition.html);
     const defaultEdition = fullEditions.find((edition) => edition.language === 'EN') || fullEditions[0];
@@ -150,7 +162,7 @@
       return;
     }
     const script = document.createElement('script');
-    script.src = new URL('../../content/index.js?v=20260901-2', window.location.href).href;
+    script.src = new URL('../../content/index.js?v=20260909-1', window.location.href).href;
     script.onload = () => globalThis.__AXIOLOGIC_CONTENT_INDEX__
       ? resolve(globalThis.__AXIOLOGIC_CONTENT_INDEX__)
       : reject(new Error('local content manifest did not define an index'));
@@ -170,7 +182,7 @@
     .then((index) => {
       const book = index.books?.find((candidate) => candidate.id === bookId)
         || index.books?.find((candidate) => candidate.slug === slug);
-      if (!book?.editions?.length) throw new Error(`no indexed editions for ${bookId}`);
+      if (!book || (!book.scriptahubUrl && !book.editions?.length)) throw new Error(`no indexed editions for ${bookId}`);
       render(book);
     })
     .catch((error) => {

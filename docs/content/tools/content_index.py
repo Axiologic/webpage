@@ -15,6 +15,7 @@ REPO_ROOT = Path(__file__).resolve().parents[3]
 CONTENT_ROOT = REPO_ROOT / "docs" / "content"
 INDEX_PATH = CONTENT_ROOT / "index.json"
 INDEX_SCRIPT_PATH = CONTENT_ROOT / "index.js"
+SCRIPTAHUB_BOOKS_PATH = Path(__file__).with_name("scriptahub_books.json")
 LANGUAGE_RE = re.compile(r"^[A-Z]{2}$")
 LANGUAGES = {
     "EN": "English",
@@ -37,14 +38,7 @@ EDITION_ALIASES = {
 # A revised book may retain an earlier English PDF for archival download without
 # retaining that edition in either reader mode.  The current reader text stays
 # in ``editions``; these records are solely choices presented by Download PDF.
-ARCHIVED_PDF_EDITIONS = {
-    "FUTURE_RESEARCH_INFRASTRUCTURE": [
-        {
-            "label": "Previous edition (104 pages)",
-            "pdf": "EN/The_Future_of_Research_Infrastructure.pdf",
-        },
-    ],
-}
+ARCHIVED_PDF_EDITIONS = {}
 # This legacy title was published as a Romanian text edition rather than a PDF.
 # Its English and other reader editions are text translations, so it is not part
 # of the English PDF/HTML-pair invariant.
@@ -52,6 +46,20 @@ TEXT_ONLY_BOOK_SOURCES = {
     "The_Schizoid_and_the_Oracle": "RO",
 }
 WORK_DIRECTORY_NAMES = {".translation-work"}
+
+
+def load_scriptahub_book_urls(path: Path = SCRIPTAHUB_BOOKS_PATH) -> dict[str, str]:
+    """Load the checked-in subset of ScriptaHub's public collection manifest."""
+    source = json.loads(path.read_text(encoding="utf-8"))
+    if source.get("source") != "https://scriptahub.com/collection.js":
+        raise ValueError(f"unexpected ScriptaHub source in {path.relative_to(REPO_ROOT)}")
+    books = source.get("books")
+    if not isinstance(books, dict):
+        raise ValueError(f"invalid ScriptaHub book map in {path.relative_to(REPO_ROOT)}")
+    for book_id, url in books.items():
+        if not isinstance(book_id, str) or not isinstance(url, str) or not url.startswith("https://scriptahub.com/books/"):
+            raise ValueError(f"invalid ScriptaHub book entry in {path.relative_to(REPO_ROOT)}")
+    return books
 
 
 def describe(path: Path, root: Path = CONTENT_ROOT) -> dict[str, str]:
@@ -107,6 +115,7 @@ def find_edition_html(root: Path, language: str, basename: str, book_id: str) ->
 def discover_books(root: Path = CONTENT_ROOT, docs_root: Path | None = None) -> list[dict[str, object]]:
     docs_root = docs_root or root.parent
     books = []
+    scriptahub_urls = load_scriptahub_book_urls()
     cover_re = re.compile(r'class="[^"]*\bedition-cover\b[^"]*"[^>]*src="[^"]*/([^/]+)\.png"')
     for page in sorted((docs_root / "books").glob("*/index.html")):
         source = page.read_text(encoding="utf-8")
@@ -114,6 +123,7 @@ def discover_books(root: Path = CONTENT_ROOT, docs_root: Path | None = None) -> 
         if not match:
             raise ValueError(f"book page has no edition cover: {page.relative_to(REPO_ROOT)}")
         book_id = unquote(match.group(1))
+        scriptahub_url = scriptahub_urls.get(book_id.strip())
         basename = BOOK_ALIASES.get(book_id, book_id)
         editions = []
         english_pdf = find_edition_pdf(root, "EN", basename, book_id)
@@ -169,11 +179,13 @@ def discover_books(root: Path = CONTENT_ROOT, docs_root: Path | None = None) -> 
                         edition[extension if extension == "epub" else "audio"] = alternative.relative_to(root).as_posix()
                         break
             editions.append(edition)
-        if not editions:
+        if not editions and not scriptahub_url:
             raise ValueError(f"no content editions found for {page.relative_to(REPO_ROOT)} ({book_id})")
         book = {"id": book_id, "slug": page.parent.name, "editions": editions}
+        if scriptahub_url:
+            book["scriptahubUrl"] = scriptahub_url
         archived = ARCHIVED_PDF_EDITIONS.get(book_id, [])
-        if archived:
+        if archived and not scriptahub_url:
             current = next((edition for edition in editions if edition["language"] == "EN"), None)
             if current is None or "pdf" not in current:
                 raise ValueError(f"archived PDF editions require a current English PDF for {book_id}")

@@ -56,8 +56,11 @@ class ContentLayoutTests(unittest.TestCase):
         books = content_index.discover_books()
         pages = list((REPO_ROOT / "docs" / "books").glob("*/index.html"))
         self.assertEqual(len(books), len(pages))
-        self.assertTrue(all(book["editions"] for book in books))
         for book in books:
+            if book.get("scriptahubUrl"):
+                self.assertEqual([], book["editions"], book["id"])
+                continue
+            self.assertTrue(book["editions"], book["id"])
             english = next((edition for edition in book["editions"] if edition["language"] == "EN"), None)
             if english:
                 if book["id"] in content_index.TEXT_ONLY_BOOK_SOURCES:
@@ -68,6 +71,22 @@ class ContentLayoutTests(unittest.TestCase):
                 if edition["language"] != "EN":
                     self.assertNotIn("pdf", edition, (book["id"], edition["language"]))
                     self.assertTrue("html" in edition or "tenMinuteHtml" in edition, (book["id"], edition["language"]))
+
+    def test_scriptahub_books_use_their_public_book_pages(self):
+        expected = content_index.load_scriptahub_book_urls()
+        indexed = {
+            book["id"].strip(): book["scriptahubUrl"]
+            for book in content_index.discover_books()
+            if "scriptahubUrl" in book
+        }
+        self.assertEqual(expected, indexed)
+        self.assertTrue(all(url.endswith("/en/book.html") for url in indexed.values()))
+
+        actions = (REPO_ROOT / "docs" / "assets" / "js" / "book-languages.js").read_text(encoding="utf-8")
+        external_branch = actions.index("if (book.scriptahubUrl)")
+        local_editions = actions.index("const editions = book.editions.map")
+        self.assertLess(external_branch, local_editions)
+        self.assertIn("Read on ScriptaHub", actions)
 
     def test_book_listing_has_balanced_categories_in_editorial_order(self):
         listing = (REPO_ROOT / "docs" / "books.html").read_text(encoding="utf-8")
@@ -125,6 +144,7 @@ class ContentLayoutTests(unittest.TestCase):
             self.assertIsNone(re.search(r"content/[A-Z]{2}/[^\" ]+\.pdf", source), page)
             self.assertIn("data-book-actions", source, page)
             self.assertIn("data-book-availability", source, page)
+            self.assertEqual(1, source.count("assets/js/book-languages.js"), page)
 
     def test_english_editions_have_editorial_short_reads(self):
         for book in content_index.discover_books():
