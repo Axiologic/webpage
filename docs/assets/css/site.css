@@ -775,6 +775,23 @@ p {
   text-transform: uppercase;
 }
 
+.innovation-card-link {
+  align-self: flex-start;
+  margin-top: 16px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid rgba(154, 242, 198, .4);
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.accent-card .innovation-card-link {
+  border-bottom-color: rgba(242, 209, 143, .4);
+  color: var(--accent-2);
+}
+
+.innovation-card-link:hover { border-bottom-color: currentColor; }
+
 .partnership-callout {
   display: grid;
   grid-template-columns: 1.25fr 1fr auto;
