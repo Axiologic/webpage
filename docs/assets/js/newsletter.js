@@ -14,7 +14,7 @@
   }
   if (!document.querySelector('link[href*="assets/css/site.css"]')) {
     const fallbackStyles = document.createElement('style');
-    fallbackStyles.textContent = '.newsletter-header-actions{display:flex;align-items:center;justify-content:flex-end;gap:18px;margin-left:auto}.services-top-link,.contact-top-link,.newsletter-top-trigger{position:static;padding:10px 16px;border:1px solid #9af2c6;border-radius:999px;background:#11151d;color:#9af2c6;cursor:pointer;font:600 14px Arial,sans-serif}.services-top-link{border-color:#f2d18f;color:#f2d18f}.main-nav .newsletter-top-trigger{margin-left:18px}.newsletter-page-controls{display:flex;justify-content:flex-end;gap:18px;padding:16px}.newsletter-modal{position:fixed;z-index:100;inset:0;display:grid;place-items:center;padding:20px;background:rgba(4,7,12,.72)}.newsletter-dialog{position:relative;width:min(100%,860px);padding:42px;border-radius:16px;background:#11151d;color:#fff;font-family:Arial,sans-serif}.newsletter-dialog h2{margin:8px 42px 12px 0;font-size:30px;line-height:1.12;white-space:nowrap}.newsletter-dialog p{margin:0 0 28px;color:#cbd1dc;font-size:18px;line-height:1.55;white-space:nowrap}.newsletter-dialog input,.newsletter-dialog button{box-sizing:border-box;width:100%;min-height:46px;margin-top:10px;padding:11px 13px;border-radius:8px;font:inherit}.newsletter-dialog button{border:0;background:#9af2c6;color:#0a1514;font-weight:700}.newsletter-close{position:absolute;top:14px;right:14px;border:0;background:transparent;color:#fff;font-size:24px;cursor:pointer}@media(max-width:900px){.newsletter-dialog h2,.newsletter-dialog p{white-space:normal}}';
+    fallbackStyles.textContent = '.newsletter-header-actions{display:flex;align-items:center;justify-content:flex-end;gap:18px;margin-left:auto}.newsletter-top-trigger{position:static;padding:10px 16px;border:1px solid #9af2c6;border-radius:999px;background:#11151d;color:#9af2c6;cursor:pointer;font:600 14px Arial,sans-serif}.site-menu-link{display:inline-flex;align-items:center;min-height:44px;padding:6px 0;border:0;border-bottom:1px solid transparent;border-radius:0;background:transparent;color:#cbd1dc;font:500 15px Arial,sans-serif;text-decoration:none}.site-menu-link:hover,.site-menu-link[aria-current=page]{color:#9af2c6;border-bottom-color:#9af2c6}.site-menu-link:focus-visible{outline:2px solid #9af2c6;outline-offset:4px}.newsletter-header-actions,.newsletter-page-controls{flex-wrap:wrap}.main-nav .newsletter-top-trigger{margin-left:18px}.newsletter-page-controls{display:flex;justify-content:flex-end;gap:18px;padding:16px}.newsletter-modal{position:fixed;z-index:100;inset:0;display:grid;place-items:center;padding:20px;background:rgba(4,7,12,.72)}.newsletter-dialog{position:relative;width:min(100%,860px);padding:42px;border-radius:16px;background:#11151d;color:#fff;font-family:Arial,sans-serif}.newsletter-dialog h2{margin:8px 42px 12px 0;font-size:30px;line-height:1.12;white-space:nowrap}.newsletter-dialog p{margin:0 0 28px;color:#cbd1dc;font-size:18px;line-height:1.55;white-space:nowrap}.newsletter-dialog input,.newsletter-dialog button{box-sizing:border-box;width:100%;min-height:46px;margin-top:10px;padding:11px 13px;border-radius:8px;font:inherit}.newsletter-dialog button{border:0;background:#9af2c6;color:#0a1514;font-weight:700}.newsletter-close{position:absolute;top:14px;right:14px;border:0;background:transparent;color:#fff;font-size:24px;cursor:pointer}@media(max-width:900px){.newsletter-dialog h2,.newsletter-dialog p{white-space:normal}}';
     document.head.append(fallbackStyles);
   }
 
@@ -74,37 +74,43 @@
   topTrigger.className = 'newsletter-top-trigger';
   topTrigger.textContent = 'Subscribe';
   topTrigger.addEventListener('click', openNewsletter);
+  const productsLink = document.createElement('a');
+  productsLink.href = scriptUrl ? new URL('../../products.html', scriptUrl).href : '/products.html';
+  productsLink.className = 'site-menu-link products-top-link';
+  productsLink.textContent = 'Products';
+  if (window.location.pathname.endsWith('/products.html')) productsLink.setAttribute('aria-current', 'page');
   const servicesLink = document.createElement('a');
   servicesLink.href = scriptUrl ? new URL('../../services.html', scriptUrl).href : '/services.html';
-  servicesLink.className = 'services-top-link';
+  servicesLink.className = 'site-menu-link services-top-link';
   servicesLink.textContent = 'Services';
   if (window.location.pathname.endsWith('/services.html')) servicesLink.setAttribute('aria-current', 'page');
   const contactLink = document.createElement('a');
   contactLink.href = `${scriptUrl ? new URL('../../contact.html', scriptUrl).href : '/contact.html'}#contact-form`;
-  contactLink.className = 'contact-top-link';
+  contactLink.className = 'site-menu-link contact-top-link';
   contactLink.textContent = 'Contact';
   if (window.location.pathname.endsWith('/contact.html')) contactLink.setAttribute('aria-current', 'page');
   const currentPath = window.location.pathname;
   const isBooksArea = currentPath.endsWith('/books.html') || currentPath.endsWith('/book.html') || currentPath.endsWith('/reading-paths.html') || currentPath.includes('/books/');
-  const primaryHeaderAction = isBooksArea ? topTrigger : contactLink;
+  const menuItems = [productsLink, servicesLink, contactLink];
+  if (isBooksArea) menuItems.push(topTrigger);
   const pageHeader = document.querySelector('.books-header, .top-bar');
   if (pageHeader) {
     pageHeader.classList.add('has-newsletter-actions');
-    const headerActions = document.createElement('div');
+    const headerActions = document.createElement('nav');
+    headerActions.setAttribute('aria-label', 'Main navigation');
     headerActions.className = 'newsletter-header-actions';
-    headerActions.append(servicesLink);
-    headerActions.append(primaryHeaderAction);
+    headerActions.append(...menuItems);
     pageHeader.append(headerActions);
   } else {
     const legacyNavigation = document.querySelector('.main-nav');
     if (legacyNavigation) {
-      legacyNavigation.append(servicesLink);
-      legacyNavigation.append(primaryHeaderAction);
+      legacyNavigation.append(...menuItems);
     } else {
       const pageControls = document.createElement('div');
       pageControls.className = 'newsletter-page-controls';
-      pageControls.append(servicesLink);
-      pageControls.append(primaryHeaderAction);
+      pageControls.setAttribute('role', 'navigation');
+      pageControls.setAttribute('aria-label', 'Main navigation');
+      pageControls.append(...menuItems);
       document.body.prepend(pageControls);
     }
   }
