@@ -14,6 +14,7 @@ from typing import Any
 from urllib.parse import quote
 
 import content_index
+from book_html import ANALYTICS
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
 CONTENT_ROOT = REPO_ROOT / "docs" / "content"
@@ -238,7 +239,7 @@ def render(pdf: Path, source: Path, destination: Path) -> str:
     .ten-minute-kicker {{ color: var(--standalone-link); font: 700 .78em/1.2 system-ui, sans-serif; letter-spacing: .12em; text-transform: uppercase; }}
     .ten-minute-links {{ display: flex; flex-wrap: wrap; gap: .8rem 1.1rem; margin-top: 1.2rem; font-family: system-ui, sans-serif; font-size: .82em; }}
   </style>
-  <script defer src="https://cloud.umami.is/script.js" data-website-id="e252999d-4479-42d7-9526-5f778846d4f6"></script>
+  {ANALYTICS}
 </head>
 <body>
   <header class="ten-minute-header">

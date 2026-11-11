@@ -26,10 +26,7 @@ CONTENT_ROOT = REPO_ROOT / "docs" / "content"
 HTML_ROOT = CONTENT_ROOT / "htmls"
 LANGUAGE_RE = re.compile(r"^[A-Z]{2}$")
 GENERATOR_MARKER = '<meta content="PDF Reflow conversion" name="generator"/>'
-ANALYTICS = (
-    '<script defer src="https://cloud.umami.is/script.js" '
-    'data-website-id="e252999d-4479-42d7-9526-5f778846d4f6"></script>'
-)
+ANALYTICS = '<script defer src="/assets/js/analytics.js"></script>'
 WARNING_ATTRIBUTE = 'data-pdf-conversion-warning="true"'
 REPAIR_VERSION = "4"
 PROCESSED_MARKER = f'<meta content="{REPAIR_VERSION}" name="pdf-reflow-repair"/>'
